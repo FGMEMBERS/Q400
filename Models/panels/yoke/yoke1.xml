@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+    <path>yoke1.ac</path>
+
+<!-- Yokes -->
+<animation>
+        <type>rotate</type>
+        <object-name>atcident-btn</object-name>
+        <object-name>badge</object-name>
+        <object-name>poly</object-name>
+        <object-name>ptt</object-name>
+        <object-name>cylinder</object-name>
+        <object-name>object</object-name>
+        <object-name>apdisouter</object-name>
+        <object-name>yokebox</object-name>
+        <property>controls/flight/elevator</property>
+        <factor>7.5</factor>
+        <center>
+            <x-m>-11.1454</x-m>
+            <y-m>0.4803</y-m>
+            <z-m>1.7325</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+	  <object-name>atcident-btn</object-name>
+        <object-name>badge</object-name>
+        <object-name>poly</object-name>
+        <object-name>ptt</object-name>
+        <object-name>cylinder</object-name>
+        <object-name>object</object-name>
+        <object-name>apdisouter</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>-45.0</factor>
+        <center>
+            <x-m>-11.1454</x-m>
+            <y-m>0.5309</y-m>
+            <z-m>2.3352</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    </PropertyList>

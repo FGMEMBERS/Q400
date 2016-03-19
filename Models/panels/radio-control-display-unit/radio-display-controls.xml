@@ -1,0 +1,1365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New document created with EditiX at wed Feb 17th 17:24:49 GMT 2010 -->
+
+<PropertyList>
+<!-- # # # # # # # # # # # # # # # # # # # # # --><!-- # DHC8-400 Radio Display Controls  # --><!-- # # # # # # # # # # # # # # # # # # # # # -->
+	
+<path>radio-control-display-unit.ac</path>
+
+<!-- VHF1 SELECT-->
+	<animation>
+		<type>select</type>
+		<object-name>c2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/selected-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>c2</object-name>
+		<property>/instrumentation/comm/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>c3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/selected-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>c3</object-name>
+		<property>/instrumentation/comm/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>c4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/selected-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>c4</object-name>
+		<property>/instrumentation/comm/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>c6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/selected-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>c6</object-name>
+		<property>/instrumentation/comm/frequencies/selected-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>c7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/selected-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>c7</object-name>
+		<property>/instrumentation/comm/frequencies/selected-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+<!-- VHF1 STANDBY SELECT-->
+	<animation>
+		<type>select</type>
+		<object-name>g2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/standby-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>g2</object-name>
+		<property>/instrumentation/comm/frequencies/standby-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>g3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/standby-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>g3</object-name>
+		<property>/instrumentation/comm/frequencies/standby-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>g4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/standby-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>g4</object-name>
+		<property>/instrumentation/comm/frequencies/standby-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>g6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/standby-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>g6</object-name>
+		<property>/instrumentation/comm/frequencies/standby-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>g7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm/frequencies/standby-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>g7</object-name>
+		<property>/instrumentation/comm/frequencies/standby-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- VHF2 SELECT-->
+	<animation>
+		<type>select</type>
+		<object-name>ii2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ii2</object-name>
+		<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ii3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ii3</object-name>
+		<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ii4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ii4</object-name>
+		<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ii6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ii6</object-name>
+		<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ii7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ii7</object-name>
+		<property>/instrumentation/comm[1]/frequencies/selected-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+<!-- VHF1 STANDBY SELECT-->
+	<animation>
+		<type>select</type>
+		<object-name>mm2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>mm2</object-name>
+		<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>mm3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>mm3</object-name>
+		<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>mm4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>mm4</object-name>
+		<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>mm6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>mm6</object-name>
+		<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>mm7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>mm7</object-name>
+		<property>/instrumentation/comm[1]/frequencies/standby-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- VOR 1 SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>j2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/selected-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>j2</object-name>
+		<property>/instrumentation/nav/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>j3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/selected-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>j3</object-name>
+		<property>/instrumentation/nav/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>j4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/selected-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>j4</object-name>
+		<property>/instrumentation/nav/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>j6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/selected-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>j6</object-name>
+		<property>/instrumentation/nav/frequencies/selected-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>j7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/selected-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>j7</object-name>
+		<property>/instrumentation/nav/frequencies/selected-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- VOR STANDBY SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>n2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/standby-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>n2</object-name>
+		<property>/instrumentation/nav/frequencies/standby-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>n3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/standby-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>n3</object-name>
+		<property>/instrumentation/nav/frequencies/standby-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>n4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/standby-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>n4</object-name>
+		<property>/instrumentation/nav/frequencies/standby-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>n6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/standby-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>n6</object-name>
+		<property>/instrumentation/nav/frequencies/standby-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>n7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav/frequencies/standby-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>n7</object-name>
+		<property>/instrumentation/nav/frequencies/standby-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+<!-- ILS SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>pp2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>pp2</object-name>
+		<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>pp3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>pp3</object-name>
+		<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>pp4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>pp4</object-name>
+		<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>pp6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>pp6</object-name>
+		<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>pp7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>pp7</object-name>
+		<property>/instrumentation/nav[1]/frequencies/selected-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+<!-- ILS STANDBY SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>tt2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tt2</object-name>
+		<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>tt3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tt3</object-name>
+		<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>tt4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tt4</object-name>
+		<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>tt6</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+				<value>0.1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tt6</object-name>
+		<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+		<factor>1</factor>
+		<step>0.1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>tt7</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+				<value>0.01</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>tt7</object-name>
+		<property>/instrumentation/nav[1]/frequencies/standby-mhz</property>
+		<factor>10</factor>
+		<step>0.01</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- ADF 1 SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>r2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/selected-khz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>r2</object-name>
+		<property>/instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>r3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/selected-khz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>r3</object-name>
+		<property>/instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>r4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/selected-khz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>r4</object-name>
+		<property>/instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+<!-- ADF 1 STANDBY SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>w2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/standby-khz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>w2</object-name>
+		<property>/instrumentation/adf/frequencies/standby-khz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>w3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/standby-khz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>w3</object-name>
+		<property>/instrumentation/adf/frequencies/standby-khz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>w4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/standby-khz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>w4</object-name>
+		<property>/instrumentation/adf/frequencies/standby-khz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+<!-- ADF 2 SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>yy2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/selected-khz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>yy2</object-name>
+		<property>/instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>yy3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/selected-khz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>yy3</object-name>
+		<property>/instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>yy4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/selected-khz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>yy4</object-name>
+		<property>/instrumentation/adf/frequencies/selected-khz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+<!-- ADF 2 STANDBY SELECTED FREQUENCY-->
+	<animation>
+		<type>select</type>
+		<object-name>ccc2</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/standby-khz</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ccc2</object-name>
+		<property>/instrumentation/adf/frequencies/standby-khz</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ccc3</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/standby-khz</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ccc3</object-name>
+		<property>/instrumentation/adf/frequencies/standby-khz</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ccc4</object-name>
+		<condition>
+			<greater-than>
+				<property>/instrumentation/adf/frequencies/standby-khz</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ccc4</object-name>
+		<property>/instrumentation/adf/frequencies/standby-khz</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- #####BUTTONS AND SELECTOR SWITCH ANIMATIONS not all completed####-->
+
+<animation>
+	<type>rotate</type>
+	<object-name>selector2-flat-switch</object-name>
+	<property>controls/switches/channel-select</property>
+	<value>6</value>
+	<interpolation>
+		<entry><ind>0</ind><dep>0.0</dep></entry><!-- #####initial entry should select vhf1 property####-->
+            <entry><ind>1</ind><dep>21.0</dep></entry><!-- #####second selection should select vhf2 property####-->
+            <entry><ind>2</ind><dep>69.5</dep></entry><!-- #####3rd selection should select HF####-->
+            <entry><ind>3</ind><dep>112.5</dep></entry><!-- #####4th selection should select standby1####-->
+            <entry><ind>4</ind><dep>174.5</dep></entry><!-- #####5th selection should select standby2####-->
+            <entry><ind>5</ind><dep>208.5</dep></entry><!-- #####6th selection should select serv/int####-->
+		<entry><ind>6</ind><dep>240.0</dep></entry><!-- #####7th selection should select PA system####-->
+	</interpolation>
+	<axis>
+		<x>0.0</x>
+		<y>0.0</y>
+		<z>-1.0</z>
+	</axis>
+	<center>
+		<x-m>-10.8550</x-m>
+		<y-m>-0.0940</y-m>
+		<z-m>2.0351</z-m>
+	</center>
+</animation>
+
+<!-- HOTSPOT -->
+<animation>
+	<type>pick</type>
+	<object-name>selector2-flat-switch</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<interval-sec>0.3</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/switches/channel-select</property>
+			<property>instrumentation/comm/frequencies/selected-mhz</property>
+		<step>1</step>
+                <min>0</min>
+                <max>6</max>
+		</binding>
+	</action>
+</animation>
+
+
+<animation>
+	<type>pick</type>
+	<object-name>selector2-flat-switch</object-name>
+	<action>
+		<button>1</button>
+		<repeatable>false</repeatable>
+		<interval-sec>0.3</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/switches/channel-select</property>
+			<property>instrumentation/comm[1]/frequencies/selected-mhz</property>
+		<step>-1</step>
+                <min>0</min>
+                <max>6</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>selector2-flat-switch</object-name>
+	<action>
+		<button>2</button>
+		<repeatable>false</repeatable>
+		<interval-sec>0.3</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/switches/channel-select</property>
+		<step>1</step>
+                <min>0</min>
+                <max>6</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>selector2-flat-switch</object-name>
+	<action>
+		<button>3</button>
+		<repeatable>false</repeatable>
+		<interval-sec>0.3</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/switches/channel-select</property>
+			<property>instrumentation/comm/frequencies/standby-mhz</property>
+		<step>-1</step>
+                <min>0</min>
+                <max>6</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>selector2-flat-switch</object-name>
+	<action>
+		<button>4</button>
+		<repeatable>false</repeatable>
+		<interval-sec>0.3</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/switches/channel-select</property>
+			<property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+		<step>1</step>
+                <min>0</min>
+                <max>6</max>
+		</binding>
+	</action>
+</animation>
+
+<animation>
+	<type>pick</type>
+	<object-name>selector2-flat-switch</object-name>
+	<action>
+		<button>5</button>
+		<repeatable>false</repeatable>
+		<interval-sec>0.3</interval-sec>
+		<binding>
+			<command>property-adjust</command>
+			<property>controls/switches/channel-select</property>
+			<property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+		<step>-1</step>
+                <min>0</min>
+                <max>6</max>
+		</binding>
+	</action>
+</animation>
+
+</PropertyList>

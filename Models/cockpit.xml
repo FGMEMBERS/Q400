@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New document created with EditiX at Fri Jan 15 14:57:31 GMT 2010 -->
+
+<PropertyList>
+<model>
+  <path>Aircraft/Q400/Models/cockpit.ac</path>
+    <name>cockpit</name>
+    <offsets>
+      <x-m>0.0</x-m>
+      <y-m>0.0</y-m>
+      <z-m>0.0</z-m>
+    </offsets>
+
+<animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>10</max-m>
+    <max-property>sim/rendering/static-lod/bare</max-property>
+  </animation>
+
+  </model>
+  
+</PropertyList>

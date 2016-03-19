@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>lg-panel.ac</path>
+
+
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/gear/gear-down</property>
+		</binding>
+	</action>
+</animation> 
+
+<animation>
+		<type>rotate</type>
+		<object-name>handle</object-name>
+		<property>controls/gear/gear-down</property>
+		<factor>40</factor>
+
+		<center>
+			<x-m>-11.4529</x-m>
+			<y-m>0.3393</y-m>
+			<z-m>2.2630</z-m>
+		</center>
+
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+
+	</animation>
+
+</PropertyList>

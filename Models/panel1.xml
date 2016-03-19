@@ -1,0 +1,28 @@
+<!-- dhc8-400q Alex Park
+-->
+
+<PropertyList>
+
+    <model>
+        <name>ND1</name>
+        <path>Aircraft/dhc8-400/models/panels/MFD/ND.xml</path>
+        <offsets>
+            <x-m>-11.4516</x-m>
+            <y-m>-0.4597</y-m>
+            <z-m>2.3171</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>ND2</name>
+        <path>Aircraft/dhc8-400/models/panels/MFD/ND.xml</path>
+        <offsets>
+            <x-m>-11.4516</x-m>
+            <y-m>0.5081</y-m>
+            <z-m>2.3171</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+</PropertyList>

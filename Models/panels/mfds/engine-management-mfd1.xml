@@ -1,0 +1,1756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New document created with EditiX at Sun Jan 31 17:24:49 GMT 2010 -->
+
+<PropertyList><!-- # # # # # # # # # # # # # # # # # # # # # --><!-- # DHC8-400 Engine Management Screen  # --><!-- # # # # # # # # # # # # # # # # # # # # # -->
+	<path>engine-management-mfd1.ac</path>
+	<!-- Torque-->
+	<animation>
+		<type>select</type>
+		<object-name>trq-01.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/torque-ftlb</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>trq-01.01</object-name>
+		<property>/engines/engine[0]/torque-ftlb</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>trq-01.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/torque-ftlb</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>trq-01.02</object-name>
+		<property>/engines/engine[0]/torque-ftlb</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>trq-01.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/torque-ftlb</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>trq-01.03</object-name>
+		<property>/engines/engine[0]/torque-ftlb</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+
+	</animation>
+
+	
+	<!-- Torque Analogue Style Digital Display-->
+	
+	<animation>
+        <type>rotate</type>
+        <object-name>trq01-needle</object-name>
+        <property>engines/engine/torque-ftlb</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>31822</ind><dep>190</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>-0.0110</y-m>
+        <z-m>2.4564</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+<animation>
+		<type>select</type>
+		<object-name>trq-02.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/torque-ftlb</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>trq-02.01</object-name>
+		<property>/engines/engine[1]/torque-ftlb</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>trq-02.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/torque-ftlb</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>trq-02.02</object-name>
+		<property>/engines/engine[1]/torque-ftlb</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>trq-02.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/torque-ftlb</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>trq-02.03</object-name>
+		<property>/engines/engine[1]/torque-ftlb</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>trq02-needle</object-name>
+        <property>engines/engine/torque-ftlb</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>31822</ind><dep>190</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>0.0775</y-m>
+        <z-m>2.4564</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Left Prop RPM-->
+	<animation>
+		<type>select</type>
+		<object-name>prop1-rpm.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/rpm</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop1-rpm.01</object-name>
+		<property>/engines/engine/torque-ftlb</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>prop1-rpm.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/rpm</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop1-rpm.02</object-name>
+		<property>/engines/engine/rpm</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>prop1-rpm.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/rpm</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop1-rpm.03</object-name>
+		<property>/engines/engine/rpm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+<animation>
+		<type>select</type>
+		<object-name>prop1-rpm.04</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/rpm</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop1-rpm.04</object-name>
+		<property>/engines/engine/rpm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>prop1-rpm-needle</object-name>
+        <property>engines/engine/rpm</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>900</ind><dep>190</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>-0.0109</y-m>
+        <z-m>2.3972</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+<!-- Right Prop RPM-->
+
+<animation>
+		<type>select</type>
+		<object-name>prop2-rpm.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/rpm</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop2-rpm.01</object-name>
+		<property>/engines/engine[1]/torque-ftlb</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>prop2-rpm.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/rpm</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop2-rpm.02</object-name>
+		<property>/engines/engine[1]/rpm</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>prop2-rpm.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/rpm</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop2-rpm.03</object-name>
+		<property>/engines/engine[1]/rpm</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+<animation>
+		<type>select</type>
+		<object-name>prop2-rpm.04</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/rpm</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>prop2-rpm.04</object-name>
+		<property>/engines/engine[1]/rpm</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>prop2-rpm-needle</object-name>
+        <property>engines/engine[1]/rpm</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>900</ind><dep>190</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>0.0756</y-m>
+        <z-m>2.3972</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Left ITT -->
+	<animation>
+		<type>select</type>
+		<object-name>itt01.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt01.01</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>itt01.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt01.02</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>itt01.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt01.03</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+<animation>
+		<type>select</type>
+		<object-name>itt01.04</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt01.04</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>itt1-needle</object-name>
+        <property>engines/engine/oil-temp-c</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>200</ind><dep>190</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>-0.0109</y-m>
+        <z-m>2.3441</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+<!-- Right ITT -->
+	<animation>
+		<type>select</type>
+		<object-name>itt02.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt02.01</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>itt02.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt02.02</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>itt02.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt02.03</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+<animation>
+		<type>select</type>
+		<object-name>itt02.04</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>itt02.04</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>itt2-needle</object-name>
+        <property>engines/engine/oil-temp-c</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>200</ind><dep>190</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>0.0750</y-m>
+        <z-m>2.3439</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+
+<!-- Left Engine Oil Temp -->
+
+<animation>
+		<type>select</type>
+		<object-name>eng1-oiltemp.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng1-oiltemp.01</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng1-oiltemp.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng1-oiltemp.02</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng1-oiltemp.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/oil-temp-c</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng1-oiltemp.03</object-name>
+		<property>/engines/engine/oil-temp-c</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>eng1-oiltemp-needle</object-name>
+        <property>engines/engine/oil-temp-c</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>150</ind><dep>100</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>-0.0559</y-m>
+        <z-m>2.2955</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Right Engine Oil Temp -->
+
+<animation>
+		<type>select</type>
+		<object-name>eng2-oiltemp.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/oil-temp-c</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng2-oiltemp.01</object-name>
+		<property>/engines/engine[1]/oil-temp-c</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng2-oiltemp.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/oil-temp-c</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng2-oiltemp.02</object-name>
+		<property>/engines/engine[1]/oil-temp-c</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng2-oiltemp.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/oil-temp-c</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng2-oiltemp.03</object-name>
+		<property>/engines/engine[1]/oil-temp-c</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>eng2-oiltemp-needle</object-name>
+        <property>engines/engine[1]/oil-temp-c</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>150</ind><dep>100</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>0.1215</y-m>
+        <z-m>2.2951</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Left Engine Fuel Flow -->
+
+<animation>
+		<type>select</type>
+		<object-name>ff01-pph.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/fuel-flow-pph</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ff01-pph.01</object-name>
+		<property>/engines/engine/fuel-flow-pph</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ff01-pph.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/fuel-flow-pph</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ff01-pph.02</object-name>
+		<property>/engines/engine/fuel-flow-pph</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ff01-pph.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine/fuel-flow-pph</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ff01-pph.03</object-name>
+		<property>/engines/engine/fuel-flow-pph</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+<!-- Right Engine Fuel Flow -->
+
+
+<animation>
+		<type>select</type>
+		<object-name>ff02-pph.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/fuel-flow-pph</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ff02-pph.01</object-name>
+		<property>/engines/engine[1]/fuel-flow-pph</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ff02-pph.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/fuel-flow-pph</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ff02-pph.02</object-name>
+		<property>/engines/engine[1]/fuel-flow-pph</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>ff02-pph.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/fuel-flow-pph</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>ff02-pph.03</object-name>
+		<property>/engines/engine[1]/fuel-flow-pph</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- Front Tank Fuel Balance -->
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-frt.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[0]/level-lbs</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-frt.01</object-name>
+		<property>/consumables/fuel/tank[0]/level-lbs</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-frt.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[0]/level-lbs</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-frt.02</object-name>
+		<property>/consumables/fuel/tank[0]/level-lbs</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-frt.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[0]/level-lbs</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-frt.03</object-name>
+		<property>/consumables/fuel/tank[0]/level-lbs</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-frt.04</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[0]/level-lbs</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-frt.04</object-name>
+		<property>/consumables/fuel/tank[0]/level-lbs</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+<!-- Rear Tank Fuel Balance -->
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-rear.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[1]/level-lbs</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-rear.01</object-name>
+		<property>/consumables/fuel/tank[1]/level-lbs</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-rear.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[1]/level-lbs</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-rear.02</object-name>
+		<property>/consumables/fuel/tank[1]/level-lbs</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-rear.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[1]/level-lbs</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-rear.03</object-name>
+		<property>/consumables/fuel/tank[1]/level-lbs</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-bal-rear.04</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank[1]/level-lbs</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-bal-rear.04</object-name>
+		<property>/consumables/fuel/tank[1]/level-lbs</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- N2 percentage Needles -->
+
+<animation>
+        <type>rotate</type>
+        <object-name>nh-rpm01-needle</object-name>
+        <property>engines/engine[0]/n2</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>100</ind><dep>177</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>-0.0687</y-m>
+        <z-m>2.4241</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>nh-rpm02-needle</object-name>
+        <property>engines/engine[1]/n2</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>100</ind><dep>177</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>0.1269</y-m>
+        <z-m>2.4241</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<!-- Oil PSI temporary property values to be fixed -->
+
+<animation>
+        <type>rotate</type>
+        <object-name>eng1-oilpsi-needle</object-name>
+        <property>engines/engine[0]/n2</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>150</ind><dep>87</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>-0.0559</y-m>
+        <z-m>2.2955</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+<animation>
+        <type>rotate</type>
+        <object-name>eng2-oilpsi-needle</object-name>
+        <property>engines/engine[1]/n2</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>150</ind><dep>84</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>0.1218</y-m>
+        <z-m>2.2950</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+
+<!-- Engine 1 Oil Psi Temporary Property values needs fixing -->
+
+<animation>
+		<type>select</type>
+		<object-name>eng1-oilpsi.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/n2</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng1-oilpsi.01</object-name>
+		<property>/engines/engine[0]/n2</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng1-oilpsi.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/n2</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng1-oilpsi.02</object-name>
+		<property>/engines/engine[0]/n2</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng1-oilpsi.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/n2</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng1-oilpsi.03</object-name>
+		<property>/engines/engine[0]/n2</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- Engine 2 Oil Psi Temporary Property values needs fixing -->
+
+<animation>
+		<type>select</type>
+		<object-name>eng2-oilpsi.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/n2</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng2-oilpsi.01</object-name>
+		<property>/engines/engine[1]/n2</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng2-oilpsi.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/n2</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng2-oilpsi.02</object-name>
+		<property>/engines/engine[1]/n2</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>eng2-oilpsi.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/n2</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>eng2-oilpsi.03</object-name>
+		<property>/engines/engine[1]/n2</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- Front Tank Fuel Temp -->
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-frttank-temp.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-degc</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-frttank-temp.01</object-name>
+		<property>/environment/temperature-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-frttank-temp.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-degc</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-frttank-temp.02</object-name>
+		<property>/environment/temperature-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-frttank-temp.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-degc</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-frttank-temp.03</object-name>
+		<property>/environment/temperature-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- Rear Tank Fuel Temp -->
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-reartank-temp.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-degc</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-reartank-temp.01</object-name>
+		<property>/environment/temperature-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-reartank-temp.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-degc</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-reartank-temp.02</object-name>
+		<property>/environment/temperature-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>fuel-reartank-temp.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-degc</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-reartank-temp.03</object-name>
+		<property>/environment/temperature-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- Saturated Air Temperature -->
+
+<animation>
+		<type>select</type>
+		<object-name>sat-temp.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-sea-level-degc</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>sat-temp.01</object-name>
+		<property>/environment/temperature-sea-level-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>sat-temp.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-sea-level-degc</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>sat-temp.02</object-name>
+		<property>/environment/temperature-sea-level-degc</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>sat-temp.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/environment/temperature-sea-level-degc</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>sat-temp.03</object-name>
+		<property>/environment/temperature-sea-level-degc</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- NL percentage RPM -->
+
+<animation>
+		<type>select</type>
+		<object-name>nl1-rpm.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/n2</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>nl1-rpm.01</object-name>
+		<property>/environment/temperature-sea-level-degc</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>nl1-rpm.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/n2</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>nl1-rpm.02</object-name>
+		<property>/engines/engine[0]/n2</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>nl1-rpm.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[0]/n2</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>nl1-rpm.03</object-name>
+		<property>/engines/engine[0]/n2</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>nl2-rpm.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/n2</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>nl2-rpm.01</object-name>
+		<property>/engines/engine[1]/n2</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>nl2-rpm.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/n2</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>nl2-rpm.02</object-name>
+		<property>/engines/engine[1]/n2</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<animation>
+		<type>select</type>
+		<object-name>nl2-rpm.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/engines/engine[1]/n2</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>nl2-rpm.03</object-name>
+		<property>/engines/engine[1]/n2</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+
+
+
+    	
+</PropertyList>

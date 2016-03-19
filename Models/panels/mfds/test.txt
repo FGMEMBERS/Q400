@@ -1,0 +1,29 @@
+<animation> 
+<type>pick</type> 
+<object-name>HDG_HOLD</object-name> 
+<action> 
+<button>0</button> 
+<repeatable>false</repeatable> 
+<binding> 
+<command>property-cycle</command> 
+<property>/property1</property> 
+<value type="string">1</value> 
+<value type="string">0</value> 
+<value type="string">0</value> 
+</binding> 
+<binding> 
+<command>property-cycle</command> 
+<property>/property2</property> 
+<value type="string">0</value> 
+<value type="string">1</value> 
+<value type="string">0</value> 
+</binding> 
+<binding> 
+<command>property-cycle</command> 
+<property>/property3</property> 
+<value type="string">0</value> 
+<value type="string">0</value> 
+<value type="string">1</value> 
+</binding> 
+</action> 
+</animation>

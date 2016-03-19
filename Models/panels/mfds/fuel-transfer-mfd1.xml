@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- New document created with EditiX at Sun Jan 31 17:24:49 GMT 2010 -->
+
+<PropertyList><!-- # # # # # # # # # # # # # # # # # # # # # --><!-- # DHC8-400 Fuel Transfer Screen  # --><!-- # # # # # # # # # # # # # # # # # # # # # -->
+	<path>fuel-transfer-mfd1.ac</path>
+	<!-- Total Fuel-->
+	<animation>
+		<type>select</type>
+		<object-name>fuel-lbs.01</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank/level-lbs</property>
+				<value>1000</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-lbs.01</object-name>
+		<property>/consumables/fuel/tank/level-lbs</property>
+		<factor>0.0001</factor>
+		<step>1000</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel-lbs.02</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank/level-lbs</property>
+				<value>100</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-lbs.02</object-name>
+		<property>/consumables/fuel/tank/level-lbs</property>
+		<factor>0.001</factor>
+		<step>100</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<animation>
+		<type>select</type>
+		<object-name>fuel-lbs.03</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank/level-lbs</property>
+				<value>10</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-lbs.03</object-name>
+		<property>/consumables/fuel/tank/level-lbs</property>
+		<factor>0.01</factor>
+		<step>10</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>fuel-lbs.04</object-name>
+		<condition>
+			<greater-than>
+				<property>/consumables/fuel/tank/level-lbs</property>
+				<value>1</value>
+			</greater-than>
+		</condition>
+	</animation>
+	<animation>
+		<type>textranslate</type>
+		<object-name>fuel-lbs.04</object-name>
+		<property>/consumables/fuel/tank/level-lbs</property>
+		<factor>0.1</factor>
+		<step>1</step>
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+	
+	<!-- Total Fuel Analogue Style Digital Display-->
+	
+	<animation>
+        <type>rotate</type>
+        <object-name>fuel-tank1-ind</object-name>
+        <property>consumables/fuel/tank[1]/level-lbs</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.1</ind><dep>320</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>-0.0633</y-m>
+        <z-m>2.4271</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>fuel-tank2-ind</object-name>
+        <property>consumables/fuel/tank[0]/level-lbs</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.1</ind><dep>320</dep></entry>
+        </interpolation>
+        <center>
+        <x-m>-11.455</x-m>
+        <y-m>0.1257</y-m>
+        <z-m>2.4293</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    
+    <animation>
+		<type>rotate</type>
+		<object-name>flap-indicator</object-name>
+		<property>surface-positions/flap-pos-norm</property>
+
+		<interpolation>
+			<entry><ind>0</ind><dep>0</dep></entry>
+			<entry><ind>0.143</ind><dep>44</dep></entry>
+			<entry><ind>0.429</ind><dep>82</dep></entry>
+			<entry><ind>0.571</ind><dep>110</dep></entry>
+			<entry><ind>1</ind><dep>260</dep></entry>
+		</interpolation>
+
+		<center>
+			<x-m>-11.455</x-m>
+			<y-m>-0.0726</y-m>
+			<z-m>2.3066</z-m>
+		</center>
+
+		<axis>
+			<x>-1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+
+	</animation>
+
+<!-- Hydraulic Pressure Display temporary properties -->
+
+
+<animation>
+    <type>translate</type>
+    <object-name>pkbrk-hyd-press-needle</object-name>
+    <property>consumables/fuel/tank/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>8</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>stby-hyd-press-needle</object-name>
+    <property>consumables/fuel/tank/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>10</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>no1-hyd-press-needle</object-name>
+    <property>consumables/fuel/tank[1]/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>10</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>no2-hyd-press-needle</object-name>
+    <property>consumables/fuel/tank[2]/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>10</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>no3-hyd-press-needle</object-name>
+    <property>consumables/fuel/tank[2]/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>10</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>no1-hyd-quant-needle</object-name>
+    <property>consumables/fuel/tank[1]/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>10</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>no2-hyd-quant-needle</object-name>
+    <property>consumables/fuel/tank[1]/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>10</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+<animation>
+    <type>translate</type>
+    <object-name>no3-hyd-quant-needle</object-name>
+    <property>consumables/fuel/tank[2]/density-ppg</property>
+    <interpolation>
+        <entry>
+            <ind>0.0</ind><dep>0.0</dep>
+        </entry>
+        <entry>
+            <ind>10</ind><dep>0.032</dep>
+        </entry>
+    </interpolation>
+    <axis>
+        <x>0.0</x>
+        <y>0.0</y>
+        <z>1.0</z>
+    </axis>
+</animation>
+
+
+</PropertyList>
