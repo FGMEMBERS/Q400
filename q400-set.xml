@@ -124,6 +124,9 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
 		<file>Nasal/hydralic-pressure.nas</file>
 		<file>Nasal/lighting.nas</file>
         </q400>
+        <doors>
+            <file>Nasal/doors.nas</file>
+        </doors>
     </nasal>
 
  

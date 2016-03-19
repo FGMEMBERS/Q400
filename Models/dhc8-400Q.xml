@@ -8,6 +8,20 @@
 <z-m>0</z-m>
 <pitch-deg>0</pitch-deg>
 </offsets>
+
+      var self = cmdarg();
+
+      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
+      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
+      var float_2 = self.getNode("sim/multiplay/generic/float[2]", 1);
+
+      var passengerF_door = self.getNode("sim/model/door-positions/passengerF/position-norm", 1);
+      var passengerR_door = self.getNode("sim/model/door-positions/passengerR/position-norm", 1);
+      var cargo_door = self.getNode("sim/model/door-positions/cargo/position-norm", 1);
+      
+      passengerF_door.alias(float_0);
+      passengerR_door.alias(float_1);
+      cargo_door.alias(float_2);
 <nasal>
 <load>
 var livery_update = aircraft.livery_update.new("Aircraft/Q400/Models/Liveries");
@@ -15,6 +29,9 @@ var livery_update = aircraft.livery_update.new("Aircraft/Q400/Models/Liveries");
 
 <unload>
 livery_update.stop();
+      passengerF_door.unalias();
+      passengerR_door.unalias();
+      cargo_door.unalias();
 </unload>
 </nasal>
 
@@ -86,7 +103,156 @@ livery_update.stop();
     </offsets>
   </model>
 
-
+  <!--Doors-->
+   <animation>
+    <type>pick</type>
+    <object-name>doorF</object-name>
+    <object-name>stairs</object-name>
+    <object-name>stairhandle1</object-name>
+    <object-name>doorFint</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passengerF.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>doorF</object-name>
+    <property>sim/model/door-positions/passengerF/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 140 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -9.6602 </x-m>
+      <y-m>  -1.1306 </y-m>
+      <z-m>  1.3894 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>stairs</object-name>
+    <object-name>stairhandle1</object-name>
+    <object-name>doorFint</object-name>
+    <property>sim/model/door-positions/passengerF/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   -140 </dep></entry>
+      <entry><ind> 1 </ind><dep> 0 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -9.6602 </x-m>
+      <y-m>  -1.1306 </y-m>
+      <z-m>  1.3894 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+   <animation>
+    <type>pick</type>
+    <object-name>doorR</object-name>
+    <object-name>doorRint</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.passengerR.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>doorR</object-name>
+    <object-name>doorRint</object-name>
+    <property>sim/model/door-positions/passengerR/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -170 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 6.9021 </x-m>
+      <y-m>  -1.341 </y-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
+    <object-name>doorR</object-name>
+    <object-name>doorRint</object-name>
+    <property>sim/model/door-positions/passengerR/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 170 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 7.3152 </x-m>
+      <y-m>  -1.3385 </y-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation>
+   <animation>
+    <type>pick</type>
+    <object-name>doorC</object-name>
+    <object-name>doorCint</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.cargo.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>doorC</object-name>
+    <object-name>doorCint</object-name>
+    <property>sim/model/door-positions/cargo/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -120 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 9.1065 </x-m>
+      <y-m>  -1.1016 </y-m>
+      <z-m> 3.0311 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  
+  
+  
+  
     <animation>
         <type>rotate</type>
         <object-name>Elevator</object-name>
@@ -718,7 +884,7 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>4.5846</y-m>
+  <y-m>4.166</y-m>
   <z-m>2.2404</z-m>
  </center>
 <axis><x>1</x></axis>
@@ -734,11 +900,11 @@ livery_update.stop();
         </entry>
         <entry>
           <ind>0.9</ind>
-          <dep>120</dep>
+          <dep>-120</dep>
         </entry>
         <entry>
           <ind>0.05</ind>
-          <dep>120</dep>
+          <dep>-120</dep>
         </entry>
 		<entry>
           <ind>0</ind>
@@ -766,11 +932,11 @@ livery_update.stop();
         </entry>
         <entry>
           <ind>0.9</ind>
-          <dep>-120</dep>
+          <dep>120</dep>
         </entry>
         <entry>
           <ind>0.05</ind>
-          <dep>-120</dep>
+          <dep>120</dep>
         </entry>
 		<entry>
           <ind>0</ind>
