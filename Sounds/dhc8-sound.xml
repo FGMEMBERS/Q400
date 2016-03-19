@@ -11,7 +11,7 @@
             <reference-dist>1.0</reference-dist>
             <max-dist>4.0</max-dist>
             <mode>once</mode>
-            <path>Sounds/turbine_start.wav</path>
+            <path>turbine_start.wav</path>
             <condition>
                 <greater-than>
                     <property>controls/engines/engine[0]/condition</property>
@@ -34,7 +34,7 @@
             <reference-dist>150.0</reference-dist>
             <max-dist>500.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turboprop1.wav</path>
+            <path>turboprop1.wav</path>
             <property>engines/engine[0]/n2</property>
             <condition>
                 <greater-than>
@@ -68,7 +68,7 @@
             <reference-dist>1.0</reference-dist>
             <max-dist>4.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
+            <path>turbine_loop.wav</path>
             <property>engines/engine[0]/n2</property>
             <volume>
                 <property>sim/sound/cabin</property>
@@ -91,7 +91,7 @@
             <reference-dist>1.0</reference-dist>
             <max-dist>4.0</max-dist>
             <mode>once</mode>
-            <path>Sounds/turbine_shutdown.wav</path>
+            <path>turbine_shutdown.wav</path>
             <condition>
                 <equals>
                     <property>controls/engines/engine[0]/condition</property>
@@ -116,7 +116,7 @@
             <reference-dist>2.0</reference-dist>
             <max-dist>4.0</max-dist>
             <mode>once</mode>
-            <path>Sounds/turbine_start.wav</path>
+            <path>turbine_start.wav</path>
             <condition>
                 <greater-than>
                     <property>controls/engines/engine[1]/condition</property>
@@ -140,7 +140,7 @@
             <reference-dist>150.0</reference-dist>
             <max-dist>500.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turboprop1.wav</path>
+            <path>turboprop1.wav</path>
             <property>engines/engine[1]/n2</property>
             <condition>
                 <greater-than>
@@ -176,7 +176,7 @@
             <reference-dist>1.0</reference-dist>
             <max-dist>4.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
+            <path>turbine_loop.wav</path>
             <condition>
                 <greater-than>
                     <property>engines/engine[1]/n2</property>
@@ -204,7 +204,7 @@
             <reference-dist>1.0</reference-dist>
             <max-dist>4.0</max-dist>
             <mode>once</mode>
-            <path>Sounds/turbine_shutdown.wav</path>
+            <path>turbine_shutdown.wav</path>
             <condition>
                 <equals>
                     <property>controls/engines/engine[1]/condition</property>
@@ -229,7 +229,7 @@
             <reference-dist>2.0</reference-dist>
             <max-dist>5.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/rumble.wav</path>
+            <path>rumble.wav</path>
             <condition>
                 <or>
                     <property>gear/gear[0]/wow</property>
@@ -252,7 +252,7 @@
         <gear>
             <name>gear</name>
             <mode>in-transit</mode>
-            <path>Sounds/gear.wav</path>
+            <path>gear.wav</path>
             <property>gear/gear[0]/position-norm</property>
             <reference-dist>2.0</reference-dist>
             <max-dist>5.0</max-dist>
@@ -270,7 +270,7 @@
 
         <gear>
             <name>gear-lock</name>
-            <path>Sounds/gear-lck.wav</path>
+            <path>gear-lck.wav</path>
             <condition>
                 <equals>
                     <property>gear/gear[0]/position-norm</property>
@@ -290,7 +290,7 @@
             <name>squeal</name>
             <reference-dist>20.0</reference-dist>
             <max-dist>40.0</max-dist>
-            <path>Sounds/squeal.wav</path>
+            <path>squeal.wav</path>
             <condition>
                 <or>
                     <property>gear/gear[0]/wow</property>
@@ -322,7 +322,7 @@
             <reference-dist>2.0</reference-dist>
             <max-dist>5.0</max-dist>
             <mode>in-transit</mode>
-            <path>Sounds/flaps.wav</path>
+            <path>flaps.wav</path>
             <property>surface-positions/flap-pos-norm</property>
             <volume>
                 <property>sim/sound/cabin</property>
@@ -339,7 +339,7 @@
             <reference-dist>0.5</reference-dist>
             <max-dist>1.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/wind.wav</path>
+            <path>wind.wav</path>
             <condition>
                 <and>
                     <equals>
