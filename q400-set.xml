@@ -111,6 +111,7 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
 
     <nasal>
         <q400>
+            <file>Nasal/liveries.nas</file>
             <file>Nasal/Electrical.nas</file>
             <file>Nasal/systems.nas</file>
             <file>Nasal/vhf22.nas</file>
