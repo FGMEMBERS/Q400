@@ -3,6 +3,10 @@
 <PropertyList>
 
   <path>WhiteLight.ac</path>
+  <effect>
+      <inherits-from>Effects/model-transparent</inherits-from>
+    <object-name>Light</object-name>
+</effect>
 
   <animation>
     <type>noshadow</type>

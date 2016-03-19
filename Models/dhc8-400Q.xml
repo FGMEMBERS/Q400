@@ -1628,9 +1628,9 @@ livery_update.stop();
 <path>Aircraft/Q400/Models/lights/GreenLight.xml</path>
 <name>Greenlight</name>     
 <offsets>
-<x-m>-0.155666</x-m>
-<y-m>13.004</y-m>
-<z-m>3.8568</z-m>       
+<x-m>0.7125</x-m>
+<y-m>14.2759</y-m>
+<z-m>4.2177</z-m>       
 </offsets>
 </model>
 
@@ -1638,9 +1638,9 @@ livery_update.stop();
 <path>Aircraft/Q400/Models/lights/RedLight.xml</path>
 <name>Redlight</name>     
 <offsets>
-<x-m>-0.155666</x-m>
-<y-m>-13.004</y-m>
-<z-m>3.8568</z-m>       
+<x-m>0.7125</x-m>
+<y-m>-14.2759</y-m>
+<z-m>4.2177</z-m>       
 </offsets>
 </model>
 
