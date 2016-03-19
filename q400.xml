@@ -102,7 +102,7 @@ Fuel burn ... 580 lbs/hr
     <tank x="0.66" y="0" z="2" capacity="5850" jet="true"/>
     <tank x="-1.32" y="0" z="2.5" capacity="5850" jet="true"/>
 
-    <gear x="11.953" y="0.00" z="0" compression=".4"
+    <gear x="11.953" y="0.00" z="0.0443" compression=".4"
     spring="0.8" damp="1.2" sfric="0.6" dfric="0.5">
         <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
 <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -181,6 +181,12 @@ Prop diam: 2.59 m
         <control-input axis="/controls/engines/engine[1]/propeller-feather"
         control="PROPFEATHER"/>
     </propeller>
+    
+    
+    <!--Pushback-->
+      <thruster x="-13.0502"  y="0.00" z="0.6695" vx="1" vy="0" vz="0" thrust="2000">
+  <control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
+  </thruster>
 <!--
     <jet x="-1.40" y="3.98" z="2.921" mass="500" thrust="2000" egt="1050" tsfc="0.468" 
     epr="3.4" rotate="0" spool-time="10.0">

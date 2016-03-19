@@ -75,6 +75,16 @@ livery_update.stop();
 <texture>engine.png</texture>
 
 </animation>
+<!--Pushback Truck-->
+ <model>
+  <name>Pushback</name>
+  <path>Models/Pushback/pushback.xml</path>
+  <offsets>
+   <x-m>-12.7395</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.1</z-m>
+  </offsets>
+ </model>
 
 <model>
     <path>Aircraft/Q400/Models/interior.xml</path>
