@@ -41,30 +41,59 @@ livery_update.stop();
         <object-name>propdiscR</object-name>
         <object-name>windows</object-name>
     </effect>
- <!--   
+  
 <animation>
       <type>material</type>
-	<object-name>wingroot</object-name>
-      <object-name>LLG.door</object-name>
-      <object-name>RLG.door</object-name>
-      <object-name>Lwing</object-name>
-      <object-name>Lfuselage</object-name>
-      <object-name>Rfuselage</object-name>
+	<object-name>body</object-name>
+      <object-name>wing</object-name>
+      <object-name>wingfix</object-name>
+      <object-name>aileronL</object-name>
+      <object-name>aileronR</object-name>
+      <object-name>flapRO</object-name>
+      <object-name>flapLO</object-name>
+      <object-name>flapI</object-name>
+      <object-name>engineL</object-name>
+      <object-name>engineR</object-name>
+      <object-name>hstab</object-name>
+      <object-name>elevator</object-name>
+      <object-name>vstab</object-name>
+      <object-name>vstab2</object-name>
+      <object-name>vstab3</object-name>
       <object-name>rudder</object-name>
-      <object-name>Elevator</object-name>
-      <object-name>tail</object-name>
-	<object-name>R.aileron</object-name>
-	<object-name>L.aileron</object-name>
-	<object-name>Rwing</object-name>
-	<object-name>R.flap</object-name>
-	<object-name>L.flap</object-name>
-	<object-name>ball</object-name>
-	<object-name>cabindoor</object-name>
+      <object-name>doorF</object-name>
+      <object-name>doorR</object-name>
+      <object-name>doorC</object-name>
+      <object-name>doorC</object-name>
+      <object-name>gear1F</object-name>
+      <object-name>gear2F</object-name>
+      <object-name>gearL1</object-name>
+      <object-name>gearL2</object-name>
+      <object-name>gearL3</object-name>
+      <object-name>gearL4</object-name>
+      <object-name>gearLL</object-name>
+      <object-name>gearLR</object-name>
+      <object-name>gearLL2</object-name>
+      <object-name>gearLR2</object-name>
+      <object-name>gearLL3</object-name>
+      <object-name>gearLR3</object-name>
+      <object-name>gearR1</object-name>
+      <object-name>gearR2</object-name>
+      <object-name>gearR3</object-name>
+      <object-name>gearR4</object-name>
+      <object-name>gearRL</object-name>
+      <object-name>gearRR</object-name>
+      <object-name>gearRL2</object-name>
+      <object-name>gearRR2</object-name>
+      <object-name>gearRL3</object-name>
+      <object-name>gearRR3</object-name>
+      
       <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
-      <texture>AVA.png</texture>
+      <texture>Q400.png</texture>
 
-    </animation>-->
+    </animation>
+    
+    
     <animation>
 
 <type>material</type>
