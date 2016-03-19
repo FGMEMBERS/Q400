@@ -44,8 +44,8 @@
        <value>0.99</value>
      </greater-than>
    </condition>
-   <property>gear/gear[0]/steering-norm</property>
-   <factor>-70</factor>
+   <property>gear/gear[0]/caster-angle-deg</property>
+   <factor>-1</factor>
    <center>
      <x-m>0</x-m>
      <y-m>0</y-m>
