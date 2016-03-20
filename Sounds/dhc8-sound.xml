@@ -37,6 +37,9 @@
             <path>Sounds/turboprop1.wav</path>
             <property>engines/engine[0]/n2</property>
             <condition>
+                <not>
+                    <property>sim/current-view/internal</property>
+                </not>
                 <greater-than>
                     <property>controls/engines/engine[0]/condition</property>
                     <value>0.15</value>

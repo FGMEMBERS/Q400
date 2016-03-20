@@ -85,12 +85,31 @@ DHC8 -400Q by Alex Park Jan 2010
     </dynamic>
   </view>
 
+<view n="1">
+  <config>
+   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+  </config>
+ </view>
 
-    <current-view>
-        <config>
-            <default-field-of-view-deg>120</default-field-of-view-deg>
-        </config>
-    </current-view>
+ <view n="2">
+  <config>
+   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+  </config>
+ </view>
+
+ <view n="3">
+  <config>
+   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+  </config>
+ </view>
+
+ <view n="4">
+  <config>
+   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+  </config>
+ </view>
+
+
 
     <systems>
         <electrical>

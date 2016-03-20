@@ -7,7 +7,7 @@ Height: 7.81
 Length: 32.83
 Wing span: 28.42
 
-MTOW: 29,260 lbs
+MTOW: 29,260 lbs ???? according to wikipedia: 64,500 lb (29,260 kg)
 
 Service Ceiling = 27000 ft
 Cruise at MTOW
@@ -18,10 +18,10 @@ Stall :
 Full Flaps = 60 kt
 O Flaps = 75 kt
 
-empty weight=38000lbs
+empty weight= 37888 according to http://www2.bombardier.com/q400/en/specifications.jsp ?
 -->
 
-<airplane mass="38000">
+<airplane mass="35000">
 
     <approach speed="90" aoa="5" fuel="0.5">
         <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
@@ -34,7 +34,7 @@ empty weight=38000lbs
  	  <control-setting axis="/controls/gear/gear-down" value="1"/>
     </approach>
 
-    <cruise speed="413" alt="10000" fuel="0.5"> 
+    <cruise speed="360" alt="10000" fuel="0.5"> 
         <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
@@ -136,19 +136,21 @@ Fuel burn ... 580 lbs/hr
 <!--
 Engines:
 2 PW150A
-4573 shp
+was 4573 shp ?
+5071 SHP
+7000 SHP takeoff
 Prop diam: 2.59 m 
 -->
-
+    <!--cruise power approximated-->
     <propeller x="-1.400" y="3.980" z="2.921"
-        mass="500" moment="80" radius="1.8"
+        mass="500" moment="80" radius="2.05"
         cruise-speed="414" cruise-rpm="1000"
-        cruise-power="4250" cruise-alt="10000"
+        cruise-power="4800" cruise-alt="10000"
         min-rpm="750" max-rpm="1020"
         fine-stop="0.25" coarse-stop="4.0">
         <turbine-engine
-            eng-power="4573" eng-rpm="1020" alt="10000"
-            flat-rating="4573" max-n2="101.5" bsfc="0.468"/>
+            eng-power="5071" eng-rpm="1020" alt="10000"
+            flat-rating="5071" max-n2="101.5" bsfc="0.468"/>
         <actionpt x="3.589" y="3.980" z="2.921"/>
         <control-input axis="/controls/engines/engine[0]/throttle"
         control="THROTTLE"/>
@@ -163,14 +165,14 @@ Prop diam: 2.59 m
     </propeller>
 
     <propeller x="-1.400" y="-3.980" z="2.921"
-        mass="500" moment="-80" radius="1.8"
+        mass="500" moment="-80" radius="2.05"
         cruise-speed="414" cruise-rpm="1000"
-        cruise-power="4250" cruise-alt="10000"
+        cruise-power="4800" cruise-alt="10000"
         min-rpm="750" max-rpm="1020"
         fine-stop="0.25" coarse-stop="4.0">
         <turbine-engine
-            eng-power="4573" eng-rpm="1020" alt="10000"
-            flat-rating="4573" max-n2="101.5" bsfc="0.468"/>
+            eng-power="5071" eng-rpm="1020" alt="10000"
+            flat-rating="5071" max-n2="101.5" bsfc="0.468"/>
         <actionpt x="3.589" y="-3.980" z="2.921"/>
         <control-input axis="/controls/engines/engine[1]/throttle"
         control="THROTTLE"/>
@@ -186,38 +188,15 @@ Prop diam: 2.59 m
     
     
     <!--Pushback-->
-      <thruster x="-13.0502"  y="0.00" z="0.6695" vx="1" vy="0" vz="0" thrust="2000">
+      <thruster x="-13.0502"  y="0.00" z="0.6695" vx="1" vy="0" vz="0" thrust="3500">
   <control-input axis="/sim/model/pushback/target-speed-fps" control="THROTTLE" src0="-1" src1="1" dst0="-1" dst1="1"/>
   </thruster>
-<!--
-    <jet x="-1.40" y="3.98" z="2.921" mass="500" thrust="2000" egt="1050" tsfc="0.468" 
-    epr="3.4" rotate="0" spool-time="10.0">
-        <control-input axis="/controls/engines/engine[0]/throttle-lever"
-        control="THROTTLE"/>
-         <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
- <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm"/>
- <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
-        <actionpt  x="3.589" y="3.98" z="2.921"/>
-    </jet>
 
-    <jet x="-1.400" y="-3.98" z="2.921" mass="500" thrust="2000" egt="1050" tsfc="0.468" 
-    epr="3.4" rotate="0" spool-time="10.0">
-        <control-input axis="/controls/engines/engine[1]/throttle-lever"
-        control="THROTTLE"/>
-         <control-input axis="/controls/engines/engine[0]/reverser" control="REVERSE_THRUST"/>
- <control-output control="REVERSE_THRUST" prop="/surface-positions/reverser-norm"/>
- <control-speed control="REVERSE_THRUST" transition-time="1.5"/>
-        <actionpt  x="3.589" y="-3.98" z="2.921"/>
-    </jet> 
-
-
-
--->
 
 
     <ballast x="0" y="0" z="3.04" mass="850"/>
-    <ballast x="2.471" y="0" z="1.5" mass="1500"/>
-    <ballast x="11.0" y="0" z="1" mass="1500"/>
+    <ballast x="2.471" y="0" z="1.5" mass="2000"/>
+    <ballast x="11.0" y="0" z="1" mass="5000"/>
 
     <weight x="11.35" y="0" z="2.35" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.0" y="0" z="2.50" mass-prop="/sim/weight[1]/weight-lb"/>
