@@ -17,9 +17,11 @@ Cruise at MTOW
 Stall :
 Full Flaps = 60 kt
 O Flaps = 75 kt
+
+empty weight=38000lbs
 -->
 
-<airplane mass="12000">
+<airplane mass="38000">
 
     <approach speed="90" aoa="5" fuel="0.5">
         <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
