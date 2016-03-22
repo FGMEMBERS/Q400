@@ -1,5 +1,5 @@
 The Bombardier Q400(NG) is a regional twinprop aircraft originally produced by DeHavilland Canada as the DHC8-400 with the intention to build an aircraft between the DHC7 and DHC6.
-There are 3 other variants of this aircraft currently used, the Q100, Q200 and the Q400.
+There are 3 other variants of this aircraft currently used, the Q100, Q200 and the Q300.
 According to Bombardier, the Q400 flies almost as far as a jet but uses much less fuel and produces much less CO2.
 
 

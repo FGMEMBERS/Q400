@@ -21,7 +21,7 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
         </startup>
 
     <model>
-<path>Aircraft/Q400/Models/dhc8-400Q.xml</path>
+<path>Aircraft/Q400/Models/q400.xml</path>
 <livery> 
 <file type="string"/> 
 </livery> 
@@ -31,7 +31,7 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
     <menubar>
         <default>
             <menu n="10">
-                <label>DHC8-400</label>
+                <label>Bombardier Q400</label>
                 <enabled type="bool">true</enabled>
                 <item>
                     <label>Autostart</label>
