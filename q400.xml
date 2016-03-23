@@ -113,22 +113,22 @@ Fuel burn ... 580 lbs/hr
   <control-speed control="EXTEND" transition-time="6"/>
     </gear>
 
-    <gear x="-0.266" y="-3.98" z="0" compression=".3"
-    spring="0.8" damp="1.2" sfric="0.8" dfric="0.7">
-        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
-        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
-<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-  <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
-  <control-speed control="EXTEND" transition-time="6"/>
-
-    </gear>
-
     <gear x="-0.266" y="3.98" z="0" compression=".3"
     spring="0.8" damp="1.2" sfric="0.8" dfric="0.7">
         <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
         <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
 <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-output control="EXTEND" prop="/gear/gear[2]/position-norm"/>
+  <control-speed control="EXTEND" transition-time="6"/>
+
+    </gear>
+
+    <gear x="-0.266" y="-3.98" z="0" compression=".3"
+    spring="0.8" damp="1.2" sfric="0.8" dfric="0.7">
+        <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
+        <control-input axis="/controls/gear/brake-parking" control="BRAKE"/>
+<control-input axis="/controls/gear/gear-down" control="EXTEND"/>
+  <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   <control-speed control="EXTEND" transition-time="6"/>
 
     </gear>

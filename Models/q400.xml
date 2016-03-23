@@ -15,16 +15,22 @@
       var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
       var float_2 = self.getNode("sim/multiplay/generic/float[2]", 1);
       var float_3 = self.getNode("sim/multiplay/generic/float[3]", 1);
+      var float_4 = self.getNode("sim/multiplay/generic/float[4]", 1);
+      var float_5 = self.getNode("sim/multiplay/generic/float[5]", 1);
 
       var passengerF_door = self.getNode("sim/model/door-positions/passengerF/position-norm", 1);
       var passengerR_door = self.getNode("sim/model/door-positions/passengerR/position-norm", 1);
       var passengerRR_door = self.getNode("sim/model/door-positions/passengerRR/position-norm", 1);
+      var passengerRF_door = self.getNode("sim/model/door-positions/passengerRF/position-norm", 1);
       var cargo_door = self.getNode("sim/model/door-positions/cargo/position-norm", 1);
+      var cargoR_door = self.getNode("sim/model/door-positions/cargoR/position-norm", 1);
       
       passengerF_door.alias(float_0);
       passengerR_door.alias(float_1);
       cargo_door.alias(float_2);
-      passengerRR_door.alias(float_3);
+      cargoR_door.alias(float_3);
+      passengerRR_door.alias(float_4);
+      passengerRF_door.alias(float_4);
 <nasal>
 <load>
 var livery_update = aircraft.livery_update.new("Aircraft/Q400/Models/Liveries");
@@ -35,19 +41,14 @@ livery_update.stop();
       passengerF_door.unalias();
       passengerR_door.unalias();
       cargo_door.unalias();
+      cargoR_door.unalias();
       passengerRR_door.unalias();
+      passengerRF_door.unalias();
 </unload>
 </nasal>
 
 <effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-        <object-name>propdiscL</object-name>
-        <object-name>propdiscR</object-name>
-        <object-name>windows</object-name>
-    </effect>
-  
-<animation>
-      <type>material</type>
+    <inherits-from>Effects/reflect</inherits-from>
 	<object-name>fuselage</object-name>
       <object-name>wing</object-name>
       <object-name>aileronL</object-name>
@@ -65,7 +66,7 @@ livery_update.stop();
       <object-name>doorF</object-name>
       <object-name>doorR</object-name>
       <object-name>doorC</object-name>
-      <object-name>doorC</object-name>
+      <object-name>doorCR</object-name>
       <object-name>gear1F</object-name>
       <object-name>gear2F</object-name>
       <object-name>gearL1</object-name>
@@ -88,6 +89,60 @@ livery_update.stop();
       <object-name>gearRR2</object-name>
       <object-name>gearRL3</object-name>
       <object-name>gearRR3</object-name>
+    </effect>
+<effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>propdiscL</object-name>
+        <object-name>propdiscR</object-name>
+        <object-name>Windows</object-name>
+    </effect>
+  
+<animation>
+      <type>material</type>
+	<object-name>fuselage</object-name>
+      <object-name>wing</object-name>
+      <object-name>aileronL</object-name>
+      <object-name>aileronR</object-name>
+      <object-name>flapRO</object-name>
+      <object-name>flapLO</object-name>
+      <object-name>flapI</object-name>
+      <object-name>engineL</object-name>
+      <object-name>engineR</object-name>
+      <object-name>hstab</object-name>
+      <object-name>elevator</object-name>
+      <object-name>vstab</object-name>
+      <object-name>vstab2</object-name>
+      <object-name>rudder</object-name>
+      <object-name>doorF</object-name>
+      <object-name>doorR</object-name>
+      <object-name>doorC</object-name>
+      <object-name>doorCR</object-name>
+      <object-name>gear1F</object-name>
+      <object-name>gear2F</object-name>
+      <object-name>gearL1</object-name>
+      <object-name>gearL2</object-name>
+      <object-name>gearL3</object-name>
+      <object-name>gearL4</object-name>
+      <object-name>gearLL</object-name>
+      <object-name>gearLLint</object-name>
+      <object-name>gearLR</object-name>
+      <object-name>gearLRint</object-name>
+      <object-name>gearLL2</object-name>
+      <object-name>gearLL2int</object-name>
+      <object-name>gearLR2</object-name>
+      <object-name>gearLR2int</object-name>
+      <object-name>gearR1</object-name>
+      <object-name>gearR2</object-name>
+      <object-name>gearR3</object-name>
+      <object-name>gearR4</object-name>
+      <object-name>gearRL</object-name>
+      <object-name>gearRLint</object-name>
+      <object-name>gearRR</object-name>
+      <object-name>gearRRint</object-name>
+      <object-name>gearRL2</object-name>
+      <object-name>gearRL2int</object-name>
+      <object-name>gearRR2</object-name>
+      <object-name>gearRR2int</object-name>
       
       <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
@@ -95,17 +150,7 @@ livery_update.stop();
 
     </animation>
     
-    
-    <animation>
 
-<type>material</type>
-<object-name>Lengine</object-name>
-<object-name>Rengine</object-name>
-<property-base>sim/model/livery</property-base>
-<texture-prop>texture</texture-prop>
-<texture>engine.png</texture>
-
-</animation>
 <!--Pushback Truck-->
  <model>
   <name>Pushback</name>
@@ -125,7 +170,15 @@ livery_update.stop();
       <z-m> 0.000 </z-m>
     </offsets>
   </model>
-
+<model>
+    <path>Aircraft/Q400/Models/cockpit.xml</path>
+    <offsets>
+      <x-m> -0.5 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> -0.15 </z-m>
+    </offsets>
+  </model>
+<!--
 <model>
     <path>Aircraft/Q400/Models/cockpit.xml</path>
     <offsets>
@@ -134,13 +187,13 @@ livery_update.stop();
       <z-m> 0.000 </z-m>
     </offsets>
   </model>
-
+  -->
 <model>
     <path>Aircraft/Q400/Models/panels.xml</path>
     <offsets>
-      <x-m> 0.000 </x-m>
+      <x-m> -0.5 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
+      <z-m> -0.15 </z-m>
     </offsets>
   </model>
 
@@ -402,17 +455,51 @@ livery_update.stop();
   </animation>
   
   
+   <animation>
+    <type>pick</type>
+    <object-name>doorCR</object-name>
+    <object-name>doorCRint</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.cargoR.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>doorCR</object-name>
+    <object-name>doorCRint</object-name>
+    <property>sim/model/door-positions/cargoR/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 120 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 9.1065 </x-m>
+      <y-m>  1.1016 </y-m>
+      <z-m> 3.0311 </z-m>
+    </center>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
   
   
     <animation>
         <type>rotate</type>
-        <object-name>Elevator</object-name>
+        <object-name>elevator</object-name>
         <property>controls/flight/elevator</property>
         <factor>15.0</factor>
         <center>
-            <x-m>17.282</x-m>
-            <y-m>0</y-m>
-            <z-m>7.457</z-m>
+            <x-m>16.9015</x-m>
+            <z-m>7.9884</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -1313,7 +1400,7 @@ livery_update.stop();
   <z>0</z>
  </axis>
 </animation>
-<!--Front Gear-->
+<!--Front Gear--><!--
 <animation>
  <type>rotate</type>
  <object-name>gearFR</object-name>
@@ -1379,7 +1466,7 @@ livery_update.stop();
             <y2-m>0.3354</y2-m>
             <z2-m>0.744</z2-m>
         </axis>
-</animation>
+</animation>-->
 <animation>
  <type>rotate</type>
  <object-name>wheelF</object-name>
@@ -1450,374 +1537,6 @@ livery_update.stop();
     
     
     
-<animation>
-<type>rotate</type>
-  <object-name>FLG.doorL</object-name>
-  <property>gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>90</dep>
-        </entry>
-        <entry>
-          <ind>0.2</ind>
-          <dep>90</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
-  <center>
-   <x-m>-12.439</x-m>
-   <y-m>-0.1549</y-m>
-   <z-m>1.0213</z-m>
-  </center>
-  <axis>
-   <x>-1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
-<animation>
-<type>rotate</type>
-  <object-name>FLG.doorR</object-name>
-  <property>gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>90</dep>
-        </entry>
-        <entry>
-          <ind>0.2</ind>
-          <dep>90</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
-  <center>
-   <x-m>-12.439</x-m>
-   <y-m>0.1549</y-m>
-   <z-m>1.0213</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
-
-
-<animation>
- <type>rotate</type>
- <object-name>frontLG</object-name>
- <object-name>frontLGwheels</object-name>
-<object-name>frontLG-gas-strut</object-name>
-<object-name>frontLG-bottom-strut</object-name>
-<object-name>frontLG-oleo</object-name>
-<object-name>frontLG-rear-strut</object-name>
-<object-name>frontLG-top-strut</object-name>
- <property>/gear/gear[0]/position-norm</property>
- <factor>120</factor>
- <offset-deg>-120</offset-deg>
- <min>90</min>
- <max>0</max>
- <center>
-  <x-m>-11.953</x-m>
-  <y-m>0.0</y-m>
-  <z-m>1.217</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>
-
-<animation>
- <type>rotate</type>
- <object-name>frontLG</object-name>
- <object-name>frontLGwheels</object-name>
- <property>/gear/gear[0]/position-norm</property>
- <factor>90</factor>
- <offset-deg>-90</offset-deg>
- <min>90</min>
- <max>0</max>
- <center>
-  <x-m>-12.1082</x-m>
-  <y-m>0.0</y-m>
-  <z-m>0.9077</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>
-
-<animation>
-  <type>rotate</type>
-  <object-name>LLG.door</object-name>
-  <property>gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>90</dep>
-        </entry>
-        <entry>
-          <ind>0.2</ind>
-          <dep>90</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
-  <center>
-   <x-m>0.16</x-m>
-   <y-m>-4.32</y-m>
-   <z-m>2.17</z-m>
-  </center>
-  <axis>
-   <x>-1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
-
-<animation>
- <type>rotate</type>
- <object-name>LLG</object-name>
-<object-name>LLG.wheels</object-name>
-<object-name>LLG.rear.strut</object-name>
- <property>/gear/gear[0]/position-norm</property>
- <factor>70</factor>
- <offset-deg>-70</offset-deg>
- <min>70</min>
- <max>0</max>
- <center>
-  <x-m>-1.21</x-m>
-  <y-m>-3.98</y-m>
-  <z-m>2.33</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>
-
-<animation>
- <type>rotate</type>
- <object-name>LLG.rear.strut</object-name>
- <property>/gear/gear[0]/position-norm</property>
- <factor>14</factor>
- <offset-deg>-14</offset-deg>
- <min>14</min>
- <max>0</max>
- <center>
-  <x-m>-0.1448</x-m>
-  <y-m>-3.9998</y-m>
-  <z-m>1.1511</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>
-
-
-<animation>
-  <type>rotate</type>
-  <object-name>RLG.door</object-name>
-  <property>gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>90</dep>
-        </entry>
-        <entry>
-          <ind>0.2</ind>
-          <dep>90</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
-  <center>
-   <x-m>0.16</x-m>
-   <y-m>4.32</y-m>
-   <z-m>2.17</z-m>
-  </center>
-  <axis>
-   <x>1.0</x>
-   <y>0.0</y>
-   <z>0.0</z>
-  </axis>
- </animation>
-
-
-<animation>
- <type>rotate</type>
- <object-name>RLG</object-name>
-<object-name>RLG.wheels</object-name>
-<object-name>RLG.rear.strut</object-name>
- <property>/gear/gear[0]/position-norm</property>
- <factor>70</factor>
- <offset-deg>-70</offset-deg>
- <min>70</min>
- <max>0</max>
- <center>
-  <x-m>-1.21</x-m>
-  <y-m>3.98</y-m>
-  <z-m>2.33</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>
-
-<animation>
- <type>rotate</type>
- <object-name>RLG.rear.strut</object-name>
- <property>/gear/gear[0]/position-norm</property>
- <factor>14</factor>
- <offset-deg>-14</offset-deg>
- <min>14</min>
- <max>0</max>
- <center>
-  <x-m>-0.1448</x-m>
-  <y-m>3.9998</y-m>
-  <z-m>1.1511</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>
-
-
-  <animation>
-    <type>rotate</type>
-    <property>gear/gear[0]/steering-norm</property>
-    <object-name>frontLG</object-name>
- <object-name>frontLGwheels</object-name>
-    <factor>-30</factor>
-    <center>
-      <x-m>-11.953</x-m>
-    </center>
-    <axis>
-      <z>1</z>
-    </axis>
-    <!-- The nosewheel steering has a microswitch to disable it
-             once the nosewheel has left the ground -->
-    <condition>
-      <equals>
-        <property>gear/gear[0]/wow</property>
-        <value>true</value>
-      </equals>
-    </condition>
-
-  </animation>
-
-
-  <animation>
-    <type>translate</type>
-    <object-name>frontLGwheels</object-name>
-    <property>gear/gear[0]/compression-norm</property>
-    <factor>0.2</factor>
-    <axis>
-      <x>0</x>
-      <y>0</y>
-      <z>1</z>
-    </axis>
-  </animation>
-
-
-
-
-
-<!-- hotspots -->
-
-    <animation>
-        <type>pick</type>
-        <object-name>Lfuel.off</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-toggle</command>
-            <property>controls/engines/engine[0]/cutoff</property>
-        </binding>
-        </action>
-    </animation>
-
-    <animation>
-        <type>pick</type>
-        <object-name>Rfuel.off</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>false</repeatable>
-            <binding>
-            <command>property-toggle</command>
-            <property>controls/engines/engine[1]/cutoff</property>
-        </binding>
-        </action>
-    </animation>
-
-
-<!-- Instruments  will go here -->
-    <animation>
-        <type>rotate</type>
-	  <object-name>cabindoor</object-name>
-	  <object-name>step</object-name>
-        <property>controls/doors/cabin-door-pos-norm</property>
-	<interpolation> 
-        <entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      <entry>
-          <ind>0.1</ind>
-          <dep>5</dep>
-        </entry>
-	<entry>
-          <ind>0.5</ind>
-          <dep>25</dep>
-        </entry>
-	<entry>
-          <ind>0.9</ind>
-          <dep>120</dep>
-        </entry>
-	<entry>
-          <ind>1</ind>
-          <dep>130</dep>
-        </entry>
-      </interpolation>
-
-        <center>
-            <x-m>-8.9991</x-m>
-            <y-m>-0.9285</y-m>
-            <z-m>1.2850</z-m>
-        </center>
-
-<axis>
-            <x>1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-</animation>
-
 <!-- Yokes -->
 
 <model>

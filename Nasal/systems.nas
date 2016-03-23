@@ -1,8 +1,9 @@
 ####B1900d systems
 #### Syd Adams
+####now Q400 systems
 
 
-aircraft.livery.init("Aircraft/b1900d/Models/Liveries");
+
 var FDM ="";
 var tanks=[];
 var N1=[0.0,0.0];
