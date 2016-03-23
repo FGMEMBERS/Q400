@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--WIP-->
+<PropertyList>
+
+	<name>engine_start</name>
+	<layout>vbox</layout>
+
+	<text>
+		<label>Onboard Systems Control</label>
+	</text>
+
+	<hrule />
+	<text>
+            <label>Pre-Startup</label>
+	</text>
+
+	<button>
+		<legend>Batteries</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/electric/battery-switch</property>
+		</binding>
+	</button>
+	<button>
+		<legend>Main Bus Tie</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/electric/bus-tie</property>
+		</binding>
+	</button>
+	<button>
+		<legend>APU</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/electric/apu</property>
+		</binding>
+	</button>
+	<button>
+		<legend>Fire/Smoke Detec. Test</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/fire/test</property>
+		</binding>
+	</button>
+	<button>
+		<legend>Bleed Air 1/2 Off</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine/bleed-air</property>
+                        <value>false</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine[1]/bleed-air</property>
+                        <value>false</value>
+		</binding>
+	</button>
+	<button>
+		<legend>APU bleed</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/electric/apu-bleed</property>
+		</binding>
+	</button>
+	<button>
+		<legend>Fire/Smoke Detec. Test</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/fire/test</property>
+		</binding>
+	</button>
+	<button>
+		<legend>Recirc Fan</legend><!--???-->
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/electric/recirc-fan</property>
+		</binding>
+	</button>
+	<button>
+            <legend>Passenger signs</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/cabin/no-smoking</property>
+		</binding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/cabin/seatbelts</property>
+		</binding>
+	</button>
+	<button>
+		<legend>A/Col Lights</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/lighting/strobe-lights</property>
+		</binding>
+	</button>
+        
+        
+	<hrule />
+	<text>
+            <label>Startup</label>
+	</text>
+	<button>
+		<legend>Fuel Valves</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/engines/engine/fuel-valve-open</property>
+		</binding>
+		<binding>
+			<command>property-toggle</command>
+                        <property>/controls/engines/engine[1]/fuel-valve-open</property>
+		</binding>
+	</button>
+	<button>
+		<legend>Fuel Condition Lever</legend>
+		<padding>5</padding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine[0]/condition</property>
+                        <value>1</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine[1]/condition</property>
+                        <value>1</value>
+		</binding>
+	</button>
+	<text>
+            <label>Start Switchy</label>
+	</text>
+	<button>
+		<legend>CRANK</legend>
+		<padding>2</padding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine/cranking</property>
+                        <value>1</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine[1]/cranking</property>
+                        <value>1</value>
+		</binding>
+	</button>
+	<button>
+		<legend>0</legend>
+		<padding>2</padding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine/cranking</property>
+                        <value>0</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine[1]/cranking</property>
+                        <value>0</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine/starter</property>
+                        <value>0</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine[1]/starter</property>
+                        <value>0</value>
+		</binding>
+	</button>
+	<button>
+		<legend>START A+B</legend>
+		<padding>2</padding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine/starter</property>
+                        <value>1</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+                        <property>/controls/engines/engine[1]/starter</property>
+                        <value>1</value>
+		</binding>
+	</button>
+    
+		
+	<hrule />
+        
+
+	<text>
+		<label>Switches will come soon!</label>
+	</text>
+
+</PropertyList>

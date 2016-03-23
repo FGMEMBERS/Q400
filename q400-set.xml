@@ -55,6 +55,17 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
       <dialog-name>pushback</dialog-name>
      </binding>
     </item>
+    <item n="10">
+     <label>Systems</label>
+     <name>engine_start</name>
+						<binding>
+							<command>nasal</command>
+							<script>
+							 var systems = gui.Dialog.new("sim/gui/dialogs/systems/dialog", "Aircraft/Q400/Dialogs/enginestart.xml");
+							 systems.open();
+							</script>
+						</binding>
+    </item>
             </menu>
         </default>
     </menubar>
