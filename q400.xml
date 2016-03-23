@@ -148,10 +148,10 @@ Prop diam: 2.59 m
         cruise-power="4800" cruise-alt="10000"
         min-rpm="750" max-rpm="1020"
         fine-stop="0.25" coarse-stop="4.0">
+        <actionpt x="3.589" y="3.980" z="2.921"/>
         <turbine-engine
             eng-power="5071" eng-rpm="1020" alt="10000"
-            flat-rating="5071" max-n2="101.5" bsfc="0.468"/>
-        <actionpt x="3.589" y="3.980" z="2.921"/>
+            flat-rating="5071" max-n2="101.5" bsfc="0.468"  spool-time="4"/>
         <control-input axis="/controls/engines/engine[0]/throttle"
         control="THROTTLE"/>
         <control-input axis="/controls/engines/engine[0]/condition"
@@ -170,10 +170,10 @@ Prop diam: 2.59 m
         cruise-power="4800" cruise-alt="10000"
         min-rpm="750" max-rpm="1020"
         fine-stop="0.25" coarse-stop="4.0">
+        <actionpt x="3.589" y="-3.980" z="2.921"/>
         <turbine-engine
             eng-power="5071" eng-rpm="1020" alt="10000"
-            flat-rating="5071" max-n2="101.5" bsfc="0.468"/>
-        <actionpt x="3.589" y="-3.980" z="2.921"/>
+            flat-rating="5071" max-n2="101.5" bsfc="0.468"  spool-time="4"/>
         <control-input axis="/controls/engines/engine[1]/throttle"
         control="THROTTLE"/>
         <control-input axis="/controls/engines/engine[1]/condition"

@@ -7,9 +7,9 @@
 <!-- Engine 1 -->
 
 <crank>
-            <name>engstart0</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>4.0</max-dist>
+            <name>engstart0</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
@@ -23,16 +23,16 @@
                 <factor>0.3</factor>
             </volume>
             <position>
-                <x>-1.5</x>
-                <y>2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>-4.3739</y>
+                <z>3</z>
             </position>
         </crank>
 
         <prop>
             <name>prop1</name>
-            <reference-dist>150.0</reference-dist>
-            <max-dist>500.0</max-dist>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/turboprop1.wav</path>
             <property>engines/engine[0]/n2</property>
@@ -60,16 +60,16 @@
                 <max>1.2</max>
             </pitch>
             <position>
-                <x>-1.5</x>
-                <y>2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>-4.3739</y>
+                <z>3</z>
             </position>
         </prop>
 
         <turbine0>
-            <name>turbine0</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>4.0</max-dist>
+            <name>turbine0</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/turbine_loop.wav</path>
             <property>engines/engine[0]/n2</property>
@@ -78,9 +78,9 @@
                 <factor>0.3</factor>
             </volume>
             <position>
-                <x>-1.5</x>
-                <y>2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>-4.3739</y>
+                <z>3</z>
             </position>
             <pitch>
                 <property>engines/engine[0]/n2</property>
@@ -90,9 +90,9 @@
         </turbine0>
 
         <shutdown>
-            <name>engine0 off</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>4.0</max-dist>
+            <name>engine0 off</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <mode>once</mode>
             <path>Sounds/turbine_shutdown.wav</path>
             <condition>
@@ -106,18 +106,18 @@
                 <factor>0.3</factor>
             </volume>
             <position>
-                <x>-1.5</x>
-                <y>2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>-4.3739</y>
+                <z>3</z>
             </position>
         </shutdown>
 
 <!-- Engine 2 -->
 
         <crank>
-            <name>engstart1</name>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>4.0</max-dist>
+            <name>engstart1</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
@@ -131,17 +131,17 @@
                 <factor>0.3</factor>
             </volume>
             <position>
-                <x>-1.5</x>
-                <y>-2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>4.3739</y>
+                <z>3</z>
             </position>
         </crank>
 
 
         <prop>
             <name>prop2</name>
-            <reference-dist>150.0</reference-dist>
-            <max-dist>500.0</max-dist>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/turboprop1.wav</path>
             <property>engines/engine[1]/n2</property>
@@ -166,18 +166,18 @@
                 <max>1.2</max>
             </pitch>
             <position>
-                <x>-1.5</x>
-                <y>-2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>4.3739</y>
+                <z>3</z>
             </position>
         </prop>
 
 
  
         <turbine1>
-            <name>turbine1</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>4.0</max-dist>
+            <name>turbine1</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/turbine_loop.wav</path>
             <condition>
@@ -191,9 +191,9 @@
                 <factor>0.3</factor>
             </volume>
             <position>
-                <x>-1.5</x>
-                <y>-2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>4.3739</y>
+                <z>3</z>
             </position>
             <pitch>
                 <property>engines/engine[1]/n2</property>
@@ -203,9 +203,9 @@
         </turbine1>
 
         <shutdown>
-            <name>engine1 off</name>
-            <reference-dist>1.0</reference-dist>
-            <max-dist>4.0</max-dist>
+            <name>engine1 off</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <mode>once</mode>
             <path>Sounds/turbine_shutdown.wav</path>
             <condition>
@@ -219,26 +219,22 @@
                 <factor>0.3</factor>
             </volume>
             <position>
-                <x>-1.5</x>
-                <y>-2.6</y>
-                <z>-0.33</z>
+                <x>-2.1677</x>
+                <y>4.3739</y>
+                <z>3</z>
             </position>
         </shutdown>
 
-
-
+        <!--GEAR-->
+        <!--Gear Rumble-->
         <rumble>
-            <name>rumble</name>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>5.0</max-dist>
+            <name>rumble</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/rumble.wav</path>
             <condition>
-                <or>
                     <property>gear/gear[0]/wow</property>
-                    <property>gear/gear[1]/wow</property>
-                    <property>gear/gear[2]/wow</property>
-                </or>
             </condition>
             <volume>
                 <property>velocities/groundspeed-kt</property>
@@ -246,31 +242,111 @@
                 <max>0.5</max>
             </volume>
             <position>
-                <x>0</x>
-                <y>0</y>
-                <z>-2</z>
+                <x>-12.8751</x>
+                <y>0.0</y>
+                <z>1.0179</z>
             </position>
         </rumble>
-
+        <rumble>
+            <name>rumble</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/rumble.wav</path>
+            <condition>
+                    <property>gear/gear[1]/wow</property>
+            </condition>
+            <volume>
+                <property>velocities/groundspeed-kt</property>
+                <factor>0.05</factor>
+                <max>0.5</max>
+            </volume>
+            <position>
+                <x>0.7776</x>
+                <y>-4.3525</y>
+                <z>2.9713</z>
+            </position>
+        </rumble>
+        <rumble>
+            <name>rumble</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/rumble.wav</path>
+            <condition>
+                    <property>gear/gear[2]/wow</property>
+            </condition>
+            <volume>
+                <property>velocities/groundspeed-kt</property>
+                <factor>0.05</factor>
+                <max>0.5</max>
+            </volume>
+            <position>
+                <x>0.7776</x>
+                <y>4.3525</y>
+                <z>2.9713</z>
+            </position>
+        </rumble>
+        <!--Gear extension-->
+        <!--Front-->
         <gear>
             <name>gear</name>
             <mode>in-transit</mode>
             <path>Sounds/gear.wav</path>
             <property>gear/gear[0]/position-norm</property>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>5.0</max-dist>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <pitch>
                 <internal>dt_play</internal>
                 <offset>0.8</offset>
                 <factor>-0.001</factor>
             </pitch>
             <position>
-                <x>0</x>
-                <y>0</y>
-                <z>-2</z>
+                <x>-12.8751</x>
+                <y>0.0</y>
+                <z>1.0179</z>
             </position>
         </gear>
-
+        <!--Left-->
+        <gear>
+            <name>gear</name>
+            <mode>in-transit</mode>
+            <path>Sounds/gear.wav</path>
+            <property>gear/gear[0]/position-norm</property>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <pitch>
+                <internal>dt_play</internal>
+                <offset>0.8</offset>
+                <factor>-0.001</factor>
+            </pitch>
+            <position>
+                <x>0.7776</x>
+                <y>-4.3525</y>
+                <z>2.9713</z>
+            </position>
+        </gear>
+        <!--Right-->
+        <gear>
+            <name>gear</name>
+            <mode>in-transit</mode>
+            <path>Sounds/gear.wav</path>
+            <property>gear/gear[0]/position-norm</property>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <pitch>
+                <internal>dt_play</internal>
+                <offset>0.8</offset>
+                <factor>-0.001</factor>
+            </pitch>
+            <position>
+                <x>0.7776</x>
+                <y>4.3525</y>
+                <z>2.9713</z>
+            </position>
+        </gear>
+        <!--Gear Lock-->
+        <!--Front-->
         <gear>
             <name>gear-lock</name>
             <path>Sounds/gear-lck.wav</path>
@@ -280,12 +356,48 @@
                     <value>0</value>
                 </equals>
             </condition>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>5.0</max-dist>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
             <position>
-                <x>0</x>
-                <y>0</y>
-                <z>-2</z>
+                <x>-12.8751</x>
+                <y>0.0</y>
+                <z>1.0179</z>
+            </position>
+        </gear>
+        <!--Left-->
+        <gear>
+            <name>gear-lock</name>
+            <path>Sounds/gear-lck.wav</path>
+            <condition>
+                <equals>
+                    <property>gear/gear[0]/position-norm</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <position>
+                <x>0.7776</x>
+                <y>-4.3525</y>
+                <z>2.9713</z>
+            </position>
+        </gear>
+        <!--Right-->
+        <gear>
+            <name>gear-lock</name>
+            <path>Sounds/gear-lck.wav</path>
+            <condition>
+                <equals>
+                    <property>gear/gear[0]/position-norm</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <position>
+                <x>0.7776</x>
+                <y>4.3525</y>
+                <z>2.9713</z>
             </position>
         </gear>
 

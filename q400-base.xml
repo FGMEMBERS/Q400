@@ -191,21 +191,19 @@ DHC8 -400Q by Alex Park Jan 2010
 		<pfd-norm>1</pfd-norm>
         </lighting>
  
-        <engines>
+    <engines>
         <fire-test type="bool">0</fire-test>
-            <engine n="0">
-                <condition>0</condition>
-                <cutoff>0</cutoff>
-                <condition-lever>1</condition-lever>
-                <propeller-pitch>0</propeller-pitch>
-            </engine>
-            <engine n="1">
-                <condition>0</condition>
-                <cutoff>0</cutoff>
-                <condition-lever>1</condition-lever>
-                <propeller-pitch>0</propeller-pitch>
-            </engine>
-        </engines>
+        <engine n="0">
+            <condition>0</condition>
+            <condition-input type="double">0</condition-input>
+            <propeller-pitch>0</propeller-pitch>
+        </engine>
+        <engine n="1">
+            <condition>0</condition>
+            <condition-input type="double">0</condition-input>
+            <propeller-pitch>0</propeller-pitch>
+        </engine>
+    </engines>
 </controls>
 
 <consumables>
@@ -243,18 +241,36 @@ DHC8 -400Q by Alex Park Jan 2010
     <comm n="1">
         <serviceable type="bool">1</serviceable>
     </comm>
+    <eng-gauge>
+        <itt n="0" type="double">0</itt>
+        <itt n="1" type="double">0</itt>
+        <torque n="0" alias="/engines/engine/torque-ftlb"/>
+        <torque n="1" alias="/engines/engine[1]/torque-ftlb"/>
+        <prop n="0" alias="/engines/engine/rpm"/>
+        <prop n="1" alias="/engines/engine[1]/rpm"/>
+        <turbine n="0" alias="/engines/engine/n1"/>
+        <turbine n="1" alias="/engines/engine[1]/n1"/>
+        <fuel-pph n="0" type="double">0</fuel-pph>
+        <fuel-pph n="1" type="double">0</fuel-pph>
+        <oil-psi-norm n="0" type="double">0</oil-psi-norm>
+        <oil-psi-norm n="1" type="double">0</oil-psi-norm>
+        <oil-temp-norm n="0" type="double">0</oil-temp-norm>
+        <oil-temp-norm n="1" type="double">0</oil-temp-norm>
+    </eng-gauge>
     </instrumentation>
 
     <engines>
         <engine n="0">
-            <running>1</running>
+            <running>0</running>
             <rpm>0</rpm>
-            <fuel-flow-pph type="float">0</fuel-flow-pph>
+            <n1 type="double">0</n1>
+            <fuel-flow_pph type="float">0</fuel-flow_pph>
         </engine>
         <engine n="1">
-            <running>1</running>
+            <running>0</running>
             <rpm>0</rpm>
-            <fuel-flow-pph type="float">0</fuel-flow-pph>
+            <n1 type="double">0</n1>
+            <fuel-flow_pph type="float">0</fuel-flow_pph>
         </engine>
     </engines>
 
