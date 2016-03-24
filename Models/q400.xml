@@ -1560,6 +1560,52 @@ livery_update.stop();
 </model>
 
 <!-- LIGHTS -->
+<model>
+<path>lights/taxilight.xml</path>
+<name>Greenlight</name>     
+<offsets>
+<x-m>-0.6</x-m>
+<y-m>5.229</y-m>
+<z-m>3.6302</z-m>       
+</offsets>
+</model>
+<model>
+<path>lights/taxilight.xml</path>
+<name>Greenlight</name>     
+<offsets>
+<x-m>-0.6</x-m>
+<y-m>-5.229</y-m>
+<z-m>3.6302</z-m>       
+</offsets>
+</model>
+<!--Nose-->
+<model>
+<path>lights/landinglightgear.xml</path>
+<name>Landinglightgear</name>     
+<offsets>
+<x-m>-12.9926</x-m>
+<y-m>0.0</y-m>
+<z-m>0.6628</z-m>       
+</offsets>
+</model>
+<model>
+<path>lights/landinglight.xml</path>
+<name>Landinglightright</name>     
+<offsets>
+<x-m>-0.6</x-m>
+<y-m>5.4957</y-m>
+<z-m>3.6302</z-m>       
+</offsets>
+</model>
+<model>
+<path>lights/landinglight.xml</path>
+<name>Landinglightleft</name>     
+<offsets>
+<x-m>-0.6</x-m>
+<y-m>-5.4957</y-m>
+<z-m>3.6302</z-m>       
+</offsets>
+</model>
 
 <model>
 <path>Aircraft/Q400/Models/lights/GreenLight.xml</path>
@@ -1586,9 +1632,9 @@ livery_update.stop();
 <path>Aircraft/Q400/Models/lights/beacon.xml</path>
 <name>flashtop</name>     
 <offsets>
-<x-m>15.3631</x-m>
+<x-m>16.1446</x-m>
 <y-m>0.000</y-m>
-<z-m>7.4286</z-m>   
+<z-m>8.3171</z-m>   
 </offsets>
 </model>
 
@@ -1597,9 +1643,9 @@ livery_update.stop();
 <path>Aircraft/Q400/Models/lights/strobe.xml</path>
 <name>strobeRHW</name>     
 <offsets>
-<x-m>0.4488</x-m>
-<y-m>12.9876</y-m>
-<z-m>3.8748</z-m>   
+<x-m>0.7125</x-m>
+<y-m>14.2759</y-m>
+<z-m>4.2177</z-m>    
 </offsets>
 </model>
 
@@ -1607,9 +1653,9 @@ livery_update.stop();
 <path>Aircraft/Q400/Models/lights/strobe.xml</path>
 <name>strobeLHW</name>     
 <offsets>
-<x-m>0.4488</x-m>
-<y-m>-12.9876</y-m>
-<z-m>3.8748</z-m>   
+<x-m>0.7125</x-m>
+<y-m>-14.2759</y-m>
+<z-m>4.2177</z-m>   
 </offsets>
 </model>
 

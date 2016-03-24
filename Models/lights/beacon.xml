@@ -32,7 +32,7 @@
     </condition>
   </animation>
 
-  <animation>
+   <animation>
     <type>dist-scale</type>
     <object-name>Light</object-name>
     <interpolation>
@@ -42,7 +42,7 @@
       </entry>
       <entry>
         <ind>1500</ind>
-        <dep>20</dep>
+        <dep>4</dep>
       </entry>
     </interpolation>
   </animation>

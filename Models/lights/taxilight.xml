@@ -29,12 +29,12 @@
       <y>  0 </y>
       <z>  0 </z>
     </axis>
-    <power>1.1</power>
-    <factor>1.1</factor>
-    <offset>0</offset>
+    <power>1</power>
+    <factor>1</factor>
+    <offset>-0.5</offset>
     <two-sides type="bool">false</two-sides>
     <min>0.5</min>
-    <max>1.1</max>
+    <max>1</max>
   </animation>
 
 <animation>
@@ -51,6 +51,7 @@
 </entry>
 </interpolation>
 </animation>
+
 <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
 <object-name>flash</object-name>
@@ -59,7 +60,7 @@
 <type>select</type>
 <object-name>flash</object-name>
 <condition>
-<property>controls/lighting/landing-lights</property>
+<property>controls/lighting/taxi-lights</property>
 </condition>
 </animation>
 
