@@ -16,20 +16,17 @@
       var float_2 = self.getNode("sim/multiplay/generic/float[2]", 1);
       var float_3 = self.getNode("sim/multiplay/generic/float[3]", 1);
       var float_4 = self.getNode("sim/multiplay/generic/float[4]", 1);
-      var float_5 = self.getNode("sim/multiplay/generic/float[5]", 1);
 
       var passengerF_door = self.getNode("sim/model/door-positions/passengerF/position-norm", 1);
-      var passengerR_door = self.getNode("sim/model/door-positions/passengerR/position-norm", 1);
-      var passengerRR_door = self.getNode("sim/model/door-positions/passengerRR/position-norm", 1);
+      var passengerLH_door = self.getNode("sim/model/door-positions/passengerLH/position-norm", 1);
+      var passengerRH_door = self.getNode("sim/model/door-positions/passengerRH/position-norm", 1);
       var passengerRF_door = self.getNode("sim/model/door-positions/passengerRF/position-norm", 1);
       var cargo_door = self.getNode("sim/model/door-positions/cargo/position-norm", 1);
-      var cargoR_door = self.getNode("sim/model/door-positions/cargoR/position-norm", 1);
       
       passengerF_door.alias(float_0);
-      passengerR_door.alias(float_1);
+      passengerLH_door.alias(float_1);
       cargo_door.alias(float_2);
-      cargoR_door.alias(float_3);
-      passengerRR_door.alias(float_4);
+      passengerRH_door.alias(float_3);
       passengerRF_door.alias(float_4);
 <nasal>
 <load>
@@ -39,10 +36,9 @@ var livery_update = aircraft.livery_update.new("Aircraft/Q400/Models/Liveries");
 <unload>
 livery_update.stop();
       passengerF_door.unalias();
-      passengerR_door.unalias();
+      passengerLH_door.unalias();
       cargo_door.unalias();
-      cargoR_door.unalias();
-      passengerRR_door.unalias();
+      passengerRH_door.unalias();
       passengerRF_door.unalias();
 </unload>
 </nasal>
@@ -66,7 +62,6 @@ livery_update.stop();
       <object-name>doorF</object-name>
       <object-name>doorR</object-name>
       <object-name>doorC</object-name>
-      <object-name>doorCR</object-name>
       <object-name>gear1F</object-name>
       <object-name>gear2F</object-name>
       <object-name>gearL1</object-name>
@@ -116,7 +111,6 @@ livery_update.stop();
       <object-name>doorF</object-name>
       <object-name>doorR</object-name>
       <object-name>doorC</object-name>
-      <object-name>doorCR</object-name>
       <object-name>gear1F</object-name>
       <object-name>gear2F</object-name>
       <object-name>gearL1</object-name>
@@ -214,25 +208,6 @@ livery_update.stop();
     </action>
   </animation>
   
-  <!--animation>
-    <type>rotate</type>
-    <object-name>doorF</object-name>
-    <property>sim/model/door-positions/passengerF/position-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1 </ind><dep> 140 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -9.6602 </x-m>
-      <y-m>  -1.1306 </y-m>
-      <z-m>  1.3894 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation-->
   <animation>
     <type>rotate</type>
     <object-name>stairs</object-name>
@@ -254,17 +229,17 @@ livery_update.stop();
       <z> 0 </z>
     </axis>
   </animation>
+  
    <animation>
     <type>pick</type>
     <object-name>doorLH</object-name>
-    <object-name>doorLHint</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>doors.passengerR.toggle();</script>
+        <script>doors.passengerLH.toggle();</script>
       </binding>
     </action>
   </animation>
@@ -272,8 +247,7 @@ livery_update.stop();
   <animation>
     <type>rotate</type>
     <object-name>doorLH</object-name>
-    <object-name>doorLHint</object-name>
-    <property>sim/model/door-positions/passengerR/position-norm</property>
+    <property>sim/model/door-positions/passengerLH/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
       <entry><ind> 1 </ind><dep> -170 </dep></entry>
@@ -291,8 +265,7 @@ livery_update.stop();
   <animation>
     <type>rotate</type>
     <object-name>doorLH</object-name>
-    <object-name>doorLHint</object-name>
-    <property>sim/model/door-positions/passengerR/position-norm</property>
+    <property>sim/model/door-positions/passengerLH/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
       <entry><ind> 1 </ind><dep> 170 </dep></entry>
@@ -307,12 +280,12 @@ livery_update.stop();
       <z> 1 </z>
     </axis>
   </animation>
+  
   <!--Right Front Door-->
   
    <animation>
     <type>pick</type>
     <object-name>doorRF</object-name>
-    <object-name>doorRFint</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -327,7 +300,6 @@ livery_update.stop();
   <animation>
     <type>rotate</type>
     <object-name>doorRF</object-name>
-    <object-name>doorRFint</object-name>
     <property>sim/model/door-positions/passengerRF/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
@@ -343,10 +315,10 @@ livery_update.stop();
       <z> 1 </z>
     </axis>
   </animation>
+  
   <animation>
     <type>rotate</type>
     <object-name>doorRF</object-name>
-    <object-name>doorRFint</object-name>
     <property>sim/model/door-positions/passengerRF/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
@@ -362,19 +334,19 @@ livery_update.stop();
       <z> 1 </z>
     </axis>
   </animation>
+  
   <!--Right Rear Door-->
   
    <animation>
     <type>pick</type>
     <object-name>doorRH</object-name>
-    <object-name>doorRHint</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
         <command>nasal</command>
-        <script>doors.passengerRR.toggle();</script>
+        <script>doors.passengerRH.toggle();</script>
       </binding>
     </action>
   </animation>
@@ -382,8 +354,7 @@ livery_update.stop();
   <animation>
     <type>rotate</type>
     <object-name>doorRH</object-name>
-    <object-name>doorRHint</object-name>
-    <property>sim/model/door-positions/passengerRR/position-norm</property>
+    <property>sim/model/door-positions/passengerRH/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
       <entry><ind> 1 </ind><dep> 170 </dep></entry>
@@ -401,8 +372,7 @@ livery_update.stop();
   <animation>
     <type>rotate</type>
     <object-name>doorRH</object-name>
-    <object-name>doorRHint</object-name>
-    <property>sim/model/door-positions/passengerRR/position-norm</property>
+    <property>sim/model/door-positions/passengerRH/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
       <entry><ind> 1 </ind><dep> -170 </dep></entry>
@@ -421,7 +391,6 @@ livery_update.stop();
    <animation>
     <type>pick</type>
     <object-name>doorC</object-name>
-    <object-name>doorCint</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -436,7 +405,6 @@ livery_update.stop();
   <animation>
     <type>rotate</type>
     <object-name>doorC</object-name>
-    <object-name>doorCint</object-name>
     <property>sim/model/door-positions/cargo/position-norm</property>
     <interpolation>
       <entry><ind> 0 </ind><dep>   0 </dep></entry>
@@ -454,43 +422,7 @@ livery_update.stop();
     </axis>
   </animation>
   
-  
-   <animation>
-    <type>pick</type>
-    <object-name>doorCR</object-name>
-    <object-name>doorCRint</object-name>
-    <visible>true</visible>
-    <action>
-      <button>0</button>
-      <repeatable>false</repeatable>
-      <binding>
-        <command>nasal</command>
-        <script>doors.cargoR.toggle();</script>
-      </binding>
-    </action>
-  </animation>
-  
-  <animation>
-    <type>rotate</type>
-    <object-name>doorCR</object-name>
-    <object-name>doorCRint</object-name>
-    <property>sim/model/door-positions/cargoR/position-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep>   0 </dep></entry>
-      <entry><ind> 1 </ind><dep> 120 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> 9.1065 </x-m>
-      <y-m>  1.1016 </y-m>
-      <z-m> 3.0311 </z-m>
-    </center>
-    <axis>
-      <x> 1 </x>
-      <y> 0 </y>
-      <z> 0 </z>
-    </axis>
-  </animation>
-  
+ <!--Flight Surfaces-->
   
     <animation>
         <type>rotate</type>
@@ -498,9 +430,9 @@ livery_update.stop();
         <property>controls/flight/elevator</property>
         <factor>15.0</factor>
         <center>
-            <x-m>16.9015</x-m>
-            <z-m>7.9884</z-m>
-        </center>
+            <x-m>16.937134</x-m>
+            <z-m>7.993223</z-m>
+		</center>
         <axis>
             <x>0</x>
             <y>1</y>
@@ -513,11 +445,11 @@ livery_update.stop();
         <object-name>rudder</object-name>
         <property>controls/flight/rudder</property>
         <factor>15.0</factor>
-<axis>
-            <x1-m>15.176</x1-m>
-            <z1-m>3.7534</z1-m>
-            <x2-m>16.544</x2-m>
-            <z2-m>7.2174</z2-m>
+		<axis>
+            <x1-m>15.146358</x1-m>
+            <z1-m>3.685321</z1-m>
+            <x2-m>16.721611</x2-m>
+            <z2-m>7.559196</z2-m>
         </axis>
     </animation>
 
@@ -526,12 +458,11 @@ livery_update.stop();
     <object-name>flapI</object-name>
     <property>surface-positions/flap-pos-norm</property>
     <factor> 40 </factor>
-<center>
+		<center>
             <x-m>1.2924</x-m>
             <z-m>3.4635</z-m>
-</center>
-    <axis><y>1</y>
-    </axis>
+		</center>
+    <axis><y>1</y></axis>
   </animation>
   <animation>
     <type>rotate</type>
@@ -539,12 +470,12 @@ livery_update.stop();
     <property>surface-positions/flap-pos-norm</property>
     <factor> 40 </factor>
     <axis>
-      <x1-m> 1.2644 </x1-m>
-      <y1-m> 5.4803 </y1-m>
-      <z1-m> 3.5879</z1-m>
-      <x2-m>1.1704 </x2-m>
-      <y2-m>10.6070</y2-m>
-      <z2-m>3.8934</z2-m>
+      <x1-m>1.330693</x1-m>
+      <y1-m>5.52884</y1-m>
+      <z1-m>3.578864</z1-m>
+      <x2-m>1.157535 </x2-m>
+      <y2-m>10.618776</y2-m>
+      <z2-m>3.89157</z2-m>
     </axis>
   </animation>
   <animation>
@@ -553,12 +484,12 @@ livery_update.stop();
     <property>surface-positions/flap-pos-norm</property>
     <factor> -40 </factor>
     <axis>
-      <x1-m> 1.2644 </x1-m>
-      <y1-m> -5.4803 </y1-m>
-      <z1-m> 3.5879</z1-m>
-      <x2-m>1.1704 </x2-m>
-      <y2-m>-10.6070</y2-m>
-      <z2-m>3.8934</z2-m>
+      <x1-m>1.330693</x1-m>
+      <y1-m>-5.528839</y1-m>
+      <z1-m>3.578864</z1-m>
+      <x2-m>1.157535</x2-m>
+      <y2-m>-10.618776</y2-m>
+      <z2-m>3.89157</z2-m>
     </axis>
   </animation>
 
@@ -591,15 +522,16 @@ livery_update.stop();
       <z2-m>4.1508</z2-m>
     </axis>
   </animation>
+  
   <animation>
     <type>rotate</type>
     <object-name>elevator</object-name>
     <property>surface-positions/elevator-pos-norm</property>
     <factor> 10 </factor>
-<center>
-            <x-m>16.935</x-m>
-            <z-m>7.8641</z-m>
-</center>
+		<center>
+            <x-m>16.937134</x-m>
+            <z-m>7.993223</z-m>
+		</center>
     <axis><y>1</y>
     </axis>
   </animation>
@@ -633,13 +565,12 @@ livery_update.stop();
         <type>spin</type>
         <object-name>propdiscL</object-name>
         <object-name>propL</object-name>
-        <object-name>spinnerL</object-name>
         <property>engines/engine[0]/n2</property>
         <factor>80.0</factor>
         <center>
-            <x-m>-3.74783</x-m>
+            <x-m>-3.341908</x-m>
             <y-m>-4.37881</y-m>
-            <z-m>3.2705</z-m>
+            <z-m>3.200319</z-m>
         </center>
         <axis>
             <x>1</x>
@@ -674,13 +605,12 @@ livery_update.stop();
         <type>spin</type>
         <object-name>propR</object-name>
         <object-name>propdiscR</object-name>
-        <object-name>spinnerR</object-name>
         <property>engines/engine[1]/n2</property>
         <factor>80.0</factor>
         <center>
-            <x-m>-3.74783</x-m>
+            <x-m>-3.341908</x-m>
             <y-m>4.37881</y-m>
-            <z-m>3.2705</z-m>
+            <z-m>3.200319</z-m>
         </center>
         <axis>
             <x>1</x>
@@ -783,11 +713,9 @@ livery_update.stop();
 <!--Retraction-->
 <animation>
  <type>rotate</type>
- <object-name>wheelL</object-name>
+ <object-name>WheelL</object-name>
  <object-name>gearL1</object-name>
  <object-name>gearL2</object-name>
- <object-name>gearL3</object-name>
- <object-name>gearL4</object-name>
  <property>/gear/gear[1]/position-norm</property>
  <factor>60</factor>
  <offset-deg>-60</offset-deg>
@@ -834,8 +762,7 @@ livery_update.stop();
 <!--Gear doors-->
 <animation>
  <type>rotate</type>
- <object-name>gearLR</object-name>
- <object-name>gearLRint</object-name>
+ <object-name>GeardoorLVR</object-name>
  <property>/gear/gear[0]/position-norm</property>
       <interpolation> 
         <entry>
@@ -852,15 +779,14 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>-3.9294</y-m>
-  <z-m>2.1019</z-m>
+  <y-m>-3.90393</y-m>
+  <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
 </animation>
 <animation>
  <type>rotate</type>
- <object-name>gearLL</object-name>
- <object-name>gearLLint</object-name>
+ <object-name>GeardoorLVL</object-name>
  <property>/gear/gear[0]/position-norm</property>
       <interpolation> 
         <entry>
@@ -877,15 +803,14 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>-4.8265</y-m>
-  <z-m>2.1019</z-m>
+  <y-m>-4.821711</y-m>
+  <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
 </animation>
 <animation>
  <type>rotate</type>
- <object-name>gearLR2</object-name>
- <object-name>gearLR2int</object-name>
+ <object-name>GeardoorLHR</object-name>
  <property>/gear/gear[0]/position-norm</property>
 <interpolation>
         <entry>
@@ -906,17 +831,14 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>-3.847</y-m>
-  <z-m>2.312</z-m>
+  <y-m>-3.890123</y-m>
+  <z-m>2.353169</z-m>
  </center>
-<axis>
-            <x>1</x>
-        </axis>
+<axis><x>1</x></axis>
 </animation>
 <animation>
  <type>rotate</type>
- <object-name>gearLL2</object-name>
- <object-name>gearLL2int</object-name>
+ <object-name>GeardoorLHL</object-name>
  <property>/gear/gear[0]/position-norm</property>
       <interpolation> 
         <entry>
@@ -937,19 +859,16 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>-4.9101</y-m>
-  <z-m>2.312</z-m>
+  <y-m>-4.835518</y-m>
+  <z-m>2.353168</z-m>
  </center>
-<axis>
-            <x>1</x>
-        </axis>
+<axis><x>1</x></axis>
 </animation>
+
 <!--Compression>-->
 <animation>
  <type>translate</type>
- <object-name>gearL3</object-name>
- <object-name>gearL4</object-name>
- <object-name>wheelL</object-name>
+ <object-name>WheelL</object-name>
  <property>/gear/gear[1]/compression-norm</property>
 <factor>0.250</factor>
  <axis>
@@ -962,12 +881,12 @@ livery_update.stop();
 <!--Spinnig-->
 <animation>
  <type>spin</type>
- <object-name>wheelL</object-name>
+ <object-name>WheelL</object-name>
  <property>/gear/gear[1]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>0.97726</x-m>
-  <z-m>0.38568</z-m>
+  <x-m>1.11067</x-m>
+  <z-m>0.371916</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -981,7 +900,7 @@ livery_update.stop();
 
 <animation>
  <type>rotate</type>
- <object-name>wheelR</object-name>
+ <object-name>WheelR</object-name>
  <object-name>gearR1</object-name>
  <object-name>gearR2</object-name>
  <property>/gear/gear[2]/position-norm</property>
@@ -1027,11 +946,11 @@ livery_update.stop();
   <z>0</z>
  </axis>
 </animation>
+
 <!--Gear doors-->
 <animation>
  <type>rotate</type>
- <object-name>gearRL</object-name>
- <object-name>gearRLint</object-name>
+ <object-name>GeardoorRVL</object-name>
  <property>/gear/gear[2]/position-norm</property>
       <interpolation> 
         <entry>
@@ -1048,15 +967,14 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>3.9294</y-m>
-  <z-m>2.1019</z-m>
+  <y-m>3.90393</y-m>
+  <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
 </animation>
 <animation>
  <type>rotate</type>
- <object-name>gearRR</object-name>
- <object-name>gearRRint</object-name>
+ <object-name>GeardoorRVR</object-name>
  <property>/gear/gear[2]/position-norm</property>
       <interpolation> 
         <entry>
@@ -1073,15 +991,14 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>4.8265</y-m>
-  <z-m>2.1019</z-m>
+  <y-m>4.821712</y-m>
+  <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
 </animation>
 <animation>
  <type>rotate</type>
- <object-name>gearRL2</object-name>
- <object-name>gearRL2int</object-name>
+ <object-name>GeardoorRHL</object-name>
  <property>/gear/gear[2]/position-norm</property>
 <interpolation>
         <entry>
@@ -1102,17 +1019,14 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>3.847</y-m>
-  <z-m>2.312</z-m>
+  <y-m>3.890122</y-m>
+  <z-m>2.353168</z-m>
  </center>
-<axis>
-            <x>1</x>
-        </axis>
+<axis><x>1</x></axis>
 </animation>
 <animation>
  <type>rotate</type>
- <object-name>gearRR2</object-name>
- <object-name>gearRR2int</object-name>
+ <object-name>GeardoorRHR</object-name>
  <property>/gear/gear[2]/position-norm</property>
       <interpolation> 
         <entry>
@@ -1133,249 +1047,18 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>4.9101</y-m>
-  <z-m>2.312</z-m>
- </center>
-<axis>
-            <x>1</x>
-        </axis>
-</animation>
-
-
-
-<!--
-<animation>
- <type>rotate</type>
- <object-name>wheelR</object-name>
- <object-name>gearR1</object-name>
- <object-name>gearR2</object-name>
- <object-name>gearR3</object-name>
- <object-name>gearR4</object-name>
- <property>/gear/gear[2]/position-norm</property>
- <factor>60</factor>
- <offset-deg>-60</offset-deg>
- <min>90</min>
- <max>0</max>
- <center>
-  <x-m>-0.2953</x-m>
-  <z-m>2.8703</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>
-<animation>
- <type>rotate</type>
- <object-name>gearR2</object-name>
- <property>/gear/gear[1]/position-norm</property>
- <factor>50</factor>
- <offset-deg>-50</offset-deg>
- <min>90</min>
- <max>0</max>
- <center>
-  <x-m>0.9566</x-m>
-  <z-m>1.0519</z-m>
- </center>
- <axis>
-  <x>0</x>
-  <y>1</y>
-  <z>0</z>
- </axis>
-</animation>-->
-<!--Gear Doors--><!--
-<animation>
- <type>rotate</type>
- <object-name>gearRR</object-name>
- <property>/gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
- <center>
-  <y-m>4.5846</y-m>
-  <z-m>2.2404</z-m>
+  <y-m>4.835519</y-m>
+  <z-m>2.353168</z-m>
  </center>
 <axis><x>1</x></axis>
 </animation>
-<animation>
- <type>rotate</type>
- <object-name>gearRL</object-name>
- <property>/gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>-120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>-120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
- <center>
-  <y-m>4.166</y-m>
-  <z-m>2.2404</z-m>
- </center>
-<axis><x>1</x></axis>
-</animation>
-<animation>
- <type>rotate</type>
- <object-name>gearRR2</object-name>
- <property>/gear/gear[0]/position-norm</property>
-<interpolation>
-        <entry>
-          <ind>1</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.9</ind>
-          <dep>-120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>-120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
 
-<axis>
-            <x1-m>1.7621</x1-m>
-            <y1-m>4.589</y1-m>
-            <z1-m>2.2739</z1-m>
-            <x2-m>1.1189</x2-m>
-            <y2-m>4.589</y2-m>
-            <z2-m>2.2569</z2-m>
-        </axis>
-</animation>
-<animation>
- <type>rotate</type>
- <object-name>gearRL2</object-name>
- <property>/gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.9</ind>
-          <dep>120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
- 
- <center>
-  <x-m>1.4427</x-m>
-  <y-m>4.1661</y-m>
-  <z-m>2.2670</z-m>
- </center>
-<axis>
-            <x1-m>1.7621</x1-m>
-            <y1-m>4.589</y1-m>
-            <z1-m>2.2739</z1-m>
-            <x2-m>1.1189</x2-m>
-            <y2-m>4.589</y2-m>
-            <z2-m>2.2569</z2-m>
-        </axis>
-</animation>
-<animation>
- <type>rotate</type>
- <object-name>gearRR3</object-name>
- <property>/gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.9</ind>
-          <dep>120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
- <center>
-  <x-m>1.7631</x-m>
-  <y-m>4.7947</y-m>
-  <z-m>2.2784</z-m>
- </center>
-<axis>
-            <x1-m>1.7631</x1-m>
-            <y1-m>3.9423</y1-m>
-            <z1-m>2.2784</z1-m>
-            <x2-m>3.0984</x2-m>
-            <y2-m>3.9423</y2-m>
-            <z2-m>2.3844</z2-m>
-        </axis>
-</animation>
-<animation>
- <type>rotate</type>
- <object-name>gearRL3</object-name>
- <property>/gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>0</dep>
-        </entry>
-        <entry>
-          <ind>0.9</ind>
-          <dep>-120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>-120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
-
-<axis>
-            <x1-m>1.7631</x1-m>
-            <y1-m>3.9423</y1-m>
-            <z1-m>2.2784</z1-m>
-            <x2-m>3.0984</x2-m>
-            <y2-m>3.9423</y2-m>
-            <z2-m>2.3844</z2-m>
-        </axis>
-</animation>-->
 <!--Compression>-->
 <animation>
  <type>translate</type>
  <object-name>gearR3</object-name>
  <object-name>gearR4</object-name>
- <object-name>wheelR</object-name>
+ <object-name>WheelR</object-name>
  <property>/gear/gear[2]/compression-norm</property>
 <factor>0.250</factor>
  <axis>
@@ -1387,12 +1070,12 @@ livery_update.stop();
 <!--Spinnig-->
 <animation>
  <type>spin</type>
- <object-name>wheelR</object-name>
+ <object-name>WheelR</object-name>
  <property>/gear/gear[2]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>0.97726</x-m>
-  <z-m>0.38568</z-m>
+  <x-m>1.11067</x-m>
+  <z-m>0.371916</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1400,86 +1083,20 @@ livery_update.stop();
   <z>0</z>
  </axis>
 </animation>
-<!--Front Gear--><!--
-<animation>
- <type>rotate</type>
- <object-name>gearFR</object-name>
- <property>/gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>-120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>-120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
- <center>
-  <x-m>-9.2067</x-m>
-  <y-m>-0.3195</y-m>
-  <z-m>0.7764</z-m>
- </center>
 
-        <axis>
-            <x1-m>-9.9695</x1-m>
-            <y1-m>-0.3013</y1-m>
-            <z1-m>0.8307</z1-m>
-            <x2-m>-8.5457</x2-m>
-            <y2-m>-0.3354</y2-m>
-            <z2-m>0.744</z2-m>
-        </axis>
-</animation>
+<!--Front Gear-->
 <animation>
  <type>rotate</type>
- <object-name>gearFL</object-name>
+ <object-name>WheelN</object-name>
+ <object-name>gearF</object-name>
  <property>/gear/gear[0]/position-norm</property>
-      <interpolation> 
-        <entry>
-          <ind>1</ind>
-          <dep>120</dep>
-        </entry>
-        <entry>
-          <ind>0.05</ind>
-          <dep>120</dep>
-        </entry>
-		<entry>
-          <ind>0</ind>
-          <dep>0</dep>
-        </entry>
-      </interpolation>
- <center>
-  <x-m>-9.2067</x-m>
-  <y-m>0.3195</y-m>
-  <z-m>0.7764</z-m>
- </center>
-
-        <axis>
-            <x1-m>-9.9695</x1-m>
-            <y1-m>0.3013</y1-m>
-            <z1-m>0.8307</z1-m>
-            <x2-m>-8.5457</x2-m>
-            <y2-m>0.3354</y2-m>
-            <z2-m>0.744</z2-m>
-        </axis>
-</animation>-->
-<animation>
- <type>rotate</type>
- <object-name>wheelF</object-name>
- <object-name>gear1F</object-name>
- <object-name>gear2F</object-name>
- <property>/gear/gear[0]/position-norm</property>
- <factor>-170</factor>
- <offset-deg>170</offset-deg>
+ <factor>-115</factor>
+ <offset-deg>115</offset-deg>
  <min>90</min>
  <max>0</max>
  <center>
-  <x-m>-12.8141</x-m>
-  <z-m>1.0677</z-m>
+  <x-m>-12.74229</x-m>
+  <z-m>0.98081</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1489,14 +1106,13 @@ livery_update.stop();
 </animation>
 <animation>
  <type>rotate</type>
- <object-name>gear1F</object-name>
- <object-name>gear2F</object-name>
- <object-name>wheelF</object-name>
+ <object-name>WheelN</object-name>
+ <object-name>gearF</object-name>
  <property>/gear/gear[0]/caster-angle-deg</property>
 <factor>-1</factor>
  <center>
-  <x-m>-12.8141</x-m>
-  <z-m>1.0677</z-m>
+  <x-m>-12.74229</x-m>
+  <z-m>0.98081</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1508,7 +1124,7 @@ livery_update.stop();
 <animation>
  <type>translate</type>
  <object-name>gear2F</object-name>
- <object-name>wheelF</object-name>
+ <object-name>WheelN</object-name>
  <property>/gear/gear[2]/compression-norm</property>
 <factor>0.250</factor>
  <axis>
@@ -1520,19 +1136,128 @@ livery_update.stop();
 <!--Spinnig-->
 <animation>
  <type>spin</type>
- <object-name>wheelF</object-name>
+ <object-name>WheelN</object-name>
  <property>/gear/gear[0]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>-12.68002</x-m>
+  <x-m>-12.631022</x-m>
   <y-m>0.0</y-m>
-  <z-m>0.34611</z-m>
+  <z-m>0.319545</z-m>
  </center>
  <axis>
   <x>0</x>
   <y>1</y>
   <z>0</z>
  </axis>
+</animation>
+
+<!--Front Gear Doors-->
+<animation>
+ <type>rotate</type>
+ <object-name>GeardoorNHL</object-name>
+ <property>/gear/gear[0]/position-norm</property>
+      <interpolation> 
+        <entry>
+          <ind>1</ind>
+          <dep>-90</dep>
+        </entry>
+        <entry>
+          <ind>0.5</ind>
+          <dep>-90</dep>
+        </entry>
+		<entry>
+          <ind>0</ind>
+          <dep>0</dep>
+        </entry>
+      </interpolation>
+ <center>
+  <y-m>-0.166868</y-m>
+  <z-m>0.784313</z-m>
+ </center>
+<axis><x>1</x></axis>
+</animation>
+<animation>
+ <type>rotate</type>
+ <object-name>GeardoorNHR</object-name>
+ <object-name>gearRRint</object-name>
+ <property>/gear/gear[0]/position-norm</property>
+      <interpolation> 
+        <entry>
+          <ind>1</ind>
+          <dep>90</dep>
+        </entry>
+        <entry>
+          <ind>0.5</ind>
+          <dep>90</dep>
+        </entry>
+		<entry>
+          <ind>0</ind>
+          <dep>0</dep>
+        </entry>
+      </interpolation>
+ <center>
+  <y-m>0.166868</y-m>
+  <z-m>0.784313</z-m>
+ </center>
+<axis><x>1</x></axis>
+</animation>
+<animation>
+ <type>rotate</type>
+ <object-name>GeardoorNVL</object-name>
+ <object-name>gearRL2int</object-name>
+ <property>/gear/gear[0]/position-norm</property>
+<interpolation>
+        <entry>
+          <ind>1</ind>
+          <dep>0</dep>
+        </entry>
+        <entry>
+          <ind>0.9</ind>
+          <dep>-90</dep>
+        </entry>
+        <entry>
+          <ind>0.05</ind>
+          <dep>-90</dep>
+        </entry>
+		<entry>
+          <ind>0</ind>
+          <dep>0</dep>
+        </entry>
+      </interpolation>
+ <center>
+  <y-m>-0.250301</y-m>
+  <z-m>0.850797</z-m>
+ </center>
+<axis><x>1</x></axis>
+</animation>
+<animation>
+ <type>rotate</type>
+ <object-name>GeardoorNVR</object-name>
+ <object-name>gearRR2int</object-name>
+ <property>/gear/gear[0]/position-norm</property>
+      <interpolation> 
+        <entry>
+          <ind>1</ind>
+          <dep>0</dep>
+        </entry>
+        <entry>
+          <ind>0.9</ind>
+          <dep>90</dep>
+        </entry>
+        <entry>
+          <ind>0.05</ind>
+          <dep>90</dep>
+        </entry>
+		<entry>
+          <ind>0</ind>
+          <dep>0</dep>
+        </entry>
+      </interpolation>
+ <center>
+  <y-m>0.250301</y-m>
+  <z-m>0.850797</z-m>
+ </center>
+<axis><x>1</x></axis>
 </animation>
     
     
