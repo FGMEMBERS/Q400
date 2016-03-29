@@ -2,7 +2,7 @@
 
 <!-- New document created with EditiX at Fri Jan 15 14:57:31 GMT 2010 -->
 
-<PropertyList>
+<PropertyList><!--
 <model>
   <path>Aircraft/Q400/Models/panels/glareshield/glareshield.ac</path>
     <name>center-glareshield</name>
@@ -146,28 +146,37 @@
       <y-m>0.0</y-m>
       <z-m>0.0</z-m>
     </offsets>
+    </model>-->
+
+<model>
+  <path>panels/AI/AI.xml</path>
+</model>
+<model>
+  <path>panels/PFD/pfd.xml</path>
+    <offsets>
+<x-m>-12.3085</x-m>
+<y-m>-0.48</y-m>
+<z-m>2.14142</z-m>
+<pitch-deg>-16.5</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/PFD/pfd.xml</path>
+    <offsets>
+<x-m>-12.3085</x-m>
+<y-m>0.48</y-m>
+<z-m>2.14142</z-m>
+<pitch-deg>-16.5</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/ESID/ESID.xml</path>
 </model>
 
 <model>
-  <path>Aircraft/Q400/Models/eadi.xml</path>
-    <name>eadi</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
+  <path>panels/lg/lg.xml</path>
 </model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/lg/lg.xml</path>
-    <name>landing_gear</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
+<!--
 <model>
   <path>Aircraft/Q400/Models/panels/MFD/ND.xml</path>
     <name>mfd2</name>
@@ -186,8 +195,7 @@
       <y-m>-0.4581</y-m>
       <z-m>2.3177</z-m>
     </offsets>
-</model>
-
+</model>-->
 
 
 

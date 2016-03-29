@@ -106,7 +106,7 @@ Fuel burn ... 580 lbs/hr
 
     <gear x="11.953" y="0.00" z="0.0443" compression=".4"
     spring="0.8" damp="1.2" sfric="0.6" dfric="0.5">
-        <control-input axis="/controls/flight/rudder" control="STEER" square="true"/>
+        <control-input axis="/controls/flight/rudder" control="STEER" square="true" src0="-1" dst0="-2" src1="1" dst1="2"/>
 <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
   <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   <control-output control="STEER" prop="/gear/gear[0]/caster-angle-deg"/>

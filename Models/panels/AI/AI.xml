@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>AI.ac</path>
+        <animation>
+		<type>select</type>
+		<object-name>display.off</object-name>
+		<condition>
+			<less-than>
+				<property>/systems/electrical/batt-volts</property>
+				<value>10</value>
+			</less-than>
+		</condition>
+	</animation>
+<animation>
+<type>texmultiple</type>
+<object-name>ai</object-name>
+<transform>
+  <subtype>texrotate</subtype>
+<property>/orientation/roll-deg</property>
+      <min> -180 </min>
+      <max>  180 </max>
+      <center>
+        <x> 0.5 </x>
+        <y> 0.5 </y>
+      </center>
+      <axis>
+        <x>  0 </x>
+        <y>  0 </y>
+        <z> -1 </z>
+      </axis>
+</transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+      <factor> 0.005 </factor>
+      <center>
+        <x> 0.5 </x>
+        <y> 0.5 </y>
+      </center>
+      <axis>
+        <x> 0 </x>
+        <y> 1 </y>
+        <z> 0 </z>
+      </axis>
+    </transform>
+</animation>    	
+</PropertyList>

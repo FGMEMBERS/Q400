@@ -24,9 +24,9 @@ DHC8 -400Q by Alex Park Jan 2010
         <internal type="bool">true</internal>
         <config>
             <default-field-of-view-deg>90</default-field-of-view-deg>
-            <x-offset-m type="double">-0.50</x-offset-m>
-            <y-offset-m type="double">2.950</y-offset-m>
-            <z-offset-m type="double">-10.7</z-offset-m>
+            <x-offset-m type="double">-0.4577</x-offset-m>
+            <y-offset-m type="double">2.6227</y-offset-m>
+            <z-offset-m type="double">-11.4083</z-offset-m>
             <pitch-offset-deg>-14</pitch-offset-deg>
         </config>
     </view>
@@ -214,6 +214,7 @@ DHC8 -400Q by Alex Park Jan 2010
  
 
         <engines>
+                <internal-engine-starter>0</internal-engine-starter>
         <fire-test type="bool">0</fire-test>
             <engine n="0">
                 <condition>0</condition>

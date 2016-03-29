@@ -167,9 +167,9 @@ livery_update.stop();
 <model>
     <path>Aircraft/Q400/Models/cockpit.xml</path>
     <offsets>
-      <x-m> -0.5 </x-m>
+      <x-m> 0.0 </x-m>
       <y-m> 0.000 </y-m>
-      <z-m> -0.15 </z-m>
+      <z-m> 0.0 </z-m>
     </offsets>
   </model>
 <!--
@@ -182,13 +182,9 @@ livery_update.stop();
     </offsets>
   </model>
   -->
+  <!--Instruments-->
 <model>
     <path>Aircraft/Q400/Models/panels.xml</path>
-    <offsets>
-      <x-m> -0.5 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> -0.15 </z-m>
-    </offsets>
   </model>
 
   <!--Doors-->
@@ -1109,7 +1105,7 @@ livery_update.stop();
  <object-name>WheelN</object-name>
  <object-name>gearF</object-name>
  <property>/gear/gear[0]/caster-angle-deg</property>
-<factor>-1</factor>
+<factor>-0.3</factor>
  <center>
   <x-m>-12.74229</x-m>
   <z-m>0.98081</z-m>
@@ -1140,9 +1136,9 @@ livery_update.stop();
  <property>/gear/gear[0]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>-12.631022</x-m>
+  <x-m>-12.54243</x-m>
   <y-m>0.0</y-m>
-  <z-m>0.319545</z-m>
+  <z-m>0.28198</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1260,29 +1256,7 @@ livery_update.stop();
 <axis><x>1</x></axis>
 </animation>
     
-    
-    
-<!-- Yokes -->
-
-<model>
-<path>Aircraft/Q400/Models/panels/yoke/yoke.xml</path>
-<name>PilotYoke</name>     
-<offsets>
-<x-m>0</x-m>
-<y-m>0</y-m>
-<z-m>0</z-m>       
-</offsets>
-</model>
-
-<model>
-<path>Aircraft/Q400/Models/panels/yoke/yoke1.xml</path>
-<name>C0PilotYoke</name>     
-<offsets>
-<x-m>0</x-m>
-<y-m>0</y-m>
-<z-m>0</z-m>       
-</offsets>
-</model>
+   
 
 <!-- LIGHTS -->
 <model>
