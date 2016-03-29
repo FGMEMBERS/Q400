@@ -9,8 +9,11 @@ DHC8 -400Q by Alex Park Jan 2010
     <sim>
 
     <model>
-        <start-idling type="bool">1</start-idling>
+        <start-idling type="bool">0</start-idling>
         <variant type="int">1</variant>
+        <interior>
+            <seats type="double">74</seats>
+        </interior>
     </model>
 
 

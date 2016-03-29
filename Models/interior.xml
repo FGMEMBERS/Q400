@@ -20,6 +20,46 @@
   </animation>
 
   </model>
-
+    <animation>
+      <type>pick</type>
+      <object-name>seats74</object-name>
+      <object-name>seats78</object-name>
+      <object-name>seats82</object-name>
+      <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-cycle</command>
+          <property>/sim/model/interior/seats</property>
+          <value>74</value>
+          <value>78</value>
+          <value>82</value>
+      </binding>
+  </action>
+</animation>
+  <animation>
+      <type>select</type>
+      <object-name>seats74</object-name>
+      <condition><equals>
+          <property>/sim/model/interior/seats</property>
+          <value>74</value>
+          </equals></condition>
+</animation>
+  <animation>
+      <type>select</type>
+      <object-name>seats78</object-name>
+      <condition><equals>
+          <property>/sim/model/interior/seats</property>
+          <value>78</value>
+          </equals></condition>
+</animation>
+  <animation>
+      <type>select</type>
+      <object-name>seats82</object-name>
+      <condition><equals>
+          <property>/sim/model/interior/seats</property>
+          <value>82</value>
+          </equals></condition>
+</animation>
 </PropertyList>
 
