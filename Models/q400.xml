@@ -184,7 +184,10 @@ livery_update.stop();
   -->
   <!--Instruments-->
 <model>
-    <path>Aircraft/Q400/Models/panels.xml</path>
+    <path>overhead.xml</path>
+  </model>
+<model>
+    <path>panels.xml</path>
   </model>
 
   <!--Doors-->
