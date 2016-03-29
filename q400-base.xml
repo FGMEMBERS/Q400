@@ -90,25 +90,43 @@ DHC8 -400Q by Alex Park Jan 2010
 
 <view n="1">
   <config>
-   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+   <target-y-offset-m archive="y" type="double">3.5</target-y-offset-m>
   </config>
  </view>
 
  <view n="2">
   <config>
-   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+   <target-y-offset-m archive="y" type="double">3.5</target-y-offset-m>
   </config>
  </view>
 
  <view n="3">
   <config>
-   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+   <target-y-offset-m archive="y" type="double">3.5</target-y-offset-m>
   </config>
  </view>
 
  <view n="4">
   <config>
-   <target-y-offset-m archive="y" type="double">3</target-y-offset-m>
+   <target-y-offset-m archive="y" type="double">3.5</target-y-offset-m>
+  </config>
+ </view>
+
+ <view n="5">
+  <config>
+   <target-y-offset-m archive="y" type="double">3.5</target-y-offset-m>
+  </config>
+ </view>
+
+ <view n="6">
+  <config>
+   <target-y-offset-m archive="y" type="double">3.5</target-y-offset-m>
+  </config>
+ </view>
+
+ <view n="7">
+  <config>
+   <target-y-offset-m archive="y" type="double">3.5</target-y-offset-m>
   </config>
  </view>
 
