@@ -708,6 +708,32 @@ livery_update.stop();
 <!-- Gear Animations -->
     <!--Adapted from Dash8Q200-->
     
+<!--Gear effects (smoke)-->
+<model>
+<path>Effects/ground/ground0.xml</path>
+<offsets>
+      <x-m> -12.5322 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.05</z-m>   
+</offsets>
+</model>
+<model>
+<path>Effects/ground/ground1.xml</path>
+<offsets>
+      <x-m>1.1908 </x-m>
+      <y-m> -4.687</y-m>
+      <z-m> -0.0074</z-m>   
+</offsets>
+</model>
+<model>
+<path>Effects/ground/ground2.xml</path>
+<offsets>
+      <x-m> 1.1908 </x-m>
+      <y-m> 4.687</y-m>
+      <z-m>-0.0074</z-m>   
+</offsets>
+</model>
+    
 <!--Gear Left-->
 <!--Retraction-->
 <animation>
