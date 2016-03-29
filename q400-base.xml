@@ -212,19 +212,26 @@ DHC8 -400Q by Alex Park Jan 2010
 		<pfd-norm>1</pfd-norm>
         </lighting>
  
-    <engines>
+
+        <engines>
         <fire-test type="bool">0</fire-test>
-        <engine n="0">
-            <condition>0</condition>
-            <condition-input type="double">0</condition-input>
-            <propeller-pitch>0</propeller-pitch>
-        </engine>
-        <engine n="1">
-            <condition>0</condition>
-            <condition-input type="double">0</condition-input>
-            <propeller-pitch>0</propeller-pitch>
-        </engine>
-    </engines>
+            <engine n="0">
+                <condition>0</condition>
+                <cutoff>0</cutoff>
+                <mixture>0</mixture>
+                <propeller-pitch>0</propeller-pitch>
+                <throttle-fwd type="double">0</throttle-fwd>
+                <throttle-rvrs type="double">0</throttle-rvrs>
+                </engine>
+            <engine n="1">
+                <condition>0</condition>
+                <cutoff>0</cutoff>
+                <mixture>0</mixture>
+                <propeller-pitch>0</propeller-pitch>
+                <throttle-fwd type="double">0</throttle-fwd>
+                <throttle-rvrs type="double">0</throttle-rvrs>  
+            </engine>
+        </engines>
 </controls>
 
 <consumables>
@@ -309,6 +316,30 @@ DHC8 -400Q by Alex Park Jan 2010
 
     <input>
         <keyboard>
+        <key n="127">
+            <name>Delete</name>
+            <desc>Toggle Reversers</desc>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/reverser</property>
+            </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[1]/reverser</property>
+            </binding>
+        </key>
             <key n="77">
                 <name>M</name>
                 <desc>condition lever leaner.</desc>

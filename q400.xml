@@ -24,8 +24,8 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
 <airplane mass="35000">
 
     <approach speed="90" aoa="5" fuel="0.5">
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.2"/>
+        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="0.2"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="0.2"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/flight/flaps" value="0.5"/>
@@ -35,8 +35,8 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
     </approach>
 
     <cruise speed="360" alt="10000" fuel="0.5"> 
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="1.0"/>
+        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="1.0"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/flight/flaps" value="0.0"/>
@@ -152,7 +152,7 @@ Prop diam: 2.59 m
         <turbine-engine
             eng-power="5071" eng-rpm="1020" alt="10000"
             flat-rating="5071" max-n2="101.5" bsfc="0.468"  spool-time="4"/>
-        <control-input axis="/controls/engines/engine[0]/throttle"
+        <control-input axis="/controls/engines/engine[0]/throttle-fwd"
         control="THROTTLE"/>
         <control-input axis="/controls/engines/engine[0]/condition"
         control="CONDLEVER"/>
@@ -174,7 +174,7 @@ Prop diam: 2.59 m
         <turbine-engine
             eng-power="5071" eng-rpm="1020" alt="10000"
             flat-rating="5071" max-n2="101.5" bsfc="0.468"  spool-time="4"/>
-        <control-input axis="/controls/engines/engine[1]/throttle"
+        <control-input axis="/controls/engines/engine[1]/throttle-fwd"
         control="THROTTLE"/>
         <control-input axis="/controls/engines/engine[1]/condition"
         control="CONDLEVER"/>
@@ -185,7 +185,20 @@ Prop diam: 2.59 m
         <control-input axis="/controls/engines/engine[1]/propeller-feather"
         control="PROPFEATHER"/>
     </propeller>
+    <!--Thrust reverser-->
     
+
+    <thruster x="3.589" y="3.980" z="2.921" vx="-1" vy="0" vz="0" thrust="10000">
+        <control-input axis="/controls/engines/engine[0]/throttle-rvrs" control="THROTTLE"/>
+        <control-output control="THROTTLE" prop="engines/engine[0]/reverse"/>
+        <control-speed control="THROTTLE" transition-time="2"/>
+    </thruster>
+
+    <thruster x="3.589" y="-3.980" z="2.921" vx="-1" vy="0" vz="0" thrust="10000">
+        <control-input axis="/controls/engines/engine[1]/throttle-rvrs" control="THROTTLE"/>
+        <control-output control="THROTTLE" prop="engines/engine[1]/reverse"/>
+        <control-speed control="THROTTLE" transition-time="2"/>
+    </thruster>
     
     <!--Pushback-->
       <thruster x="-13.0502"  y="0.00" z="0.6695" vx="1" vy="0" vz="0" thrust="3500">

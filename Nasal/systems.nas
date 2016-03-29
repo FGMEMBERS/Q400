@@ -287,28 +287,28 @@ setlistener("controls/fuel/Raux-switch", func(raux){
         }
 },0,0);
 
-var update_fuel = func{
-    if(getprop("controls/fuel/gauge-switch")=="auxilary"){
-        setprop("consumables/fuel/gauge[0]",getprop("consumables/fuel/tank[2]/level-lbs"));
-        setprop("consumables/fuel/gauge[1]",getprop("consumables/fuel/tank[3]/level-lbs"));
-    }else{
-        setprop("consumables/fuel/gauge[0]",getprop("consumables/fuel/tank[0]/level-lbs"));
-        setprop("consumables/fuel/gauge[1]",getprop("consumables/fuel/tank[1]/level-lbs"));
-    }
-
-    if(getprop("consumables/fuel/tank[2]/selected")){
-        if(getprop("consumables/fuel/tank[2]/level-lbs")<=3.35 and getprop("consumables/fuel/tank[0]/level-lbs")>0.0){
-            setprop("consumables/fuel/tank[2]/selected",0);
-            setprop("consumables/fuel/tank[0]/selected",1);
-            }
-        }
-    if(getprop("consumables/fuel/tank[3]/selected")){
-        if(getprop("consumables/fuel/tank[3]/level-lbs")<=3.35 and getprop("consumables/fuel/tank[1]/level-lbs")>0.0){
-            setprop("consumables/fuel/tank[3]/selected",0);
-            setprop("consumables/fuel/tank[1]/selected",1);
-        }
-    }
-}
+#var update_fuel = func{
+#    if(getprop("controls/fuel/gauge-switch")=="auxilary"){
+#        setprop("consumables/fuel/gauge[0]",getprop("consumables/fuel/tank[2]/level-lbs"));
+#        setprop("consumables/fuel/gauge[1]",getprop("consumables/fuel/tank[3]/level-lbs"));
+#    }else{
+#        setprop("consumables/fuel/gauge[0]",getprop("consumables/fuel/tank[0]/level-lbs"));
+#        setprop("consumables/fuel/gauge[1]",getprop("consumables/fuel/tank[1]/level-lbs"));
+#    }
+#
+#    if(getprop("consumables/fuel/tank[2]/selected")){
+#        if(getprop("consumables/fuel/tank[2]/level-lbs")<=3.35 and getprop("consumables/fuel/tank[0]/level-lbs")>0.0){
+#            setprop("consumables/fuel/tank[2]/selected",0);
+#            setprop("consumables/fuel/tank[0]/selected",1);
+#            }
+#        }
+#    if(getprop("consumables/fuel/tank[3]/selected")){
+#        if(getprop("consumables/fuel/tank[3]/level-lbs")<=3.35 and getprop("consumables/fuel/tank[1]/level-lbs")>0.0){
+#            setprop("consumables/fuel/tank[3]/selected",0);
+#            setprop("consumables/fuel/tank[1]/selected",1);
+#        }
+#    }
+#}
 
 
 setlistener("/sim/current-view/internal", func(vw){
@@ -500,10 +500,32 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
+#Thrust reverser, integrated from dhc6
+var LHrvr=getprop("controls/engines/engine[0]/reverser");
+    var RHrvr=getprop("controls/engines/engine[1]/reverser");
+    var THR1 =getprop("controls/engines/engine[0]/throttle");
+    var THR2 =getprop("controls/engines/engine[1]/throttle");
+    var running1 = getprop("engines/engine[0]/running");
+    var running2 = getprop("engines/engine[1]/running");
+    if(LHrvr==1 and running1==0) {
+        setprop("controls/engines/engine[0]/throttle-rvrs-norunning",THR1);
+    } else if (LHrvr==1 and running1==1) {
+        setprop("controls/engines/engine[0]/throttle-rvrs",THR1);
+    } else {
+        setprop("controls/engines/engine[0]/throttle-fwd",THR1);
+    }
+
+    if(RHrvr==1 and running2==0) {
+        setprop("controls/engines/engine[1]/throttle-rvrs-norunning",THR2);
+    } else if (RHrvr==1 and running2==1) {
+        setprop("controls/engines/engine[1]/throttle-rvrs",THR2);
+    } else {
+        setprop("controls/engines/engine[1]/throttle-fwd",THR2);
+    }
 
     flight_meter();
     wiper.active();
-    update_fuel();
+   # update_fuel();
     if(getprop("controls/cabin-door/open")){
         if(getprop("engines/engine/running"))setprop("controls/cabin-door/open",0);
     }
