@@ -224,7 +224,7 @@ Prop diam: 2.59 m
 
     <ballast x="0" y="0" z="3.04" mass="850"/>
     <ballast x="2.471" y="0" z="1.5" mass="2000"/>
-    <ballast x="11.0" y="0" z="1" mass="5000"/>
+    <ballast x="11.0" y="0" z="1" mass="6500"/>
 
     <weight x="11.35" y="0" z="2.35" mass-prop="/sim/weight[0]/weight-lb"/>
     <weight x="0.0" y="0" z="2.50" mass-prop="/sim/weight[1]/weight-lb"/>
