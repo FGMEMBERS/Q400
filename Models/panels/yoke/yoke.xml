@@ -3,23 +3,17 @@
 
     <path>yoke.ac</path>
 
-<!-- Yokes -->
+<!-- Yoke L -->
 <animation>
         <type>rotate</type>
-        <object-name>atcident-btn</object-name>
-        <object-name>badge</object-name>
-        <object-name>poly</object-name>
-        <object-name>ptt</object-name>
-        <object-name>cylinder</object-name>
-        <object-name>object</object-name>
-        <object-name>apdisouter</object-name>
-        <object-name>yokebox</object-name>
+        <object-name>YokeL_Elevator</object-name>
+        <object-name>YokeL_Aileron</object-name>		
         <property>controls/flight/elevator</property>
         <factor>7.5</factor>
         <center>
-            <x-m>-11.1454</x-m>
-            <y-m>-0.4803</y-m>
-            <z-m>1.7325</z-m>
+            <x-m>-12.041177</x-m>
+            <y-m>-0.499998</y-m>
+            <z-m>1.356261</z-m>
         </center>
         <axis>
             <x>0</x>
@@ -30,19 +24,49 @@
 
     <animation>
         <type>rotate</type>
-	  <object-name>atcident-btn</object-name>
-        <object-name>badge</object-name>
-        <object-name>poly</object-name>
-        <object-name>ptt</object-name>
-        <object-name>cylinder</object-name>
-        <object-name>object</object-name>
-        <object-name>apdisouter</object-name>
+	  <object-name>YokeL_Aileron</object-name>
         <property>controls/flight/aileron</property>
         <factor>-45.0</factor>
         <center>
-            <x-m>-11.1454</x-m>
-            <y-m>-0.4803</y-m>
-            <z-m>2.3352</z-m>
+            <x-m>-11.951792</x-m>
+            <y-m>-0.499998</y-m>
+            <z-m>1.965158</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+	<!-- Yoke R -->
+<animation>
+        <type>rotate</type>
+        <object-name>YokeR_Elevator</object-name>
+        <object-name>YokeR_Aileron</object-name>		
+        <property>controls/flight/elevator</property>
+        <factor>7.5</factor>
+        <center>
+            <x-m>-12.041177</x-m>
+            <y-m>0.499998</y-m>
+            <z-m>1.356261</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+	  <object-name>YokeR_Aileron</object-name>
+        <property>controls/flight/aileron</property>
+        <factor>-45.0</factor>
+        <center>
+            <x-m>-11.951792</x-m>
+            <y-m>0.499998</y-m>
+            <z-m>1.965158</z-m>
         </center>
         <axis>
             <x>1</x>

@@ -52,38 +52,29 @@ livery_update.stop();
       <object-name>flapRO</object-name>
       <object-name>flapLO</object-name>
       <object-name>flapI</object-name>
-      <object-name>engineL</object-name>
-      <object-name>engineR</object-name>
+      <object-name>Engines</object-name>
       <object-name>hstab</object-name>
       <object-name>elevator</object-name>
       <object-name>vstab</object-name>
-      <object-name>vstab2</object-name>
       <object-name>rudder</object-name>
       <object-name>doorF</object-name>
-      <object-name>doorR</object-name>
+      <object-name>doorLH</object-name>
+      <object-name>doorRF</object-name>
+      <object-name>doorRH</object-name>
       <object-name>doorC</object-name>
-      <object-name>gear1F</object-name>
-      <object-name>gear2F</object-name>
+      <object-name>gearF</object-name>
       <object-name>gearL1</object-name>
       <object-name>gearL2</object-name>
-      <object-name>gearL3</object-name>
-      <object-name>gearL4</object-name>
-      <object-name>gearLL</object-name>
-      <object-name>gearLR</object-name>
-      <object-name>gearLL2</object-name>
-      <object-name>gearLR2</object-name>
-      <object-name>gearLL3</object-name>
-      <object-name>gearLR3</object-name>
+      <object-name>GeardoorLHL</object-name>
+      <object-name>GeardoorLHR</object-name>
+      <object-name>GeardoorLVL</object-name>
+      <object-name>GeardoorLVR</object-name>
       <object-name>gearR1</object-name>
       <object-name>gearR2</object-name>
-      <object-name>gearR3</object-name>
-      <object-name>gearR4</object-name>
-      <object-name>gearRL</object-name>
-      <object-name>gearRR</object-name>
-      <object-name>gearRL2</object-name>
-      <object-name>gearRR2</object-name>
-      <object-name>gearRL3</object-name>
-      <object-name>gearRR3</object-name>
+      <object-name>GeardoorRHL</object-name>
+      <object-name>GeardoorRHR</object-name>
+      <object-name>GeardoorRVL</object-name>
+      <object-name>GeardoorRVR</object-name>
     </effect>
 <effect>
     <inherits-from>Effects/model-transparent</inherits-from>
@@ -101,42 +92,27 @@ livery_update.stop();
       <object-name>flapRO</object-name>
       <object-name>flapLO</object-name>
       <object-name>flapI</object-name>
-      <object-name>engineL</object-name>
-      <object-name>engineR</object-name>
+      <object-name>Engines</object-name>
       <object-name>hstab</object-name>
       <object-name>elevator</object-name>
       <object-name>vstab</object-name>
-      <object-name>vstab2</object-name>
       <object-name>rudder</object-name>
       <object-name>doorF</object-name>
       <object-name>doorR</object-name>
       <object-name>doorC</object-name>
-      <object-name>gear1F</object-name>
-      <object-name>gear2F</object-name>
+      <object-name>gearF</object-name>
       <object-name>gearL1</object-name>
       <object-name>gearL2</object-name>
-      <object-name>gearL3</object-name>
-      <object-name>gearL4</object-name>
-      <object-name>gearLL</object-name>
-      <object-name>gearLLint</object-name>
-      <object-name>gearLR</object-name>
-      <object-name>gearLRint</object-name>
-      <object-name>gearLL2</object-name>
-      <object-name>gearLL2int</object-name>
-      <object-name>gearLR2</object-name>
-      <object-name>gearLR2int</object-name>
+      <object-name>GeardoorLHL</object-name>
+      <object-name>GeardoorLHR</object-name>
+      <object-name>GeardoorLVL</object-name>
+      <object-name>GeardoorLVR</object-name>
       <object-name>gearR1</object-name>
       <object-name>gearR2</object-name>
-      <object-name>gearR3</object-name>
-      <object-name>gearR4</object-name>
-      <object-name>gearRL</object-name>
-      <object-name>gearRLint</object-name>
-      <object-name>gearRR</object-name>
-      <object-name>gearRRint</object-name>
-      <object-name>gearRL2</object-name>
-      <object-name>gearRL2int</object-name>
-      <object-name>gearRR2</object-name>
-      <object-name>gearRR2int</object-name>
+      <object-name>GeardoorRHL</object-name>
+      <object-name>GeardoorRHR</object-name>
+      <object-name>GeardoorRVL</object-name>
+      <object-name>GeardoorRVR</object-name>
       
       <property-base>sim/model/livery</property-base>
       <texture-prop>texture</texture-prop>
@@ -756,7 +732,7 @@ livery_update.stop();
       <z-m>-0.0074</z-m>   
 </offsets>
 </model>
-    
+
 <!--Gear Left-->
 <!--Retraction-->
 <animation>
@@ -765,13 +741,13 @@ livery_update.stop();
  <object-name>gearL1</object-name>
  <object-name>gearL2</object-name>
  <property>/gear/gear[1]/position-norm</property>
- <factor>60</factor>
- <offset-deg>-60</offset-deg>
+ <factor>65</factor>
+ <offset-deg>-65</offset-deg>
  <min>90</min>
  <max>0</max>
  <center>
-  <x-m>-0.2953</x-m>
-  <z-m>2.8703</z-m>
+  <x-m>-0.324119</x-m>
+  <z-m>2.418236</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -789,7 +765,7 @@ livery_update.stop();
           <dep>-25</dep>
         </entry>
         <entry>
-          <ind>60</ind>
+          <ind>0.4</ind>
           <dep>-25</dep>
         </entry>
 		<entry>
@@ -798,8 +774,8 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <x-m>0.9566</x-m>
-  <z-m>1.0519</z-m>
+  <x-m>0.777148</x-m>
+  <z-m>0.845464</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -815,11 +791,11 @@ livery_update.stop();
       <interpolation> 
         <entry>
           <ind>1</ind>
-          <dep>90</dep>
+          <dep>45</dep>
         </entry>
         <entry>
           <ind>0.5</ind>
-          <dep>90</dep>
+          <dep>45</dep>
         </entry>
 		<entry>
           <ind>0</ind>
@@ -827,7 +803,7 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>-3.90393</y-m>
+  <y-m>-3.980727</y-m>
   <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
@@ -839,11 +815,11 @@ livery_update.stop();
       <interpolation> 
         <entry>
           <ind>1</ind>
-          <dep>-90</dep>
+          <dep>-45</dep>
         </entry>
         <entry>
           <ind>0.5</ind>
-          <dep>-90</dep>
+          <dep>-45</dep>
         </entry>
 		<entry>
           <ind>0</ind>
@@ -851,7 +827,7 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>-4.821711</y-m>
+  <y-m>-4.744914</y-m>
   <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
@@ -933,7 +909,7 @@ livery_update.stop();
  <property>/gear/gear[1]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>1.11067</x-m>
+  <x-m>0.81067</x-m>
   <z-m>0.371916</z-m>
  </center>
  <axis>
@@ -952,13 +928,13 @@ livery_update.stop();
  <object-name>gearR1</object-name>
  <object-name>gearR2</object-name>
  <property>/gear/gear[2]/position-norm</property>
- <factor>60</factor>
- <offset-deg>-60</offset-deg>
+ <factor>65</factor>
+ <offset-deg>-65</offset-deg>
  <min>90</min>
  <max>0</max>
  <center>
-  <x-m>-0.2953</x-m>
-  <z-m>2.8703</z-m>
+  <x-m>-0.324119</x-m>
+  <z-m>2.418236</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -976,7 +952,7 @@ livery_update.stop();
           <dep>-25</dep>
         </entry>
         <entry>
-          <ind>60</ind>
+          <ind>0.4</ind>
           <dep>-25</dep>
         </entry>
 		<entry>
@@ -985,8 +961,8 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <x-m>0.9566</x-m>
-  <z-m>1.0519</z-m>
+  <x-m>0.777148</x-m>
+  <z-m>0.845464</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1003,11 +979,11 @@ livery_update.stop();
       <interpolation> 
         <entry>
           <ind>1</ind>
-          <dep>-90</dep>
+          <dep>-45</dep>
         </entry>
         <entry>
           <ind>0.5</ind>
-          <dep>-90</dep>
+          <dep>-45</dep>
         </entry>
 		<entry>
           <ind>0</ind>
@@ -1015,7 +991,7 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>3.90393</y-m>
+  <y-m>3.980727</y-m>
   <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
@@ -1027,11 +1003,11 @@ livery_update.stop();
       <interpolation> 
         <entry>
           <ind>1</ind>
-          <dep>90</dep>
+          <dep>45</dep>
         </entry>
         <entry>
           <ind>0.5</ind>
-          <dep>90</dep>
+          <dep>45</dep>
         </entry>
 		<entry>
           <ind>0</ind>
@@ -1039,7 +1015,7 @@ livery_update.stop();
         </entry>
       </interpolation>
  <center>
-  <y-m>4.821712</y-m>
+  <y-m>4.744914</y-m>
   <z-m>2.138327</z-m>
  </center>
 <axis><x>1</x></axis>
@@ -1138,13 +1114,13 @@ livery_update.stop();
  <object-name>WheelN</object-name>
  <object-name>gearF</object-name>
  <property>/gear/gear[0]/position-norm</property>
- <factor>-115</factor>
- <offset-deg>115</offset-deg>
+ <factor>-112</factor>
+ <offset-deg>112</offset-deg>
  <min>90</min>
  <max>0</max>
  <center>
-  <x-m>-12.74229</x-m>
-  <z-m>0.98081</z-m>
+  <x-m>-12.686933</x-m>
+  <z-m>0.994319</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1157,10 +1133,10 @@ livery_update.stop();
  <object-name>WheelN</object-name>
  <object-name>gearF</object-name>
  <property>/gear/gear[0]/caster-angle-deg</property>
-<factor>-0.3</factor>
+<factor>-1</factor>
  <center>
-  <x-m>-12.74229</x-m>
-  <z-m>0.98081</z-m>
+  <x-m>-12.686933</x-m>
+  <z-m>0.994319</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1171,7 +1147,7 @@ livery_update.stop();
 <!--Compression>-->
 <animation>
  <type>translate</type>
- <object-name>gear2F</object-name>
+ <object-name>gearF</object-name>
  <object-name>WheelN</object-name>
  <property>/gear/gear[2]/compression-norm</property>
 <factor>0.250</factor>
@@ -1188,8 +1164,7 @@ livery_update.stop();
  <property>/gear/gear[0]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>-12.54243</x-m>
-  <y-m>0.0</y-m>
+  <x-m>-12.542431</x-m>
   <z-m>0.28198</z-m>
  </center>
  <axis>
@@ -1307,8 +1282,6 @@ livery_update.stop();
  </center>
 <axis><x>1</x></axis>
 </animation>
-    
-   
 
 <!-- LIGHTS -->
 <model>

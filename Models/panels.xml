@@ -271,7 +271,15 @@
     </offsets>
 </model>-->
 
-
+<model>
+  <path>Aircraft/Q400/Models/yoke/yoke.xml</path>
+    <name>yoke</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+</model>
 
 <animation>
     <type>range</type>
