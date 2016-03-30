@@ -242,10 +242,10 @@
 </model>
 
 <model>
-  <path>panels/baropanel/baropanel.ac</path>
+  <path>panels/baropanel/baropanel.xml</path>
 </model>
 <model>
-  <path>panels/baropanel/baropanel.ac</path>
+  <path>panels/baropanel/baropanel.xml</path>
     <offsets>
 <y-m>1.27788</y-m>
     </offsets>

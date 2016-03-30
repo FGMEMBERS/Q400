@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>baropanel.ac</path>
+        
+        <!--Panel illumination-->
+        
+<animation>
+      <type>material</type>
+	<object-name>base</object-name>
+        <condition><property>/controls/lighting/panel-lights</property></condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+            <factor-prop>/controls/lighting/panel/center</factor-prop>
+        </emission>
+    </animation>
+        
+
+  <!--Overhead Panel-->
+  <animation>
+        <type>knob</type>
+        <object-name>baroknob</object-name>
+				<property>instrumentation/altimeter/setting-inhg</property>
+                                <factor>100</factor>
+    <center>
+      <y-m> -0.63869 </y-m>
+    </center>
+    <axis>
+            <x1-m>-12.3027</x1-m>
+            <z1-m>2.1334</z1-m>
+            <x2-m>-12.2916</x2-m>
+            <z2-m>2.1366</z2-m>
+        </axis>
+        <action>
+            <binding>
+				<command>property-adjust</command>
+				<property>instrumentation/altimeter/setting-inhg</property>
+                                <factor>0.05</factor>
+				<min>27.0</min>
+				<max>32.0</max>
+				<wrap>false</wrap>
+            </binding>
+        </action>
+       <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>inhg</tooltip-id>
+                <label>QNH (InHg): %s</label>
+                <mapping>QNH</mapping>
+				<property>instrumentation/altimeter/setting-inhg</property>
+            </binding>
+        </hovered>
+    </animation>
+
+  
+     <animation>
+        <type>pick</type>
+        <object-name>barobase</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            	<command>property-assign</command>
+				<property>instrumentation/altimeter/setting-inhg</property>
+                <value>29.92</value>
+            </binding>
+    </action>
+    </animation>
+
+    
+    
+    
+  
+</PropertyList>
