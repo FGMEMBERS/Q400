@@ -229,6 +229,9 @@
 <pitch-deg>-90</pitch-deg>
     </offsets>
 </model>
+<model>
+  <path>panels/ap/ap.ac</path>
+</model>
 <!--Engine Instrument-->
 <model>
   <path>panels/ESID/ESID.xml</path>
