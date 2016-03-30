@@ -152,23 +152,84 @@
   <path>panels/AI/AI.xml</path>
 </model>
 <model>
-  <path>panels/PFD/pfd.xml</path>
+  <path>panels/PFD/PFD3d.xml</path>
     <offsets>
-<x-m>-12.3085</x-m>
+<x-m>-12.311</x-m>
 <y-m>-0.48</y-m>
-<z-m>2.14142</z-m>
-<pitch-deg>-16.5</pitch-deg>
+<z-m>2.135</z-m>
+<pitch-deg>-16.2</pitch-deg>
     </offsets>
 </model>
 <model>
-  <path>panels/PFD/pfd.xml</path>
+  <path>panels/PFD/PFD3d.xml</path>
     <offsets>
-<x-m>-12.3085</x-m>
+<x-m>-12.311</x-m>
 <y-m>0.48</y-m>
-<z-m>2.14142</z-m>
-<pitch-deg>-16.5</pitch-deg>
+<z-m>2.135</z-m>
+<pitch-deg>-16.2</pitch-deg>
     </offsets>
 </model>
+<!--NDs-->
+<model>
+  <path>panels/ND/ND.xml</path>
+</model>
+<!--CDUs-->
+<model>
+  <path>panels/CDU/CDU.xml</path>
+    <offsets>
+<x-m>-12.2019</x-m>
+<y-m>-0.17</y-m>
+<z-m>1.965</z-m>
+<pitch-deg>-60</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/CDU/CDU1.xml</path>
+    <offsets>
+<x-m>-12.2019</x-m>
+<y-m>0.17</y-m>
+<z-m>1.965</z-m>
+<pitch-deg>-60</pitch-deg>
+    </offsets>
+</model>
+<!--RMUs-->
+<model>
+  <path>panels/RMU/RMU1.xml</path>
+    <offsets>
+<x-m>-11.66</x-m>
+<y-m>-0.19</y-m>
+<z-m>1.884</z-m>
+<pitch-deg>-90</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/RMU/RMU-sup1.xml</path>
+    <offsets>
+<x-m>-11.66</x-m>
+<y-m>-0.19</y-m>
+<z-m>1.884</z-m>
+<pitch-deg>-90</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/RMU/RMU2.xml</path>
+    <offsets>
+<x-m>-11.66</x-m>
+<y-m>0.19</y-m>
+<z-m>1.884</z-m>
+<pitch-deg>-90</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/RMU/RMU-sup2.xml</path>
+    <offsets>
+<x-m>-11.66</x-m>
+<y-m>0.19</y-m>
+<z-m>1.884</z-m>
+<pitch-deg>-90</pitch-deg>
+    </offsets>
+</model>
+<!--Engine Instrument-->
 <model>
   <path>panels/ESID/ESID.xml</path>
 </model>

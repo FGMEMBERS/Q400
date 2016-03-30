@@ -500,4 +500,174 @@
         </action>
     </animation>
   
+    <!--ENGINE START PANEL-->
+    
+  
+   <animation>
+    <type>pick</type>
+    <object-name>ignition1</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/engines/engine/ignition</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>ignition1</object-name>
+        <property>/controls/engines/engine/ignition</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -11.8082 </x-m>
+      <z-m>  2.88309 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+   <animation>
+    <type>pick</type>
+    <object-name>ignition2</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/engines/engine[1]/ignition</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>ignition2</object-name>
+        <property>/controls/engines/engine[1]/ignition</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -11.8082 </x-m>
+      <z-m>  2.88309 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  <!--Starter - from dhc6-->
+     <animation>
+        <type>pick</type>
+        <object-name>startselect</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+            	<command>property-adjust</command>
+		<property>controls/engines/internal-engine-starter</property>
+                <step>1</step>
+		<min>-1</min>
+		<max>1</max>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+        <action>
+      <name>decrease</name>
+      <button>3</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/internal-engine-starter</property>
+        <step>1</step>
+        <min>-1</min>
+        <max>1</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+    </action>
+       <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>starter</tooltip-id>
+                <label>starter: %s</label>
+                <mapping>Starter</mapping>
+                <property>controls/engines/internal-engine-starter</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>startselect</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+	    <binding>
+              <command>property-adjust</command>
+	      <property>controls/engines/internal-engine-starter</property>
+              <step>-1</step>
+	      <min>-1</min>
+	      <max>1</max>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+        <action>
+      <name>increase</name>
+      <button>4</button>
+      <repeatable>true</repeatable>
+      <binding>
+        <command>property-adjust</command>
+        <property>controls/engines/internal-engine-starter</property>
+        <step>-1</step>
+        <min>-1</min>
+        <max>1</max>
+        <wrap>0</wrap>
+      </binding>
+      <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+    </action>
+       <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>starter</tooltip-id>
+                <label>starter: %s</label>
+                <mapping>Starter</mapping>
+		<property>controls/engines/internal-engine-starter</property>
+            </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>startselect</object-name>
+	<property>controls/engines/internal-engine-starter</property>
+        <factor>35.0</factor>
+        <center>
+            <x-m>-11.8082</x-m>
+            <y-m>0.15483</y-m>
+            <z-m>2.88309</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+  
 </PropertyList>

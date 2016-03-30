@@ -132,7 +132,22 @@ Fuel burn ... 580 lbs/hr
   <control-speed control="EXTEND" transition-time="6"/>
 
     </gear>
+    <!--Jacks-->
+    <gear x="11.953" y="0.00" z="-0.3755" compression=".1"
+    spring="0.8" damp="1.2" sfric="0.6" dfric="0.5" skid="true">
+<control-input axis="/controls/gear/jacks" control="EXTEND"/>
+    </gear>
 
+    <gear x="-0.266" y="3.98" z="-0.3755" compression=".1"
+    spring="0.8" damp="1.2" sfric="0.8" dfric="0.7" skid="true">
+<control-input axis="/controls/gear/jacks" control="EXTEND"/>
+    </gear>
+
+    <gear x="-0.266" y="-3.98" z="-0.3755" compression=".1"
+    spring="0.8" damp="1.2" sfric="0.8" dfric="0.7" skid="true">
+<control-input axis="/controls/gear/jacks" control="EXTEND"/>
+    </gear>
+    
 <!--
 Engines:
 2 PW150A

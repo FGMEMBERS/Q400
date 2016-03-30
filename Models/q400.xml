@@ -182,6 +182,29 @@ livery_update.stop();
     </offsets>
   </model>
   -->
+  <!--Jacks-->
+<model>
+    <path>jacks.ac</path>
+    <name>jacks</name>
+  </model>
+   <animation>
+    <type>select</type>
+    <object-name>jacks</object-name>
+    <condition>
+        <and>
+    <property>controls/gear/jacks</property>
+    <or>
+    <property>gear/gear/wow</property>
+    <property>gear/gear[1]/wow</property>
+    <property>gear/gear[2]/wow</property>
+    <property>gear/gear[3]/wow</property>
+    <property>gear/gear[4]/wow</property>
+    <property>gear/gear[5]/wow</property>
+    </or>
+</and>
+</condition>
+  </animation>
+  
   <!--Instruments-->
 <model>
     <path>overhead.xml</path>

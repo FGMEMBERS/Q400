@@ -66,6 +66,13 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
 							</script>
 						</binding>
     </item>
+                <item>
+                    <label>Put aircraft on jacks</label>
+                    <binding>
+                        <command>property-toggle</command>
+                        <property>controls/gear/jacks</property>
+                    </binding>
+                </item>
             </menu>
         </default>
     </menubar>
@@ -91,7 +98,11 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
 
 
 <controls>
+    <electric>
+        <power-source>1</power-source>
+    </electric>
         <gear>
+            <jacks>0</jacks>
             <brake-parking>1</brake-parking>
         </gear>
 </controls>
@@ -121,6 +132,12 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
 
 
     <nasal>
+				<cdu>
+					<file>Aircraft/CitationX/Models/Instruments/CDU/CDU.nas</file>
+				</cdu>
+        <ND>
+            <file>Models/panels/ND/ND.nas</file>
+        </ND>
         <q400>
             <file>Nasal/liveries.nas</file>
             <file>Nasal/Electrical.nas</file>
