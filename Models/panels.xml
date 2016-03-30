@@ -149,9 +149,6 @@
     </model>-->
 
 <model>
-  <path>panels/AI/AI.xml</path>
-</model>
-<model>
   <path>panels/PFD/PFD3d.xml</path>
     <offsets>
 <x-m>-12.311</x-m>
@@ -230,6 +227,9 @@
     </offsets>
 </model>
 <model>
+  <path>panels/enginepanel/enginepanel.ac</path>
+</model>
+<model>
   <path>panels/ap/ap.ac</path>
 </model>
 <!--Engine Instrument-->
@@ -239,6 +239,16 @@
 
 <model>
   <path>panels/lg/lg.xml</path>
+</model>
+
+<model>
+  <path>panels/baropanel/baropanel.ac</path>
+</model>
+<model>
+  <path>panels/baropanel/baropanel.ac</path>
+    <offsets>
+<y-m>1.27788</y-m>
+    </offsets>
 </model>
 <!--
 <model>
