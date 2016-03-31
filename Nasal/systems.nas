@@ -9,6 +9,32 @@ var tanks=[];
 var N1=[0.0,0.0];
 var fuel_cutoff=[0,0];
 
+#Throttle Reverser interpolation
+setlistener("/controls/engines/engine/reverser", func(v) {
+  if(v.getValue()){
+    interpolate("/controls/engines/engine/reverser-position", 1, 0.25);
+  }else{
+    interpolate("/controls/engines/engine/reverser-position", 0, 0.25);
+  }
+});
+
+setlistener("/controls/engines/engine[1]/reverser", func(v) {
+  if(v.getValue()){
+    interpolate("/controls/engines/engine[1]/reverser-position", 1, 0.25);
+  }else{
+    interpolate("/controls/engines/engine[1]/reverser-position", 0, 0.25);
+  }
+});
+#Parking/emerg Brake interpolation
+
+
+setlistener("/controls/gear/brake-parking", func(v) {
+  if(v.getValue()){
+    interpolate("/controls/gear/brake-parking-position", 1, 0.5);
+  }else{
+    interpolate("/controls/gear/brake-parking-position", 0, 0.5);
+  }
+});
 
 var Wiper = {
     new : func(prop,power,settings){
@@ -500,6 +526,8 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
+#Altitude conversion for ap
+setprop("/position/altitude-ft-100", getprop("/position/altitude-ft")*0.01);
 #Thrust reverser, integrated from dhc6
 var LHrvr=getprop("controls/engines/engine[0]/reverser");
     var RHrvr=getprop("controls/engines/engine[1]/reverser");

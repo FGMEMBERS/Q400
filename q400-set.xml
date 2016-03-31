@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!--
 ************************************************************************
-de Havilland DHC8-400Q
+de Havilland DHC8-400Q/Bombardier Q400
 Jan 2009 Alex Park
 FDM based on Alex Park Dash 8 300Q adapted for the Dash8 - 400Q
-new version with up-to-date systems and a better cockpit 2016 by Florian K and D-ECHO
+new version with up-to-date systems, a complete new ex- and interior model 2016 by Florian K and D-ECHO
 ************************************************************************
 -->
 
@@ -79,6 +79,45 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
 
 </sim>
 
+    <autopilot>
+        <settings>
+						<minimums-mode type="string">RA</minimums-mode>
+            <minimums type="int">200</minimums>
+            <target-roll-deg type="double">0</target-roll-deg>
+            <target-pitch-deg type="double">0</target-pitch-deg>
+            <vertical-speed-fpm type="int">0</vertical-speed-fpm>
+            <nav-source type="string">NAV1</nav-source>
+            <bank-limit type="int">30</bank-limit>
+            <target-speed-kt type="int">250</target-speed-kt>
+            <target-speed-mach type="double">0.38</target-speed-mach>
+
+            <changeover type="bool">0</changeover>
+            <heading-bug-deg type="int">0</heading-bug-deg>
+            <vertical-speed-fpm type="int">0</vertical-speed-fpm>
+            <asel type="int">410</asel>
+        </settings>
+        <locks>
+            <heading>ROLL</heading>
+            <heading-arm type="string"></heading-arm>
+            <altitude>PTCH</altitude>
+            <altitude-arm type="string"></altitude-arm>
+            <AP-status type="string"></AP-status>
+            <FD-status type="bool">1</FD-status>
+            <yaw-damper type="bool">0</yaw-damper>
+            <m-trim type="bool">0</m-trim>
+        </locks>
+        <internal>
+            <selected-crs type="int">0</selected-crs>
+            <nav-distance type="double">0</nav-distance>
+            <nav-type type="string"></nav-type>
+            <nav-id type="string"></nav-id>
+            <course-deflection type="double">0.0</course-deflection>
+            <gs-valid type="bool">0</gs-valid>
+            <gs-deflection type="double">0.0</gs-deflection>
+            <in-range type="bool">0</in-range>
+            <gs-in-range type="bool">0</gs-in-range>
+        </internal>
+    </autopilot>
 <input>
  <keyboard>
   <key n="127">
@@ -104,57 +143,42 @@ new version with up-to-date systems and a better cockpit 2016 by Florian K and D
         <gear>
             <jacks>0</jacks>
             <brake-parking>1</brake-parking>
+            <brake-parking-position>1</brake-parking-position>
         </gear>
 </controls>
 
-<input>
- <keyboard> 
-<key n="119"> 
-<name>w</name> 
-<desc>Walk forward toward view</desc>
- <repeatable>true</repeatable>
- <binding>
- <command>nasal</command> 
-<script>walk.walk_about(0.1)</script> 
-</binding> 
-</key> 
-<key n="87"> 
-<name>W</name>
- <desc>Walk backward from view</desc> 
-<repeatable>true</repeatable> 
-<binding>
- <command>nasal</command>
- <script>walk.walk_about(-0.1)</script> 
-</binding> 
-</key>
- </keyboard>
- </input> 
+
 
 
     <nasal>
 				<cdu>
-					<file>Aircraft/CitationX/Models/Instruments/CDU/CDU.nas</file>
+					<file>Models/panels/CDU/CDU.nas</file>
 				</cdu>
         <ND>
             <file>Models/panels/ND/ND.nas</file>
         </ND>
         <q400>
+            <file>Nasal/Flightdirector.nas</file>
             <file>Nasal/liveries.nas</file>
             <file>Nasal/Electrical.nas</file>
             <file>Nasal/systems.nas</file>
             <file>Nasal/vhf22.nas</file>
             <file>Nasal/vir32.nas</file>
 		<file>Nasal/reverse-thrust.nas</file>
-		<file>Nasal/walk.nas</file>
 		<file>Nasal/copilot-dual-control.nas</file>
-		<file>Nasal/dhc8-400-dual-control.nas</file>
-		<file>Nasal/dual-control-tools.nas</file>
-		<file>Nasal/hydralic-pressure.nas</file>
+		<!--<file>Nasal/dhc8-400-dual-control.nas</file>
+		<file>Nasal/dual-control-tools.nas</file>-->
 		<file>Nasal/lighting.nas</file>
         </q400>
         <doors>
             <file>Nasal/doors.nas</file>
         </doors>
+<walk>
+			<file>Nasal/walk.nas</file>
+		</walk>
+<dialogs>
+            <file>Nasal/dialogs.nas</file>
+        </dialogs>
     </nasal>
 
  

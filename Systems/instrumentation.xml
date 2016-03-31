@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
 <!--
 **********************************************************************
@@ -13,16 +13,12 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </adf>
 
-    <adf>
-        <name>adf</name>
-        <number>1</number>
-    </adf>
-
     <airspeed-indicator>
         <name>airspeed-indicator</name>
         <number>0</number>
         <total-pressure>/systems/pitot/total-pressure-inhg</total-pressure>
         <static-pressure>/systems/static/pressure-inhg</static-pressure>
+        <has-overspeed-indicator>1</has-overspeed-indicator>
     </airspeed-indicator>
 
     <altimeter>
@@ -42,16 +38,21 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </clock>
 
+    <comm-radio>
+        <name>comm</name>
+        <number>0</number>
+    </comm-radio>
+
+    <comm-radio>
+        <name>comm</name>
+        <number>1</number>
+    </comm-radio>
+
     <heading-indicator>
         <name>heading-indicator</name>
         <number>0</number>
         <suction>/systems/vacuum/suction-inhg</suction>
     </heading-indicator>
-
-    <heading-indicator-dg>
-        <name>heading-indicator-dg</name>
-        <number>0</number>
-    </heading-indicator-dg>
 
     <magnetic-compass>
         <name>magnetic-compass</name>
@@ -68,6 +69,11 @@ This file selects the instrumentation modules that should be available.
         <number>1</number>
     </nav-radio>
 
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+
     <slip-skid-ball>
         <name>slip-skid-ball</name>
         <number>0</number>
@@ -78,20 +84,51 @@ This file selects the instrumentation modules that should be available.
         <number>0</number>
     </turn-indicator>
 
-    <radar>
-        <name>radar</name>
+    <KT-70>
+        <name>kt-70</name>
         <number>0</number>
-    </radar>
+    </KT-70>
 
-    <groundradar>
-        <name>groundradar</name>
-        <airport-id-source>instrumentation/groundradar/id</airport-id-source>
-        <range-source>instrumentation/groundradar/range</range-source>
-    </groundradar>
+    <KT-70>
+        <name>kt-70</name>
+        <number>1</number>
+    </KT-70>
+
+    <KR-87>
+        <name>kr-87</name>
+        <number>0</number>
+    </KR-87>
+
+    <marker-beacon>
+        <name>marker-beacon</name>
+        <number>0</number>
+    </marker-beacon>
 
     <mk-viii>
         <name>mk-viii</name>
         <number>0</number>
     </mk-viii>
+
+    <radar>
+        <name>radar</name>
+        <number>0</number>
+    </radar>
+
+    <tcas>
+        <name>tcas</name>
+        <number>0</number>
+    </tcas>
+
+    <navigation-display>
+        <name>nd</name>
+        <number>0</number>
+        <symbols include="nav-display.xml"/>
+    </navigation-display>
+
+   <navigation-display>
+        <name>tcas-display</name>
+        <number>0</number>
+        <symbols include="tcas-display.xml"/>
+    </navigation-display>
 
 </PropertyList>

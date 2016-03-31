@@ -16,18 +16,21 @@
       var float_2 = self.getNode("sim/multiplay/generic/float[2]", 1);
       var float_3 = self.getNode("sim/multiplay/generic/float[3]", 1);
       var float_4 = self.getNode("sim/multiplay/generic/float[4]", 1);
+      var float_5 = self.getNode("sim/multiplay/generic/float[5]", 1);
 
       var passengerF_door = self.getNode("sim/model/door-positions/passengerF/position-norm", 1);
       var passengerLH_door = self.getNode("sim/model/door-positions/passengerLH/position-norm", 1);
       var passengerRH_door = self.getNode("sim/model/door-positions/passengerRH/position-norm", 1);
       var passengerRF_door = self.getNode("sim/model/door-positions/passengerRF/position-norm", 1);
       var cargo_door = self.getNode("sim/model/door-positions/cargo/position-norm", 1);
+      var fd_door = self.getNode("sim/model/door-positions/fd/position-norm", 1);
       
       passengerF_door.alias(float_0);
       passengerLH_door.alias(float_1);
       cargo_door.alias(float_2);
       passengerRH_door.alias(float_3);
       passengerRF_door.alias(float_4);
+      fd_door.alias(float_5);
 <nasal>
 <load>
 var livery_update = aircraft.livery_update.new("Aircraft/Q400/Models/Liveries");
@@ -40,6 +43,7 @@ livery_update.stop();
       cargo_door.unalias();
       passengerRH_door.unalias();
       passengerRF_door.unalias();
+      fd_door.unalias();
 </unload>
 </nasal>
 
@@ -148,16 +152,7 @@ livery_update.stop();
       <z-m> 0.0 </z-m>
     </offsets>
   </model>
-<!--
-<model>
-    <path>Aircraft/Q400/Models/cockpit.xml</path>
-    <offsets>
-      <x-m> 0.000 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.000 </z-m>
-    </offsets>
-  </model>
-  -->
+
   <!--Jacks-->
 <model>
     <path>jacks.ac</path>
@@ -909,7 +904,7 @@ livery_update.stop();
  <property>/gear/gear[1]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>0.81067</x-m>
+  <x-m>1.11067</x-m>
   <z-m>0.371916</z-m>
  </center>
  <axis>

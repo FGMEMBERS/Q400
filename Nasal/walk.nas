@@ -5,7 +5,8 @@ var yViewNode = props.globals.getNode("sim/current-view/x-offset-m", 1);
 var hViewNode = props.globals.getNode("sim/current-view/heading-offset-deg", 1);
 
 var walk_about = func(wa_distance) {
-	if (getprop("sim/current-view/view-number") == 0 or getprop("sim/current-view/view-number") == 7 or getprop("sim/current-view/view-number") == 8) {
+	var i = getprop("sim/current-view/view-number");
+	if (i == view.indexof("Stewardess 360 View") or i == view.indexof("Cabin View") or i == view.indexof("Pilot View") or i == view.indexof("Copilot View")) {
 		var wa_heading_rad = hViewNode.getValue() * 0.01745329252;
 		var new_x_position = xViewNode.getValue() - (math.cos(wa_heading_rad) * wa_distance);
 		var new_y_position = yViewNode.getValue() - (math.sin(wa_heading_rad) * wa_distance);
@@ -13,3 +14,4 @@ var walk_about = func(wa_distance) {
 		yViewNode.setValue(new_y_position);
 	}
 }
+

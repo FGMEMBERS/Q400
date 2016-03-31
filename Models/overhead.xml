@@ -19,7 +19,151 @@
         </emission>
     </animation>
         
-        
+        <!--CAUTION PANEL-->
+<!--Test-->
+  
+   <animation>
+    <type>pick</type>
+    <object-name>cautiontest</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/panel/cautiontest</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>cautiontest</object-name>
+        <property>/controls/panel/cautiontest</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -11.88603 </x-m>
+      <z-m>  2.85219 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+<animation>
+      <type>material</type>
+	<object-name>cautions</object-name>
+	<object-name>empty</object-name>
+	<object-name>passdoor</object-name>
+	<object-name>bagdoor</object-name>
+	<object-name>parkbrake</object-name>
+	<object-name>stall</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property><property>/controls/panel/cautiontest</property></condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+<!--Doors-->
+<!--Passenger Doors-->
+<animation>
+      <type>material</type>
+	<object-name>passdoor</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+<or>
+<less-than>
+<property>/sim/model/door-positions/passengerF/position-norm</property>
+<value>1</value>
+</less-than>
+<greater-than>
+<property>/sim/model/door-positions/passengerLH/position-norm</property>
+<value>0</value>
+</greater-than>
+<greater-than>
+<property>/sim/model/door-positions/passengerRH/position-norm</property>
+<value>0</value>
+</greater-than>
+<greater-than>
+<property>/sim/model/door-positions/passengerRF/position-norm</property>
+<value>0</value>
+</greater-than>
+</or>
+</condition>
+        <ambient>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </ambient>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+<!--Cargo Doors-->
+<animation>
+      <type>material</type>
+	<object-name>bagdoor</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+<greater-than>
+<property>/sim/model/door-positions/cargo/position-norm</property>
+<value>0</value>
+</greater-than>
+</condition>
+        <ambient>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </ambient>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+</animation>
+<!--Parking Brake-->
+<animation>
+      <type>material</type>
+	<object-name>parkbrake</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+<property>/controls/gear/brake-parking</property></condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+
+<!--Stall-->
+<animation>
+      <type>material</type>
+	<object-name>stall</object-name>
+      <condition>
+        <and>
+          <property>controls/electric/battery-switch</property>
+          <less-than>
+            <property>velocities/airspeed-kt</property>
+            <value>55</value>
+          </less-than>
+          <not>
+            <property>/gear/gear[0]/wow</property>
+            <property>/gear/gear[1]/wow</property>
+            <property>/gear/gear[2]/wow</property>
+          </not>
+        </and>
+      </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
         <!-- WIP ;)-->
         
         <!--DC CONTROL PANEL-->

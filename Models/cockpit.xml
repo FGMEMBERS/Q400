@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- New document created with EditiX at Fri Jan 15 14:57:31 GMT 2010 -->
-
 <PropertyList>
 <model>
-  <path>Aircraft/Q400/Models/cockpit.ac</path>
+  <path>cockpit.ac</path>
     <name>cockpit</name>
     <offsets>
       <x-m>0.0</x-m>
@@ -20,5 +18,398 @@
   </animation>
 
   </model>
-  
+
+<!--HUD-->
+<animation>
+  <type>pick</type>
+	<object-name>hud.glass</object-name>
+  <action>
+   <button>0</button>
+    <binding>
+     <command>property-toggle</command>
+     <property>/controls/switches/hud</property>
+    </binding>
+   </action>
+  </animation>
+
+    <animation>
+        <type>slider</type>
+        <object-name>hud</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+            <command>property-adjust</command>
+            <property>controls/switches/hud-flip</property>
+            <factor>-0.05</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>Hud Flip: %3d%%</label>
+            <measure-text>Hud Flip: 100%</measure-text>
+            <tooltip-id>hud-flip</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/switches/hud-flip</property>
+          </binding>
+        </hovered>
+    </animation>
+
+<animation>
+	<type>rotate</type>
+	<object-name>hud</object-name>
+	<object-name>hud.glass</object-name>
+	<property>/controls/switches/hud-flip</property>
+	<factor>-65</factor>
+	<center>
+		<x-m>-11.96066</x-m>
+		<y-m>0</y-m>
+		<z-m>2.85956</z-m>
+	</center>
+	<axis>
+		<x>0</x>
+		<y>1</y>
+		<z>0</z>
+	</axis>
+</animation>
+  <!--Animate Throttle Panel-->
+<!--Throttles-->
+
+    <animation>
+        <type>slider</type>
+        <object-name>throttleL</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[0]/throttle</property>
+            <factor>-0.1</factor>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>LH Throttle: %3d%%</label>
+            <measure-text>LH Throttle: 100%</measure-text>
+            <tooltip-id>lh-throttle</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[0]/throttle</property>
+          </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>throttleL</object-name>
+        <property>controls/engines/engine[0]/throttle-fwd</property>
+        <factor>-77.13</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>throttleL</object-name>
+        <property>controls/engines/engine[0]/reverser-position</property>
+        <factor>21.71</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>throttleL</object-name>
+        <property>controls/engines/engine[0]/throttle-rvrs-norunning</property>
+        <factor>26</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>throttleL</object-name>
+        <property>controls/engines/engine[0]/throttle-rvrs</property>
+        <factor>26</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>    
+
+<animation>
+        <type>slider</type>
+        <object-name>throttleR</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+            <command>property-adjust</command>
+            <property>controls/engines/engine[1]/throttle</property>
+            <factor>-0.1</factor>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>RH Throttle: %3d%%</label>
+            <measure-text>RH Throttle: 100%</measure-text>
+            <tooltip-id>rh-throttle</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/engines/engine[1]/throttle</property>
+          </binding>
+        </hovered>
+    </animation>
+<animation>
+        <type>rotate</type>
+        <object-name>throttleR</object-name>
+        <property>controls/engines/engine[1]/throttle-fwd</property>
+        <factor>-77.13</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>throttleR</object-name>
+        <property>controls/engines/engine[1]/reverser-position</property>
+        <factor>21.71</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>throttleR</object-name>
+        <property>controls/engines/engine[1]/throttle-rvrs-norunning</property>
+        <factor>26</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>throttleR</object-name>
+        <property>controls/engines/engine[1]/throttle-rvrs</property>
+        <factor>26</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+<!--Condition Levers-->
+
+    <animation>
+        <type>slider</type>
+        <object-name>conditionL</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+            <command>property-adjust</command>
+        <property>controls/engines/engine[0]/condition</property>
+            <factor>0.1</factor>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>LH Condition: %3d%%</label>
+            <measure-text>LH Condition: 100%</measure-text>
+            <tooltip-id>lh-condition</tooltip-id>
+            <mapping>percent</mapping>
+        <property>controls/engines/engine[0]/condition</property>
+          </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>conditionL</object-name>
+        <property>controls/engines/engine[0]/condition</property>
+        <factor>-125</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <animation>
+        <type>slider</type>
+        <object-name>conditionR</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+            <command>property-adjust</command>
+        <property>controls/engines/engine[1]/condition</property>
+            <factor>0.1</factor>
+            <min>-1</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>RH Condition: %3d%%</label>
+            <measure-text>RH Condition: 100%</measure-text>
+            <tooltip-id>rh-condition</tooltip-id>
+            <mapping>percent</mapping>
+        <property>controls/engines/engine[1]/condition</property>
+          </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>conditionR</object-name>
+        <property>controls/engines/engine[1]/condition</property>
+        <factor>-125</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+<!--Flaps-->
+    <animation>
+        <type>slider</type>
+        <object-name>flapslever</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+          <binding>
+            <command>property-adjust</command>
+        <property>controls/flight/flaps</property>
+            <factor>-0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+        </action>
+        <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>Flaps Lever: %3d%%</label>
+            <measure-text>Flaps Lever: 100%</measure-text>
+            <tooltip-id>flaps-lever</tooltip-id>
+            <mapping>percent</mapping>
+        <property>controls/flight/flaps</property>
+          </binding>
+        </hovered>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>flapslever</object-name>
+        <property>/controls/flight/flaps</property>
+        <factor>70</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+<!--Park/Emergency Brake-->
+    <animation>
+      <type>pick</type>
+        <object-name>emergbrake</object-name>
+      <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+          <property>/controls/gear/brake-parking</property>
+      </binding>
+  </action>
+</animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>emergbrake</object-name>
+        <property>controls/gear/brake-parking-position</property>
+        <factor>85</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
 </PropertyList>

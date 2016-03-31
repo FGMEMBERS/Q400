@@ -1,153 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!-- New document created with EditiX at Fri Jan 15 14:57:31 GMT 2010 -->
-
-<PropertyList><!--
-<model>
-  <path>Aircraft/Q400/Models/panels/glareshield/glareshield.ac</path>
-    <name>center-glareshield</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-
-  </model>
-
-  <model>
-  <path>Aircraft/Q400/Models/panels/glareshield/right-glareshield.ac</path>
-    <name>right-glareshield</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-
-  </model>
-<model>
-  <path>Aircraft/Q400/Models/panels/glareshield/left-glareshield.ac</path>
-    <name>left-glareshield</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-
-  </model>
- <model>
-  <path>Aircraft/Q400/Models/panels/mfds/engine-management-mfd1.xml</path>
-    <name>Engine-Management</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-
-  </model>
-
+<PropertyList>
 
 <model>
-  <path>Aircraft/Q400/Models/panels/radio-control-display-unit/radio-display-controls.xml</path>
-    <name>radio-display-control</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-
+  <path>panels/hud/hud.xml</path>
 </model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/efis/co-pilot-efis.xml</path>
-    <name>efis</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-
-<model>
-  <path>Aircraft/Q400/Models/panels/efis/efis.xml</path>
-    <name>efis</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/fms/fms.ac</path>
-    <name>pilot_fms</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/fms/co-pilot-fms.ac</path>
-    <name>copilot_fms</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/fuel-control/fuel-control.ac</path>
-    <name>fuel-control</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/cvr/cockpit-voice-recorder-panel.ac</path>
-    <name>fuel-control</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/efis/engine-system-control-panel.ac</path>
-    <name>engine-system-control</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/trim-panel/trim-panel.xml</path>
-    <name>trim-panel</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-</model>
-
-<model>
-  <path>Aircraft/Q400/Models/panels/primus660/primus660.ac</path>
-    <name>primus660</name>
-    <offsets>
-      <x-m>0.0</x-m>
-      <y-m>0.0</y-m>
-      <z-m>0.0</z-m>
-    </offsets>
-    </model>-->
-
 <model>
   <path>panels/PFD/PFD3d.xml</path>
     <offsets>
@@ -230,7 +86,7 @@
   <path>panels/enginepanel/enginepanel.ac</path>
 </model>
 <model>
-  <path>panels/ap/ap.ac</path>
+  <path>panels/ap/ap.xml</path>
 </model>
 <!--Engine Instrument-->
 <model>
@@ -250,29 +106,9 @@
 <y-m>1.27788</y-m>
     </offsets>
 </model>
-<!--
-<model>
-  <path>Aircraft/Q400/Models/panels/MFD/ND.xml</path>
-    <name>mfd2</name>
-    <offsets>
-      <x-m>-11.4484</x-m>
-      <y-m>0.5060</y-m>
-      <z-m>2.3177</z-m>
-    </offsets>
-</model>
 
 <model>
-  <path>Aircraft/Q400/Models/panels/MFD/ND.xml</path>
-    <name>mfd1</name>
-    <offsets>
-      <x-m>-11.4484</x-m>
-      <y-m>-0.4581</y-m>
-      <z-m>2.3177</z-m>
-    </offsets>
-</model>-->
-
-<model>
-  <path>Aircraft/Q400/Models/yoke/yoke.xml</path>
+  <path>Aircraft/Q400/Models/panels/yoke/yoke.xml</path>
     <name>yoke</name>
     <offsets>
       <x-m>0</x-m>

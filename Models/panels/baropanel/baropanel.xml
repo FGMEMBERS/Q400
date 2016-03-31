@@ -6,7 +6,8 @@
         
 <animation>
       <type>material</type>
-	<object-name>base</object-name>
+	<object-name>Circle</object-name>
+	<object-name>Circle.001</object-name>
         <condition><property>/controls/lighting/panel-lights</property></condition>
         <emission>
             <red>1</red>
