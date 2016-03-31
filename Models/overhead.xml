@@ -249,7 +249,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/engine/generator</property>
+        <property>/controls/electric/engine/generator</property>
       </binding>
     </action>
   </animation>
@@ -257,7 +257,7 @@
   <animation>
     <type>rotate</type>
     <object-name>dcgen1</object-name>
-        <property>/controls/engine/generator</property>
+        <property>/controls/electric/engine/generator</property>
     <factor>30</factor>
     <center>
       <x-m> -11.62847 </x-m>
@@ -272,7 +272,7 @@
   <animation>
     <type>rotate</type>
     <object-name>gen1</object-name>
-        <property>/controls/engine/generator</property>
+        <property>/controls/electric/engine/generator</property>
     <factor>30</factor>
     <center>
       <x-m> -11.58529 </x-m>
@@ -297,7 +297,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/engine[1]/generator</property>
+        <property>/controls/electric/engine[1]/generator</property>
       </binding>
     </action>
   </animation>
@@ -305,7 +305,7 @@
   <animation>
     <type>rotate</type>
     <object-name>dcgen2</object-name>
-        <property>/controls/engine[1]/generator</property>
+        <property>/controls/electric/engine[1]/generator</property>
     <factor>30</factor>
     <center>
       <x-m> -11.62847 </x-m>
@@ -320,7 +320,7 @@
   <animation>
     <type>rotate</type>
     <object-name>gen2</object-name>
-        <property>/controls/engine[1]/generator</property>
+        <property>/controls/electric/engine[1]/generator</property>
     <factor>30</factor>
     <center>
       <x-m> -11.58529 </x-m>
@@ -455,7 +455,38 @@
     </axis>
   </animation>
   <!--Left Panel-->
+  <!--Landing Lights-->
+   <animation>
+    <type>pick</type>
+    <object-name>landinglightL</object-name>
+    <object-name>landinglightR</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/landing-lights</property>
+      </binding>
+    </action>
+  </animation>
   
+  <animation>
+    <type>rotate</type>
+    <object-name>landinglightL</object-name>
+    <object-name>landinglightR</object-name>
+        <property>/controls/lighting/landing-lights</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -11.93815 </x-m>
+      <z-m>  2.83149 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
   <!--Taxi Lights-->
    <animation>
     <type>pick</type>
@@ -486,7 +517,6 @@
       <z> 0 </z>
     </axis>
   </animation>
-  <!--Landing lights to come-->
   
   <!--PASSENGER SIGNS-->
   <!--Seatbelt signs-->
