@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">SATA International</name>
+            <name type="string">SATA Air Acores</name>
             <texture>Liveries/sata.png</texture>
         </livery>
     </model>

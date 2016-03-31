@@ -96,7 +96,7 @@ livery_update.stop();
       <object-name>flapRO</object-name>
       <object-name>flapLO</object-name>
       <object-name>flapI</object-name>
-      <object-name>Engines</object-name>
+      <object-name>Engine_L</object-name>
       <object-name>hstab</object-name>
       <object-name>elevator</object-name>
       <object-name>vstab</object-name>
@@ -612,91 +612,6 @@ livery_update.stop();
         </axis>
     </animation>
 
-   
-
-
-
-<!-- panel goes here-->
-
-    <animation>
-        <type>rotate</type>
-        <object-name>LHthrottle</object-name>
-        <property>controls/engines/engine[0]/throttle</property>
-        <factor>50.0</factor>
-        <center>
-            <x-m>-11.1299</x-m>
-            <y-m>0.0174</y-m>
-            <z-m>1.9997</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-    <animation>
-        <type>rotate</type>
-        <object-name>RHthrottle</object-name>
-        <property>controls/engines/engine[1]/throttle</property>
-        <factor>50.0</factor>
-        <center>
-            <x-m>-11.1299</x-m>
-            <y-m>0.0277</y-m>
-            <z-m>1.9997</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>-1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-
-<animation>
-        <type>rotate</type>
-        <object-name>flaplever</object-name>
-	<property>surface-positions/flap-pos-norm</property>
-        <factor>40.0</factor>
-        <center>
-            <x-m>-11.1066</x-m>
-            <y-m>0.1514</y-m>
-            <z-m>1.9997</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
- <animation>
-        <type>rotate</type>
-        <object-name>brake</object-name>
-        <property>controls/gear/brake-parking</property>
-        <factor>50</factor>
-        <center>
-            <x-m>-11.1299</x-m>
-            <y-m>-0.0905</y-m>
-            <z-m>1.9997</z-m>
-        </center>
-        <axis>
-            <x>0</x>
-            <y>1</y>
-            <z>0</z>
-        </axis>
-    </animation>
-<animation>
-        <type>pick</type>
-        <object-name>brake</object-name>
-        <action>
-            <button>0</button>
-            <repeatable>true</repeatable>
-            <interval-sec>0.5</interval-sec>
-            <binding>
-            <command>property-toggle</command>
-            <property>controls/gear/brake-parking</property>
-            </binding>
-        </action>
-    </animation>
 
     
 <!-- Gear Animations -->
