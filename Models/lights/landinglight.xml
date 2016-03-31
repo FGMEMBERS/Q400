@@ -59,6 +59,10 @@
 <type>select</type>
 <object-name>flash</object-name>
 <condition>
+<greater-than>
+<property>systems/electrical/batt-volts</property>
+<value>15</value>
+</greater-than>
 <property>controls/lighting/landing-lights</property>
 </condition>
 </animation>

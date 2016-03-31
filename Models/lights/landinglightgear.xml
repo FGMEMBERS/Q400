@@ -76,6 +76,10 @@
 <type>select</type>
 <object-name>flash</object-name>
 <condition>
+<greater-than>
+<property>systems/electrical/batt-volts</property>
+<value>15</value>
+</greater-than>
     <greater-than>
 <property>gear/gear/position-norm</property>
 <value>0.99</value>

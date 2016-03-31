@@ -266,9 +266,17 @@
         <action>
           <binding>
             <command>property-adjust</command>
+        <property>controls/engines/engine[0]/propeller-pitch</property>
+            <factor>0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+            <command>property-adjust</command>
         <property>controls/engines/engine[0]/condition</property>
             <factor>0.1</factor>
-            <min>-1</min>
+            <min>0</min>
             <max>1</max>
             <wrap>0</wrap>
           </binding>
@@ -307,9 +315,17 @@
         <action>
           <binding>
             <command>property-adjust</command>
+        <property>controls/engines/engine[1]/propeller-pitch</property>
+            <factor>0.1</factor>
+            <min>0</min>
+            <max>1</max>
+            <wrap>0</wrap>
+          </binding>
+          <binding>
+            <command>property-adjust</command>
         <property>controls/engines/engine[1]/condition</property>
             <factor>0.1</factor>
-            <min>-1</min>
+            <min>0</min>
             <max>1</max>
             <wrap>0</wrap>
           </binding>
