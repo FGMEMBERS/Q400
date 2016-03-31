@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ########################################
+
+ # DR400-jsbSim by PAF team
+ # April 2012 : Modified by PAF team
+ # http://equipe-flightgear.forumactif.com
+
+##########################################-->
+
+<PropertyList>
+
+   <name>checklists</name>
+
+   <width>600</width>
+   <height>700</height>
+   <modal>false</modal>
+   <draggable>true</draggable>
+   <resizable>false</resizable>
+   
+	<text>
+		<x>280</x>
+		<y>670</y>
+		<label>Check lists</label>
+	</text>
+	
+	<list>
+		<x>10</x>
+		<y>520</y>
+		<width>580</width>
+		<height>150</height>
+		<property>/sim/gui/dialogs/dr400/checklist-title</property>
+		<binding>
+			<command>dialog-apply</command>
+		</binding>
+	</list>
+
+	<text>
+		<x>180</x>
+		<y>480</y>
+		<label>....</label>
+		<property>/sim/gui/dialogs/dr400/checklist-title</property>
+         <live>true</live>
+	</text>
+	
+   <list>
+		<x>10</x>
+		<y>10</y>
+		<width>580</width>
+		<height>460</height>
+        <property>/sim/gui/dialogs/dr400/checklist-titlebis</property>
+	</list>
+
+	<button>
+		<x>574</x>
+		<y>674</y>
+		<width>16</width>
+		<height>16</height>
+		<legend></legend>
+		<binding>
+			<command>dialog-close</command>
+		</binding>
+	</button>
+	
+	<nasal>
+		<open><![CDATA[
+			
+			# Code to populate the combo entries.
+			var lists = cmdarg().getChildren("list");
+			var list1 = lists[0];
+			list1.removeChildren("value");
+			var checklists_titles = props.globals.getNode("/sim/gui/dialogs/dr400/checklists-list/checklists");
+			var i = 0;
+			foreach (var e; checklists_titles.getChildren("checklist")) {
+				var title = e.getChild("title").getValue();
+				list1.getNode("value["~i~"]",1).setValue(sprintf("%i-%s",(i+1),title));
+				i = i + 1;
+			}
+			
+			var load_checklist = func {
+				var number = getprop("/sim/gui/dialogs/dr400/checklist-title");
+				number = substr(number,0,find("-",number));
+				if(number!=""){
+					number = number - 1;
+
+					var list2 = lists[1];
+					list2.removeChildren("value");
+					var checklist = props.globals.getNode("/sim/gui/dialogs/dr400/checklists-list/checklists/checklist["~number~"]");
+					var no_ligne = 1;
+					foreach (var e; checklist.getChildren("line")){
+						var text = e.getChild("text").getValue();
+						var result = e.getChild("result").getValue();
+						var ligne = no_ligne ~ " " ~ text;
+						if(no_ligne<10){
+							ligne = "  " ~ ligne;
+						}
+						
+						var longueur_debut = size(ligne);
+						var longueur_fin = size(result);
+						var points = "........................................................................................................................................................................................................";
+						points = substr(points,0,160 - (longueur_fin+longueur_debut)*2);
+						ligne = ligne ~ points ~ result;
+											
+						list2.getNode("value["~no_ligne~"]",1).setValue(ligne);
+
+						no_ligne = no_ligne + 1;
+					}
+					gui.dialog_update("checklists");
+				}
+			}
+			
+			setlistener("/sim/gui/dialogs/dr400/checklist-title",load_checklist);
+		]]></open>
+	</nasal>
+  </PropertyList>

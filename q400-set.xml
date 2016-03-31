@@ -55,17 +55,13 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
                         <dialog-name>pushback</dialog-name>
                     </binding>
                 </item>
-                <item n="11">
-                    <label>Systems</label>
-                        <name>engine_start</name>
-						<binding>
-							<command>nasal</command>
-							<script>
-							 var systems = gui.Dialog.new("sim/gui/dialogs/systems/dialog", "Aircraft/Q400/Dialogs/enginestart.xml");
-							 systems.open();
-							</script>
-						</binding>
-    </item>
+      <item>
+        <label>Checklists</label>
+	<binding>
+	  <command>dialog-show</command>
+	  <dialog-name>checklists</dialog-name>
+	</binding>
+      </item>
                 <item>
                     <label>Put aircraft on jacks</label>
                     <binding>
@@ -76,6 +72,7 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             </menu>
         </default>
     </menubar>
+    <checklists include="Dialogs/checklists.xml"/>
 
 </sim>
 
