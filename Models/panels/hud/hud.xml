@@ -39,6 +39,7 @@
    <object-name>mach.001</object-name>
    <object-name>mach.002</object-name>
    <object-name>mach.003</object-name>
+   <object-name>mach.004</object-name>
    <object-name>hdgtext</object-name>
    <object-name>hdg100</object-name>
    <object-name>hdg10</object-name>
@@ -141,6 +142,7 @@
    <object-name>mach.001</object-name>
    <object-name>mach.002</object-name>
    <object-name>mach.003</object-name>
+   <object-name>mach.004</object-name>
    <object-name>hdgtext</object-name>
    <object-name>hdg100</object-name>
    <object-name>hdg10</object-name>
