@@ -24,6 +24,36 @@
 				<value>ON</value>
 			</item>
 			<item>
+				<name>For APU</name>
+			</item>
+			<item>
+				<name>APU Master</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>APU Start</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>APU Generator</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>APU Bleed Air</name>
+				<value>As required</value>
+			</item>
+			<item>
+				<name>For EPU</name>
+			</item>
+			<item>
+				<name>EPU</name>
+				<value>Plugged In (via Menu)</value>
+			</item>
+			<item>
+				<name>External Power</name>
+				<value>ON</value>
+			</item>
+			<item>
 				<name>Landing Gear</name>
 				<value>DOWN and three green</value>
 			</item>
