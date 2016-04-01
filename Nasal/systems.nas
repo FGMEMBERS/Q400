@@ -310,6 +310,9 @@ setlistener("/sim/signals/fdm-initialized", func {
     setprop("consumables/fuel/tank[3]/selected",0);
     settimer(update_systems, 2);
     settimer(update_alarms,0);
+    if(getprop("/position/gear-agl-ft") >= 10){
+    setprop("/sim/model/door-positions/passengerF/position-norm", 1);
+}
     });
 
 
@@ -401,6 +404,11 @@ setprop("controls/electric/engine[1]/bus-tie",1);
 setprop("controls/electric/avionics-switch",1);
 setprop("controls/electric/battery-switch",1);
 setprop("controls/electric/inverter-switch",1);
+setprop("controls/APU/master",1);
+setprop("controls/APU/start",1);
+setprop("controls/APU/generator",1);
+setprop("controls/engines/engine[0]/ignition-switch",1);
+setprop("controls/engines/engine[1]/ignition-switch",1);
 setprop("controls/lighting/instrument-lights",1);
 setprop("controls/lighting/landing-lights",1);
 setprop("controls/lighting/landing-lights[1]",1);
@@ -410,14 +418,17 @@ setprop("controls/lighting/strobe/switch",1);
 setprop("controls/lighting/logo-lights",1);
 setprop("controls/engines/engine[0]/condition",1);
 setprop("controls/engines/engine[1]/condition",1);
-setprop("controls/engines/engine[0]/condition-input",1);
-setprop("controls/engines/engine[1]/condition-input",1);
+setprop("controls/engines/engine[0]/condition-lever",1);
+setprop("controls/engines/engine[1]/condition-lever",1);
 setprop("controls/engines/engine[0]/mixture",1);
 setprop("controls/engines/engine[1]/mixture",1);
 setprop("controls/engines/engine[0]/propeller-pitch",1);
 setprop("controls/engines/engine[1]/propeller-pitch",1);
 setprop("engines/engine[0]/running",1);
 setprop("engines/engine[1]/running",1);
+setprop("controls/APU/master",0);
+setprop("controls/APU/start",0);
+setprop("controls/APU/generator",0);
 setprop("controls/electric/RH-AC-bus",1);
 setprop("controls/electric/LH-AC-bus",1);
 setprop("controls/electric/efis/bank[0]",1);
@@ -546,6 +557,11 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
+#Gear Failure System
+if(getprop("/gear/serviceable") == 1){
+setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
+}
+
 if(getprop("/controls/engines/engine/ignition-switch") == 1 and getprop("/systems/electrical/volts") == 28){
 setprop("controls/engines/engine/ignition", 1);
 }else{

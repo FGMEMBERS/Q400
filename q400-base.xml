@@ -151,9 +151,9 @@ DHC8 -400Q by Alex Park Jan 2010
 
     <flaps>
         <setting>0.000</setting>
-        <setting>0.250</setting>
-        <setting>0.500</setting>
-        <setting>0.750</setting>
+        <setting>0.142</setting>
+        <setting>0.284</setting>
+        <setting>0.426</setting>
         <setting>1.000</setting>
     </flaps>
 
@@ -185,7 +185,9 @@ DHC8 -400Q by Alex Park Jan 2010
 
 
 </sim>
-
+<position>
+ <gear-agl-ft>0</gear-agl-ft>
+</position>
 <controls>
         <electric>
             <battery-switch type = "bool">1</battery-switch>
