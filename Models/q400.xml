@@ -4,33 +4,6 @@
 
 <path>q400.ac</path> 
 
-<offsets>
-<z-m>0</z-m>
-<pitch-deg>0</pitch-deg>
-</offsets>
-
-      var self = cmdarg();
-
-      var float_0 = self.getNode("sim/multiplay/generic/float[0]", 1);
-      var float_1 = self.getNode("sim/multiplay/generic/float[1]", 1);
-      var float_2 = self.getNode("sim/multiplay/generic/float[2]", 1);
-      var float_3 = self.getNode("sim/multiplay/generic/float[3]", 1);
-      var float_4 = self.getNode("sim/multiplay/generic/float[4]", 1);
-      var float_5 = self.getNode("sim/multiplay/generic/float[5]", 1);
-
-      var passengerF_door = self.getNode("sim/model/door-positions/passengerF/position-norm", 1);
-      var passengerLH_door = self.getNode("sim/model/door-positions/passengerLH/position-norm", 1);
-      var passengerRH_door = self.getNode("sim/model/door-positions/passengerRH/position-norm", 1);
-      var passengerRF_door = self.getNode("sim/model/door-positions/passengerRF/position-norm", 1);
-      var cargo_door = self.getNode("sim/model/door-positions/cargo/position-norm", 1);
-      var fd_door = self.getNode("sim/model/door-positions/fd/position-norm", 1);
-      
-      passengerF_door.alias(float_0);
-      passengerLH_door.alias(float_1);
-      cargo_door.alias(float_2);
-      passengerRH_door.alias(float_3);
-      passengerRF_door.alias(float_4);
-      fd_door.alias(float_5);
 <nasal>
 <load>
 var livery_update = aircraft.livery_update.new("Aircraft/Q400/Models/Liveries");

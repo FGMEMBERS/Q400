@@ -192,10 +192,10 @@ DHC8 -400Q by Alex Park Jan 2010
             <avionics-switch type = "bool">1</avionics-switch>
             <external-power type = "bool">1</external-power>
             <engine n="0">
-                <generator>true</generator>
+                <generator>false</generator>
             </engine>
             <engine n="1">
-                <generator>true</generator>
+                <generator>false</generator>
             </engine>
             <wipers>
             <switch type ="bool">0</switch>
@@ -217,6 +217,7 @@ DHC8 -400Q by Alex Park Jan 2010
                 <internal-engine-starter>0</internal-engine-starter>
         <fire-test type="bool">0</fire-test>
             <engine n="0">
+                <condition-lever>0</condition-lever>
                 <condition>0</condition>
                 <cutoff>0</cutoff>
                 <mixture>0</mixture>
@@ -225,6 +226,7 @@ DHC8 -400Q by Alex Park Jan 2010
                 <throttle-rvrs type="double">0</throttle-rvrs>
                 </engine>
             <engine n="1">
+                <condition-lever>0</condition-lever>
                 <condition>0</condition>
                 <cutoff>0</cutoff>
                 <mixture>0</mixture>

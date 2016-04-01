@@ -9,6 +9,26 @@ var tanks=[];
 var N1=[0.0,0.0];
 var fuel_cutoff=[0,0];
 
+#APU simulation (try)
+#setlistener("/controls/APU/master", func(v) {
+#	if(v.getValue()){
+#		setlistener("/controls/APU/start", func (a) {
+#			if(a.getValue()){
+#				interpolate("/controls/APU/rpm", 30, 5);
+#				setlistener("/controls/APU/rpm", func(b) {
+#				if(b.getValue() >= 30){
+#				setprop("/systems/electrical/APU-running", true);
+#				setprop("/systems/electrical/APU-volts", 28);
+#				}
+#				})
+#			}
+#		})
+#	}else{setprop("/controls/APU/rpm", 0);
+#	setprop("/systems/electrical/APU-running", false);
+#	setprop("/systems/electrical/APU-volts", 0);
+#	}
+#})
+
 #Throttle Reverser interpolation
 setlistener("/controls/engines/engine/reverser", func(v) {
   if(v.getValue()){
@@ -526,6 +546,39 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
+if(getprop("/controls/engines/engine/ignition-switch") == 1 and getprop("/systems/electrical/volts") == 28){
+setprop("controls/engines/engine/ignition", 1);
+}else{
+setprop("controls/engines/engine/ignition", 0);
+}
+if(getprop("/controls/engines/engine[1]/ignition-switch") == 1 and getprop("/systems/electrical/volts") == 28){
+setprop("controls/engines/engine[1]/ignition", 1);
+}else{
+setprop("controls/engines/engine[1]/ignition", 0);
+}
+#VERY simplified ignition system
+if(getprop("/controls/engines/engine/ignition") == 0){
+setprop("controls/engines/engine/condition", 0);
+}else{
+setprop("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"));
+}
+if(getprop("/controls/engines/engine[1]/ignition") == 0){
+setprop("controls/engines/engine[1]/condition", 0);
+}else{
+setprop("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"));
+}
+#EPU
+if(getprop("/controls/electric/epu-switch")){
+setprop("/controls/electric/power-source", -1);
+}
+#APU
+APUmaster=getprop("/controls/APU/master");
+APUstart=getprop("/controls/APU/start");
+if(APUmaster == 1 and APUstart == 1){setprop("/controls/APU/running", 1)}else{setprop("/controls/APU/running", 0)}
+APUrunning=getprop("/controls/APU/running");
+APUgen=getprop("/controls/APU/generator");
+if(APUrunning == 1 and APUgen == 1){setprop("/controls/APU/power", 1)}else{setprop("/controls/APU/power", 0)}
+
 #Altitude conversion for ap
 setprop("/position/altitude-ft-100", getprop("/position/altitude-ft")*0.01);
 #Thrust reverser, integrated from dhc6

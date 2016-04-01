@@ -215,7 +215,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/electric/external-power</property>
+        <property>/controls/electric/epu-switch</property>
       </binding>
     </action>
   </animation>
@@ -224,7 +224,7 @@
     <type>rotate</type>
     <object-name>extpwr</object-name>
     <object-name>dcextpwr</object-name>
-        <property>/controls/electric/external-power</property>
+        <property>/controls/electric/epu-switch</property>
     <factor>30</factor>
     <center>
       <x-m> -11.62847 </x-m>
@@ -673,7 +673,66 @@
             </binding>
         </action>
     </animation>
+  <!--APU PANEL-->
   
+   <animation>
+    <type>pick</type>
+    <object-name>APUpower</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/APU/master</property>
+      </binding>
+    </action>
+  </animation>
+  
+   <animation>
+    <type>pick</type>
+    <object-name>APUstart</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/APU/start</property>
+      </binding>
+    </action>
+  </animation>
+  
+   <animation>
+    <type>pick</type>
+    <object-name>APUgen</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+<condition>
+        <property>/controls/APU/running</property></condition>
+        <command>property-toggle</command>
+        <property>/controls/APU/generator</property>
+      </binding>
+    </action>
+  </animation>
+  
+   <animation>
+    <type>pick</type>
+    <object-name>APUbleedair</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/APU/bleedair</property>
+      </binding>
+    </action>
+  </animation>
+
     <!--ENGINE START PANEL-->
     
   
@@ -686,7 +745,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/engines/engine/ignition</property>
+        <property>/controls/engines/engine[0]/ignition-switch</property>
       </binding>
     </action>
   </animation>
@@ -694,7 +753,7 @@
   <animation>
     <type>rotate</type>
     <object-name>ignition1</object-name>
-        <property>/controls/engines/engine/ignition</property>
+        <property>/controls/engines/engine[0]/ignition-switch</property>
     <factor>30</factor>
     <center>
       <x-m> -11.8082 </x-m>
@@ -715,7 +774,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/engines/engine[1]/ignition</property>
+        <property>/controls/engines/engine[1]/ignition-switch</property>
       </binding>
     </action>
   </animation>
@@ -723,7 +782,7 @@
   <animation>
     <type>rotate</type>
     <object-name>ignition2</object-name>
-        <property>/controls/engines/engine[1]/ignition</property>
+        <property>/controls/engines/engine[1]/ignition-switch</property>
     <factor>30</factor>
     <center>
       <x-m> -11.8082 </x-m>

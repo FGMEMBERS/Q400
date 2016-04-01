@@ -18,7 +18,35 @@
   </animation>
 
   </model>
-
+<!--Tiller Steering-->
+    <animation>
+        <type>rotate</type>
+        <object-name>tillersteerL</object-name>
+        <property>gear/gear/caster-angle-deg</property>
+        <factor>-0.15</factor>
+		<axis>
+            <x1-m>-11.67347</x1-m>
+            <y1-m>-0.87988</y1-m>
+            <z1-m>1.85555</z1-m>
+            <x2-m>-11.61158</x2-m>
+            <y2-m>-0.87988</y2-m>
+            <z2-m>1.89348</z2-m>
+        </axis>
+    </animation>
+    <animation>
+        <type>rotate</type>
+        <object-name>tillersteerR</object-name>
+        <property>gear/gear/caster-angle-deg</property>
+        <factor>-0.15</factor>
+		<axis>
+            <x1-m>-11.67347</x1-m>
+            <y1-m>0.87988</y1-m>
+            <z1-m>1.85555</z1-m>
+            <x2-m>-11.61158</x2-m>
+            <y2-m>0.87988</y2-m>
+            <z2-m>1.89348</z2-m>
+        </axis>
+    </animation>
 <!--HUD-->
 <animation>
   <type>pick</type>
@@ -274,7 +302,7 @@
           </binding>
           <binding>
             <command>property-adjust</command>
-        <property>controls/engines/engine[0]/condition</property>
+        <property>controls/engines/engine[0]/condition-lever</property>
             <factor>0.1</factor>
             <min>0</min>
             <max>1</max>
@@ -288,14 +316,14 @@
             <measure-text>LH Condition: 100%</measure-text>
             <tooltip-id>lh-condition</tooltip-id>
             <mapping>percent</mapping>
-        <property>controls/engines/engine[0]/condition</property>
+        <property>controls/engines/engine[0]/condition-lever</property>
           </binding>
         </hovered>
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>conditionL</object-name>
-        <property>controls/engines/engine[0]/condition</property>
+        <property>controls/engines/engine[0]/condition-lever</property>
         <factor>-125</factor>
         <center>
             <x-m>-11.88406</x-m>
@@ -323,7 +351,7 @@
           </binding>
           <binding>
             <command>property-adjust</command>
-        <property>controls/engines/engine[1]/condition</property>
+        <property>controls/engines/engine[1]/condition-lever</property>
             <factor>0.1</factor>
             <min>0</min>
             <max>1</max>
@@ -337,14 +365,14 @@
             <measure-text>RH Condition: 100%</measure-text>
             <tooltip-id>rh-condition</tooltip-id>
             <mapping>percent</mapping>
-        <property>controls/engines/engine[1]/condition</property>
+        <property>controls/engines/engine[1]/condition-lever</property>
           </binding>
         </hovered>
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>conditionR</object-name>
-        <property>controls/engines/engine[1]/condition</property>
+        <property>controls/engines/engine[1]/condition-lever</property>
         <factor>-125</factor>
         <center>
             <x-m>-11.88406</x-m>

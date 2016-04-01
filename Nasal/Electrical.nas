@@ -7,6 +7,7 @@ var BattVolts = props.globals.getNode("systems/electrical/batt-volts",1);
 var Volts = props.globals.getNode("/systems/electrical/volts",1);
 var Amps = props.globals.getNode("/systems/electrical/amps",1);
 var EXT  = props.globals.getNode("/controls/electric/external-power",1);
+var APU  = props.globals.getNode("/controls/APU/power",1);
 var switch_list=[];
 var output_list=[];
 var serv_list=[];
@@ -219,6 +220,8 @@ init_switches = func() {
     append(servout_list,"tacan");
     append(serv_list,"instrumentation/turn-indicator/serviceable");
     append(servout_list,"turn-coordinator");
+    append(serv_list,"instrumentation/mk-viii/serviceable");
+    append(servout_list,"mk-viii");
     append(serv_list,"instrumentation/comm/serviceable");
     append(servout_list,"comm");
     append(serv_list,"instrumentation/comm[1]/serviceable");
@@ -247,9 +250,11 @@ update_virtual_bus = func( dt ) {
     BattVolts.setValue(battery_volts);
     var alternator1_volts = alternator1.get_output_volts();
     var alternator2_volts = alternator2.get_output_volts();
+    var apu_volts = 28.0;
+    var APU_plugged = getprop("/controls/APU/power");
     var external_volts = 28.0;
     var power_selector = getprop("controls/electric/power-source");
-    var EXT_plugged = getprop("/sim/model/equipment/ground-services/external-power/enable");
+    var EXT_plugged = getprop("/services/ext-pwr/enable");
 
     load = 0.0;
     bus_volts = 0.0;
@@ -273,6 +278,15 @@ update_virtual_bus = func( dt ) {
         setprop("/controls/electric/external-power", 1);
         } else {
         setprop("/controls/electric/external-power", 0);
+        }
+        if (APU_plugged == 1 and power_selector == -2){
+        setprop("/controls/electric/APU", 1);
+        } else {
+        setprop("/controls/electric/APU", 0);
+        }
+    if ( APU.getBoolValue() and ( apu_volts > bus_volts) ) {
+        power_source = "apu";
+        bus_volts = apu_volts;
         }
     if ( EXT.getBoolValue() and ( external_volts > bus_volts) ) {
         power_source = "external";

@@ -34,7 +34,7 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
  	  <control-setting axis="/controls/gear/gear-down" value="1"/>
     </approach>
 
-    <cruise speed="360" alt="10000" fuel="0.5"> 
+    <cruise speed="320" alt="10000" fuel="0.5"> <!--Intermediate Cruise Speed-->
         <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
@@ -203,13 +203,13 @@ Prop diam: 2.59 m
     <!--Thrust reverser-->
     
 
-    <thruster x="3.589" y="3.980" z="2.921" vx="-1" vy="0" vz="0" thrust="10000">
+    <thruster x="3.589" y="3.980" z="2.921" vx="-1" vy="0" vz="0" thrust="7000">
         <control-input axis="/controls/engines/engine[0]/throttle-rvrs" control="THROTTLE"/>
         <control-output control="THROTTLE" prop="engines/engine[0]/reverse"/>
         <control-speed control="THROTTLE" transition-time="2"/>
     </thruster>
 
-    <thruster x="3.589" y="-3.980" z="2.921" vx="-1" vy="0" vz="0" thrust="10000">
+    <thruster x="3.589" y="-3.980" z="2.921" vx="-1" vy="0" vz="0" thrust="7000">
         <control-input axis="/controls/engines/engine[1]/throttle-rvrs" control="THROTTLE"/>
         <control-output control="THROTTLE" prop="engines/engine[1]/reverse"/>
         <control-speed control="THROTTLE" transition-time="2"/>
