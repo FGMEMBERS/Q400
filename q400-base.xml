@@ -133,7 +133,7 @@ DHC8 -400Q by Alex Park Jan 2010
 
 
     <systems>
-        <electrical>
+	<electrical>
             <path></path>
         </electrical>
         <autopilot>

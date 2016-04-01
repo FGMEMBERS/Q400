@@ -383,15 +383,6 @@ setlistener("/gear/gear[1]/wow", func(gr){
     }else{FHmeter.start();setprop("controls/cabin-door/open",0);}
 },0,0);
 
-setlistener("controls/engines/engine[0]/condition", func(c1){
-    if(c1.getValue() <= 0.01) fuel_cutoff[0]=1 else fuel_cutoff[0]=0;
-    setprop("controls/engines/engine[0]/cutoff",fuel_cutoff[0]);
-},1,0);
-
-setlistener("controls/engines/engine[1]/condition", func(c2){
-    if(c2.getValue() <= 0.01) fuel_cutoff[1]=1 else fuel_cutoff[1]=0;
-    setprop("controls/engines/engine[1]/cutoff",fuel_cutoff[1]);
-},1,0);
 
 
 var Startup = func{
@@ -416,8 +407,6 @@ setprop("controls/lighting/taxi-lights",1);
 setprop("controls/lighting/beacon/switch",1);
 setprop("controls/lighting/strobe/switch",1);
 setprop("controls/lighting/logo-lights",1);
-setprop("controls/engines/engine[0]/condition",1);
-setprop("controls/engines/engine[1]/condition",1);
 setprop("controls/engines/engine[0]/condition-lever",1);
 setprop("controls/engines/engine[1]/condition-lever",1);
 setprop("controls/engines/engine[0]/mixture",1);
@@ -458,8 +447,6 @@ setprop("controls/lighting/strobe/switch",0);
 setprop("controls/lighting/logo-lights",0);
 setprop("controls/engines/engine[0]/cutoff",1);
 setprop("controls/engines/engine[1]/cutoff",1);
-setprop("controls/engines/engine[0]/condition",0);
-setprop("controls/engines/engine[1]/condition",0);
 setprop("controls/engines/engine[0]/condition-input",0);
 setprop("controls/engines/engine[1]/condition-input",0);
 setprop("controls/engines/engine[0]/mixture",0);
@@ -557,21 +544,26 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
+#a bit of nasal for the start ;)
+if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
+setprop("/controls/engines/internal-engine-starter", 0);
+}
 #Gear Failure System
 if(getprop("/gear/serviceable") == 1){
 setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
 }
 
-if(getprop("/controls/engines/engine/ignition-switch") == 1 and getprop("/systems/electrical/volts") == 28){
-setprop("controls/engines/engine/ignition", 1);
-}else{
-setprop("controls/engines/engine/ignition", 0);
-}
-if(getprop("/controls/engines/engine[1]/ignition-switch") == 1 and getprop("/systems/electrical/volts") == 28){
-setprop("controls/engines/engine[1]/ignition", 1);
-}else{
-setprop("controls/engines/engine[1]/ignition", 0);
-}
+    if(getprop("/controls/engines/engine/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
+    setprop("controls/engines/engine/ignition", 1);
+    } else {
+    setprop("controls/engines/engine/ignition", 0);
+    }
+    if(getprop("/controls/engines/engine[1]/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
+    setprop("controls/engines/engine[1]/ignition", 1);
+    }else{
+    setprop("controls/engines/engine[1]/ignition", 0);
+    }
+
 #VERY simplified ignition system
 if(getprop("/controls/engines/engine/ignition") == 0){
 setprop("controls/engines/engine/condition", 0);

@@ -113,7 +113,56 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
         </default>
     </menubar>
     <checklists include="Dialogs/checklists.xml"/>
-
+    <color-set>
+        <white>
+            <r type="float">0.9</r>
+            <g type="float">0.9</g>
+            <b type="float">0.9</b>
+            <a type="float">1.0</a>
+        </white>
+        <red>
+            <r type="float">0.9</r>
+            <g type="float">0.0</g>
+            <b type="float">0.0</b>
+            <a type="float">1.0</a>
+        </red>
+        <yellow>
+            <r type="float">0.9</r>
+            <g type="float">0.9</g>
+            <b type="float">0.0</b>
+            <a type="float">1.0</a>
+        </yellow>
+        <green>
+            <r type="float">0.0</r>
+            <g type="float">0.9</g>
+            <b type="float">0.0</b>
+            <a type="float">1.0</a>
+        </green>
+        <cyan>
+            <r type="float">0.0</r>
+            <g type="float">0.9</g>
+            <b type="float">0.9</b>
+            <a type="float">1.0</a>
+        </cyan>
+        <blue>
+            <r type="float">0.0</r>
+            <g type="float">0.0</g>
+            <b type="float">0.9</b>
+            <a type="float">1.0</a>
+        </blue>
+        <magenta>
+            <r type="float">0.9</r>
+            <g type="float">0.0</g>
+            <b type="float">0.9</b>
+            <a type="float">1.0</a>
+        </magenta>
+        <amber>
+            <r type="float">0.9</r>
+            <g type="float">0.5</g>
+            <b type="float">0.0</b>
+            <a type="float">1.0</a>
+        </amber>
+    </color-set>
 </sim>
 
     <autopilot>
@@ -185,13 +234,22 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
         </gear>
 </controls>
 
-
+<instrumentation>
+	<efis>
+		<serviceable>1</serviceable>
+	</efis>
+    <cdu>
+			<input type="string"/>
+      <serviceable type="bool">1</serviceable>
+      <display>NAVIDENT[0]</display>
+      <ident>
+        <model>Citation X</model>
+      </ident>
+    </cdu>
+   </instrumentation>
 
 
     <nasal>
-				<cdu>
-					<file>Models/panels/CDU/CDU.nas</file>
-				</cdu>
         <ND>
             <file>Models/panels/ND/ND.nas</file>
         </ND>
@@ -199,12 +257,11 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
    <file>Nasal/limits.nas</file>
             <file>Nasal/Flightdirector.nas</file>
             <file>Nasal/liveries.nas</file>
-            <file>Nasal/Electrical.nas</file>
+         <file>Nasal/Electrical.nas</file>
             <file>Nasal/systems.nas</file>
-            <file>Nasal/vhf22.nas</file>
-            <file>Nasal/vir32.nas</file>
-		<file>Nasal/reverse-thrust.nas</file>
-		<file>Nasal/copilot-dual-control.nas</file>
+           <!-- <file>Nasal/vhf22.nas</file>
+            <file>Nasal/vir32.nas</file>-->
+		<!--<file>Nasal/copilot-dual-control.nas</file>-->
 		<!--<file>Nasal/dhc8-400-dual-control.nas</file>
 		<file>Nasal/dual-control-tools.nas</file>-->
 		<file>Nasal/lighting.nas</file>
@@ -218,6 +275,26 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
 <dialogs>
             <file>Nasal/dialogs.nas</file>
         </dialogs>
+				<procedures>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsDB.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsWP.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsTP.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsTransition.nas</file>
+
+				</procedures>
+				<displaypages>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/CduStart.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltPlan.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltList.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltDeparture.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltDestination.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/NavPages.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/Performance.nas</file>
+						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/Progress.nas</file>
+				</displaypages>
+				<cdu>
+						<file>Models/panels/CDU/CDU.nas</file>
+				</cdu>
     </nasal>
 
  

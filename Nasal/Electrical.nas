@@ -146,6 +146,9 @@ var alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator","/eng
 
 #####################################
 setlistener("/sim/signals/fdm-initialized", func {
+    setprop("controls/lighting/efis-norm",0.8);
+    setprop("controls/lighting/cdu",0.6);
+    setprop("controls/lighting/cdu1",0.6);
     BattVolts.setDoubleValue(0);
     init_switches();
     settimer(update_electrical,5);
@@ -206,6 +209,8 @@ init_switches = func() {
 
     append(serv_list,"instrumentation/adf/serviceable");
     append(servout_list,"adf");
+    append(serv_list,"instrumentation/efis/serviceable");
+    append(servout_list,"efis");
     append(serv_list,"instrumentation/dme/serviceable");
     append(servout_list,"dme");
     append(serv_list,"instrumentation/gps/serviceable");

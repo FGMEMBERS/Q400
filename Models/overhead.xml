@@ -688,6 +688,28 @@
       </binding>
     </action>
   </animation>
+<animation>
+      <type>material</type>
+	<object-name>APUpower</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+	  <property>/controls/APU/master</property></condition>
+        <ambient>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </ambient>
+	 <diffuse>
+   <red>0</red>
+   <green>1</green>
+   <blue>0.0</blue>
+  </diffuse>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
   
    <animation>
     <type>pick</type>
@@ -702,6 +724,28 @@
       </binding>
     </action>
   </animation>
+<animation>
+      <type>material</type>
+	<object-name>APUstart</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+	  <property>/controls/APU/start</property></condition>
+        <ambient>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </ambient>
+	 <diffuse>
+   <red>0</red>
+   <green>1</green>
+   <blue>0.0</blue>
+  </diffuse>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
   
    <animation>
     <type>pick</type>
@@ -718,6 +762,28 @@
       </binding>
     </action>
   </animation>
+<animation>
+      <type>material</type>
+	<object-name>APUgen</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+	  <property>/controls/APU/generator</property></condition>
+        <ambient>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </ambient>
+	 <diffuse>
+   <red>0</red>
+   <green>1</green>
+   <blue>0.0</blue>
+  </diffuse>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
   
    <animation>
     <type>pick</type>
@@ -732,7 +798,50 @@
       </binding>
     </action>
   </animation>
-
+<animation>
+      <type>material</type>
+    <object-name>APUbleedair</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+        <property>/controls/APU/bleedair</property></condition>
+        <ambient>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </ambient>
+	 <diffuse>
+   <red>0</red>
+   <green>1</green>
+   <blue>0.0</blue>
+  </diffuse>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+<animation>
+      <type>material</type>
+	<object-name>APUunknown</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+	  <property>/controls/APU/power</property></condition>
+        <ambient>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </ambient>
+	 <diffuse>
+   <red>0</red>
+   <green>1</green>
+   <blue>0.0</blue>
+  </diffuse>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
     <!--ENGINE START PANEL-->
     
   
@@ -803,7 +912,7 @@
             <repeatable>false</repeatable>
             <binding>
             	<command>property-adjust</command>
-		<property>controls/engines/internal-engine-starter</property>
+		<property>controls/engines/internal-engine-starter-selector</property>
                 <step>1</step>
 		<min>-1</min>
 		<max>1</max>
@@ -819,7 +928,7 @@
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>controls/engines/internal-engine-starter</property>
+		<property>controls/engines/internal-engine-starter-selector</property>
         <step>1</step>
         <min>-1</min>
         <max>1</max>
@@ -836,7 +945,7 @@
                 <tooltip-id>starter</tooltip-id>
                 <label>starter: %s</label>
                 <mapping>Starter</mapping>
-                <property>controls/engines/internal-engine-starter</property>
+		<property>controls/engines/internal-engine-starter-selector</property>
             </binding>
         </hovered>
     </animation>
@@ -849,7 +958,7 @@
             <repeatable>false</repeatable>
 	    <binding>
               <command>property-adjust</command>
-	      <property>controls/engines/internal-engine-starter</property>
+		<property>controls/engines/internal-engine-starter-selector</property>
               <step>-1</step>
 	      <min>-1</min>
 	      <max>1</max>
@@ -865,7 +974,7 @@
       <repeatable>true</repeatable>
       <binding>
         <command>property-adjust</command>
-        <property>controls/engines/internal-engine-starter</property>
+		<property>controls/engines/internal-engine-starter-selector</property>
         <step>-1</step>
         <min>-1</min>
         <max>1</max>
@@ -882,14 +991,14 @@
                 <tooltip-id>starter</tooltip-id>
                 <label>starter: %s</label>
                 <mapping>Starter</mapping>
-		<property>controls/engines/internal-engine-starter</property>
+		<property>controls/engines/internal-engine-starter-selector</property>
             </binding>
         </hovered>
     </animation>
     <animation>
         <type>rotate</type>
         <object-name>startselect</object-name>
-	<property>controls/engines/internal-engine-starter</property>
+		<property>controls/engines/internal-engine-starter-selector</property>
         <factor>35.0</factor>
         <center>
             <x-m>-11.8082</x-m>
@@ -903,4 +1012,41 @@
         </axis>
     </animation>
   
+    <animation>
+        <type>pick</type>
+        <object-name>startbtn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+	    <binding>
+              <command>property-assign</command>
+<condition><greater-than><property>systems/electrical/volts</property><value>25</value></greater-than>
+	<equals>
+		<property>controls/engines/internal-engine-starter-selector</property>
+		<value>-1</value>
+	</equals>
+</condition><greater-than><property>systems/electrical/volts</property><value>25</value></greater-than>
+		<property>controls/engines/internal-engine-starter</property>
+		<value>-1</value>
+            </binding>
+	    <binding><condition><greater-than><property>systems/electrical/volts</property><value>25</value></greater-than><equals>
+		<property>controls/engines/internal-engine-starter-selector</property>
+<value>0</value></equals></condition>
+              <command>property-assign</command>
+		<property>controls/engines/internal-engine-starter</property>
+              <value>0</value>
+            </binding>
+	    <binding><condition><greater-than><property>systems/electrical/volts</property><value>25</value></greater-than><equals>
+		<property>controls/engines/internal-engine-starter-selector</property>
+<value>1</value></equals></condition>
+              <command>property-assign</command>
+		<property>controls/engines/internal-engine-starter</property>
+              <value>1</value>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/sound/click</property>
+            </binding>
+        </action>
+</animation>
 </PropertyList>
