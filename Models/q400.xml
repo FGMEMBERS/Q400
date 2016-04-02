@@ -157,7 +157,7 @@ livery_update.stop();
     <path>panels.xml</path>
   </model>
 <model>
-    <path>pedestalrear.ac</path>
+    <path>pedestalrear.xml</path>
   </model>
 
   <!--Doors-->
