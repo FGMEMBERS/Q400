@@ -415,9 +415,6 @@ setprop("controls/engines/engine[0]/propeller-pitch",1);
 setprop("controls/engines/engine[1]/propeller-pitch",1);
 setprop("engines/engine[0]/running",1);
 setprop("engines/engine[1]/running",1);
-setprop("controls/APU/master",0);
-setprop("controls/APU/start",0);
-setprop("controls/APU/generator",0);
 setprop("controls/electric/RH-AC-bus",1);
 setprop("controls/electric/LH-AC-bus",1);
 setprop("controls/electric/efis/bank[0]",1);
@@ -428,6 +425,7 @@ setprop("consumables/fuel/tank[0]/selected",1);
 setprop("consumables/fuel/tank[1]/selected",1);
 setprop("controls/fuel/Raux-switch","auto");
 setprop("controls/fuel/gauge-switch","auxilary");
+print("Engines Started. Please shut off APU manually");
 }
 
 var Shutdown = func{

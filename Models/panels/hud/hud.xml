@@ -2038,8 +2038,8 @@
    <property>orientation/heading-deg[0]</property>
    <center>
      <x-m>0</x-m>
-     <y>0</y>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>1</x>
@@ -2054,8 +2054,8 @@
    <property>instrumentation/nav/radials/target-radial-deg[0]</property>
    <center>
      <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>-1</x>
@@ -2070,8 +2070,8 @@
    <property>orientation/heading-deg[0]</property>
    <center>
      <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>1</x>
@@ -2086,8 +2086,8 @@
    <property>instrumentation/nav/radials/target-radial-deg[0]</property>
    <center>
      <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>-1</x>
@@ -2102,8 +2102,8 @@
    <property>orientation/heading-deg[0]</property>
    <center>
      <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>1</x>
@@ -2118,8 +2118,8 @@
    <property>instrumentation/nav/radials/target-radial-deg[0]</property>
    <center>
      <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>-1</x>
@@ -2180,9 +2180,8 @@
      </entry>
    </interpolation>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>-1.0</x>
@@ -2249,9 +2248,8 @@
    <object-name>vector.002</object-name>
    <property>autopilot/settings/true-heading-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>-1.0</x>
@@ -2265,9 +2263,8 @@
    <object-name>vector.002</object-name>
    <property>orientation/heading-deg[0]</property>
    <center>
-     <x-m>0</x-m>
-     <y-m>0</y-m>
-     <z-m>-0.065</z-m>
+     <y-m>-0.42687</y-m>
+     <z-m>2.61707</z-m>
    </center>
    <axis>
      <x>1.0</x>

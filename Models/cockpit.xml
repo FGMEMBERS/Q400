@@ -390,27 +390,57 @@
     </animation>
 <!--Flaps-->
     <animation>
-        <type>slider</type>
+        <type>pick</type>
         <object-name>flapslever</object-name>
-        <drag-direction>vertical</drag-direction>
         <action>
+	<button>0</button>
+	<repeatable>0</repeatable>
           <binding>
-            <command>property-adjust</command>
+            <command>property-cycle</command>
         <property>controls/flight/flaps</property>
-            <factor>-0.1</factor>
-            <min>0</min>
-            <max>1</max>
-            <wrap>0</wrap>
+            <value>0.142</value>
+            <value>0.284</value>
+            <value>0.426</value>
+            <value>1.000</value>
+       	    <value>0.000</value>
           </binding>
-        </action>
-        <hovered>
+       </action>
+       <hovered>
           <binding>
             <command>set-tooltip</command>
             <label>Flaps Lever: %3d%%</label>
             <measure-text>Flaps Lever: 100%</measure-text>
             <tooltip-id>flaps-lever</tooltip-id>
             <mapping>percent</mapping>
+            <property>controls/flight/flaps</property>
+          </binding>
+        </hovered>
+    </animation>
+<!--Opposite direction-->
+<animation>
+        <type>pick</type>
+        <object-name>flapslever</object-name>
+        <action>
+	<button>1</button>
+	<repeatable>0</repeatable>
+          <binding>
+            <command>property-cycle</command>
         <property>controls/flight/flaps</property>
+            <value>1.000</value>
+            <value>0.426</value>
+            <value>0.284</value>
+            <value>0.142</value>
+       	    <value>0.000</value>
+          </binding>
+       </action>
+       <hovered>
+          <binding>
+            <command>set-tooltip</command>
+            <label>Flaps Lever: %3d%%</label>
+            <measure-text>Flaps Lever: 100%</measure-text>
+            <tooltip-id>flaps-lever</tooltip-id>
+            <mapping>percent</mapping>
+            <property>controls/flight/flaps</property>
           </binding>
         </hovered>
     </animation>
