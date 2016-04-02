@@ -45,43 +45,6 @@
 <pitch-deg>-60</pitch-deg>
     </offsets>
 </model>
-<!--RMUs-->
-<model>
-  <path>panels/RMU/RMU1.xml</path>
-    <offsets>
-<x-m>-11.66</x-m>
-<y-m>-0.19</y-m>
-<z-m>1.884</z-m>
-<pitch-deg>-90</pitch-deg>
-    </offsets>
-</model>
-<model>
-  <path>panels/RMU/RMU-sup1.xml</path>
-    <offsets>
-<x-m>-11.66</x-m>
-<y-m>-0.19</y-m>
-<z-m>1.884</z-m>
-<pitch-deg>-90</pitch-deg>
-    </offsets>
-</model>
-<model>
-  <path>panels/RMU/RMU2.xml</path>
-    <offsets>
-<x-m>-11.66</x-m>
-<y-m>0.19</y-m>
-<z-m>1.884</z-m>
-<pitch-deg>-90</pitch-deg>
-    </offsets>
-</model>
-<model>
-  <path>panels/RMU/RMU-sup2.xml</path>
-    <offsets>
-<x-m>-11.66</x-m>
-<y-m>0.19</y-m>
-<z-m>1.884</z-m>
-<pitch-deg>-90</pitch-deg>
-    </offsets>
-</model>
 <model>
   <path>panels/enginepanel/enginepanel.ac</path>
 </model>
