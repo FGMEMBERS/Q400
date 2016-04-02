@@ -51,6 +51,11 @@
 <model>
   <path>panels/ap/ap.xml</path>
 </model>
+<!--EFIS control panels-->
+<model>
+  <path>panels/EFIScontrol/efiscontrol.ac</path>
+</model>
+
 <!--Engine Instrument-->
 <model>
   <path>panels/ESID/ESID.xml</path>
