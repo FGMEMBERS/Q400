@@ -46,14 +46,7 @@
     </offsets>
 </model>
 <model>
-  <path>panels/enginepanel/enginepanel.ac</path>
-</model>
-<model>
   <path>panels/ap/ap.xml</path>
-</model>
-<!--EFIS control panels-->
-<model>
-  <path>panels/EFIScontrol/efiscontrol.ac</path>
 </model>
 
 <!--Engine Instrument-->
