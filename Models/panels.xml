@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
+<!--Glareshield Panel-->
+<model>
+  <path>panels/glareshieldpanel/glareshieldpanel.xml</path>
+</model>
+
 
 <model>
   <path>panels/hud/hud.xml</path>
@@ -44,10 +49,10 @@
 <z-m>1.95</z-m>
 <pitch-deg>-60</pitch-deg>
     </offsets>
-</model>
+</model><!--
 <model>
   <path>panels/ap/ap.xml</path>
-</model>
+</model>-->
 
 <!--Engine Instrument-->
 <model>

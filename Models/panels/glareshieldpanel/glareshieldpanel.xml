@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="ISO-8859-1"?> 
+
+<PropertyList>
+
+    <path>glareshieldpanel.ac</path>
+
+<!-- FD/AP -->
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>hdg</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("hdg")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>alt</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("alt")</script>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>nav</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("nav")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>vnav</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("vnav")</script>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>appr</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("app")</script>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>vs</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("vs")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>bc</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("bc")</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>stby</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("stby")</script>
+            </binding>
+        </action>
+    </animation>
+
+
+    <animation>
+        <type>pick</type>
+        <object-name>ap</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("ap");</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>yd</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>q400.FD_set_mode("yd");</script>
+            </binding>
+        </action>
+    </animation>
+
+  <animation>
+        <type>knob</type>
+        <object-name>crsL</object-name>
+        <object-name>crsR</object-name>
+        <action>
+                <binding>
+                    <command>property-adjust</command>
+<condition><equals>
+                <property>/autopilot/settings/nav-source</property>
+<value>NAV1</value>
+</equals></condition>
+                    <property>instrumentation/nav/radials/selected-deg</property>
+                    <factor>-1</factor>
+                    <min>0</min>
+                    <max>360</max>
+                    <wrap>1</wrap>
+                </binding>
+                <binding>
+                    <command>property-adjust</command>
+<condition><equals>
+                <property>/autopilot/settings/nav-source</property>
+<value>NAV2</value>
+</equals></condition>
+                    <property>instrumentation/nav[1]/radials/selected-deg</property>
+                    <factor>-1</factor>
+                    <min>0</min>
+                    <max>360</max>
+                    <wrap>1</wrap>
+                </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>navsourceL</object-name>
+        <object-name>navsourceR</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-cycle</command>
+                <property>/autopilot/settings/nav-source</property>
+		<value>NAV1</value>
+		<value>NAV2</value>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>knob</type>
+        <object-name>altknob</object-name>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/autopilot/settings/asel</property>
+                <factor>1</factor>
+                <min>10</min>
+                <max>500</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>altsel</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+                <binding>
+                    <command>property-assign</command>
+                    <property>autopilot/settings/asel</property>
+                    <property>position/altitude-ft-100</property>
+                </binding>
+        </action>
+    </animation>
+  <animation>
+<type>slider</type>
+        <object-name>Cylinder</object-name>
+        <drag-direction>vertical</drag-direction>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <factor>10</factor>
+                <min>-5000</min>
+                <max>5000</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>knob</type>
+        <object-name>hdgL</object-name>
+        <object-name>hdgR</object-name>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/autopilot/settings/heading-bug-deg</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>360</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+    <animation>
+        <type>pick</type>
+        <object-name>hsisel</object-name>
+        <visible>true</visible>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+                <binding>
+                    <command>property-assign</command>
+                <property>/autopilot/settings/heading-bug-deg</property>
+                    <property>/orientation/heading-deg</property>
+                </binding>
+        </action>
+    </animation>
+</PropertyList>
