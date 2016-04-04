@@ -10,7 +10,8 @@
 	<object-name>bases</object-name>
 	<object-name>bases2</object-name>
 	<object-name>scrws</object-name>
-        <condition><property>/controls/lighting/panel-lights</property></condition>
+        <condition><property>/controls/electric/battery-switch</property>
+<property>/controls/lighting/panel-lights</property></condition>
         <emission>
             <red>1</red>
             <green>1</green>
@@ -517,7 +518,168 @@
       <z> 0 </z>
     </axis>
   </animation>
-  
+  <!--WINDSHIELD PANEL-->
+ <!--Heating-->
+  <animation>
+        <type>pick</type>
+        <object-name>windshieldheat</object-name>
+        <action>
+	<button>0</button>
+	<repeatable>0</repeatable>
+            <binding>
+                <command>property-cycle</command>
+                <property>/controls/windshield/heating</property>
+		<value>WARMUP</value>
+		<value>NORM</value>
+                <value>OFF</value>
+            </binding>
+            <binding>
+                <command>property-cycle</command>
+                <property>/controls/windshield/heating-knob</property>
+		<value>1</value>
+		<value>2</value>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+    <type>rotate</type>
+        <object-name>windshieldheat</object-name>
+                <property>/controls/windshield/heating-knob</property>
+ <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -50 </dep></entry>
+      <entry><ind> 2 </ind><dep> -90 </dep></entry>
+    </interpolation>
+		<axis>
+            <x1-m>-11.90109</x1-m>
+            <y1-m>-0.33854</y1-m>
+            <z1-m>2.84798</z1-m>
+            <x2-m>-11.89965</x2-m>
+            <y2-m>-0.33854</y2-m>
+            <z2-m>2.84417</z2-m>
+        </axis>
+  </animation>
+ <!--Wiper-->
+  <animation>
+        <type>pick</type>
+        <object-name>wiper</object-name>
+        <action>
+	<button>0</button>
+	<repeatable>0</repeatable>
+            <binding>
+                <command>property-cycle</command>
+                <property>/controls/windshield/wiper</property>
+		<value>LOW</value>
+		<value>HIGH</value>
+                <value>OFF</value>
+            </binding>
+            <binding>
+                <command>property-cycle</command>
+                <property>/controls/windshield/wiper-knob</property>
+		<value>1</value>
+		<value>2</value>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+    <type>rotate</type>
+        <object-name>wiper</object-name>
+                <property>/controls/windshield/wiper-knob</property>
+ <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -50 </dep></entry>
+      <entry><ind> 2 </ind><dep> -90 </dep></entry>
+    </interpolation>
+		<axis>
+            <x1-m>-11.90109</x1-m>
+            <y1-m>-0.27681</y1-m>
+            <z1-m>2.84798</z1-m>
+            <x2-m>-11.89965</x2-m>
+            <y2-m>-0.27681</y2-m>
+            <z2-m>2.84417</z2-m>
+        </axis>
+  </animation>
+<!--ICE PROTECTION PANEL-->
+<!--Illuminate Lamps-->
+        <animation>
+      <type>material</type>
+	<object-name>icetailL1</object-name>
+	<object-name>icetailL2</object-name>
+	<object-name>icetailR1</object-name>
+	<object-name>icetailR2</object-name>
+	<object-name>icewingL1</object-name>
+	<object-name>icewingL2</object-name>
+	<object-name>icewingL3</object-name>
+	<object-name>icewingL4</object-name>
+	<object-name>icewingR1</object-name>
+	<object-name>icewingR2</object-name>
+	<object-name>icewingR3</object-name>
+	<object-name>icewingR4</object-name>
+	<object-name>icepropLR</object-name>
+	<object-name>icepropLL</object-name>
+	<object-name>icepropRL</object-name>
+	<object-name>icepropRR</object-name>
+        <condition><greater-than>
+                <property>/controls/iceprotection/automodes-knob</property>
+<value>0.5</value>
+</greater-than>
+<greater-than>
+                <property>/systems/electrical/volts</property>
+<value>5</value>
+</greater-than></condition>
+        <emission>
+            <red>0</red>
+            <green>1</green>
+            <blue>0</blue>
+        </emission>
+    </animation>
+<!--Airframe Automatic Modes-->
+  <animation>
+        <type>pick</type>
+        <object-name>airframeauto</object-name>
+        <action>
+	<button>0</button>
+	<repeatable>0</repeatable>
+            <binding>
+                <command>property-cycle</command>
+                <property>/controls/iceprotection/automodes</property>
+		<value>SLOW</value>
+		<value>FAST</value>
+                <value>OFF</value>
+            </binding>
+            <binding>
+                <command>property-cycle</command>
+                <property>/controls/iceprotection/automodes-knob</property>
+		<value>1</value>
+		<value>2</value>
+                <value>0</value>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+    <type>rotate</type>
+        <object-name>airframeauto</object-name>
+                <property>/controls/iceprotection/automodes-knob</property>
+ <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> -50 </dep></entry>
+      <entry><ind> 2 </ind><dep> -90 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -11.72076 </x-m>
+      <z-m> 2.91948 </z-m>
+    </center>
+		<axis>
+            <x1-m>-11.90109</x1-m>
+            <y1-m>-0.33940</y1-m>
+            <z1-m>2.84798</z1-m>
+            <x2-m>-11.89965</x2-m>
+            <y2-m>-0.33940</y2-m>
+            <z2-m>2.84417</z2-m>
+        </axis>
+  </animation>
   <!--PASSENGER SIGNS-->
   <!--Seatbelt signs-->
    <animation>
@@ -841,48 +1003,67 @@
     </axis>    
   </animation>
 
-  <!-- TEXT OSG -->
-  <text>
-    <name>textosg</name>
-    <type type="string">literal</type>
-    <text type="string">ELT</text>
-    <draw-text type="bool">true</draw-text>
-    <font>Helvetica.txf</font>
-    <character-size type="double">0.014</character-size>
-    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
-    <axis-alignment>yz-plane</axis-alignment>
-    <max-height>0.06</max-height>
-    <max-width>0.04</max-width>
-    <font-resolution>
-      <width type="int">64</width>
-      <height type="int">64</height>
-    </font-resolution>
-    <alignment>center-center</alignment>
-    <offsets>
-      <x-m>  0.008 </x-m>
-      <y-m> -0.020 </y-m>
-      <z-m>  0.005 </z-m>
-    </offsets>
-  </text>
-
+<!--Flight Recorder-->
   <animation>
-    <type>material</type>
-    <object-name>textosg</object-name>
-    <emission>
-      <red>   0.8 </red>
-      <green> 0.8 </green>
-      <blue>  0.0 </blue>
-    </emission>
+    <type>pick</type>
+    <object-name>flightrcdr</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable> 
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/flightrcdr/gndtest</property>
+        <value type="bool">true</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/flightrcdr/norm</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/click</property>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+        <property>instrumentation/flightrcdr/gndtest</property>
+          <value type="bool">false</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+        <property>instrumentation/flightrcdr/norm</property>
+          <value type="bool">true</value>
+        </binding>
+      </mod-up>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>elt-test</tooltip-id>
+        <label>Flight Recorder Ground Test: %s</label>
+        <property>instrumentation/flightrcdr/gndtest</property>
+        <mapping>on-off</mapping>
+      </binding>
+    </hovered>
   </animation>
 
   <animation>
-    <type>select</type>
-    <object-name>textosg</object-name>
-    <condition>
-      <property>sim/panel-hotspots</property>
-    </condition>
+    <type>rotate</type>
+    <object-name>flightrcdr</object-name>
+    <factor>-15</factor>
+        <property>instrumentation/flightrcdr/gndtest</property>
+    <center>
+      <x-m>-11.7619</x-m>
+      <z-m>2.90577</z-m>
+    </center>
+    <axis>
+      <x> 0</x>
+      <y>-1</y>
+      <z> 0</z>
+    </axis>    
   </animation>
-
 
   <!--APU PANEL-->
   

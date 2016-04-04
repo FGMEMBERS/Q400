@@ -83,6 +83,18 @@ setlistener("/instrumentation/elt/test", func(n) {
     screen.log.write(help_string);
   }
 });
+#Flight Recorder Test
+setlistener("/instrumentation/flightrcdr/gndtest", func(n) {
+  if(n.getBoolValue()){
+    var lat = getprop("/position/latitude-string");
+    var lon = getprop("/position/longitude-string");
+    var aircraft = getprop("/sim/description");
+    var callsign = getprop("/sim/multiplay/callsign");
+    var help_string = "Testing FlightRecorder: " ~ aircraft ~ " " ~ callsign ~ " at " ~lat~" LAT "~lon~" LON ..... ok";
+    screen.log.write(help_string);
+  }
+});
+
 #Throttle Reverser interpolation
 setlistener("/controls/engines/engine/reverser", func(v) {
   if(v.getValue()){
