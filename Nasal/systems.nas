@@ -28,7 +28,61 @@ var fuel_cutoff=[0,0];
 #	setprop("/systems/electrical/APU-volts", 0);
 #	}
 #})
+############################################
+# ELT System from Cessna337
+# Authors: Pavel Cueto, with A LOT of collaboration from Thorsten and AndersG
+# Adaptation by Clément de l'Hamaide and Daniel Dubreuil for DR400-dauphin
+# Adaption by D-ECHO for Q400
+############################################
 
+var eltmsg = func {
+  var lat = getprop("/position/latitude-string");
+  var lon = getprop("/position/longitude-string");
+  var aircraft = getprop("/sim/description");
+  var callsign = getprop("/sim/multiplay/callsign");
+
+  if(getprop("/sim/damaged")){
+     if(getprop("/instrumentation/elt/armed")) {
+        var help_string = "" ~ aircraft ~ " " ~ callsign ~ "  DAMAGED, requesting SAR service";
+        screen.log.write(help_string);
+      }
+    }
+  
+    if(getprop("/sim/crashed")){
+      if(getprop("/instrumentation/elt/armed")) {
+        var help_string = "ELT AutoMessage: " ~ aircraft ~ " " ~ callsign ~ " at " ~lat~" LAT "~lon~" LON, *** CRASHED ***";
+        setprop("/sim/multiplay/chat", help_string);
+        setprop("/sim/freeze/clock", 1);
+        setprop("/sim/freeze/master", 1);
+        setprop("/sim/crashed", 0);
+        screen.log.write("Press p to resume");
+      }
+    }
+
+  settimer(eltmsg, 0);  
+}
+
+setlistener("/instrumentation/elt/on", func(n) {
+  if(n.getBoolValue()){
+    var lat = getprop("/position/latitude-string");
+    var lon = getprop("/position/longitude-string");
+    var aircraft = getprop("/sim/description");
+    var callsign = getprop("/sim/multiplay/callsign");
+    var help_string = "ELT AutoMessage: " ~ aircraft ~ " " ~ callsign ~ " at " ~lat~" LAT "~lon~" LON, MAYDAY, MAYDAY, MAYDAY";
+    setprop("/sim/multiplay/chat", help_string);
+  }
+});
+  
+setlistener("/instrumentation/elt/test", func(n) {
+  if(n.getBoolValue()){
+    var lat = getprop("/position/latitude-string");
+    var lon = getprop("/position/longitude-string");
+    var aircraft = getprop("/sim/description");
+    var callsign = getprop("/sim/multiplay/callsign");
+    var help_string = "Testing ELT: " ~ aircraft ~ " " ~ callsign ~ " at " ~lat~" LAT "~lon~" LON";
+    screen.log.write(help_string);
+  }
+});
 #Throttle Reverser interpolation
 setlistener("/controls/engines/engine/reverser", func(v) {
   if(v.getValue()){

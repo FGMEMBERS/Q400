@@ -235,6 +235,11 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
 </controls>
 
 <instrumentation>
+    <elt>
+      <on type="bool">0</on>
+      <armed type="bool">1</armed>
+      <test type="bool">0</test>
+    </elt>
 	<efis>
 		<serviceable>1</serviceable>
 	</efis>

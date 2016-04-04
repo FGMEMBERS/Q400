@@ -673,6 +673,217 @@
             </binding>
         </action>
     </animation>
+<!--ELT-->
+  <animation>
+    <type>pick</type>
+    <object-name>SwitchUp</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/elt/armed</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>instrumentation/elt/on</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/click</property>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>elt-switch</tooltip-id>
+        <label>ELT: %s</label>
+        <property>instrumentation/elt/on</property>
+        <mapping>nasal</mapping>
+        <script>
+          var m = getprop("/instrumentation/elt/on");
+          if ( m ) return 'ON';
+          return 'ARMED';
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>elt</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable> 
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/elt/test</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/elt/armed</property>
+        <value type="bool">true</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/elt/on</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/click</property>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/instrumentation/elt/test</property>
+          <value type="bool">false</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/elt/armed</property>
+          <value type="bool">true</value>
+        </binding>
+      </mod-up>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>elt-test</tooltip-id>
+        <label>ELT test: %s</label>
+        <property>instrumentation/elt/test</property>
+        <mapping>on-off</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>SwitchDown</object-name>
+    <visible>false</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable> 
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/elt/test</property>
+        <value type="bool">true</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/elt/armed</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-assign</command>
+        <property>instrumentation/elt/on</property>
+        <value type="bool">false</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>sim/model/click</property>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/instrumentation/elt/test</property>
+          <value type="bool">false</value>
+        </binding>
+        <binding>
+          <command>property-assign</command>
+          <property>instrumentation/elt/armed</property>
+          <value type="bool">true</value>
+        </binding>
+      </mod-up>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>elt-test</tooltip-id>
+        <label>ELT test: %s</label>
+        <property>instrumentation/elt/test</property>
+        <mapping>on-off</mapping>
+      </binding>
+    </hovered>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>elt</object-name>
+    <factor>-15</factor>
+    <property>instrumentation/elt/test</property>
+    <center>
+      <x-m>-11.7619</x-m>
+      <z-m>2.90577</z-m>
+    </center>
+    <axis>
+      <x> 0</x>
+      <y>-1</y>
+      <z> 0</z>
+    </axis>    
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>elt</object-name>
+    <property>instrumentation/elt/on</property>
+    <factor>15</factor>
+    <center>
+      <x-m>-11.7619</x-m>
+      <z-m>2.90577</z-m>
+    </center>
+    <axis>
+      <x> 0</x>
+      <y>-1</y>
+      <z> 0</z>
+    </axis>    
+  </animation>
+
+  <!-- TEXT OSG -->
+  <text>
+    <name>textosg</name>
+    <type type="string">literal</type>
+    <text type="string">ELT</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.014</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.06</max-height>
+    <max-width>0.04</max-width>
+    <font-resolution>
+      <width type="int">64</width>
+      <height type="int">64</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m>  0.008 </x-m>
+      <y-m> -0.020 </y-m>
+      <z-m>  0.005 </z-m>
+    </offsets>
+  </text>
+
+  <animation>
+    <type>material</type>
+    <object-name>textosg</object-name>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>textosg</object-name>
+    <condition>
+      <property>sim/panel-hotspots</property>
+    </condition>
+  </animation>
+
+
   <!--APU PANEL-->
   
    <animation>
