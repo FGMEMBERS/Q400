@@ -30,7 +30,7 @@ var navLight = aircraft.light.new("/sim/model/lights/nav-lights", [0], "/control
 var landingLightL = aircraft.light.new("/sim/model/lights/landing-light[0]", [0], "/controls/lighting/landing-light[0]");
 var landingLightR = aircraft.light.new("/sim/model/lights/landing-light[1]", [0], "/controls/lighting/landing-light[1]");
 var taxiLight = aircraft.light.new("/sim/model/lights/taxi-lights", [0], "/controls/lighting/taxi-lights");
-var strobeLight = aircraft.light.new("/sim/model/lights/strobe", [0.08, 2.5], "/controls/lighting/strobe");
+var strobeLight = aircraft.light.new("/sim/model/lights/strobe", [0.08, 2.5], "/controls/lighting/strobe-lights");
 var beaconLight = aircraft.light.new("/sim/model/lights/beacon", [0.08, 0.08, 0.08, 2.5], "/controls/lighting/beacon");
 
 

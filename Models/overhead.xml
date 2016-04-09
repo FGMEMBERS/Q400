@@ -366,6 +366,7 @@
     </axis>
   </animation>
   <!--A/COL lights-->
+<!--Red-->
    <animation>
     <type>pick</type>
     <object-name>ACOLlights</object-name>
@@ -373,6 +374,46 @@
     <action>
       <button>0</button>
       <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/lighting/strobe-lights</property>
+	<value>0</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/beacon</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>ACOLlights</object-name>
+        <property>/controls/lighting/beacon</property>
+    <factor>-30</factor>
+    <center>
+      <x-m> -11.93815 </x-m>
+      <z-m>  2.83149 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+<!--White-->
+   <animation>
+    <type>pick</type>
+    <object-name>ACOLlights</object-name>
+    <visible>true</visible>
+    <action>
+      <button>1</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-assign</command>
+        <property>/controls/lighting/beacon</property>
+	<value>0</value>
+      </binding>
       <binding>
         <command>property-toggle</command>
         <property>/controls/lighting/strobe-lights</property>
@@ -384,7 +425,7 @@
     <type>rotate</type>
     <object-name>ACOLlights</object-name>
         <property>/controls/lighting/strobe-lights</property>
-    <factor>-30</factor>
+    <factor>30</factor>
     <center>
       <x-m> -11.93815 </x-m>
       <z-m>  2.83149 </z-m>

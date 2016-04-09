@@ -28,6 +28,10 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
+	<greater-than>
+	<property>/systems/electrical/volts</property>
+	<value>15</value>
+	</greater-than>
       <property>/sim/model/lights/beacon/state</property>
     </condition>
   </animation>

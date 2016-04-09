@@ -164,6 +164,29 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
         </amber>
     </color-set>
         <tutorials include="Tutorials/tutorials.xml"/>
+    <multiplay>
+        <generic>
+            <string n="0" alias="/sim/aero"/>
+            <string n="1" alias="/sim/multiplay/callsign"/>
+            <int n="0" alias="/sim/model/blunt-nose"/>
+            <int n="1" alias="/sim/model/display-callsign"/>
+
+            <int n="9" alias="/sim/model/lights/nav-lights/state"/>
+            <int n="10" alias="/sim/model/lights/landing-light[0]/state"/>
+            <int n="11" alias="/sim/model/lights/landing-light[1]/state"/>
+            <int n="12" alias="/sim/model/lights/taxi-lights/state"/>
+            <int n="13" alias="/sim/model/lights/strobe/state"/>
+            <int n="14" alias="/sim/model/lights/beacon/state"/>
+
+            <float n="3" alias="/systems/electrical/outputs/nav-lights">       0 </float>
+            <float n="4" alias="/systems/electrical/outputs/landing-light[0]"> 0 </float>
+            <float n="5" alias="/systems/electrical/outputs/landing-light[1]"> 0 </float>
+            <float n="6" alias="/systems/electrical/outputs/taxi-lights">      0 </float>
+            <float n="7" alias="/systems/electrical/outputs/strobe">           0 </float>
+            <float n="8" alias="/systems/electrical/outputs/beacon">           0 </float>
+            <float n="9" alias="/systems/electrical/volts">                    0 </float>
+        </generic>
+    </multiplay>
 </sim>
 
     <autopilot>

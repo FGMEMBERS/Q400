@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+  <name>shaders</name>
+  <inherits-from>/Effects/model-combined-deferred</inherits-from>
+  <parameters>
+	<condition><use>/controls/lighting/logo-lights</use></condition>
+    <lightmap-enabled type="int">1</lightmap-enabled>
+    <texture n="3">
+      <image>../Models/lightmap.png</image>
+    </texture>
+  </parameters>
+</PropertyList>
+

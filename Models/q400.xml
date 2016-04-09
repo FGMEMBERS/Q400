@@ -19,6 +19,37 @@ livery_update.stop();
       fd_door.unalias();
 </unload>
 </nasal>
+<!--Landing Lights Lightmap-->
+<effect>
+		<name>Landing lightmap</name>
+		<inherits-from>Effects/lightmap</inherits-from>
+		<parameters>
+			<texture n="1">
+				<image>Aircraft/Q400/Models/lightmap.png</image>
+			</texture>
+			<condition>
+				<use>/controls/lighting/landing-lights</use>
+			</condition>
+		</parameters>
+<object-name>Engine_L</object-name>
+</effect>
+<!--LOGO LIGHTMAP-->
+<effect>
+		<name>Logo lightmap</name>
+		<inherits-from>Effects/lightmap</inherits-from>
+		<parameters>
+			<texture n="1">
+				<image>Aircraft/Q400/Models/lightmap.png</image>
+			</texture>
+			<condition>
+				<use>/controls/lighting/logo-lights</use>
+			</condition>
+		</parameters>
+<object-name>vstab</object-name>
+<object-name>rudder</object-name>
+      <object-name>hstab</object-name>
+      <object-name>elevator</object-name>
+</effect>
 
 <effect>
     <inherits-from>Effects/reflect</inherits-from>
@@ -29,11 +60,6 @@ livery_update.stop();
       <object-name>flapRO</object-name>
       <object-name>flapLO</object-name>
       <object-name>flapI</object-name>
-      <object-name>Engines</object-name>
-      <object-name>hstab</object-name>
-      <object-name>elevator</object-name>
-      <object-name>vstab</object-name>
-      <object-name>rudder</object-name>
       <object-name>doorF</object-name>
       <object-name>doorLH</object-name>
       <object-name>doorRF</object-name>
@@ -1240,30 +1266,29 @@ livery_update.stop();
 </offsets>
 </model>
 
-
+<!--A/COL lights are red and white available, we use beacon for red and strobe for white-->
+<!--Wings-->
 <model>
-<path>Aircraft/Q400/Models/lights/beacon.xml</path>
-<name>flashtop</name>     
-<offsets>
-<x-m>16.1446</x-m>
-<y-m>0.000</y-m>
-<z-m>8.3171</z-m>   
-</offsets>
-</model>
-
-
-<model>
-<path>Aircraft/Q400/Models/lights/strobe.xml</path>
+<path>lights/strobe.xml</path>
 <name>strobeRHW</name>     
 <offsets>
 <x-m>0.7125</x-m>
 <y-m>14.2759</y-m>
-<z-m>4.2177</z-m>    
+<z-m>4.2177</z-m>   
+</offsets>
+</model>
+<model>
+<path>lights/beacon.xml</path>
+<name>strobeRHW</name>     
+<offsets>
+<x-m>0.7125</x-m>
+<y-m>14.2759</y-m>
+<z-m>4.2177</z-m>   
 </offsets>
 </model>
 
 <model>
-<path>Aircraft/Q400/Models/lights/strobe.xml</path>
+<path>lights/strobe.xml</path>
 <name>strobeLHW</name>     
 <offsets>
 <x-m>0.7125</x-m>
@@ -1271,18 +1296,71 @@ livery_update.stop();
 <z-m>4.2177</z-m>   
 </offsets>
 </model>
-
 <model>
-<path>Aircraft/Q400/Models/lights/strobe.xml</path>
-<name>strobelower</name>     
+<path>lights/beacon.xml</path>
+<name>strobeLHW</name>     
 <offsets>
-<x-m>-3.4541</x-m>
-<y-m>0</y-m>
-<z-m>1.0133</z-m>   
+<x-m>0.7125</x-m>
+<y-m>-14.2759</y-m>
+<z-m>4.2177</z-m>  
 </offsets>
 </model>
-
-
-
+<!--Tail top-->
+<model>
+<path>lights/strobe.xml</path>
+<name>flashtopwhite</name>     
+<offsets>
+<x-m>16.18368</x-m>
+<y-m>0.000</y-m>
+<z-m>8.3</z-m>   
+</offsets>
+</model>
+<model>
+<path>lights/beacon.xml</path>
+<name>flashtopred</name>     
+<offsets>
+<x-m>16.18368</x-m>
+<y-m>0.000</y-m>
+<z-m>8.3</z-m>   
+</offsets>
+</model>
+<!--Fuselage top-->
+<model>
+<path>lights/strobe.xml</path>
+<name>fltopwhite</name>     
+<offsets>
+<x-m>-0.44037</x-m>
+<y-m>0.000</y-m>
+<z-m>3.9</z-m>   
+</offsets>
+</model>
+<model>
+<path>lights/beacon.xml</path>
+<name>fltopred</name>     
+<offsets>
+<x-m>-0.44037</x-m>
+<y-m>0.000</y-m>
+<z-m>3.9</z-m>      
+</offsets>
+</model>
+<!--Fuselage bottom-->
+<model>
+<path>lights/strobe.xml</path>
+<name>flbtmwhite</name>     
+<offsets>
+<x-m>-0.27464</x-m>
+<y-m>0.000</y-m>
+<z-m>0.865</z-m>  
+</offsets>
+</model>
+<model>
+<path>lights/beacon.xml</path>
+<name>flbtmred</name>     
+<offsets>
+<x-m>-0.27464</x-m>
+<y-m>0.000</y-m>
+<z-m>0.865</z-m>      
+</offsets>
+</model>
 
 </PropertyList>
