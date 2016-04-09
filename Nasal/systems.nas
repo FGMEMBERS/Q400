@@ -609,7 +609,7 @@ var update_engine = func(eng){
 
 var update_systems = func {
 #hide ALS landing light from the outside
-if(getprop("/sim/current-view/internal") == 1){
+if(getprop("/sim/current-view/internal") == 1 and getprop("/systems/electrical/volts") >= 15 ){
 setprop("/sim/rendering/als-secondary-lights/use-landing-light", getprop("/controls/lighting/landing-lights"));
 }else{
 setprop("/sim/rendering/als-secondary-lights/use-landing-light", 0);

@@ -24,7 +24,6 @@ DHC8 -400Q by Alex Park Jan 2010
 
 
     <view n="0">
-        <internal archive="y">true</internal>
         <name>Cockpit</name>
         <type>lookfrom</type>
         <internal type="bool">true</internal>
@@ -35,19 +34,7 @@ DHC8 -400Q by Alex Park Jan 2010
             <z-offset-m type="double">-11.4083</z-offset-m>
             <pitch-offset-deg>-14</pitch-offset-deg>
         </config>
-    </view>    <view n="0">
-        <internal archive="y">true</internal>
-        <name>Copilot View</name>
-        <type>lookfrom</type>
-        <internal type="bool">true</internal>
-        <config>
-            <default-field-of-view-deg>90</default-field-of-view-deg>
-            <x-offset-m type="double">0.4577</x-offset-m>
-            <y-offset-m type="double">2.682</y-offset-m>
-            <z-offset-m type="double">-11.4083</z-offset-m>
-            <pitch-offset-deg>-14</pitch-offset-deg>
-        </config>
-    </view>
+    </view>  
   <view n="101">
     <name>Cabin View</name>
     <type>lookfrom</type>
@@ -104,7 +91,36 @@ DHC8 -400Q by Alex Park Jan 2010
     <dynamic>
       <enabled type="bool" userarchive="y">false</enabled>
     </dynamic>
-  </view>
+  </view> 
+ <view n="103">
+        <name>Copilot View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <config>
+      <from-model type="bool">true</from-model>
+      <from-model-idx type="int">0</from-model-idx>
+      <ground-level-nearplane-m type="double">0.5</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">80.0</default-field-of-view-deg>
+      <default-pitch-deg type="double">0</default-pitch-deg>
+      <default-heading-deg type="double">0</default-heading-deg>
+      <front-direction-deg type="double">0</front-direction-deg>
+      <front-left-direction-deg type="double">45</front-left-direction-deg>
+      <left-direction-deg type="double">90</left-direction-deg>
+      <back-left-direction-deg type="double">135</back-left-direction-deg>
+      <back-direction-deg type="double">180</back-direction-deg>
+      <back-right-direction-deg type="double">225</back-right-direction-deg>
+      <right-direction-deg type="double">270</right-direction-deg>
+      <front-right-direction-deg type="double">315</front-right-direction-deg>
+            <default-field-of-view-deg>90</default-field-of-view-deg>
+            <x-offset-m type="double">0.4577</x-offset-m>
+            <y-offset-m type="double">2.682</y-offset-m>
+            <z-offset-m type="double">-11.4083</z-offset-m>
+            <pitch-offset-deg>-14</pitch-offset-deg>
+        </config>
+    <dynamic>
+      <enabled type="bool" userarchive="y">false</enabled>
+    </dynamic>
+    </view>
 
 <view n="1">
   <config>
