@@ -1,0 +1,991 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+    <name>Start Up</name>
+
+    <description>
+This tutorial will show you how to start the engines off the Bombardier Q400 using the API.
+    </description>
+
+    <audio-dir>Tutorials/startup</audio-dir>
+
+    <init>
+    </init>
+
+    <step>
+        <set>
+            <property>/controls/gear/brake-parking</property>
+            <value>true</value>
+        </set>
+        <set>
+            <property>/controls/flight/flaps</property>
+            <value>0.0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine/ignition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[1]/ignition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine/starter</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[1]/starter</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine/condition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/controls/engines/engine[1]/condition</property>
+            <value>0</value>
+        </set>
+        <set>
+            <property>/engines/engine/running</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/engines/engine[1]/running</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/consumables/fuel/tank[0]/selected</property>
+            <value>true</value>
+        </set>
+        <set>
+            <property>/consumables/fuel/tank[1]/selected</property>
+            <value>true</value>
+        </set>
+        <set>
+            <property>/controls/switches/master-avionics</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/controls/electric/battery-switch</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/controls/lighting/taxi-light</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/controls/lighting/landing-lights</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/controls/lighting/nav-lights</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/controls/lighting/beacon</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/controls/lighting/strobe</property>
+            <value>false</value>
+        </set>
+        <set>
+            <property>/controls/lighting/instruments-norm</property>
+            <value>0</value>
+        </set>
+    	<set>
+            <property>/instrumentation/doors/passengerFL/position-norm</property>
+            <value>0</value>
+        </set>
+        <message>Now, you'll be showed how to start the engines.</message>
+        <view>
+            <heading-offset-deg>-20</heading-offset-deg>
+            <pitch-offset-deg>0</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>80</field-of-view>
+        </view>
+        <wait>3</wait>
+    </step>
+
+    <step>
+        <message>Verify that the parking brake is still set.</message>
+        <view>
+            <heading-offset-deg>-45</heading-offset-deg>
+            <pitch-offset-deg>-41.9</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>50.1</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3092</x-m>
+            <y-m>-0.1992</y-m>
+            <z-m>-0.3284</z-m>
+            <scale>3.4667</scale>
+        </marker>
+        <error>
+            <message>Set the parking brake.</message>
+            <condition>
+                <not>
+                    <property>controls/gear/brake-parking</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                    <property>controls/gear/brake-parking</property>
+            </condition>
+        </exit>
+    </step>
+
+
+    <step>
+        <message>Switch on the batteries.</message>
+        <view>
+            <heading-offset-deg>-29.3</heading-offset-deg>
+            <pitch-offset-deg>45</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>48.4</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3198</x-m>
+            <y-m>-0.4298</y-m>
+            <z-m>-0.2587</z-m>
+            <scale>0.5868</scale>
+        </marker>
+        <error>
+            <message>Please switch the batteries on!</message>
+            <condition><not>
+                    <property>/controls/electric/battery-switch</property></not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                    <property>/controls/electric/battery-switch</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Smoking is not allowed inside the aircraft - switch the "No Smoking"-Signs on</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>10.861</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>14</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.2769</x-m>
+            <y-m>-0.0917</y-m>
+            <z-m>-0.1959</z-m>
+            <scale>0.5868</scale>
+        </marker>
+        <error>
+            <message>Switch the no smoking signs on!</message>
+            <condition><not>
+        <property>/controls/cabin/nosmoking</property></not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+        <property>/controls/cabin/nosmoking</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Next, test the caution panel: Switch on caution test</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>10.861</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>14</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.2769</x-m>
+            <y-m>-0.0917</y-m>
+            <z-m>-0.1959</z-m>
+            <scale>0.5868</scale>
+        </marker>
+        <error>
+            <message>Switch caution test to on!</message>
+            <condition><not>
+        <property>/controls/panel/cautiontest</property></not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+        <property>/controls/panel/cautiontest</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Now the caution lights should be emitted.</message>
+        <view>
+            <heading-offset-deg>-41</heading-offset-deg>
+            <pitch-offset-deg>7.946</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>30</field-of-view>
+        </view>
+
+        <exit>
+            <condition>
+        <property>/controls/panel/cautiontest</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch the caution test off again.</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>10.861</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>14</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3342</x-m>
+            <y-m>-0.0027</y-m>
+            <z-m>-0.2289</z-m>
+            <scale>3.1156</scale>
+        </marker>
+
+        <error>
+            <message>Please switch the caution test off!</message>
+            <condition>
+        <property>/controls/panel/cautiontest</property>
+            </condition>
+        </error>
+
+        <exit>
+            <condition><not>
+        <property>/controls/panel/cautiontest</property></not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Passengers shall better be seated and secured, so switch on the seatbelts sign</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>10.861</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>14</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.2769</x-m>
+            <y-m>-0.0917</y-m>
+            <z-m>-0.1959</z-m>
+            <scale>0.5868</scale>
+        </marker>
+        <error>
+            <message>Switch the seatbelt signs on!</message>
+            <condition><not>
+        <property>/controls/cabin/seatbelts</property></not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+        <property>/controls/cabin/seatbelts</property>
+            </condition>
+        </exit>
+    </step>
+    <step>
+        <message>After this, we go to the APU panel and switch on the APU.</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>18.635</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>16.3</field-of-view>
+        </view>
+
+        <exit>
+        </exit>
+    </step>
+    <step>
+        <message>Turn the APU master on.</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>18.635</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>16.3</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3000</x-m>
+            <y-m>-0.3858</y-m>
+            <z-m>-0.1917</z-m>
+            <scale>1.9333</scale>
+        </marker>
+        <error>
+            <message>Click the APU master button to turn it on.</message>
+            <condition>
+                <not>
+                    <property>/controls/APU/master</property>
+                </not>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                    <property>/controls/APU/master</property>
+            </condition>
+        </exit>
+    </step>
+    <step>
+        <message>Start the APU by clicking the START button</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>18.635</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>16.3</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3000</x-m>
+            <y-m>-0.3858</y-m>
+            <z-m>-0.1917</z-m>
+            <scale>1.9333</scale>
+        </marker>
+        <error>
+            <message>Click the start button to start the APU.</message>
+            <condition>
+                <not>
+                    <property>/controls/APU/start</property>
+                </not>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                    <property>/controls/APU/start</property>
+            </condition>
+        </exit>
+    </step>
+    <step>
+        <message>Now, we'll finally need to switch on the generator</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>18.635</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>16.3</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3000</x-m>
+            <y-m>-0.3858</y-m>
+            <z-m>-0.1917</z-m>
+            <scale>1.9333</scale>
+        </marker>
+        <error>
+            <message>Click the GEN button to switch on the APU generator.</message>
+            <condition>
+                <not>
+                    <property>/controls/APU/generator</property>
+                </not>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                    <property>/controls/APU/generator</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>We are almost ready for the engine startup. For security reasons, the A/COL light now has to be on.</message>
+        <view>
+            <heading-offset-deg>-50</heading-offset-deg>
+            <pitch-offset-deg>11.02</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>15</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3579</x-m>
+            <y-m>-0.1537</y-m>
+            <z-m>-0.2653</z-m>
+            <scale>1.0992</scale>
+        </marker>
+        <error>
+            <message>You have to warn everyone that you're about to start the engine so switch on the A/COL light now!</message>
+            <condition>
+                <not>
+                    <property>/controls/lighting/strobe-lights</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                    <property>/controls/lighting/strobe-lights</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>A final visual check has to be done to verify nobody is in the propeller area.</message>
+        <wait>2</wait>
+        <view>
+            <heading-offset-deg>140</heading-offset-deg>
+            <pitch-offset-deg>-17</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.904575</x-offset-m>
+            <y-offset-m>2.753</y-offset-m>
+            <z-offset-m>-11.4083</z-offset-m>
+            <field-of-view>64</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Looks clear.</message>
+        <wait>2</wait>
+        <view>
+            <heading-offset-deg>-140</heading-offset-deg>
+            <pitch-offset-deg>-17</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.904575</x-offset-m>
+            <y-offset-m>2.753</y-offset-m>
+            <z-offset-m>-11.4083</z-offset-m>
+            <field-of-view>64</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Left engine ignition - NORM</message>
+        <view>
+            <heading-offset-deg>-50</heading-offset-deg>
+            <pitch-offset-deg>17.821</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>19.851</field-of-view>
+            <x-offset-m>-0.4577</x-offset-m>
+            <y-offset-m>2.682</y-offset-m>
+            <z-offset-m>-11.4083</z-offset-m>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>Switch the left engine ignition (1) to NORM</message>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine/ignition</property>
+                    </not>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                    <property>/controls/engines/engine/ignition</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Engine Start Selector - 1 (left).</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>16.636</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>19.2851</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>Set the engine start selector to LEFT position!</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/internal-engine-starter-selector</property>
+                    <value>1</value>
+                </not-equals>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/engines/internal-engine-starter-selector</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+    <step>
+        <message>Engine Start Executor - press.</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>16.636</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>19.2851</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>Press the engine start executor once!</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/internal-engine-starter</property>
+                    <value>1</value>
+                </not-equals>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/engines/internal-engine-starter</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+    <step>
+        <message>Look down to the pedestal and set the left condition lever to start and feather (20%).</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>-48</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>That's too low, set the condition lever to 20%.</message>
+            <condition>
+                <less-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.15</value>
+                </less-than>
+            </condition>
+        </error>
+        <error>
+            <message>That's too high, set the condition lever to 20%.</message>
+            <condition>
+                <greater-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.25</value>
+                </greater-than>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                <less-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.25</value>
+                </less-than>
+                <greater-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.15</value>
+	        </greater-than>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Great, the left engine is running. Check that the engine reacts on power input on the engine screen.</message>
+        <view>
+            <heading-offset-deg>-23</heading-offset-deg>
+            <pitch-offset-deg>-27</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>24</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3791</x-m>
+            <y-m>-0.3089</y-m>
+            <z-m>-0.1320</z-m>
+            <scale>3.8622</scale>
+        </marker>
+        <exit>
+        </exit>
+    </step>
+
+    <step>
+        <message>We'll continue with the second engine.</message>
+    </step>
+
+
+    <step>
+        <message>Right engine ignition - NORM</message>
+        <view>
+            <heading-offset-deg>-50</heading-offset-deg>
+            <pitch-offset-deg>17.821</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>19.851</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>Switch the right engine ignition (2) to NORM</message>
+            <condition>
+                <not>
+                    <property>/controls/engines/engine[1]/ignition</property>
+                    </not>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                    <property>/controls/engines/engine[1]/ignition</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Engine Start Selector - 2 (right).</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>16.636</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>19.2851</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>Set the engine start selector to RIGHT position!</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/internal-engine-starter-selector</property>
+                    <value>-1</value>
+                </not-equals>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/engines/internal-engine-starter-selector</property>
+                    <value>-1</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+    <step>
+        <message>Engine Start Executor - press.</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>16.636</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>19.2851</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>Press the engine start executor once!</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/internal-engine-starter</property>
+                    <value>-1</value>
+                </not-equals>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/engines/internal-engine-starter</property>
+                    <value>-1</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+    <step>
+        <message>Look down to the pedestal and set the right condition lever to start and feather (20%).</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>-48</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>That's too low, set the condition lever to 20%.</message>
+            <condition>
+                <less-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.2</value>
+                </less-than>
+            </condition>
+        </error>
+        <error>
+            <message>That's too high, set the condition lever to 20%.</message>
+            <condition>
+                <greater-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.2</value>
+                </greater-than>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.2</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Great, the right engine is also running. Check that both engines react on power input on the engine screen.</message>
+        <view>
+            <heading-offset-deg>-23</heading-offset-deg>
+            <pitch-offset-deg>-27</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>24</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3791</x-m>
+            <y-m>-0.3089</y-m>
+            <z-m>-0.1320</z-m>
+            <scale>3.8622</scale>
+        </marker>
+        <exit>
+        </exit>
+    </step>
+
+   <step>
+        <message>Now reset the start selector to 0.</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>16.636</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>19.2851</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>Set the engine start selector to the norm (0) position!</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/internal-engine-starter-selector</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/engines/internal-engine-starter-selector</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>On the pedestal panel, set both condition levers to MIN 850 (40%).</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>-48</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>That's too low, set tboth condition levers to 40%.</message>
+            <condition><or>
+                <less-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.35</value>
+                </less-than>
+                <less-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.35</value>
+                </less-than></or>
+            </condition>
+        </error>
+        <error>
+            <message>That's too high, set both condition levers to 40%.</message>
+            <condition><or>
+                <greater-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.45</value>
+                </greater-than>
+                <greater-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.45</value>
+                </greater-than></or>
+            </condition>
+        </error>
+
+        <exit>
+            <condition><and>
+                <greater-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.35</value>
+                </greater-than>
+                <greater-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.35</value>
+                </greater-than>
+                <less-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.45</value>
+                </less-than>
+                <less-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.45</value>
+                </less-than>
+           </and> </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>As we are still getting our power from the APU, switch the engine generators on so we can turn off the APU.</message>
+        <view>
+            <heading-offset-deg>-29.3</heading-offset-deg>
+            <pitch-offset-deg>45</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>48.4</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3198</x-m>
+            <y-m>-0.4298</y-m>
+            <z-m>-0.2587</z-m>
+            <scale>0.5868</scale>
+        </marker>
+        <error>
+            <message>Please switch the generators on!</message>
+            <condition><not><or>
+                    <property>/controls/electric/engine/generator</property>
+                    <property>/controls/electric/engine[1]/generator</property></or></not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                    <property>/controls/electric/engine/generator</property>
+                    <property>/controls/electric/engine[1]/generator</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Now we are receiving our power from the engine generators and the APU may be turned OFF (first generator, then start and then master).</message>
+        <view>
+            <heading-offset-deg>-58</heading-offset-deg>
+            <pitch-offset-deg>18.635</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>16.3</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3000</x-m>
+            <y-m>-0.3858</y-m>
+            <z-m>-0.1917</z-m>
+            <scale>1.9333</scale>
+        </marker>
+        <error>
+            <message>Turn the APU off.</message>
+            <condition><or>
+                    <property>/controls/APU/master</property>
+                    <property>/controls/APU/start</property>
+                    <property>/controls/APU/generator</property></or>
+            </condition>
+        </error>
+
+        <exit>
+            <condition><not>
+                    <property>/controls/APU/master</property>
+                    <property>/controls/APU/start</property>
+                    <property>/controls/APU/generator</property></not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>On the pedestal panel again, set both condition levers to MAX (100%).</message>
+        <view>
+            <heading-offset-deg>-55</heading-offset-deg>
+            <pitch-offset-deg>-48</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <field-of-view>20</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.3689</x-m>
+            <y-m>-0.3663</y-m>
+            <z-m>-0.2985</z-m>
+            <scale>3.0000</scale>
+        </marker>
+
+        <error>
+            <message>That's too low, set tboth condition levers to 100%.</message>
+            <condition><or>
+                <less-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.95</value>
+                </less-than>
+                <less-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.95</value>
+                </less-than></or>
+            </condition>
+        </error>
+
+        <exit>
+            <condition><and>
+                <greater-than>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0.95</value>
+                </greater-than>
+                <greater-than>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0.95</value>
+                </greater-than>
+           </and> </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Great, our lesson is complete. We're now ready to taxi to the runway.</message>
+    </step>
+
+</PropertyList>

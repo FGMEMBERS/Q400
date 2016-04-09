@@ -163,6 +163,7 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             <a type="float">1.0</a>
         </amber>
     </color-set>
+        <tutorials include="Tutorials/tutorials.xml"/>
 </sim>
 
     <autopilot>
