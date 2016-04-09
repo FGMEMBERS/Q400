@@ -7,7 +7,13 @@ DHC8 -400Q by Alex Park Jan 2010
 
 <PropertyList>
     <sim>
-
+<rendering>
+	<als-secondary-lights>
+		<use-landing-light>1</use-landing-light>
+	</als-secondary-lights>
+</rendering>
+	
+	
     <model>
         <start-idling type="bool">0</start-idling>
         <variant type="int">1</variant>
@@ -25,6 +31,18 @@ DHC8 -400Q by Alex Park Jan 2010
         <config>
             <default-field-of-view-deg>90</default-field-of-view-deg>
             <x-offset-m type="double">-0.4577</x-offset-m>
+            <y-offset-m type="double">2.682</y-offset-m>
+            <z-offset-m type="double">-11.4083</z-offset-m>
+            <pitch-offset-deg>-14</pitch-offset-deg>
+        </config>
+    </view>    <view n="0">
+        <internal archive="y">true</internal>
+        <name>Copilot View</name>
+        <type>lookfrom</type>
+        <internal type="bool">true</internal>
+        <config>
+            <default-field-of-view-deg>90</default-field-of-view-deg>
+            <x-offset-m type="double">0.4577</x-offset-m>
             <y-offset-m type="double">2.682</y-offset-m>
             <z-offset-m type="double">-11.4083</z-offset-m>
             <pitch-offset-deg>-14</pitch-offset-deg>

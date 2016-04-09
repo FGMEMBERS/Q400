@@ -1048,7 +1048,7 @@ livery_update.stop();
  <object-name>WheelN</object-name>
  <object-name>gearF</object-name>
  <property>/gear/gear[0]/caster-angle-deg</property>
-<factor>-1</factor>
+<factor>-0.3</factor>
  <center>
   <x-m>-12.686933</x-m>
   <z-m>0.994319</z-m>

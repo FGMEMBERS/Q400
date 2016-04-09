@@ -40,7 +40,7 @@
  <type>rotate</type>
  <object-name>flash</object-name>
  <property>/gear/gear[0]/caster-angle-deg</property>
-<factor>-1</factor>
+<factor>-0.3</factor>
  <center>
   <x-m>0.3s</x-m>
   <z-m>0.0</z-m>

@@ -608,6 +608,12 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
+#hide ALS landing light from the outside
+if(getprop("/sim/current-view/internal") == 1){
+setprop("/sim/rendering/als-secondary-lights/use-landing-light", getprop("/controls/lighting/landing-lights"));
+}else{
+setprop("/sim/rendering/als-secondary-lights/use-landing-light", 0);
+}
 #a bit of nasal for the start ;)
 if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
 setprop("/controls/engines/internal-engine-starter", 0);
