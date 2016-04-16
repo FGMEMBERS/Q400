@@ -204,7 +204,7 @@
             </condition>
             <volume>
                 <property>engines/engine[0]/n2</property>
-                <factor>0.001</factor>
+                <factor>0.004</factor>
             </volume>
             <volume>
                 <property>sim/sound/effects/volume</property>
@@ -233,6 +233,28 @@
             <volume>
                 <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
+            </volume>
+            <position>
+                <x>-2.1677</x>
+                <y>-4.3739</y>
+                <z>3</z>
+            </position>
+            <pitch>
+                <property>engines/engine[0]/n2</property>
+                <offset>1.0</offset>
+                <factor>0.001</factor>
+            </pitch>
+        </turbine0>       
+        <turbine0>
+            <name>turbine0int</name>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/turbine_loop.wav</path>
+            <property>engines/engine[0]/n2</property>
+            <volume>
+                <property>sim/sound/effects/volume</property>
+                <factor>0.08</factor>
             </volume>
             <position>
                 <x>-2.1677</x>
@@ -344,7 +366,7 @@
             </condition>
             <volume>
                 <property>engines/engine[1]/n2</property>
-                <factor>0.001</factor>
+                <factor>0.004</factor>
             </volume>
             <volume>
                 <property>sim/sound/effects/volume</property>
@@ -380,6 +402,33 @@
             <volume>
                 <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
+            </volume>
+            <position>
+                <x>-2.1677</x>
+                <y>4.3739</y>
+                <z>3</z>
+            </position>
+            <pitch>
+                <property>engines/engine[1]/n2</property>
+                <offset>1.0</offset>
+                <factor>0.001</factor>
+            </pitch>
+        </turbine1>
+        <turbine1>
+            <name>turbine1int</name>>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>50.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/turbine_loop.wav</path>
+            <condition>
+                <greater-than>
+                    <property>engines/engine[1]/n2</property>
+                    <value>50.995</value>
+                </greater-than>
+            </condition>
+            <volume>
+                <property>sim/sound/effects/volume</property>
+                <factor>0.08</factor>
             </volume>
             <position>
                 <x>-2.1677</x>
