@@ -21,36 +21,23 @@ livery_update.stop();
 </nasal>
 <!--Landing Lights Lightmap-->
 <effect>
-		<name>Landing lightmap</name>
-		<inherits-from>Effects/lightmap</inherits-from>
-		<parameters>
-			<texture n="1">
-				<image>Aircraft/Q400/Models/lightmap.png</image>
-			</texture>
-			<condition>
-				<use>/controls/lighting/landing-lights</use>
-			</condition>
+		<inherits-from>Effects/reflect</inherits-from>
+		<parameters>     
+                    <lightmap-factor><use>/controls/lighting/landing-lights</use></lightmap-factor>
 		</parameters>
 <object-name>Engine_L</object-name>
 </effect>
 <!--LOGO LIGHTMAP-->
 <effect>
-		<name>Logo lightmap</name>
-		<inherits-from>Effects/lightmap</inherits-from>
+		<inherits-from>Effects/reflect</inherits-from>
 		<parameters>
-			<texture n="1">
-				<image>Aircraft/Q400/Models/lightmap.png</image>
-			</texture>
-			<condition>
-				<use>/controls/lighting/logo-lights</use>
-			</condition>
+	<lightmap-factor><use>/controls/lighting/logo-lights</use></lightmap-factor>
 		</parameters>
 <object-name>vstab</object-name>
 <object-name>rudder</object-name>
       <object-name>hstab</object-name>
       <object-name>elevator</object-name>
 </effect>
-
 <effect>
     <inherits-from>Effects/reflect</inherits-from>
 	<object-name>fuselage</object-name>

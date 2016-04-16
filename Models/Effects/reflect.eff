@@ -8,5 +8,15 @@
 		<reflection-enabled type="int">1</reflection-enabled>
 		<reflection-correction type="float">-0.2</reflection-correction>
 		<reflection-dynamic type="int">1</reflection-dynamic>
+    <lightmap-enabled type="int">1</lightmap-enabled>
+	<lightmap-color type="vec3d"> 1.0 1.0 1.0 </lightmap-color>
+    <texture n="3">
+      <image>Aircraft/Q400/Models/lightmap.png</image>
+		<type>2d</type>
+		<filter>linear-mipmap-linear</filter>
+		<wrap-s>clamp</wrap-s>
+		<wrap-t>clamp</wrap-t>
+		<internal-format>normalized</internal-format>
+    </texture>
 	</parameters>
 </PropertyList>

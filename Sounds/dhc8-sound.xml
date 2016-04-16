@@ -3,7 +3,130 @@
 <PropertyList>
 
     <fx>
-
+<!--Battery Switch, Cabincall, no smoking sign, seatbelt sign; code from 777, audio produced with audactiy-->
+	<chime>
+		<name>battery</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+		            <property>/controls/electric/battery-switch</property>
+		</condition>
+            <position>
+                <x>-9</x>
+                <y>0</y>
+                <z>-0.5</z>
+            </position>
+	</chime>
+	<chime>
+		<name>nosmoking</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+			<and>
+		            <property>/controls/electric/battery-switch</property>
+				<or>
+					<equals>
+    	    	        <property>controls/cabin/nosmoking</property>
+						<value>1</value>
+					</equals>
+					<equals>
+    	    	        <property>controls/cabin/nosmoking</property>
+						<value>0</value>
+					</equals>
+				</or>
+			</and>
+		</condition>
+	</chime>	   
+   
+	<chime>
+		<name>seatbelt</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+			<and>
+		            <property>/controls/electric/battery-switch</property>
+				<or>
+					<equals>
+    	    	        <property>controls/cabin/seatbelts</property>
+						<value>1</value>
+					</equals>
+					<equals>
+    	    	        <property>controls/cabin/seatbelts</property>
+						<value>0</value>
+					</equals>
+				</or>
+			</and>
+		</condition>
+	</chime>   
+   
+	<chime>
+		<name>cabincall</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+			<and>
+		            <property>/controls/electric/battery-switch</property>
+					<equals>
+    	    	        <property>controls/cabin/cabincall</property>
+						<value>1</value>
+					</equals>
+			</and>
+		</condition>
+	</chime>
+<!-- APU, same for inside and outside; APU sound and config from CRJ700-family licensed under GPL -->
+		<apu>
+			<name>APU starting</name>
+			<mode>once</mode>
+			<path>apu_start.wav</path>
+			<condition>
+					<property>controls/APU/start</property>
+			</condition>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<position>
+				<x>13.30</x>
+				<y>0.01</y>
+				<z>-0.70</z>
+			</position>
+		</apu>
+		<apu>
+			<name>APU running</name>
+			<mode>looped</mode>
+			<path>/apu_run.wav</path>
+			<condition>
+					<property>controls/APU/running</property>
+			</condition>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<position>
+				<x>13.30</x>
+				<y>0.01</y>
+				<z>-0.70</z>
+			</position>
+		</apu>
+		<apu>
+			<name>APU shutdown</name>
+			<mode>once</mode>
+			<path>apu_shutdown.wav</path>
+			<condition>
+				<and>
+					<not>
+						<property>controls/APU/master</property>
+					</not>
+				</and>
+			</condition>
+			<reference-dist>10</reference-dist>
+			<max-dist>50</max-dist>
+			<position>
+				<x>13.30</x>
+				<y>0.01</y>
+				<z>-0.70</z>
+			</position>
+		</apu>
 <!-- Engine 1 -->
 
 <crank>
@@ -13,13 +136,13 @@
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
-                <greater-than>
-                    <property>controls/engines/engine[0]/condition</property>
-                    <value>0.1</value>
-                </greater-than>
+                        <equals>
+                            <property>controls/engines/internal-engine-starter</property>
+                            <value>1</value>
+                        </equals>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
+                <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
             </volume>
             <position>
@@ -64,17 +187,51 @@
                 <y>-4.3739</y>
                 <z>3</z>
             </position>
+        </prop>        
+        <prop>
+            <name>prop1int</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/turboprop1.wav</path>
+            <property>engines/engine[0]/n2</property>
+            <condition>
+                    <property>sim/current-view/internal</property>
+                <greater-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
+            </condition>
+            <volume>
+                <property>engines/engine[0]/n2</property>
+                <factor>0.001</factor>
+            </volume>
+            <volume>
+                <property>sim/sound/effects/volume</property>
+            </volume>
+            <pitch>
+                <property>engines/engine[0]/n2</property>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
+            </pitch>
+            <position>
+                <x>-2.1677</x>
+                <y>-4.3739</y>
+                <z>3</z>
+            </position>
         </prop>
 
         <turbine0>
-            <name>turbine0</name>>
+            <name>turbine0</name>
             <reference-dist>20.0</reference-dist>
             <max-dist>50.0</max-dist>
             <mode>looped</mode>
             <path>Sounds/turbine_loop.wav</path>
             <property>engines/engine[0]/n2</property>
             <volume>
-                <property>sim/sound/cabin</property>
+                <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
             </volume>
             <position>
@@ -102,7 +259,7 @@
                 </equals>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
+                <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
             </volume>
             <position>
@@ -121,13 +278,13 @@
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
-                <greater-than>
-                    <property>controls/engines/engine[1]/condition</property>
-                    <value>0.1</value>
-                </greater-than>
+                        <equals>
+                            <property>controls/engines/internal-engine-starter</property>
+                            <value>-1</value>
+                        </equals>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
+                <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
             </volume>
             <position>
@@ -156,7 +313,41 @@
                 <factor>0.01</factor>
             </volume>
             <volume>
-                <property>sim/sound/E_volume</property>
+                <property>sim/sound/effects/volume</property>
+            </volume>
+            <pitch>
+                <property>engines/engine[1]/n2</property>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
+            </pitch>
+            <position>
+                <x>-2.1677</x>
+                <y>4.3739</y>
+                <z>3</z>
+            </position>
+        </prop>
+        <prop>
+            <name>prop2int</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
+            <mode>looped</mode>
+            <path>Sounds/turboprop1.wav</path>
+            <property>engines/engine[1]/n2</property>
+            <condition>
+                    <property>sim/current-view/internal</property>
+                <greater-than>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
+            </condition>
+            <volume>
+                <property>engines/engine[1]/n2</property>
+                <factor>0.001</factor>
+            </volume>
+            <volume>
+                <property>sim/sound/effects/volume</property>
             </volume>
             <pitch>
                 <property>engines/engine[1]/n2</property>
@@ -187,7 +378,7 @@
                 </greater-than>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
+                <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
             </volume>
             <position>
@@ -215,7 +406,7 @@
                 </equals>
             </condition>
             <volume>
-                <property>sim/sound/cabin</property>
+                <property>sim/sound/effects/volume</property>
                 <factor>0.3</factor>
             </volume>
             <position>
