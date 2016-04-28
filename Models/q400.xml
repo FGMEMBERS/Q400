@@ -19,27 +19,16 @@ livery_update.stop();
       fd_door.unalias();
 </unload>
 </nasal>
-<!--Landing Lights Lightmap-->
-<effect>
-		<inherits-from>Effects/reflect</inherits-from>
-		<parameters>     
-                    <lightmap-factor><use>/controls/lighting/landing-lights</use></lightmap-factor>
-		</parameters>
-<object-name>Engine_L</object-name>
-</effect>
-<!--LOGO LIGHTMAP-->
-<effect>
-		<inherits-from>Effects/reflect</inherits-from>
-		<parameters>
-	<lightmap-factor><use>/controls/lighting/logo-lights</use></lightmap-factor>
-		</parameters>
+    <effect>
+        <inherits-from>Effects/reflect-lightmap-logo</inherits-from>
 <object-name>vstab</object-name>
 <object-name>rudder</object-name>
       <object-name>hstab</object-name>
       <object-name>elevator</object-name>
-</effect>
+    </effect>
 <effect>
-    <inherits-from>Effects/reflect</inherits-from>
+    <inherits-from>Effects/reflect-lightmap</inherits-from>
+        <object-name>Engines</object-name>
 	<object-name>fuselage</object-name>
       <object-name>wing</object-name>
       <object-name>aileronL</object-name>

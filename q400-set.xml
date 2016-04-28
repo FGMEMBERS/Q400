@@ -188,7 +188,14 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
         </generic>
     </multiplay>
 </sim>
-
+<systems>
+    <electrical>
+        <lighting>
+            <landing-light type="bool">0</landing-light>
+            <logo-light type="bool">0</logo-light>
+        </lighting>
+    </electrical>
+</systems>
     <autopilot>
         <settings>
 						<minimums-mode type="string">RA</minimums-mode>
