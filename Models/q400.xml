@@ -28,6 +28,7 @@ livery_update.stop();
     </effect>
 <effect>
     <inherits-from>Effects/reflect-lightmap</inherits-from>
+<object-name>vstab2</object-name>
         <object-name>Engines</object-name>
 	<object-name>fuselage</object-name>
       <object-name>wing</object-name>
