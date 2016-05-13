@@ -163,7 +163,7 @@ livery_update.stop();
     <path>pedestalrear.xml</path>
   </model>
 <model>
-    <path>frontpedestal.ac</path>
+    <path>frontpedestal.xml</path>
   </model>
 
   <!--Doors-->

@@ -250,6 +250,7 @@ DHC8 -400Q by Alex Park Jan 2010
  
 
         <engines>
+            <throttle-lock>0</throttle-lock>
                 <internal-engine-starter>0</internal-engine-starter>
         <fire-test type="bool">0</fire-test>
             <engine n="0">

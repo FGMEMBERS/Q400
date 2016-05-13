@@ -117,7 +117,7 @@
           <binding>
             <command>property-adjust</command>
             <property>controls/engines/engine[0]/throttle</property>
-            <factor>-0.1</factor>
+            <factor>0.05</factor>
             <min>-1</min>
             <max>1</max>
             <wrap>0</wrap>
@@ -130,7 +130,7 @@
             <measure-text>LH Throttle: 100%</measure-text>
             <tooltip-id>lh-throttle</tooltip-id>
             <mapping>percent</mapping>
-            <property>controls/engines/engine[0]/throttle</property>
+            <property>controls/engines/engine[0]/throttle-int</property>
           </binding>
         </hovered>
     </animation>
@@ -207,7 +207,7 @@
           <binding>
             <command>property-adjust</command>
             <property>controls/engines/engine[1]/throttle</property>
-            <factor>-0.1</factor>
+            <factor>0.05</factor>
             <min>-1</min>
             <max>1</max>
             <wrap>0</wrap>
@@ -220,7 +220,7 @@
             <measure-text>RH Throttle: 100%</measure-text>
             <tooltip-id>rh-throttle</tooltip-id>
             <mapping>percent</mapping>
-            <property>controls/engines/engine[1]/throttle</property>
+            <property>controls/engines/engine[1]/throttle-int</property>
           </binding>
         </hovered>
     </animation>
@@ -478,6 +478,35 @@
         <object-name>emergbrake</object-name>
         <property>controls/gear/brake-parking-position</property>
         <factor>85</factor>
+        <center>
+            <x-m>-11.88406</x-m>
+            <y-m>0</y-m>
+            <z-m>1.92495</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+    <!--Throttle control lock-->
+    <animation>
+      <type>pick</type>
+      <object-name>throttlelock</object-name>
+      <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+          <property>/controls/engines/throttle-lock</property>
+      </binding>
+  </action>
+</animation>
+    <animation>
+        <type>rotate</type>
+      <object-name>throttlelock</object-name>
+          <property>/controls/engines/throttle-lock-position</property>
+        <factor>50</factor>
         <center>
             <x-m>-11.88406</x-m>
             <y-m>0</y-m>

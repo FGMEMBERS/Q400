@@ -122,6 +122,16 @@ setlistener("/controls/gear/brake-parking", func(v) {
   }
 });
 
+#Throttle lock interpol
+
+setlistener("/controls/engines/throttle-lock", func(v) {
+  if(v.getValue()){
+    interpolate("/controls/engines/throttle-lock-position", 1, 0.5);
+  }else{
+    interpolate("/controls/engines/throttle-lock-position", 0, 0.5);
+  }
+});
+
 var Wiper = {
     new : func(prop,power,settings){
         m = { parents : [Wiper] };
@@ -608,6 +618,22 @@ var update_engine = func(eng){
 
 
 var update_systems = func {
+#Throttle Lock
+if(getprop("/controls/engines/throttle-lock") == 0 ){
+setprop("/controls/engines/engine/throttle-int", getprop("/controls/engines/engine/throttle") );
+}else if(getprop("/controls/engines/engine/throttle") <= 0.3){
+setprop("/controls/engines/engine/throttle-int", getprop("/controls/engines/engine/throttle") );
+}else{
+setprop("/controls/engines/engine/throttle-int", 0.3 );
+}
+
+if(getprop("/controls/engines/throttle-lock") == 0 ){
+setprop("/controls/engines/engine[1]/throttle-int", getprop("/controls/engines/engine[1]/throttle") );
+}else if(getprop("/controls/engines/engine[1]/throttle") <= 0.3){
+setprop("/controls/engines/engine[1]/throttle-int", getprop("/controls/engines/engine[1]/throttle") );
+}else{
+setprop("/controls/engines/engine[1]/throttle-int", 0.3 );
+}
 #landing light for lightmap
 if(getprop("/controls/lighting/landing-lights") == 1 and getprop("/systems/electrical/volts") >=15 ){
 setprop("/systems/electrical/lighting/landing-light", 1);
@@ -670,8 +696,8 @@ setprop("/position/altitude-ft-100", getprop("/position/altitude-ft")*0.01);
 #Thrust reverser, integrated from dhc6
 var LHrvr=getprop("controls/engines/engine[0]/reverser");
     var RHrvr=getprop("controls/engines/engine[1]/reverser");
-    var THR1 =getprop("controls/engines/engine[0]/throttle");
-    var THR2 =getprop("controls/engines/engine[1]/throttle");
+    var THR1 =getprop("controls/engines/engine[0]/throttle-int");
+    var THR2 =getprop("controls/engines/engine[1]/throttle-int");
     var running1 = getprop("engines/engine[0]/running");
     var running2 = getprop("engines/engine[1]/running");
     if(LHrvr==1 and running1==0) {
