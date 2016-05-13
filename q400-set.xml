@@ -185,6 +185,9 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             <float n="7" alias="/systems/electrical/outputs/strobe">           0 </float>
             <float n="8" alias="/systems/electrical/outputs/beacon">           0 </float>
             <float n="9" alias="/systems/electrical/volts">                    0 </float>
+            <float n="15" alias="/gear/gear/position-norm">                    1 </float>
+            <float n="16" alias="/gear/gear[1]/position-norm">                    1 </float>
+            <float n="17" alias="/gear/gear[2]/position-norm">                    1 </float>
         </generic>
     </multiplay>
 </sim>
