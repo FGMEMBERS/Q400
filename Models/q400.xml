@@ -800,8 +800,8 @@ livery_update.stop();
  <property>/gear/gear[1]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>1.11067</x-m>
-  <z-m>0.371916</z-m>
+  <x-m>0.81067</x-m>
+  <z-m>0.37192</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -989,8 +989,8 @@ livery_update.stop();
  <property>/gear/gear[2]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>1.11067</x-m>
-  <z-m>0.371916</z-m>
+  <x-m>0.81067</x-m>
+  <z-m>0.37192</z-m>
  </center>
  <axis>
   <x>0</x>
@@ -1040,7 +1040,7 @@ livery_update.stop();
  <type>translate</type>
  <object-name>gearF</object-name>
  <object-name>WheelN</object-name>
- <property>/gear/gear[2]/compression-norm</property>
+ <property>/gear/gear[0]/compression-norm</property>
 <factor>0.250</factor>
  <axis>
   <x>0</x>
