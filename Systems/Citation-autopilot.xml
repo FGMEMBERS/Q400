@@ -653,11 +653,11 @@
         </enable>
         <input>
             <property>instrumentation/nav/heading-needle-deflection</property>
-            <scale>4.5</scale>
+            <scale>3.5</scale>
         </input>
         <output>autopilot/internal/cdi</output>
         <type>noise-spike</type>
-        <max-rate-of-change>10</max-rate-of-change>
+        <max-rate-of-change>5</max-rate-of-change>
     </filter>
 
     <filter>
@@ -717,11 +717,11 @@
         </enable>
         <input>
             <property>instrumentation/nav[1]/heading-needle-deflection</property>
-            <scale>4.5</scale>
+            <scale>3.5</scale>
         </input>
         <output>autopilot/internal/cdi</output>
         <type>noise-spike</type>
-        <max-rate-of-change>10</max-rate-of-change>
+        <max-rate-of-change>5</max-rate-of-change>
     </filter>
 
     <filter>
