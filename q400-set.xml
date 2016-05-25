@@ -109,6 +109,14 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
                         <property>controls/gear/jacks</property>
                     </binding>
                 </item>
+                <item>
+                    <label>LNAV mode</label>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>autopilot/locks/heading</property>
+            <value>LNAV</value>
+                    </binding>
+                </item>
             </menu>
         </default>
     </menubar>
