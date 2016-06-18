@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!-- This is a special livery flybe by D-SVEN
+    You'll probably notice that the registration G-JECY is the same as in Brussels Airlines livery. This is because flybe repainted all some Q400s they leased to Brussles Airlines in those crazy deep colors. So they did with G-JECY, so don't call the airline to say that there are multiple G-JECYs in the air :)
+    Also they started a campaign to popularize some of their destonations: "Sprirt of xy", which you can see on the pilots side of the fuselage.
+    -->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Flybe (special livery)</name>
+            <texture>Liveries/flybespecial.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>
+ 
+ 
