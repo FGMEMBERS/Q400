@@ -4,7 +4,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Alaska Airlines</name>
+            <name type="string">Alaska Airlines (N429QX)</name>
             <texture>Liveries/alaska.png</texture>
         </livery>
     </model>

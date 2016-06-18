@@ -635,12 +635,21 @@ setprop("/controls/engines/engine[1]/throttle-int", getprop("/controls/engines/e
 setprop("/controls/engines/engine[1]/throttle-int", 0.3 );
 }
 #landing light for lightmap
-if(getprop("/controls/lighting/landing-lights") == 1 and getprop("/systems/electrical/volts") >=15 ){
-setprop("/systems/electrical/lighting/landing-light", 1);
+if(getprop("/controls/lighting/landing-light") == 1 and getprop("/controls/electric/battery-switch") == 1){
+setprop("/systems/electrical/outputs/lightmap/landing-light", 1);
+}else{
+setprop("/systems/electrical/outputs/lightmap/landing-light", 0);
+}
+if(getprop("/controls/lighting/landing-light[1]") == 1 and getprop("/controls/electric/battery-switch") == 1){
+setprop("/systems/electrical/outputs/lightmap/landing-light[1]", 1);
+}else{
+setprop("/systems/electrical/outputs/lightmap/landing-light[1]", 0);
 }
 #logo light for lightmap
 if(getprop("/controls/lighting/logo-lights") == 1 and getprop("/systems/electrical/volts") >=15 ){
-setprop("/systems/electrical/lighting/logo-light", 1);
+setprop("/systems/electrical/outputs/lightmap/logo-light", 1);
+}else{
+setprop("/systems/electrical/outputs/lightmap/logo-light", 0);
 }
 #hide ALS landing light from the outside
 if(getprop("/sim/current-view/internal") == 1 and getprop("/systems/electrical/volts") >= 15 ){

@@ -225,48 +225,110 @@
 
         <turbine0>
             <name>turbine0</name>
-            <reference-dist>20.0</reference-dist>
-            <max-dist>50.0</max-dist>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
+            <path>Aircraft/Q400/Sounds/out.wav</path>
             <property>engines/engine[0]/n2</property>
+            <condition>
+                <not>
+                    <property>sim/current-view/internal</property>
+                </not>
+                <greater-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
+            </condition>
+            <volume>
+                <property>engines/engine[0]/n2</property>
+                <factor>0.5</factor>
+            </volume>
             <volume>
                 <property>sim/sound/effects/volume</property>
-                <factor>0.3</factor>
+                <factor>10</factor>
             </volume>
+            <pitch>
+                <property>engines/engine[0]/n2</property>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
+            </pitch>
             <position>
                 <x>-2.1677</x>
                 <y>-4.3739</y>
                 <z>3</z>
             </position>
-            <pitch>
-                <property>engines/engine[0]/n2</property>
-                <offset>1.0</offset>
-                <factor>0.001</factor>
-            </pitch>
         </turbine0>       
         <turbine0>
             <name>turbine0int</name>
-            <reference-dist>20.0</reference-dist>
-            <max-dist>50.0</max-dist>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
+            <path>Aircraft/Q400/Sounds/intern.wav</path>
             <property>engines/engine[0]/n2</property>
+            <condition>
+                    <property>sim/current-view/internal</property>
+                <greater-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
+            </condition>
+            <volume>
+                <property>engines/engine[0]/n2</property>
+                <factor>0.5</factor>
+            </volume>
             <volume>
                 <property>sim/sound/effects/volume</property>
-                <factor>0.08</factor>
+                <factor>10</factor>
             </volume>
+            <pitch>
+                <property>engines/engine[0]/n2</property>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
+            </pitch>
             <position>
                 <x>-2.1677</x>
                 <y>-4.3739</y>
                 <z>3</z>
             </position>
+        </turbine0>
+	<prop>
+            <name>reverser1</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
+            <mode>looped</mode>
+            <path>Aircraft/Q400/Sounds/reverse.wav</path>
+            <property>engines/engine[0]/reverse</property>
+            <condition>               
+                <greater-than>
+                    <property>controls/engines/engine[0]/throttle-rvrs</property>
+                    <value>0.0</value>
+                </greater-than>
+            </condition>
+            <volume>
+                <property>engines/engine[0]/n2</property>
+                <factor>0.05</factor>
+            </volume>
+            <volume>
+                <property>sim/sound/effects/volume</property>
+            </volume>
             <pitch>
                 <property>engines/engine[0]/n2</property>
-                <offset>1.0</offset>
-                <factor>0.001</factor>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
             </pitch>
-        </turbine0>
+            <position>
+                <x>-2.1677</x>
+                <y>-4.3739</y>
+                <z>3</z>
+            </position>
+        </prop>
+        
 
         <shutdown>
             <name>engine0 off</name>>
@@ -388,60 +450,109 @@
 
  
         <turbine1>
-            <name>turbine1</name>>
-            <reference-dist>20.0</reference-dist>
-            <max-dist>50.0</max-dist>
+            <name>turbine2</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
-            <condition>
+            <path>Aircraft/Q400/Sounds/out.wav</path>
+            <property>engines/engine[1]/n2</property>
+            <condition><not>
+                    <property>sim/current-view/internal</property></not>
                 <greater-than>
-                    <property>engines/engine[1]/n2</property>
-                    <value>50.995</value>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <value>0.15</value>
                 </greater-than>
             </condition>
             <volume>
-                <property>sim/sound/effects/volume</property>
-                <factor>0.3</factor>
+                <property>engines/engine[1]/n2</property>
+                <factor>0.5</factor>
             </volume>
+            <volume>
+                <property>sim/sound/effects/volume</property>
+                <factor>10</factor>
+            </volume>
+            <pitch>
+                <property>engines/engine[1]/n2</property>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
+            </pitch>
             <position>
                 <x>-2.1677</x>
                 <y>4.3739</y>
                 <z>3</z>
             </position>
-            <pitch>
-                <property>engines/engine[1]/n2</property>
-                <offset>1.0</offset>
-                <factor>0.001</factor>
-            </pitch>
         </turbine1>
         <turbine1>
-            <name>turbine1int</name>>
-            <reference-dist>20.0</reference-dist>
-            <max-dist>50.0</max-dist>
+            <name>turbine2int</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
             <mode>looped</mode>
-            <path>Sounds/turbine_loop.wav</path>
+            <path>Aircraft/Q400/Sounds/intern.wav</path>
+            <property>engines/engine[1]/n2</property>
             <condition>
+                    <property>sim/current-view/internal</property>
                 <greater-than>
-                    <property>engines/engine[1]/n2</property>
-                    <value>50.995</value>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <value>0.15</value>
                 </greater-than>
             </condition>
             <volume>
-                <property>sim/sound/effects/volume</property>
-                <factor>0.08</factor>
+                <property>engines/engine[1]/n2</property>
+                <factor>0.5</factor>
             </volume>
+            <volume>
+                <property>sim/sound/effects/volume</property>
+                <factor>10</factor>
+            </volume>
+            <pitch>
+                <property>engines/engine[1]/n2</property>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
+            </pitch>
             <position>
                 <x>-2.1677</x>
                 <y>4.3739</y>
                 <z>3</z>
             </position>
-            <pitch>
-                <property>engines/engine[1]/n2</property>
-                <offset>1.0</offset>
-                <factor>0.001</factor>
-            </pitch>
         </turbine1>
 
+	<prop>
+            <name>reverser2</name>
+            <reference-dist>50.0</reference-dist>
+            <max-dist>1000.0</max-dist>
+            <mode>looped</mode>
+            <path>Aircraft/Q400/Sounds/reverse.wav</path>
+            <property>engines/engine[1]/reverse</property>
+            <condition>               
+                <greater-than>
+                    <property>controls/engines/engine[1]/throttle-rvrs</property>
+                    <value>0.0</value>
+                </greater-than>
+            </condition>
+            <volume>
+                <property>engines/engine[1]/n2</property>
+                <factor>0.05</factor>
+            </volume>
+            <volume>
+                <property>sim/sound/effects/volume</property>
+            </volume>
+            <pitch>
+                <property>engines/engine[1]/n2</property>
+                <offset>0.0</offset>
+                <factor>0.015</factor>
+                <min>0.2</min>
+                <max>1.2</max>
+            </pitch>
+            <position>
+                <x>-2.1677</x>
+                <y>4.3739</y>
+                <z>3</z>
+            </position>
+        </prop>
         <shutdown>
             <name>engine1 off</name>>
             <reference-dist>20.0</reference-dist>

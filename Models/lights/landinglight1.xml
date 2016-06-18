@@ -60,7 +60,7 @@
 <object-name>flash</object-name>
 <condition>
 <greater-than>
-<property>systems/electrical/outputs/landing-light</property>
+<property>systems/electrical/outputs/landing-light[1]</property>
 <value>15</value>
 </greater-than>
 </condition>

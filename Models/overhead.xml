@@ -501,6 +501,18 @@
    <animation>
     <type>pick</type>
     <object-name>landinglightL</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/lighting/landing-light[0]</property>
+      </binding>
+    </action>
+  </animation>
+   <animation>
+    <type>pick</type>
     <object-name>landinglightR</object-name>
     <visible>true</visible>
     <action>
@@ -508,7 +520,7 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
-        <property>/controls/lighting/landing-lights</property>
+        <property>/controls/lighting/landing-light[1]</property>
       </binding>
     </action>
   </animation>
@@ -516,8 +528,22 @@
   <animation>
     <type>rotate</type>
     <object-name>landinglightL</object-name>
+        <property>/controls/lighting/landing-light[0]</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -11.93815 </x-m>
+      <z-m>  2.83149 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+  <animation>
+    <type>rotate</type>
     <object-name>landinglightR</object-name>
-        <property>/controls/lighting/landing-lights</property>
+        <property>/controls/lighting/landing-light[1]</property>
     <factor>30</factor>
     <center>
       <x-m> -11.93815 </x-m>

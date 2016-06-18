@@ -10,7 +10,7 @@
 <sim>
     <model>
         <livery>
-            <name type="string">Luxair</name>
+            <name type="string">Luxair (LX-LGF)</name>
             <texture>Liveries/luxair.png</texture>
         </livery>
     </model>

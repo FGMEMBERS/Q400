@@ -19,16 +19,26 @@ livery_update.stop();
       fd_door.unalias();
 </unload>
 </nasal>
-    <effect>
-        <inherits-from>Effects/reflect-lightmap-logo</inherits-from>
+<effect>
+		<inherits-from>Effects/lightmap-lowreflect</inherits-from>
+		<parameters>
+			<lightmap-multi>1</lightmap-multi>
+                        <lightmap-factor n="0"><use>systems/electrical/outputs/lightmap/landing-light</use></lightmap-factor>
+			<!-- <lightmap-color type="vec3d" n="0"> 1.0 0.95 0.6 </lightmap-color> -->
+                        <lightmap-factor n="1"><use>systems/electrical/outputs/lightmap/landing-light[1]</use></lightmap-factor>
+			<!-- <lightmap-color type="vec3d" n="1"> 1.0 0.95 0.6 </lightmap-color> -->
+			<lightmap-factor n="2"><use>systems/electrical/outputs/lightmap/logo-light</use></lightmap-factor>
+			<!-- <lightmap-color type="vec3d" n="2"> 1.0 1.0 1.0 </lightmap-color> -->
+			<lightmap-factor n="3">0</lightmap-factor>
+			<!-- <lightmap-color type="vec3d" n="3"> 1.0 1.0 1.0 </lightmap-color> -->
+			<texture n="3">
+				<image>Effects/lightmap.png</image>
+			</texture>
+		</parameters>
 <object-name>vstab</object-name>
 <object-name>rudder</object-name>
       <object-name>hstab</object-name>
       <object-name>elevator</object-name>
-    </effect>
-<effect>
-    <inherits-from>Effects/reflect-lightmap</inherits-from>
-<object-name>vstab2</object-name>
         <object-name>Engines</object-name>
 	<object-name>fuselage</object-name>
       <object-name>wing</object-name>
@@ -36,6 +46,7 @@ livery_update.stop();
       <object-name>aileronR</object-name>
       <object-name>flapRO</object-name>
       <object-name>flapLO</object-name>
+<object-name>vstab2</object-name>
       <object-name>flapI</object-name>
       <object-name>doorF</object-name>
       <object-name>doorLH</object-name>
@@ -72,10 +83,11 @@ livery_update.stop();
       <object-name>flapRO</object-name>
       <object-name>flapLO</object-name>
       <object-name>flapI</object-name>
-      <object-name>Engine_L</object-name>
+      <object-name>Engines</object-name>
       <object-name>hstab</object-name>
       <object-name>elevator</object-name>
       <object-name>vstab</object-name>
+      <object-name>vstab2</object-name>
       <object-name>rudder</object-name>
       <object-name>doorF</object-name>
       <object-name>doorLH</object-name>
@@ -803,7 +815,7 @@ livery_update.stop();
  <property>/gear/gear[1]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>0.81067</x-m>
+  <x-m>1.11067</x-m>
   <z-m>0.37192</z-m>
  </center>
  <axis>
@@ -992,7 +1004,7 @@ livery_update.stop();
  <property>/gear/gear[2]/rollspeed-ms</property>
 <factor>-10</factor>
  <center>
-  <x-m>0.81067</x-m>
+  <x-m>1.11067</x-m>
   <z-m>0.37192</z-m>
  </center>
  <axis>
@@ -1207,7 +1219,7 @@ livery_update.stop();
 </offsets>
 </model>
 <model>
-<path>lights/landinglight.xml</path>
+<path>lights/landinglight1.xml</path>
 <name>Landinglightright</name>     
 <offsets>
 <x-m>-0.6</x-m>

@@ -5,7 +5,7 @@
     <model>
         <livery>
             <name type="string">Bombardier House Livery</name>
-            <texture>Q400.png</texture>
+            <texture>Q400_House.png</texture>
         </livery>
     </model>
 </sim>
