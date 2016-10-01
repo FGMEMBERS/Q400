@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>pedestalrear.ac</path>
+        
+        <!--Panel illumination-->
+        
+<animation>
+      <type>material</type>
+	<object-name>trimpanel</object-name>
+	<object-name>unknownpanel</object-name>
+	<object-name>emptypanel</object-name>
+        <condition><property>/controls/lighting/panel-lights</property></condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+            <factor-prop>/controls/lighting/panel/engine</factor-prop>
+        </emission>
+    </animation>
+        
+      
+        
+        <!--TRIM PANEL-->
+<!--Rudder Trim-->
+
+  <animation>
+        <type>knob</type>
+        <object-name>ruddertrim</object-name>
+                <property>/controls/flight/rudder-trim</property>
+	<factor>-360</factor>
+    <center>
+      <x-m> -11.68977</x-m>
+      <y-m>  0.03235 </y-m>
+    </center>
+	<axis><z>1</z></axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/flight/rudder-trim</property>
+                <factor>0.01</factor>
+                <min>-0.2</min>
+                <max>0.2</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+  <animation>
+        <type>rotate</type>
+        <object-name>ruddertrimind</object-name>
+                <property>/controls/flight/rudder-trim</property>
+	<factor>-360</factor>
+    <center>
+      <x-m> -11.72675</x-m>
+      <y-m>  0.03195 </y-m>
+    </center>
+	<axis><z>1</z></axis>
+    </animation>
+
+  <animation>
+        <type>knob</type>
+        <object-name>ailerontrim</object-name>
+                <property>/controls/flight/aileron-trim</property>
+	<factor>-360</factor>
+    <center>
+      <y-m> -0.03611</y-m>
+      <z-m>  1.86654 </z-m>
+    </center>
+	<axis><x>1</x></axis>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/flight/aileron-trim</property>
+                <factor>0.01</factor>
+                <min>-0.2</min>
+                <max>0.2</max>                
+                <wrap>false</wrap>
+            </binding>
+        </action>
+    </animation>
+
+  <animation>
+        <type>rotate</type>
+        <object-name>ailerontrimind</object-name>
+                <property>/controls/flight/aileron-trim</property>
+	<factor>-360</factor>
+    <center>
+      <x-m>-11.7277</x-m>
+      <y-m>  -0.03483</y-m>
+    </center>
+	<axis><z>1</z></axis>
+    </animation>
+</PropertyList>

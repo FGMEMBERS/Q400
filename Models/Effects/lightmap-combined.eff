@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+  <name>Effects/lightmap-combined</name>
+  <inherits-from>/Effects/model-combined-deferred</inherits-from>
+  <parameters>
+		<!-- Reflection -->
+		<reflection-enabled type="int">1</reflection-enabled>
+		<reflection-correction type="float">-0.2</reflection-correction>
+		<reflection-dynamic type="int">1</reflection-dynamic>
+    <lightmap-enabled type="int">1</lightmap-enabled>
+    <texture n="3">
+      <image>../Models/lightmap.png</image>
+    </texture>
+  </parameters>
+</PropertyList>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!--
+    ############################################################################################
+    This Alaska-livery for the Bombardier Q400 is made by Andreas Spiekermann. Have fun with it!
+    ############################################################################################
+-->
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Alaska (N44IQX)</name>
+            <texture>Liveries/alaska2.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

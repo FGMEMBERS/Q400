@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<PropertyList>
+
+	<path>lg-panel.ac</path>
+        <!--AI Part-->
+        
+        <animation>
+		<type>select</type>
+		<object-name>display.off</object-name>
+		<condition>
+			<less-than>
+				<property>/systems/electrical/batt-volts</property>
+				<value>10</value>
+			</less-than>
+		</condition>
+	</animation>
+<animation>
+<type>texmultiple</type>
+<object-name>ai</object-name>
+<transform>
+  <subtype>texrotate</subtype>
+<property>/orientation/roll-deg</property>
+      <min> -180 </min>
+      <max>  180 </max>
+      <center>
+        <x> 0.5 </x>
+        <y> 0.5 </y>
+      </center>
+      <axis>
+        <x>  0 </x>
+        <y>  0 </y>
+        <z> -1 </z>
+      </axis>
+</transform>
+    <transform>
+      <subtype>textranslate</subtype>
+      <property>/instrumentation/attitude-indicator/indicated-pitch-deg</property>
+      <factor> 0.005 </factor>
+      <center>
+        <x> 0.5 </x>
+        <y> 0.5 </y>
+      </center>
+      <axis>
+        <x> 0 </x>
+        <y> 1 </y>
+        <z> 0 </z>
+      </axis>
+    </transform>
+</animation>    	
+<!---->
+
+<animation>
+	<type>pick</type>
+	<object-name>handle</object-name>
+	<visible>true</visible>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/gear/gear-down</property>
+		</binding>
+	</action>
+</animation> 
+
+<animation>
+		<type>rotate</type>
+		<object-name>handle</object-name>
+		<property>controls/gear/gear-down</property>
+		<factor>40</factor>
+
+		<center>
+			<x-m>-12.3255</x-m>
+			<z-m>2.1901</z-m>
+		</center>
+
+		<axis>
+			<x>0</x>
+			<y>1</y>
+			<z>0</z>
+		</axis>
+
+	</animation>
+        <!--Illuminate Indicators-->
+        <!--Gear Doors-->
+        <animation>
+        <type>material</type>
+	<object-name>L.door</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>/gear/gear[1]/position-norm</property>
+                    <value>0.05</value>
+                </greater-than>
+                <less-than>
+                    <property>/gear/gear[1]/position-norm</property>
+                    <value>0.95</value>
+                </less-than>
+            </and>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+        <animation>
+        <type>material</type>
+	<object-name>N.door</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>/gear/gear[0]/position-norm</property>
+                    <value>0.05</value>
+                </greater-than>
+                <less-than>
+                    <property>/gear/gear[0]/position-norm</property>
+                    <value>0.95</value>
+                </less-than>
+            </and>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+<animation>
+        <type>material</type>
+	<object-name>R.door</object-name>
+        <condition>
+            <and>
+                <greater-than>
+                    <property>/gear/gear[2]/position-norm</property>
+                    <value>0.05</value>
+                </greater-than>
+                <less-than>
+                    <property>/gear/gear[2]/position-norm</property>
+                    <value>0.95</value>
+                </less-than>
+            </and>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+        </emission>
+    </animation>
+    <!--Gear Fully Down-->
+        <animation>
+        <type>material</type>
+	<object-name>leftgreen</object-name>
+        <condition>
+                <equals>
+                    <property>/gear/gear[1]/position-norm</property>
+                    <value>1</value>
+                </equals>
+        </condition>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+        <animation>
+        <type>material</type>
+	<object-name>nosegreen</object-name>
+        <condition>
+                <equals>
+                    <property>/gear/gear[0]/position-norm</property>
+                    <value>1</value>
+                </equals>
+        </condition>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+<animation>
+        <type>material</type>
+	<object-name>rightgreen</object-name>
+        <condition>
+                <equals>
+                    <property>/gear/gear[2]/position-norm</property>
+                    <value>1</value>
+                </equals>
+        </condition>
+        <emission>
+            <red>0.4</red>
+            <green>1</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+    
+    <!--Gear Not Fully Down-->
+        <animation>
+        <type>material</type>
+	<object-name>leftred</object-name>
+        <condition><and>
+                <not-equals>
+                    <property>/gear/gear[1]/position-norm</property>
+                    <value>1</value>
+                </not-equals>
+                <not-equals>
+                    <property>/gear/gear[1]/position-norm</property>
+                    <value>0</value>
+                </not-equals>
+            </and>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>0.4</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+        <animation>
+        <type>material</type>
+	<object-name>nosered</object-name>
+        <condition><and>
+                <not-equals>
+                    <property>/gear/gear[0]/position-norm</property>
+                    <value>1</value>
+                </not-equals>
+                <not-equals>
+                    <property>/gear/gear[0]/position-norm</property>
+                    <value>0</value>
+                </not-equals>
+            </and>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>0.4</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+<animation>
+        <type>material</type>
+	<object-name>rightred</object-name>
+        <condition><and>
+                <not-equals>
+                    <property>/gear/gear[2]/position-norm</property>
+                    <value>1</value>
+                </not-equals>
+                <not-equals>
+                    <property>/gear/gear[2]/position-norm</property>
+                    <value>0</value>
+                </not-equals>
+            </and>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>0.4</green>
+            <blue>0.4</blue>
+        </emission>
+    </animation>
+</PropertyList>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+<!--Glareshield Panel-->
+<model>
+  <path>panels/glareshieldpanel/glareshieldpanel.xml</path>
+</model>
+
+
+<model>
+  <path>panels/hud/hud.xml</path>
+</model>
+<model>
+  <path>panels/PFD/PFD3d.xml</path>
+    <offsets>
+<x-m>-12.31</x-m>
+<y-m>-0.48</y-m>
+<z-m>2.125</z-m>
+<pitch-deg>-16.2</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/PFD/PFD3d.xml</path>
+    <offsets>
+<x-m>-12.31</x-m>
+<y-m>0.48</y-m>
+<z-m>2.125</z-m>
+<pitch-deg>-16.2</pitch-deg>
+    </offsets>
+</model>
+<!--NDs-->
+<model>
+  <path>panels/ND/ND.xml</path>
+</model>
+<!--CDUs-->
+<model>
+  <path>panels/CDU/CDU.xml</path>
+    <offsets>
+<x-m>-12.2019</x-m>
+<y-m>-0.17</y-m>
+<z-m>1.95</z-m>
+<pitch-deg>-60</pitch-deg>
+    </offsets>
+</model>
+<model>
+  <path>panels/CDU/CDU1.xml</path>
+    <offsets>
+<x-m>-12.2019</x-m>
+<y-m>0.17</y-m>
+<z-m>1.95</z-m>
+<pitch-deg>-60</pitch-deg>
+    </offsets>
+</model><!--
+<model>
+  <path>panels/ap/ap.xml</path>
+</model>-->
+
+<!--Engine Instrument-->
+<model>
+  <path>panels/ESID/ESID.xml</path>
+</model>
+
+<model>
+  <path>panels/lg/lg.xml</path>
+</model>
+
+<model>
+  <path>panels/baropanel/baropanel.xml</path>
+</model>
+<model>
+  <path>panels/baropanel/baropanel.xml</path>
+    <offsets>
+<y-m>1.27788</y-m>
+    </offsets>
+</model>
+
+<model>
+  <path>Aircraft/Q400/Models/panels/yoke/yoke.xml</path>
+    <name>yoke</name>
+    <offsets>
+      <x-m>0</x-m>
+      <y-m>0</y-m>
+      <z-m>0</z-m>
+    </offsets>
+</model>
+
+<animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>30</max-m>
+    <max-property>sim/rendering/static-lod/bare</max-property>
+  </animation>
+
+</PropertyList>

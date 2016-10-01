@@ -1,0 +1,11 @@
+<!--
+Alex Park dhc8-400q Navigation display
+-->
+
+<PropertyList>
+
+ <path>EFIS.ac</path>
+        <path>Aircraft/dhc8-400/models/panels/MFD/mfd-panel.xml</path>
+        <path>Aircraft/dhc8-400/models/panels/MFD/mfdtext-panel.xml</path>
+
+</PropertyList>

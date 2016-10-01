@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>flash.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+
+    <!-- Objets transparents -->
+    <object-name>flash</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>flash</object-name>
+  </animation>
+
+  <animation>
+    <type>flash</type>
+    <object-name>flash</object-name>
+    <center>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <power>1.1</power>
+    <factor>1.1</factor>
+    <offset>-0.9</offset>
+    <two-sides type="bool">false</two-sides>
+    <min>0.5</min>
+    <max>1.1</max>
+  </animation>
+<animation>
+ <type>rotate</type>
+ <object-name>flash</object-name>
+ <property>/gear/gear[0]/caster-angle-deg</property>
+<factor>-0.3</factor>
+ <center>
+  <x-m>0.3s</x-m>
+  <z-m>0.0</z-m>
+ </center>
+ <axis>
+  <x>0</x>
+  <y>0</y>
+  <z>1</z>
+ </axis>
+</animation>
+
+<animation>
+<type>dist-scale</type>
+<object-name>flash</object-name>
+<interpolation>
+<entry>
+<ind>0</ind>
+<dep>1</dep>
+</entry>
+<entry>
+<ind>20</ind>
+<dep>3</dep>
+</entry>
+</interpolation>
+</animation>
+
+<effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+<object-name>flash</object-name>
+</effect>
+
+<animation>
+<type>select</type>
+<object-name>flash</object-name>
+<condition>
+<greater-than>
+<property>systems/electrical/batt-volts</property>
+<value>15</value>
+</greater-than>
+    <greater-than>
+<property>gear/gear/position-norm</property>
+<value>0.99</value>
+</greater-than>
+<property>controls/lighting/landing-lights</property>
+</condition>
+</animation>
+
+</PropertyList>

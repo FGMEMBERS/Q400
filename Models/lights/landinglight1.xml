@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+
+  <path>flash.ac</path>
+
+  <animation>
+    <!-- Objets opaques -->
+
+    <!-- Objets transparents -->
+    <object-name>flash</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>flash</object-name>
+  </animation>
+
+  <animation>
+    <type>flash</type>
+    <object-name>flash</object-name>
+    <center>
+      <x-m> 0.000 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+    <power>1.1</power>
+    <factor>1.1</factor>
+    <offset>0</offset>
+    <two-sides type="bool">false</two-sides>
+    <min>0.5</min>
+    <max>1.1</max>
+  </animation>
+
+<animation>
+<type>dist-scale</type>
+<object-name>flash</object-name>
+<interpolation>
+<entry>
+<ind>0</ind>
+<dep>3</dep>
+</entry>
+<entry>
+<ind>20</ind>
+<dep>3</dep>
+</entry>
+</interpolation>
+</animation>
+<effect>
+    <inherits-from>Effects/model-transparent</inherits-from>
+<object-name>flash</object-name>
+</effect>
+<animation>
+<type>select</type>
+<object-name>flash</object-name>
+<condition>
+<greater-than>
+<property>systems/electrical/outputs/landing-light[1]</property>
+<value>15</value>
+</greater-than>
+</condition>
+</animation>
+
+</PropertyList>

@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+		<checklist n="0">
+			<title>Checks before engine start</title>
+			<item>
+				<name>Preflight check</name>
+				<value>COMPLETED</value>
+			</item>
+			<item>
+				<name>All Doors</name>
+				<value>CLOSED and LOCKED</value>
+			</item>
+			<item>
+				<name>Parking brake</name>
+				<value>LOCKED</value>
+			</item>
+			<item>
+				<name>Battery</name>
+				<value>ON and CHECKED</value>
+			</item>
+			<item>
+				<name>EPU/APU</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>For APU</name>
+			</item>
+			<item>
+				<name>APU Master</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>APU Start</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>APU Generator</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>APU Bleed Air</name>
+				<value>As required</value>
+			</item>
+			<item>
+				<name>For EPU</name>
+			</item>
+			<item>
+				<name>EPU</name>
+				<value>Plugged In (via Menu)</value>
+			</item>
+			<item>
+				<name>External Power</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Landing Gear</name>
+				<value>DOWN and three green</value>
+			</item>
+			<item>
+				<name>Fuel Level</name>
+				<value>Check sufficient</value>
+			</item>
+			<item>
+				<name>Passenger Signs</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Caution/Warning Panel</name>
+				<value>TEST</value>
+			</item>
+		</checklist>
+		
+		<checklist n="1">
+			<title>Engine start procedure</title>
+			<item>
+				<name>Power Lever</name>
+				<value>Idle</value>
+			</item>
+			<item>
+				<name>Condition Lever</name>
+				<value>Fuel Off</value>
+			</item>
+			<item>
+				<name>Park Brake</name>
+				<value>Recheck SET</value>
+			</item>
+			<item>
+				<name>Engine Ignitions</name>
+				<value>On</value>
+			</item>
+			<item>
+				<name>Engine Starter</name>
+				<value>Left</value>
+			</item>
+			<item>
+				<name>after 5 seconds</name>
+			</item>
+			<item>
+				<name>Left Condition Lever</name>
+				<value>Start and Feather</value>
+			</item>
+			<item>
+				<name>Engine Display</name>
+				<value>Check Left engine reacts on power</value>
+			</item>
+			<item>
+				<name>Engine Starter</name>
+				<value>Right</value>
+			</item>
+			<item>
+				<name>after 5 seconds</name>
+			</item>
+			<item>
+				<name>Right Condition Lever</name>
+				<value>Start and Feather</value>
+			</item>
+			<item>
+				<name>Engine Display</name>
+				<value>Check both engines react on power</value>
+			</item>
+			<item>
+				<name>Both condition Levers</name>
+				<value>MIN 850</value>
+			</item>
+			<item>
+				<name>Engine Starter</name>
+				<value>Off</value>
+			</item>
+		</checklist>
+		
+		<checklist n="2">
+			<title>After engine start</title>
+			<item>
+				<name>DC/AC Generators</name>
+				<value>1 and 2 on</value>
+			</item>
+			<item>
+				<name>Cockpit and Exterior Lights</name>
+				<value>as required</value>
+			</item>
+			<item>
+				<name>Both Condition Levers</name>
+				<value>MAx</value>
+			</item>
+			<item>
+				<name>Flight Controls</name>
+				<value>Free and Correct</value>
+			</item>
+		</checklist>
+		
+		<checklist n="3">
+			<title>Taxiing</title>
+			<item>
+				<name>Parking brake</name>
+				<value>UNLOCKED</value>
+			</item>
+			<item>
+				<name>Brakes</name>
+				<value>CHECKED</value>
+			</item>
+		</checklist>
+		
+		<checklist n="4">
+			<title>Check point</title>
+			<item>
+				<name>Parking brake</name>
+				<value>LOCKED</value>
+			</item>
+			<item>
+				<name>Instruments</name>
+				<value>CHECKED</value>
+			</item>
+			<item>
+				<name>Yaw Damper</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Cabin</name>
+				<value>Ready for Takeoff</value>
+			</item>
+			<item>
+				<name>Condition Lever</name>
+				<value>Check MAX</value>
+			</item>
+			<item>
+				<name>Throttle Lever</name>
+				<value>Check Travel and Reverser</value>
+			</item>
+			<item>
+				<name>RPM</name>
+				<value>Checked</value>
+			</item>
+		</checklist>
+		
+		
+		<checklist n="5">
+			<title>Before take-off/Line-up</title>
+			<item>
+				<name>Strobe/Beacon</name>
+				<value>On</value>
+			</item>
+			<item>
+				<name>Landing Light</name>
+				<value>As required</value>
+			</item>
+			<item>
+				<name>Parking Brake</name>
+				<value>RELEASE</value>
+			</item>
+			<item>
+				<name>Caution Panel</name>
+				<value>All Lights off</value>
+			</item>
+			<item>
+				<name>Flaps</name>
+				<value>5deg/1st notch</value>
+			</item>
+		</checklist>
+		
+		<checklist n="6">
+			<title>Take-off procedure</title>
+			<item>
+				<name>Parking brake</name>
+				<value>UNLOCKED</value>
+			</item>
+			<item>
+				<name>Throttle</name>
+				<value>FULL</value>
+			</item>
+			<item>
+				<name>Take-off speed</name>
+				<value>100-115kts</value>
+			</item>
+			<item>
+				<name>Climb speed</name>
+				<value>108-120kts</value>
+			</item>
+		</checklist>
+		
+		<checklist n="7">
+			<title>After Takeoff/Climb</title>
+			<item>
+				<name>Gear</name>
+				<value>UP, after 10 seconds all lights off</value>
+			</item>
+			<item>
+				<name>Flaps</name>
+				<value>0</value>
+			</item>
+			<item>
+				<name>Power</name>
+				<value>Climb Power</value>
+			</item>
+			<item>
+				<name>For FL</name>
+				<value>Altimeter STD</value>
+			</item>
+		</checklist>
+		
+		<checklist n="7">
+			<title>Cruise</title>
+			<item>
+				<name>Seat belts</name>
+				<value>Light off</value>
+			</item>
+		</checklist>
+		
+		<checklist n="8">
+			<title>Descent / approach check</title>
+			<item>
+				<name>Altimeter</name>
+				<value>set QNH</value>
+			</item>
+			<item>
+				<name>Passenger Signs</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Cabin</name>
+				<value>Secured for landing</value>
+			</item>
+			<item>
+				<name>Flaps</name>
+				<value>Set max. 15 deg/ 4th notch</value>
+			</item>
+		</checklist>
+		
+		<checklist n="9">
+			<title>Final check</title>
+			<item>
+				<name>Flaps</name>
+				<value>FULL</value>
+			</item>
+			<item>
+				<name>Caution Panel</name>
+				<value>Check Clear</value>
+			</item>
+			<item>
+				<name>Gear</name>
+				<value>Down, check 3 green</value>
+			</item>
+			<item>
+				<name>Cabin pressure</name>
+				<value>equals outside pressure</value>
+			</item>
+		</checklist>
+		
+		<checklist n="10">
+			<title>After landing check</title>
+			<item>
+				<name>Flaps</name>
+				<value>UP</value>
+			</item>
+			<item>
+				<name>Navigation Instrumentation (COM, NAV, ADF, GPS)</name>
+				<value>OFF</value>
+			</item>
+		</checklist>
+		
+		<checklist n="11">
+			<title>Engine shutdown</title>
+			<item>
+				<name>Parking brake</name>
+				<value>LOCKED</value>
+			</item>
+			<item>
+				<name>POWER</name>
+				<value>IDLE</value>
+			</item>
+			<item>
+				<name>Condition</name>
+				<value>Fuel off</value>
+			</item>
+			<item>
+				<name>Ignition</name>
+				<value>OFF</value>
+			</item>
+			<item>
+				<name>Generators</name>
+				<value>OFF</value>
+			</item>
+			<item>
+				<name>Battery</name>
+				<value>OFF</value>
+			</item>
+		</checklist>
+</PropertyList>
+

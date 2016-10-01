@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+<model>
+  <path>Aircraft/Q400/Models/interior.ac</path>
+    <name>interior</name>
+    <offsets>
+      <x-m> 0.0 </x-m>
+      <y-m>  0.0 </y-m>
+      <z-m> 0.0 </z-m>
+    </offsets>
+</model>
+<animation>
+    <type>range</type>
+    <min-m>0</min-m>
+    <max-m>1000</max-m>
+    <max-property>sim/rendering/static-lod/bare</max-property>
+  </animation>
+
+   <animation>
+    <type>pick</type>
+    <object-name>flightdeckdoor</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>nasal</command>
+        <script>doors.fd.toggle();</script>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>flightdeckdoor</object-name>
+    <property>sim/model/door-positions/fd/position-norm</property>
+    <interpolation>
+      <entry><ind> 0 </ind><dep>  0 </dep></entry>
+      <entry><ind> 1 </ind><dep> 80 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> -10.76787 </x-m>
+      <y-m>  0.31383 </y-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 0 </y>
+      <z> 1 </z>
+    </axis>
+  </animation><!--
+    <animation>
+      <type>pick</type>
+      <object-name>seats74</object-name>
+      <object-name>seats78</object-name>
+      <object-name>seats82</object-name>
+      <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-cycle</command>
+          <property>/sim/model/interior/seats</property>
+          <value>74</value>
+          <value>78</value>
+          <value>82</value>
+      </binding>
+  </action>
+</animation>
+  <animation>
+      <type>select</type>
+      <object-name>seats74</object-name>
+      <condition><equals>
+          <property>/sim/model/interior/seats</property>
+          <value>74</value>
+          </equals></condition>
+</animation>
+  <animation>
+      <type>select</type>
+      <object-name>seats78</object-name>
+      <condition><equals>
+          <property>/sim/model/interior/seats</property>
+          <value>78</value>
+          </equals></condition>
+</animation>
+  <animation>
+      <type>select</type>
+      <object-name>seats82</object-name>
+      <condition><equals>
+          <property>/sim/model/interior/seats</property>
+          <value>82</value>
+          </equals></condition>
+</animation>-->
+</PropertyList>
+

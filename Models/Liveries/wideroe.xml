@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!--
+    ############################################################################################
+    This Wideroe-livery for the Bombardier Q400 is made by Sven Seipp (D-SVEN). Have fun with it!
+    ############################################################################################
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Wideroe</name>
+            <texture>Liveries/wideroe.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>

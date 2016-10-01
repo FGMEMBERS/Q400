@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<!--
+    Notice: Brussels Airlines does not operate any Q400s themselves, but  the british reagional airline flybe paints some of them in their livery.
+    I personally don't have a senseble reason for that, but if anyone knows, you can let me know.
+    So far about those types of connections between european airlines! :)
+-->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Brussels Airlines</name>
+            <texture>Liveries/brusselsairlines.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>
+ 
+ 

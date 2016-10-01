@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+	<path>frontpedestal.ac</path>
+        
+  
+
+  <animation>
+        <type>pick</type>
+        <object-name>NDtcasL</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis/inputs/tfc</property>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>NDcenteredL</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis/inputs/nd-centered</property>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>NDwxterrL</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis/inputs/wxr</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis/inputs/terr</property>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>NDdataL</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis/inputs/data</property>
+            </binding>
+        </action>
+    </animation>
+
+  <animation>
+        <type>pick</type>
+        <object-name>NDtcasR</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis[1]/inputs/tfc</property>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>NDcenteredR</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis[1]/inputs/nd-centered</property>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>NDwxterrR</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis/inputs/wxr</property>
+            </binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis[1]/inputs/terr</property>
+            </binding>
+        </action>
+    </animation>
+  <animation>
+        <type>pick</type>
+        <object-name>NDdataR</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>0</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>/instrumentation/efis[1]/inputs/data</property>
+            </binding>
+        </action>
+    </animation>
+    
+    <!--COM1-->
+  <animation>
+        <type>select</type>
+        <object-name>COM1.off</object-name>
+        <condition><or><not>
+                    <property>/instrumentation/comm/power-btn</property></not>
+                <less-than>
+                <property>/systems/electrical/volts</property>
+                <value>15</value>
+                </less-than>
+                </or>
+        </condition>
+    </animation>
+    <!--Active frequency - if COMM mode-->
+  <animation>
+  <type>textranslate</type>
+  <object-name>comm.act.100</object-name>
+<property>/instrumentation/comm/frequencies/selected-mhz</property>
+    <step>100</step>
+    <factor>0.001</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.act.10</object-name>
+<property>/instrumentation/comm/frequencies/selected-mhz</property>
+    <step>10</step>
+    <factor>0.01</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.act.1</object-name>
+<property>/instrumentation/comm/frequencies/selected-mhz</property>
+    <step>1</step>
+    <factor>0.1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.act.01</object-name>
+<property>/instrumentation/comm/frequencies/selected-mhz</property>
+    <step>0.1</step>
+    <factor>1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.act.001</object-name>
+<property>/instrumentation/comm/frequencies/selected-mhz</property>
+    <step>0.01</step>
+    <factor>10</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.act.0001</object-name>
+<property>/instrumentation/comm/frequencies/selected-mhz</property>
+    <step>0.001</step>
+    <factor>100</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+    <!--Standby frequency-->
+  <animation>
+  <type>textranslate</type>
+  <object-name>comm.stby.100</object-name>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+    <step>100</step>
+    <factor>0.001</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.stby.10</object-name>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+    <step>10</step>
+    <factor>0.01</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.stby.1</object-name>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+    <step>1</step>
+    <factor>0.1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.stby.01</object-name>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+    <step>0.1</step>
+    <factor>1</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.stby.001</object-name>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+    <step>0.01</step>
+    <factor>10</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>textranslate</type>
+    <object-name>comm.stby.0001</object-name>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+    <step>0.001</step>
+    <factor>100</factor>
+    <bias>0.0001</bias>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  <!--Power btn-->
+  
+  <animation>
+    <type>pick</type>
+    <object-name>com.power</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+<property>/instrumentation/comm/power-btn</property>
+        </binding>
+    </action>
+  </animation>
+  <!--SWAP button-->
+  <animation>
+    <type>pick</type>
+    <object-name>com.swap</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+<!--if COMM mode-->
+      <binding>
+        <command>property-assign</command>
+        <property alias="instrumentation/comm/comm-frq-swp"/>
+        <value type="int">1</value>
+      </binding>
+      <binding>
+        <command>property-swap</command>
+<property>/instrumentation/comm/frequencies/selected-mhz</property>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+        <property alias="instrumentation/comm/comm-frq-swp"/>
+          <value type="int">0</value>
+        </binding>
+      </mod-up>
+    </action>
+  </animation>
+  <animation>
+    <type>translate</type>
+    <object-name>swap</object-name>
+        <property alias="instrumentation/comm/comm-frq-swp"/>
+    <factor>-0.002</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+  
+  <!--Tune knobs-->
+  <animation>
+    <type>knob</type>
+    <object-name>com.khz</object-name>
+    <action>
+      <binding>
+        <condition>
+	<property>/controls/electric/battery-switch</property>
+        </condition>
+        <command>property-adjust</command>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+        <factor>0.025</factor>
+        <min>0.0</min>
+        <max>1.0</max>
+        <resolution>0.025</resolution>
+        <wrap>true</wrap>
+        <mask>decimal</mask>
+      </binding>
+    </action>
+  </animation>
+ <animation>
+    <type>knob</type>
+    <object-name>com.mhz</object-name>
+    <action>
+      <binding>
+        <condition>
+	<property>/controls/electric/battery-switch</property>
+        </condition>
+        <command>property-adjust</command>
+<property>/instrumentation/comm/frequencies/standby-mhz</property>
+        <factor>1</factor>
+        <min>118.0</min>
+        <max>137.0</max>
+        <wrap>true</wrap>
+      </binding>
+    </action>
+  </animation>
+
+</PropertyList>

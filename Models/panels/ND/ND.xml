@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+<path>ND.ac</path>
+	<animation>
+		<type>select</type>
+		<object-name>navdisplayR.off</object-name>
+		<object-name>navdisplayL.off</object-name>
+		<condition>
+			<less-than>
+				<property>/systems/electrical/batt-volts</property>
+				<value>10</value>
+			</less-than>
+		</condition>
+	</animation>
+
+</PropertyList>

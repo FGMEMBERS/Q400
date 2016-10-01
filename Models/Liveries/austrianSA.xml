@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Austrian (Star Alliance)</name>
+            <texture>Liveries/austrianSA.png</texture>
+        </livery>
+    </model>
+</sim>
+</PropertyList>
