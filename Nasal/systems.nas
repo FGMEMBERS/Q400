@@ -617,93 +617,135 @@ var update_engine = func(eng){
 }
 
 
+#setlistener("/controls/APU/start", func(v) {
+#    if(v.getValue==1){
+  #      interpolate("/controls/APU/running-2", 1, 5);
+ #       print("Up");
+#    }else{
+   # print("Down");
+  #      interpolate("/controls/APU/running-2", 1, 0);
+ #   }
+#});
 var update_systems = func {
-#Throttle Lock
-if(getprop("/controls/engines/throttle-lock") == 0 ){
-setprop("/controls/engines/engine/throttle-int", getprop("/controls/engines/engine/throttle") );
-}else if(getprop("/controls/engines/engine/throttle") <= 0.3){
-setprop("/controls/engines/engine/throttle-int", getprop("/controls/engines/engine/throttle") );
-}else{
-setprop("/controls/engines/engine/throttle-int", 0.3 );
-}
-
-if(getprop("/controls/engines/throttle-lock") == 0 ){
-setprop("/controls/engines/engine[1]/throttle-int", getprop("/controls/engines/engine[1]/throttle") );
-}else if(getprop("/controls/engines/engine[1]/throttle") <= 0.3){
-setprop("/controls/engines/engine[1]/throttle-int", getprop("/controls/engines/engine[1]/throttle") );
-}else{
-setprop("/controls/engines/engine[1]/throttle-int", 0.3 );
-}
-#landing light for lightmap
-if(getprop("/controls/lighting/landing-light") == 1 and getprop("/controls/electric/battery-switch") == 1){
-setprop("/systems/electrical/outputs/lightmap/landing-light", 1);
-}else{
-setprop("/systems/electrical/outputs/lightmap/landing-light", 0);
-}
-if(getprop("/controls/lighting/landing-light[1]") == 1 and getprop("/controls/electric/battery-switch") == 1){
-setprop("/systems/electrical/outputs/lightmap/landing-light[1]", 1);
-}else{
-setprop("/systems/electrical/outputs/lightmap/landing-light[1]", 0);
-}
-#logo light for lightmap
-if(getprop("/controls/lighting/logo-lights") == 1 and getprop("/systems/electrical/volts") >=15 ){
-setprop("/systems/electrical/outputs/lightmap/logo-light", 1);
-}else{
-setprop("/systems/electrical/outputs/lightmap/logo-light", 0);
-}
-#hide ALS landing light from the outside
-if(getprop("/sim/current-view/internal") == 1 and getprop("/systems/electrical/volts") >= 15 ){
-setprop("/sim/rendering/als-secondary-lights/use-landing-light", getprop("/controls/lighting/landing-lights"));
-}else{
-setprop("/sim/rendering/als-secondary-lights/use-landing-light", 0);
-}
-#a bit of nasal for the start ;)
-if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
-setprop("/controls/engines/internal-engine-starter", 0);
-}
-#Gear Failure System
-if(getprop("/gear/serviceable") == 1){
-setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
-}
-
-    if(getprop("/controls/engines/engine/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
-    setprop("controls/engines/engine/ignition", 1);
-    } else {
-    setprop("controls/engines/engine/ignition", 0);
-    }
-    if(getprop("/controls/engines/engine[1]/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
-    setprop("controls/engines/engine[1]/ignition", 1);
+    #Throttle Lock
+    if(getprop("/controls/engines/throttle-lock") == 0 ){
+        setprop("/controls/engines/engine/throttle-int", getprop("/controls/engines/engine/throttle") );
+    }else if(getprop("/controls/engines/engine/throttle") <= 0.3){
+        setprop("/controls/engines/engine/throttle-int", getprop("/controls/engines/engine/throttle") );
     }else{
-    setprop("controls/engines/engine[1]/ignition", 0);
+        setprop("/controls/engines/engine/throttle-int", 0.3 );
     }
 
-#VERY simplified ignition system
-if(getprop("/controls/engines/engine/ignition") == 0){
-setprop("controls/engines/engine/condition", 0);
-}else{
-setprop("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"));
-}
-if(getprop("/controls/engines/engine[1]/ignition") == 0){
-setprop("controls/engines/engine[1]/condition", 0);
-}else{
-setprop("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"));
-}
-#EPU
-if(getprop("/controls/electric/epu-switch")){
-setprop("/controls/electric/power-source", -1);
-}
-#APU
-APUmaster=getprop("/controls/APU/master");
-APUstart=getprop("/controls/APU/start");
-if(APUmaster == 1 and APUstart == 1){setprop("/controls/APU/running", 1)}else{setprop("/controls/APU/running", 0)}
-APUrunning=getprop("/controls/APU/running");
-APUgen=getprop("/controls/APU/generator");
-if(APUrunning == 1 and APUgen == 1){setprop("/controls/APU/power", 1)}else{setprop("/controls/APU/power", 0)}
+    if(getprop("/controls/engines/throttle-lock") == 0 ){
+        setprop("/controls/engines/engine[1]/throttle-int", getprop("/controls/engines/engine[1]/throttle") );
+    }else if(getprop("/controls/engines/engine[1]/throttle") <= 0.3){
+        setprop("/controls/engines/engine[1]/throttle-int", getprop("/controls/engines/engine[1]/throttle") );
+    }else{
+        setprop("/controls/engines/engine[1]/throttle-int", 0.3 );
+    }
+    #landing light for lightmap
+    if(getprop("/controls/lighting/landing-light") == 1 and getprop("/controls/electric/battery-switch") == 1){
+        setprop("/systems/electrical/outputs/lightmap/landing-light", 1);
+    }else{
+        setprop("/systems/electrical/outputs/lightmap/landing-light", 0);
+    }
+    if(getprop("/controls/lighting/landing-light[1]") == 1 and getprop("/controls/electric/battery-switch") == 1){
+        setprop("/systems/electrical/outputs/lightmap/landing-light[1]", 1);
+    }else{
+        setprop("/systems/electrical/outputs/lightmap/landing-light[1]", 0);
+    }
+    #logo light for lightmap
+    if(getprop("/controls/lighting/logo-lights") == 1 and getprop("/systems/electrical/volts") >=15 ){
+        setprop("/systems/electrical/outputs/lightmap/logo-light", 1);
+    }else{
+        setprop("/systems/electrical/outputs/lightmap/logo-light", 0);
+    }
+    
+    #ALS Landing/Taxi Lights
+    if(getprop("/sim/current-view/internal") == 1 and getprop("/systems/electrical/volts") >= 15 ){
+        setprop("/sim/rendering/als-secondary-lights/use-landing-light", getprop("/controls/lighting/landing-light"));
+    }else{
+        setprop("/sim/rendering/als-secondary-lights/use-landing-light", 0);
+    }
+    if(getprop("/sim/current-view/internal") == 1 and getprop("/systems/electrical/volts") >= 15 and getprop("/controls/lighting/landing-light")== 0){
+        setprop("/sim/rendering/als-secondary-lights/use-landing-light", getprop("/controls/lighting/taxi-lights"));
+    }
+    if(getprop("/sim/current-view/internal") == 1 and getprop("/systems/electrical/volts") >= 15 ){
+        setprop("/sim/rendering/als-secondary-lights/use-alt-landing-light", getprop("/controls/lighting/landing-light[1]"));
+    }else{
+        setprop("/sim/rendering/als-secondary-lights/use-alt-landing-light", 0);
+    }
+    
+    #ALS - Beacon
+    if(getprop("/systems/electrical/volts")>=15){
+        setprop("/systems/electrical/outputs/beacon-norm", getprop("/sim/model/lights/beacon/state"));
+    }else{
+        setprop("/systems/electrical/outputs/beacon-norm", 0);
+    }
+    #ALS - Strobe
+    if(getprop("/systems/electrical/volts")>=15){
+        setprop("/systems/electrical/outputs/strobe-norm", getprop("/sim/model/lights/strobe/state"));
+    }else{
+        setprop("/systems/electrical/outputs/strobe-norm", 0);
+    }
+    #ALS - Navigation Lights
+    if(getprop("/systems/electrical/volts")>=15){
+        setprop("/systems/electrical/outputs/nav-lights-norm", getprop("/sim/model/lights/nav-lights/state"));
+    }else{
+        setprop("/systems/electrical/outputs/nav-lights-norm", 0);
+    }
+    #a bit of nasal for the start ;)
+    if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
+    setprop("/controls/engines/internal-engine-starter", 0);
+    }
+    
+    #Gear Failure System
+    if(getprop("/gear/serviceable") == 1){
+        setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
+    }
 
-#Altitude conversion for ap
-setprop("/position/altitude-ft-100", getprop("/position/altitude-ft")*0.01);
-#Thrust reverser, integrated from dhc6
-var LHrvr=getprop("controls/engines/engine[0]/reverser");
+    #Ignition
+    if(getprop("/controls/engines/engine/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
+        setprop("controls/engines/engine/ignition", 1);
+    } else {
+        setprop("controls/engines/engine/ignition", 0);
+    }
+    
+    if(getprop("/controls/engines/engine[1]/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
+        setprop("controls/engines/engine[1]/ignition", 1);
+    }else{
+        setprop("controls/engines/engine[1]/ignition", 0);
+    }
+
+    #VERY simplified ignition system
+    if(getprop("/controls/engines/engine/ignition") == 1 and getprop("/engines/engine/n2")>=13){ #We also check n2 here, so the engine won't start without prerotating using the starter
+        setprop("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"));
+    }else{
+        setprop("controls/engines/engine/condition", 0);
+    }
+    if(getprop("/controls/engines/engine[1]/ignition") == 1 and getprop("/engines/engine[1]/n2")>=13){
+        setprop("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"));
+    }else{
+        setprop("controls/engines/engine[1]/condition", 0);
+    }
+    
+    
+    #EPU
+    if(getprop("/controls/electric/epu-switch")){
+    setprop("/controls/electric/power-source", -1);
+    }
+    
+    #APU
+    APUmaster=getprop("/controls/APU/master");
+    if(APUmaster == 0){setprop("/controls/APU/running", 0)};
+    APUrunning=getprop("/controls/APU/running");
+    APUgen=getprop("/controls/APU/generator");
+    if(APUrunning == 1 and APUgen == 1){setprop("/controls/APU/power", 1)}else{setprop("/controls/APU/power", 0)}
+
+    #Altitude conversion for ap
+    setprop("/position/altitude-ft-100", getprop("/position/altitude-ft")*0.01);
+    #Thrust reverser, integrated from dhc6
+    var LHrvr=getprop("controls/engines/engine[0]/reverser");
     var RHrvr=getprop("controls/engines/engine[1]/reverser");
     var THR1 =getprop("controls/engines/engine[0]/throttle-int");
     var THR2 =getprop("controls/engines/engine[1]/throttle-int");

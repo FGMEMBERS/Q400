@@ -639,6 +639,26 @@ livery_update.stop();
 </offsets>
 </model>
 
+  <!--Wet runway propeller effect-->
+  
+  <model>
+    <path>Effects/engine/engineL.xml</path>
+  <offsets>
+      <x-m> -2.53324 </x-m>
+      <y-m>  -4.40674 </y-m>
+      <z-m> 1.77438</z-m>
+    </offsets>
+  </model>
+  
+  <model>
+    <path>Effects/engine/engineR.xml</path>
+  <offsets>
+      <x-m> -2.53324 </x-m>
+      <y-m>  4.40674 </y-m>
+      <z-m> 1.77438</z-m>
+    </offsets>
+  </model>
+  
 <!--Gear Left-->
 <!--Retraction-->
 <animation>
@@ -1238,8 +1258,25 @@ livery_update.stop();
 </model>
 
 <model>
-<path>Aircraft/Q400/Models/lights/GreenLight.xml</path>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition> 
+<path>lights/GreenLight.xml</path>
 <name>Greenlight</name>     
+<offsets>
+<x-m>0.7125</x-m>
+<y-m>14.2759</y-m>
+<z-m>4.2177</z-m>       
+</offsets>
+</model>
+<model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition> 
+<path>Effects/ALS-Lights/green-navlight.xml</path>
+<name>Greenlight-ALS</name>     
 <offsets>
 <x-m>0.7125</x-m>
 <y-m>14.2759</y-m>
@@ -1248,8 +1285,25 @@ livery_update.stop();
 </model>
 
 <model>
-<path>Aircraft/Q400/Models/lights/RedLight.xml</path>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition> 
+<path>lights/RedLight.xml</path>
 <name>Redlight</name>     
+<offsets>
+<x-m>0.7125</x-m>
+<y-m>-14.2759</y-m>
+<z-m>4.2177</z-m>       
+</offsets>
+</model>
+<model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition> 
+<path>Effects/ALS-Lights/red-navlight.xml</path>
+<name>Redlight-ALS</name>  
 <offsets>
 <x-m>0.7125</x-m>
 <y-m>-14.2759</y-m>
@@ -1261,7 +1315,12 @@ livery_update.stop();
 <!--Wings-->
 <model>
 <path>lights/strobe.xml</path>
-<name>strobeRHW</name>     
+<name>strobeRHW_white</name>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>     
 <offsets>
 <x-m>0.7125</x-m>
 <y-m>14.2759</y-m>
@@ -1269,16 +1328,50 @@ livery_update.stop();
 </offsets>
 </model>
 <model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/right-strobe.xml</path>
+<name>strobeRHW_white_ALS</name>
+<offsets>
+<x-m>0.7125</x-m>
+<y-m>14.2759</y-m>
+<z-m>4.2177</z-m>   
+</offsets>
+</model>
+<model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/beacon.xml</path>
-<name>strobeRHW</name>     
+<name>strobeRHW_red</name>     
 <offsets>
 <x-m>0.7125</x-m>
 <y-m>14.2759</y-m>
 <z-m>4.2177</z-m>   
 </offsets>
 </model>
-
 <model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/beacon.xml</path>
+<name>strobeRHW_red_ALS</name>     
+<offsets>
+<x-m>0.7125</x-m>
+<y-m>14.2759</y-m>
+<z-m>4.2177</z-m>   
+</offsets>
+</model>
+<!--LEFT WING-->
+<model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/strobe.xml</path>
 <name>strobeLHW</name>     
 <offsets>
@@ -1288,8 +1381,37 @@ livery_update.stop();
 </offsets>
 </model>
 <model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/left-strobe.xml</path>
+<name>strobeLHW-ALS</name>     
+<offsets>
+<x-m>0.7125</x-m>
+<y-m>-14.2759</y-m>
+<z-m>4.2177</z-m>   
+</offsets>
+</model>
+<model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/beacon.xml</path>
-<name>strobeLHW</name>     
+<name>beaconLHW</name>     
+<offsets>
+<x-m>0.7125</x-m>
+<y-m>-14.2759</y-m>
+<z-m>4.2177</z-m>  
+</offsets>
+</model>
+<model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/beacon.xml</path>
+<name>beaconLHW_ALS</name>     
 <offsets>
 <x-m>0.7125</x-m>
 <y-m>-14.2759</y-m>
@@ -1298,6 +1420,11 @@ livery_update.stop();
 </model>
 <!--Tail top-->
 <model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/strobe.xml</path>
 <name>flashtopwhite</name>     
 <offsets>
@@ -1307,6 +1434,23 @@ livery_update.stop();
 </offsets>
 </model>
 <model>
+<condition>
+        <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/strobe.xml</path>
+<name>flashtopwhite_ALS</name>     
+<offsets>
+<x-m>16.18368</x-m>
+<y-m>0.000</y-m>
+<z-m>8.3</z-m>   
+</offsets>
+</model>
+<model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/beacon.xml</path>
 <name>flashtopred</name>     
 <offsets>
@@ -1315,8 +1459,25 @@ livery_update.stop();
 <z-m>8.3</z-m>   
 </offsets>
 </model>
+<model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/beacon.xml</path>
+<name>flashtopred_ALS</name>     
+<offsets>
+<x-m>16.18368</x-m>
+<y-m>0.000</y-m>
+<z-m>8.3</z-m>   
+</offsets>
+</model>
 <!--Fuselage top-->
 <model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/strobe.xml</path>
 <name>fltopwhite</name>     
 <offsets>
@@ -1326,6 +1487,23 @@ livery_update.stop();
 </offsets>
 </model>
 <model>
+<condition>
+        <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/strobe.xml</path>
+<name>fltopwhite_ALS</name>     
+<offsets>
+<x-m>-0.44037</x-m>
+<y-m>0.000</y-m>
+<z-m>3.9</z-m>   
+</offsets>
+</model>
+<model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/beacon.xml</path>
 <name>fltopred</name>     
 <offsets>
@@ -1334,8 +1512,25 @@ livery_update.stop();
 <z-m>3.9</z-m>      
 </offsets>
 </model>
+<model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/beacon.xml</path>
+<name>fltopred_ALS</name>     
+<offsets>
+<x-m>-0.44037</x-m>
+<y-m>0.000</y-m>
+<z-m>3.9</z-m>      
+</offsets>
+</model>
 <!--Fuselage bottom-->
 <model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/strobe.xml</path>
 <name>flbtmwhite</name>     
 <offsets>
@@ -1345,12 +1540,41 @@ livery_update.stop();
 </offsets>
 </model>
 <model>
+<condition>
+        <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/strobe.xml</path>
+<name>flbtmwhite_ALS</name>     
+<offsets>
+<x-m>-0.27464</x-m>
+<y-m>0.000</y-m>
+<z-m>0.865</z-m>  
+</offsets>
+</model>
+<model>
+<condition>
+    <not>
+        <property>/sim/rendering/shaders/skydome</property>
+    </not>
+</condition>
 <path>lights/beacon.xml</path>
 <name>flbtmred</name>     
 <offsets>
 <x-m>-0.27464</x-m>
 <y-m>0.000</y-m>
 <z-m>0.865</z-m>      
+</offsets>
+</model>
+<model>
+<condition>
+    <property>/sim/rendering/shaders/skydome</property>
+</condition>
+<path>Effects/ALS-Lights/beacon.xml</path>
+<name>flbtmred_ALS</name>  
+<offsets>
+<x-m>-0.27464</x-m>
+<y-m>0.000</y-m>
+<z-m>0.865</z-m>     
 </offsets>
 </model>
 
