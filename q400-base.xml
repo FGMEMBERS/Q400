@@ -169,10 +169,13 @@ DHC8 -400Q by Alex Park Jan 2010
     <systems>
 	<electrical>
             <path></path>
-        </electrical>
+        </electrical>    
         <autopilot>
-            <path>Systems/Citation-autopilot.xml</path>
+            <path>Aircraft/Q400/Systems/it-autoflight.xml</path>
         </autopilot>
+        <property-rule n="100">
+            <path>Aircraft/Q400/Systems/pfd.xml</path>
+        </property-rule>
     </systems>
 
         <instrumentation>

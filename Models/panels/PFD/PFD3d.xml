@@ -273,7 +273,7 @@
 
     <animation>
       <object-name>AltitudeCursor</object-name>
-			  <property>instrumentation/pfd/target-altitude-diff</property>
+        <property>instrumentation/pfd/target-altitude-diff</property>
        <type>translate</type>
         <axis>
             <x>0</x>
@@ -434,16 +434,10 @@
         <type>select</type>
         <object-name>SpeedCursor</object-name>
            <condition>
-             <or>
               <equals>
-                  <property>/autopilot/locks/altitude</property>
-                  <value>FLC</value>
+                  <property>it-autoflight/mode/vert</property>
+                  <value>SPD CLB</value>
               </equals>
-              <equals>
-                  <property>/autopilot/locks/altitude</property>
-                  <value>VFLC</value>
-              </equals>
-             </or>
            </condition>
     </animation>
 		
@@ -1150,8 +1144,8 @@
         <object-name>VSbox</object-name>
         <condition>
             <equals>
-                <property>autopilot/locks/altitude</property>
-                <value>VS</value>
+                <property>it-autoflight/mode/vert</property>
+                <value>V/S</value>
             </equals>
         </condition>
     </animation>

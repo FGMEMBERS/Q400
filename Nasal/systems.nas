@@ -389,7 +389,11 @@ setlistener("/sim/signals/fdm-initialized", func {
     if(getprop("/position/gear-agl-ft") >= 10){
     setprop("/sim/model/door-positions/passengerF/position-norm", 1);
 }
+    itaf.ap_init();
+    var autopilot = gui.Dialog.new("sim/gui/dialogs/autopilot/dialog", "Aircraft/Q400/Systems/autopilot-dlg.xml");
     });
+    
+
 
 
 setlistener("controls/fuel/Laux-switch", func(laux){
