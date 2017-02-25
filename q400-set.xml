@@ -196,56 +196,23 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             <float n="15" alias="/gear/gear/position-norm">                    1 </float>
             <float n="16" alias="/gear/gear[1]/position-norm">                    1 </float>
             <float n="17" alias="/gear/gear[2]/position-norm">                    1 </float>
+            <float n="18" alias="/sim/model/door-positions/passengerF/position-norm"/>
+            <float n="19" alias="/sim/model/door-positions/passengerLH/position-norm"/>
+            <float n="20" alias="/sim/model/door-positions/passengerRF/position-norm"/>
+            <float n="21" alias="/sim/model/door-positions/passengerRH/position-norm"/>
+            <float n="22" alias="/sim/model/door-positions/cargo/position-norm"/>
         </generic>
     </multiplay>
+    
 </sim>
-<systems>
-    <electrical>
-        <lighting>
-            <landing-light type="bool">0</landing-light>
-            <logo-light type="bool">0</logo-light>
-        </lighting>
-    </electrical>
-</systems>
-    <autopilot>
-        <settings>
-						<minimums-mode type="string">RA</minimums-mode>
-            <minimums type="int">200</minimums>
-            <target-roll-deg type="double">0</target-roll-deg>
-            <target-pitch-deg type="double">0</target-pitch-deg>
-            <vertical-speed-fpm type="int">0</vertical-speed-fpm>
-            <nav-source type="string">NAV1</nav-source>
-            <bank-limit type="int">30</bank-limit>
-            <target-speed-kt type="int">250</target-speed-kt>
-            <target-speed-mach type="double">0.38</target-speed-mach>
-
-            <changeover type="bool">0</changeover>
-            <heading-bug-deg type="int">0</heading-bug-deg>
-            <vertical-speed-fpm type="int">0</vertical-speed-fpm>
-            <asel type="int">410</asel>
-        </settings>
-        <locks>
-            <heading>ROLL</heading>
-            <heading-arm type="string"></heading-arm>
-            <altitude>PTCH</altitude>
-            <altitude-arm type="string"></altitude-arm>
-            <AP-status type="string"></AP-status>
-            <FD-status type="bool">1</FD-status>
-            <yaw-damper type="bool">0</yaw-damper>
-            <m-trim type="bool">0</m-trim>
-        </locks>
-        <internal>
-            <selected-crs type="int">0</selected-crs>
-            <nav-distance type="double">0</nav-distance>
-            <nav-type type="string"></nav-type>
-            <nav-id type="string"></nav-id>
-            <course-deflection type="double">0.0</course-deflection>
-            <gs-valid type="bool">0</gs-valid>
-            <gs-deflection type="double">0.0</gs-deflection>
-            <in-range type="bool">0</in-range>
-            <gs-in-range type="bool">0</gs-in-range>
-        </internal>
-    </autopilot>
+    <systems>
+        <electrical>
+            <lighting>
+                <landing-light type="bool">0</landing-light>
+                <logo-light type="bool">0</logo-light>
+            </lighting>
+        </electrical>
+    </systems>
 <input>
  <keyboard>
   <key n="127">
@@ -297,25 +264,75 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
       </ident>
     </cdu>
    </instrumentation>
+   
+   
+    <it-autoflight>
+            <config>
+                    <roll>
+                            <umin>-0.50</umin>
+                            <umax>0.50</umax>
+                            <kp>0.06</kp>
+                            <kp-vloc>0.09</kp-vloc>
+                            <ti>10.0</ti>
+                            <td>0.00001</td>
+                            <kp-cws>0.09</kp-cws>
+                    </roll>
+                    <pitch>
+                            <umin>-0.40</umin>
+                            <umax>0.40</umax>
+                            <kp>-0.08</kp>
+                            <ti>10.0</ti>
+                            <td>0.0001</td>
+                            <kp-cws>-0.07</kp-cws>
+                    </pitch>
+                    <cmd>
+                            <roll-scale>6.2</roll-scale>
+                            <vorloc>-5.0</vorloc>
+                            <alt>0.03</alt>
+                            <vs>0.07</vs>
+                            <fpa>0.30</fpa>
+                            <flch>-0.35</flch>
+                            <gs>0.11</gs>
+                    </cmd>
+                    <autoland>
+                            <kp-roll>0.10</kp-roll>
+                            <kp-pitch>0.07</kp-pitch>
+                            <kp-rudder>-0.3</kp-rudder>
+                    </autoland>
+            </config>
+            <settings>
+                    <enable-cws>0</enable-cws> <!-- Enable/Disable CWS -->
+                    <flare-altitude>35</flare-altitude> <!-- Autoland Flare AGL -->
+                    <land-enable>0</land-enable> <!-- Enable/Disable Autoland -->
+                    <land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
+                    <retard-ft>40</retard-ft> <!-- Enable Thrust Retard -->
+                    <retard-enable>0</retard-enable> <!-- AGL to Thrust Retard -->
+                    <togaspd>158</togaspd> <!-- V2 + 10kts -->
+                    <lat-agl-ft>200</lat-agl-ft> <!-- Set to 999999 if you do not want T/O to change automatically to HDG, or LNAV -->
+                    <reduc-agl-ft>1500</reduc-agl-ft> <!-- Set to 999999 if you do not want TOGA to change automatically to FLCH -->
+            </settings>
+    </it-autoflight>
 
-
-    <nasal>
+    <nasal>  
         <ND>
             <file>Models/panels/ND/ND.nas</file>
         </ND>
         <q400>
-   <file>Nasal/limits.nas</file>
+            <file>Nasal/limits.nas</file>
             <file>Nasal/Flightdirector.nas</file>
             <file>Nasal/liveries.nas</file>
-         <file>Nasal/Electrical.nas</file>
+            <file>Nasal/Electrical.nas</file>
             <file>Nasal/systems.nas</file>
            <!-- <file>Nasal/vhf22.nas</file>
             <file>Nasal/vir32.nas</file>-->
 		<!--<file>Nasal/copilot-dual-control.nas</file>-->
 		<!--<file>Nasal/dhc8-400-dual-control.nas</file>
 		<file>Nasal/dual-control-tools.nas</file>-->
-		<file>Nasal/lighting.nas</file>
+            <file>Nasal/lighting.nas</file>
         </q400>
+        <itaf>
+            <file>Aircraft/Q400/Nasal/it-autoflight.nas</file>
+        </itaf>
         <doors>
             <file>Nasal/doors.nas</file>
         </doors>
