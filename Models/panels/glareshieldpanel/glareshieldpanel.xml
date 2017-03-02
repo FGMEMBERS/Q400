@@ -15,8 +15,9 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>q400.FD_set_mode("hdg")</script>
+                <command>property-assign</command>
+                <property>it-autoflight/input/lat</property>
+                <value>0</value>
             </binding>
         </action>
     </animation>
@@ -29,8 +30,9 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>q400.FD_set_mode("alt")</script>
+                <command>property-assign</command>
+                <property>it-autoflight/input/vert</property>
+                <value>0</value>
             </binding>
         </action>
     </animation>
@@ -44,13 +46,19 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>q400.FD_set_mode("nav")</script>
+                <command>property-assign</command>
+                <property>it-autoflight/input/lat</property>
+                <value>1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>it-autoflight/input/backcourse-trk</property>
+                <value>0</value>
             </binding>
         </action>
     </animation>
-
-    <animation>
+    <!--Not implemented!-->
+    <!--<animation>
         <type>pick</type>
         <object-name>vnav</object-name>
         <visible>true</visible>
@@ -62,7 +70,7 @@
                 <script>q400.FD_set_mode("vnav")</script>
             </binding>
         </action>
-    </animation>
+    </animation>-->
 
 
     <animation>
@@ -73,8 +81,14 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>q400.FD_set_mode("app")</script>
+                <command>property-assign</command>
+                <property>it-autoflight/input/vert</property>
+                <value>2</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>it-autoflight/input/lat</property>
+                <value>2</value>
             </binding>
         </action>
     </animation>
@@ -88,12 +102,13 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>q400.FD_set_mode("vs")</script>
+                <command>property-assign</command>
+                <property>it-autoflight/input/vert</property>
+                <value>1</value>
             </binding>
         </action>
     </animation>
-
+    <!--Not implemented yet!-->
     <animation>
         <type>pick</type>
         <object-name>bc</object-name>
@@ -102,12 +117,18 @@
             <button>0</button>
             <repeatable>false</repeatable>
             <binding>
-                <command>nasal</command>
-                <script>q400.FD_set_mode("bc")</script>
+                <command>property-assign</command>
+                <property>it-autoflight/input/backcourse-trk</property>
+                <value>1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>it-autoflight/input/lat</property>
+                <value>1</value>
             </binding>
         </action>
     </animation>
-
+    
     <animation>
         <type>pick</type>
         <object-name>stby</object-name>
@@ -133,6 +154,12 @@
             <binding>
                 <command>nasal</command>
                 <script>q400.FD_set_mode("ap");</script>
+            </binding>
+            <binding>
+                <command>property-cycle</command>
+                <property>it-autoflight/input/ap1</property>
+		<value>1</value>
+		<value>0</value>
             </binding>
         </action>
     </animation>
@@ -204,10 +231,10 @@
         <action>
             <binding>
                 <command>property-adjust</command>
-                <property>/autopilot/settings/asel</property>
-                <factor>1</factor>
-                <min>10</min>
-                <max>500</max>                
+                <property>it-autoflight/input/alt</property>
+                <factor>100</factor>
+                <min>1000</min>
+                <max>50000</max>                
                 <wrap>false</wrap>
             </binding>
         </action>
@@ -221,8 +248,8 @@
             <repeatable>false</repeatable>
                 <binding>
                     <command>property-assign</command>
-                    <property>autopilot/settings/asel</property>
-                    <property>position/altitude-ft-100</property>
+                    <property>it-autoflight/input/alt</property>
+                    <property>position/altitude-ft</property>
                 </binding>
         </action>
     </animation>
@@ -233,7 +260,7 @@
         <action>
             <binding>
                 <command>property-adjust</command>
-                <property>/autopilot/settings/vertical-speed-fpm</property>
+                <property>it-autoflight/input/vs</property>
                 <factor>10</factor>
                 <min>-5000</min>
                 <max>5000</max>                
@@ -248,11 +275,11 @@
         <action>
             <binding>
                 <command>property-adjust</command>
-                <property>/autopilot/settings/heading-bug-deg</property>
+                <property>it-autoflight/input/hdg</property>
                 <factor>1</factor>
                 <min>0</min>
                 <max>360</max>                
-                <wrap>false</wrap>
+                <wrap>true</wrap>
             </binding>
         </action>
     </animation>
@@ -265,8 +292,8 @@
             <repeatable>false</repeatable>
                 <binding>
                     <command>property-assign</command>
-                <property>/autopilot/settings/heading-bug-deg</property>
-                    <property>/orientation/heading-deg</property>
+                    <property>it-autoflight/input/hdg</property>
+                    <property>/orientation/heading-magnetic-deg</property>
                 </binding>
         </action>
     </animation>

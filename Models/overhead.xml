@@ -1181,31 +1181,6 @@
         <command>property-toggle</command>
         <property>/controls/APU/start</property>
       </binding>
-      <binding>
-          <condition>
-              <greater-than>
-                <property>/systems/electrical/volts</property>
-                <value>20</value>
-              </greater-than>
-              <property>/controls/APU/start</property>
-              <property>/controls/APU/master</property>
-          </condition>
-          <command>nasal</command>
-          <script>
-              interpolate("/controls/APU/running", 1, 5);
-          </script>
-      </binding>
-      <binding>
-          <condition>
-              <not>
-                <property>/controls/APU/start</property>
-            </not>
-          </condition>
-          <command>nasal</command>
-          <script>
-              interpolate("/controls/APU/running", 0, 5);
-          </script>
-      </binding>
     </action>
   </animation>
 <animation>
