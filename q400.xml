@@ -23,12 +23,12 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
 
 <airplane mass="35000">
 
-    <approach speed="90" aoa="5" fuel="0.5">
-        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="0.2"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="0.2"/>
+    <approach speed="100" aoa="5" fuel="0.5">
+        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="0.25"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="0.25"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
-        <control-setting axis="/controls/flight/flaps" value="0.5"/>
+        <control-setting axis="/controls/flight/flaps" value="1.0"/>
         <solve-weight idx="0" weight="360"/>
         <solve-weight idx="1" weight="2940"/>
  	  <control-setting axis="/controls/gear/gear-down" value="1"/>

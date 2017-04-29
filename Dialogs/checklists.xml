@@ -2,7 +2,8 @@
 
 <PropertyList>
 		<checklist n="0">
-			<title>Checks before engine start</title>
+                    <title>Checks before engine start</title>
+                    <page>
 			<item>
 				<name>Preflight check</name>
 				<value>COMPLETED</value>
@@ -14,14 +15,42 @@
 			<item>
 				<name>Parking brake</name>
 				<value>LOCKED</value>
+                                <condition>
+                                    <property>/controls/gear/brake-parking</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/gear/brake-parking</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>Battery</name>
 				<value>ON and CHECKED</value>
+                                <condition>
+                                    <property>/controls/electric/battery-switch</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/electric/battery-switch</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>EPU/APU</name>
 				<value>ON</value>
+                                <condition>
+                                    <and>
+                                        <or>
+                                            <property>/controls/APU/power</property>
+                                            <property>/controls/electrcic/external-power</property>
+                                        </or>
+                                        <equals>
+                                            <property>/systems/electrical/volts</property>
+                                            <value>28</value>
+                                        </equals>                                  
+                                    </and>
+                                </condition>
 			</item>
 			<item>
 				<name>For APU</name>
@@ -29,18 +58,50 @@
 			<item>
 				<name>APU Master</name>
 				<value>ON</value>
+                                <condition>
+                                    <property>/controls/APU/master</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/APU/master</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>APU Start</name>
 				<value>ON</value>
+                                <condition>
+                                    <property>/controls/APU/start</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/APU/start</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>APU Generator</name>
 				<value>ON</value>
+                                <condition>
+                                    <property>/controls/APU/generator</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/APU/generator</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>APU Bleed Air</name>
-				<value>As required</value>
+                                <value>ON</value>
+                                <condition>
+                                    <property>/controls/APU/bleedair</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/APU/bleedair</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>For EPU</name>
@@ -48,14 +109,43 @@
 			<item>
 				<name>EPU</name>
 				<value>Plugged In (via Menu)</value>
+                                <condition>
+                                    <property>services/ext-pwr/enable</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>services/ext-pwr/enable</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>External Power</name>
 				<value>ON</value>
+                                <condition>
+                                    <property>/controls/electrcic/external-power</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/electrcic/external-power</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
+                    </page>
+                    <page>
 			<item>
 				<name>Landing Gear</name>
 				<value>DOWN and three green</value>
+                                <condition>
+                                    <equals>
+                                        <property>/controls/gear/gear-down</property>
+                                        <value>1</value>
+                                    </equals> 
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/gear/gear-down</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>Fuel Level</name>
@@ -64,11 +154,26 @@
 			<item>
 				<name>Passenger Signs</name>
 				<value>ON</value>
+                                <condition>
+                                    <property>/controls/cabin/seatbelts</property>
+                                    <property>/controls/cabin/nosmoking</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/cabin/seatbelts</property>
+                                    <value>1</value>
+                                </binding>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/cabin/nosmoking</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>Caution/Warning Panel</name>
 				<value>TEST</value>
 			</item>
+                    </page>
 		</checklist>
 		
 		<checklist n="1">
@@ -76,22 +181,88 @@
 			<item>
 				<name>Power Lever</name>
 				<value>Idle</value>
+                                <condition>
+                                    <equals>
+                                        <property>/controls/engines/engine/throttle</property>
+                                        <value>0</value>
+                                    </equals> 
+                                    <equals>
+                                        <property>/controls/engines/engine[1]/throttle</property>
+                                        <value>0</value>
+                                    </equals> 
+                                </condition>
+                                <binding>
+                                    <command>property-interpolate</command>
+                                    <property>/controls/engines/engine/throttle</property>
+                                    <value>0</value>
+                                    <rate>2</rate>
+                                </binding>
+                                <binding>
+                                    <command>property-interpolate</command>
+                                    <property>/controls/engines/engine[1]/throttle</property>
+                                    <value>0</value>
+                                    <rate>2</rate>
+                                </binding>
 			</item>
 			<item>
 				<name>Condition Lever</name>
 				<value>Fuel Off</value>
+                                <condition>
+                                    <equals>
+                                        <property>/controls/engines/engine/condition-lever</property>
+                                        <value>0</value>
+                                    </equals> 
+                                    <equals>
+                                        <property>/controls/engines/engine[1]/condition-lever</property>
+                                        <value>0</value>
+                                    </equals> 
+                                </condition>
+                                <binding>
+                                    <command>property-interpolate</command>
+                                    <property>/controls/engines/engine/condition-lever</property>
+                                    <value>0</value>
+                                    <rate>2</rate>
+                                </binding>
+                                <binding>
+                                    <command>property-interpolate</command>
+                                    <property>/controls/engines/engine[1]/condition-lever</property>
+                                    <value>0</value>
+                                    <rate>2</rate>
+                                </binding>
 			</item>
 			<item>
-				<name>Park Brake</name>
+				<name>Parking Brake</name>
 				<value>Recheck SET</value>
+                                <condition>
+                                    <property>/controls/gear/brake-parking</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/gear/brake-parking</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>Engine Ignitions</name>
 				<value>On</value>
+                                <condition>
+                                    <property>/controls/engines/engine/ignition-switch</property>
+                                    <property>/controls/engines/engine[1]/ignition-switch</property>
+                                </condition>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/engines/engine/ignition-switch</property>
+                                    <value>1</value>
+                                </binding>
+                                <binding>
+                                    <command>property-assign</command>
+                                    <property>/controls/engines/engine[1]/ignition-switch</property>
+                                    <value>1</value>
+                                </binding>
 			</item>
 			<item>
 				<name>Engine Starter</name>
-				<value>Left</value>
+				<value>Left and Execute</value>
 			</item>
 			<item>
 				<name>after 5 seconds</name>
@@ -106,7 +277,7 @@
 			</item>
 			<item>
 				<name>Engine Starter</name>
-				<value>Right</value>
+				<value>Right and Execute</value>
 			</item>
 			<item>
 				<name>after 5 seconds</name>

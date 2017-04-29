@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	<path>baropanel.ac</path>
+    
+    <path>baropanel.ac</path>
         
-        <!--Panel illumination-->
         
-<animation>
+    <!--Panel illumination-->
+    <effect>
+        <inherits-from>Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/glareshield-lights</use></implicit-lightmap-intensity>
+        </parameters>
+	<object-name>Circle</object-name>
+	<object-name>Circle.001</object-name>
+    </effect>
+        
+    <animation>
       <type>material</type>
 	<object-name>Circle</object-name>
 	<object-name>Circle.001</object-name>

@@ -3,6 +3,29 @@
 	<path>frontpedestal.ac</path>
         
   
+        <!--Panel illumination-->
+    <effect>
+        <inherits-from>Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/enginepanel-lights</use></implicit-lightmap-intensity>
+        </parameters>
+	<object-name>base.1</object-name>
+	<object-name>base.2</object-name>
+	<object-name>base.3</object-name>
+	<object-name>base.4</object-name>
+	<object-name>base.5</object-name>
+	<object-name>base.6</object-name>
+	<object-name>base.7</object-name>
+	<object-name>screws</object-name>
+        <object-name>NDtcasL</object-name>
+        <object-name>NDcenteredL</object-name>
+        <object-name>NDwxterrL</object-name>
+        <object-name>NDdataL</object-name>
+        <object-name>NDtcasR</object-name>
+        <object-name>NDcenteredR</object-name>
+        <object-name>NDwxterrR</object-name>
+        <object-name>NDdataR</object-name>
+    </effect>
 
   <animation>
         <type>pick</type>

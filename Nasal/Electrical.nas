@@ -170,6 +170,8 @@ init_switches = func() {
     setprop("controls/lighting/engines-norm",0.8);
     setprop("controls/lighting/efis-norm",0.8);
     setprop("controls/lighting/panel-norm",0.8);
+    setprop("controls/lighting/panel/overhead", 0);
+    setprop("controls/lighting/panel/glareshield", 0);
 
     append(switch_list,"controls/anti-ice/prop-heat");
     append(output_list,"prop-heat");
@@ -474,6 +476,10 @@ var instr_lights=(bus_volts * getprop("controls/lighting/instrument-lights") ) *
 setprop(outPut~"instrument-lights",(instr_lights));
 setprop(outPut~"instrument-lights-norm",0.0357 * instr_lights);
 
+    setprop(outPut~"glareshield-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/glareshield") ) * 0.0357 );
+    setprop(outPut~"overhead-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/overhead") ) * 0.0357 );
+    setprop(outPut~"enginepanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/engine") ) * 0.0357 );
+    setprop(outPut~"centerpanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/center") ) * 0.0357 );
 
     for(var i=0; i<size(serv_list); i+=1) {
         var srvc = getprop(serv_list[i]);

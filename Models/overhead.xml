@@ -2,9 +2,21 @@
 <PropertyList>
 	<path>overhead.ac</path>
         
-        <!--Panel illumination-->
         
-<animation>
+        
+        <!--Panel illumination-->
+    <effect>
+        <inherits-from>Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/overhead-lights</use></implicit-lightmap-intensity>
+        </parameters>
+	<object-name>base</object-name>
+	<object-name>bases</object-name>
+	<object-name>bases2</object-name>
+	<object-name>scrws</object-name>
+    </effect>
+    
+<!--<animation>
       <type>material</type>
 	<object-name>base</object-name>
 	<object-name>bases</object-name>
@@ -18,7 +30,7 @@
             <blue>1</blue>
             <factor-prop>/controls/lighting/panel/overhead</factor-prop>
         </emission>
-    </animation>
+    </animation>-->
         
         <!--CAUTION PANEL-->
 <!--Test-->

@@ -684,13 +684,17 @@ setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
 #VERY simplified ignition system
 if(getprop("/controls/engines/engine/ignition") == 0){
 setprop("controls/engines/engine/condition", 0);
+}else if(getprop("/engines/engine/n2")<12) {
+setprop("controls/engines/engine/condition", 0);
 }else{
-setprop("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"));
+interpolate("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"), 1);
 }
 if(getprop("/controls/engines/engine[1]/ignition") == 0){
 setprop("controls/engines/engine[1]/condition", 0);
+}else if(getprop("/engines/engine[1]/n2")<12) {
+setprop("controls/engines/engine[1]/condition", 0);
 }else{
-setprop("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"));
+interpolate("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"), 1);
 }
 #EPU
 if(getprop("/controls/electric/epu-switch")){

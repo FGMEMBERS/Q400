@@ -435,8 +435,8 @@
         <object-name>SpeedCursor</object-name>
            <condition>
               <equals>
-                  <property>it-autoflight/mode/vert</property>
-                  <value>SPD CLB</value>
+                  <property>it-autoflight/output/vert</property>
+                  <value>4</value>
               </equals>
            </condition>
     </animation>
