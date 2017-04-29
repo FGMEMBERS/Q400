@@ -198,6 +198,23 @@ DHC8 -400Q by Alex Park Jan 2010
     <allow-toggle-cockpit>true</allow-toggle-cockpit>
 
     <help>
+        <key>
+            <name>q</name>
+            <desc>Disengage Autopilot</desc>
+        </key>
+        <key>
+            <name>w</name>
+            <desc>Walk forward towards view</desc>
+        </key>
+        <key>
+            <name>Del</name>
+            <desc>Toggle Thrust Reversers</desc>
+        </key>
+        <key>
+            <name>m/M</name>
+            <desc>Conditions Levers richer/leaner</desc>
+        </key>
+        
         <title>Dash8-400</title>
 <line>take off speed with flaps 15% = 87knts @ 30000lb</line>
 <line>landing speed with 15% flaps = 110knots @ 30000lb</line>	
@@ -225,7 +242,13 @@ DHC8 -400Q by Alex Park Jan 2010
 <position>
  <gear-agl-ft>0</gear-agl-ft>
 </position>
-<controls>
+    <controls>
+        <APU>
+            <master type="bool">0</master>
+            <start type="bool">0</start>
+            <generator type="bool">0</generator>
+            <bleedair type="bool">0</bleedair>
+        </APU>
         <electric>
             <battery-switch type = "bool">1</battery-switch>
             <avionics-switch type = "bool">1</avionics-switch>
@@ -244,18 +267,26 @@ DHC8 -400Q by Alex Park Jan 2010
 
         <lighting>
             <instrument-lights>1</instrument-lights>
-  		<strobe>1</strobe>
-  		<beacon>1</beacon>
-  		<landing-lights>1</landing-lights>
-  		<nav-lights>1</nav-lights>
-		<pfd-norm>1</pfd-norm>
+                <strobe>1</strobe>
+                <beacon>1</beacon>
+                <landing-lights>1</landing-lights>
+                <nav-lights>1</nav-lights>
+                <pfd-norm>1</pfd-norm>
+                <panel>
+                    <glareshield type="double">0</glareshield>
+                    <overhead type="double">0</overhead>
+                    <engine type="double">0</engine>
+                    <center type="double">0</center>
+                </panel>
+                <panel-lights type="bool">0</panel-lights>
         </lighting>
- 
+
 
         <engines>
-            <throttle-lock>0</throttle-lock>
-                <internal-engine-starter>0</internal-engine-starter>
-        <fire-test type="bool">0</fire-test>
+            <throttle-lock type="double">0</throttle-lock>
+            <throttle-lock-position type="double">0</throttle-lock-position>
+            <internal-engine-starter>0</internal-engine-starter>
+            <fire-test type="bool">0</fire-test>
             <engine n="0">
                 <condition-lever>0</condition-lever>
                 <condition>0</condition>
@@ -264,6 +295,8 @@ DHC8 -400Q by Alex Park Jan 2010
                 <propeller-pitch>0</propeller-pitch>
                 <throttle-fwd type="double">0</throttle-fwd>
                 <throttle-rvrs type="double">0</throttle-rvrs>
+                <reverser-position type="double">0</reverser-position>
+                <ignition-switch type="bool">0</ignition-switch>
                 </engine>
             <engine n="1">
                 <condition-lever>0</condition-lever>
@@ -272,10 +305,12 @@ DHC8 -400Q by Alex Park Jan 2010
                 <mixture>0</mixture>
                 <propeller-pitch>0</propeller-pitch>
                 <throttle-fwd type="double">0</throttle-fwd>
-                <throttle-rvrs type="double">0</throttle-rvrs>  
+                <throttle-rvrs type="double">0</throttle-rvrs>
+                <reverser-position type="double">0</reverser-position>
+                <ignition-switch type="bool">0</ignition-switch>
             </engine>
         </engines>
-</controls>
+    </controls>
 
 <consumables>
     <fuel>
@@ -359,17 +394,44 @@ DHC8 -400Q by Alex Park Jan 2010
 
     <input>
         <keyboard>
-			<key n="119">
-				<name>w</name>
-				<desc>Walk forward toward view</desc>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>nasal</command>
-					<script>
-					 walk.walk_about(0.1);
-					</script>
-				</binding>
-			</key>
+            <key n="119">
+                <name>w</name>
+                <desc>Walk forward toward view</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                        <command>nasal</command>
+                        <script>
+                            walk.walk_about(0.1);
+                        </script>
+                </binding>
+            </key>
+            <key n="113">
+                <name>q</name>
+                <desc>Disengage Autopilot</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                        <command>property-assign</command>
+                        <property>it-autoflight/input/ap1</property>
+                        <value>0</value>
+                </binding>
+                <binding>
+                        <command>property-assign</command>
+                        <property>it-autoflight/input/ap2</property>
+                        <value>0</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/autopilot/disengage-pressed</property>
+                    <value>1</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/autopilot/disengage-pressed</property>
+                        <value>0</value>
+                    </binding>
+                </mod-up>
+        </key>
         <key n="127">
             <name>Delete</name>
             <desc>Toggle Reversers</desc>

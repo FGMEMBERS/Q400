@@ -9,18 +9,30 @@
       <y-m>0.0</y-m>
       <z-m>0.0</z-m>
     </offsets>
-
-<animation>
-    <type>range</type>
-    <min-m>0</min-m>
-    <max-m>10</max-m>
-    <max-property>sim/rendering/static-lod/bare</max-property>
-  </animation>
-<effect>
-    <inherits-from>Effects/model-transparent</inherits-from>
-<object-name>hud.glass</object-name>
-</effect>
   </model>
+  
+  
+    <!--Panel illumination-->
+    <effect>
+        <inherits-from>Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/enginepanel-lights</use></implicit-lightmap-intensity>
+        </parameters>
+	<object-name>throttlepanel</object-name>
+    </effect>
+
+    <animation>
+        <type>range</type>
+        <min-m>0</min-m>
+        <max-m>10</max-m>
+        <max-property>sim/rendering/static-lod/bare</max-property>
+    </animation>
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>hud.glass</object-name>
+    </effect>
+
+    
 <!--Tiller Steering-->
     <animation>
         <type>rotate</type>

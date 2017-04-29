@@ -3,7 +3,118 @@
 <PropertyList>
 
     <path>glareshieldpanel.ac</path>
+    
+    
+    
+        <!--Panel illumination-->
+        
+ <!--   <animation>
+      <type>material</type>
+	<object-name>base.1</object-name>
+	<object-name>base.2</object-name>
+	<object-name>base.3</object-name>
+	<object-name>clockL</object-name>
+	<object-name>clockR</object-name>
+	<object-name>stickpushoffL</object-name>
+	<object-name>elevtrimoffL</object-name>
+	<object-name>propgndrangeL</object-name>
+	<object-name>spoilerbtnL</object-name>
+	<object-name>spoilersflighttaxiL</object-name>
+	<object-name>warningL</object-name>
+	<object-name>buttonsL</object-name>
+	<object-name>stickpushoffR</object-name>
+	<object-name>elevtrimoffR</object-name>
+	<object-name>propgndrangeR</object-name>
+	<object-name>spoilerbtnR</object-name>
+	<object-name>spoilersflighttaxiR</object-name>
+	<object-name>warningR</object-name>
+	<object-name>buttonsR</object-name>
+	<object-name>screws</object-name>-->
+        <!--AP Part-->
+	<!--<object-name>crsL</object-name>
+	<object-name>hdgL</object-name>
+	<object-name>navsourceL</object-name>
+	<object-name>crsR</object-name>
+	<object-name>hdgR</object-name>
+	<object-name>navsourceR</object-name>
+	<object-name>vsWheel</object-name>
+	<object-name>altknob</object-name>
+	<object-name>ias</object-name>
+	<object-name>vs</object-name>
+        <object-name>vnav</object-name>
+	<object-name>alt</object-name>
+	<object-name>altsel</object-name>
+	<object-name>hdg</object-name>
+	<object-name>hsisel</object-name>
+	<object-name>nav</object-name>
+	<object-name>appr</object-name>
+	<object-name>bc</object-name>
+	<object-name>stby</object-name>
+	<object-name>ap</object-name>
+	<object-name>yd</object-name>
+        
+        <condition>
+            <property>/controls/electric/battery-switch</property>
+            <property>/controls/lighting/panel-lights</property>
+        </condition>
+        <emission>
+            <red>1</red>
+            <green>1</green>
+            <blue>1</blue>
+            <factor-prop>/controls/lighting/panel/glareshield</factor-prop>
+        </emission>
+    </animation>-->
 
+    <effect>
+        <inherits-from>../../Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/glareshield-lights</use></implicit-lightmap-intensity>
+        </parameters>
+	<object-name>base.1</object-name>
+	<object-name>base.2</object-name>
+	<object-name>base.3</object-name>
+	<object-name>clockL</object-name>
+	<object-name>clockR</object-name>
+	<object-name>stickpushoffL</object-name>
+	<object-name>elevtrimoffL</object-name>
+	<object-name>propgndrangeL</object-name>
+	<object-name>spoilerbtnL</object-name>
+	<object-name>spoilersflighttaxiL</object-name><!--
+	<object-name>warningL</object-name>-->
+	<object-name>buttonsL</object-name>
+	<object-name>stickpushoffR</object-name>
+	<object-name>elevtrimoffR</object-name>
+	<object-name>propgndrangeR</object-name>
+	<object-name>spoilerbtnR</object-name>
+	<object-name>spoilersflighttaxiR</object-name><!--
+	<object-name>warningR</object-name>-->
+	<object-name>buttonsR</object-name>
+	<object-name>screws</object-name>
+        <!--AP Part-->
+	<object-name>crsL</object-name>
+	<object-name>hdgL</object-name>
+	<object-name>navsourceL</object-name>
+	<object-name>crsR</object-name>
+	<object-name>hdgR</object-name>
+	<object-name>navsourceR</object-name>
+	<object-name>vsWheel</object-name>
+	<object-name>altknob</object-name>
+	<object-name>ias</object-name>
+	<object-name>vs</object-name>
+        <object-name>vnav</object-name>
+	<object-name>alt</object-name>
+	<object-name>altsel</object-name>
+	<object-name>hdg</object-name>
+	<object-name>hsisel</object-name>
+	<object-name>nav</object-name>
+	<object-name>appr</object-name>
+	<object-name>bc</object-name>
+	<object-name>stby</object-name>
+	<object-name>ap</object-name>
+	<object-name>yd</object-name>
+    </effect>
+    
+    
 <!-- FD/AP -->
 
 
@@ -255,13 +366,13 @@
     </animation>
   <animation>
 <type>slider</type>
-        <object-name>Cylinder</object-name>
+        <object-name>vsWheel</object-name>
         <drag-direction>vertical</drag-direction>
         <action>
             <binding>
                 <command>property-adjust</command>
                 <property>it-autoflight/input/vs</property>
-                <factor>10</factor>
+                <factor>100</factor>
                 <min>-5000</min>
                 <max>5000</max>                
                 <wrap>false</wrap>

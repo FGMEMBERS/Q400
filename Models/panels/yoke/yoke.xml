@@ -7,7 +7,9 @@
 <animation>
         <type>rotate</type>
         <object-name>YokeL_Elevator</object-name>
-        <object-name>YokeL_Aileron</object-name>		
+        <object-name>YokeL_Aileron</object-name>
+        <object-name>YokeL_PTT</object-name>	
+        <object-name>YokeL_apdisc</object-name>		
         <property>controls/flight/elevator</property>
         <factor>7.5</factor>
         <center>
@@ -24,7 +26,9 @@
 
     <animation>
         <type>rotate</type>
-	  <object-name>YokeL_Aileron</object-name>
+        <object-name>YokeL_Aileron</object-name>
+        <object-name>YokeL_PTT</object-name>	
+        <object-name>YokeL_apdisc</object-name>	
         <property>controls/flight/aileron</property>
         <factor>-45.0</factor>
         <center>
@@ -38,6 +42,54 @@
             <z>0</z>
         </axis>
     </animation>
+
+<animation>
+	<type>pick</type>
+        <object-name>YokeL_apdisc</object-name>	
+	<visible>1</visible>
+	<action>
+		<name>AP disengage</name>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-assign</command>
+			<property>it-autoflight/input/ap1</property>
+			<value>0</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+			<property>it-autoflight/input/ap2</property>
+			<value>0</value>
+		</binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/autopilot/disengage-pressed</property>
+                    <value>1</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/autopilot/disengage-pressed</property>
+                        <value>0</value>
+                    </binding>
+                </mod-up>
+	</action>
+</animation>
+    <animation>
+        <type>translate</type>
+        <object-name>YokeL_apdisc</object-name>	
+        <property>/controls/autopilot/disengage-pressed</property>
+        <factor>0.004</factor>
+        <axis>
+            <x1-m>-11.9227</x1-m>
+            <y1-m>0.0</y1-m>
+            <z1-m>2.18274</z1-m>
+            <x2-m>-11.92783</x2-m>
+            <y2-m>0.0</y2-m>
+            <z2-m>2.1808</z2-m>
+        </axis>
+    </animation>
+
 
 	<!-- Yoke R -->
 <animation>
