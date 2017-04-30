@@ -480,6 +480,15 @@ setprop(outPut~"instrument-lights-norm",0.0357 * instr_lights);
     setprop(outPut~"overhead-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/overhead") ) * 0.0357 );
     setprop(outPut~"enginepanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/engine") ) * 0.0357 );
     setprop(outPut~"centerpanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/center") ) * 0.0357 );
+    
+    if(bus_volts>15 && getprop("/instrumentation/team/test")==1) {
+        setprop("/instrumentation/team/running, 1);
+    }else if(bus_volts<15) {
+        setprop("/instrumentation/team/running, 0);
+        setprop("/instrumentation/team/test", 0);
+    }else if(bus_volts>15 && getprop("/instrumentation/team/test")<1) {
+        setprop("/instrumentation/team/running, 2);
+    }
 
     for(var i=0; i<size(serv_list); i+=1) {
         var srvc = getprop(serv_list[i]);
@@ -495,3 +504,9 @@ update_electrical = func {
     update_virtual_bus( scnd );
 settimer(update_electrical, 0);
 }
+
+#setlistener("/controls/electric/battery-switch", func{
+#    if(bus_volts>15){
+#        interpolate("/instrumentation/team/test", 1, 2);
+#    }
+#});
