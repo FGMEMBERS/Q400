@@ -363,6 +363,10 @@ DHC8 -400Q by Alex Park Jan 2010
         <oil-temp-norm n="0" type="double">0</oil-temp-norm>
         <oil-temp-norm n="1" type="double">0</oil-temp-norm>
     </eng-gauge>
+    <team>
+        <running type="int">0</running>
+        <test type="double">0</test>
+    </team>
     </instrumentation>
 
     <engines>

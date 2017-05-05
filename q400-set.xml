@@ -343,21 +343,21 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             <file>Nasal/dialogs.nas</file>
         </dialogs>
 				<procedures>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsDB.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsWP.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsTP.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/Procedures/fmsTransition.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/Procedures/fmsDB.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/Procedures/fmsWP.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/Procedures/fmsTP.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/Procedures/fmsTransition.nas</file>
 
 				</procedures>
 				<displaypages>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/CduStart.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltPlan.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltList.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltDeparture.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/FltDestination.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/NavPages.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/Performance.nas</file>
-						<file>Aircraft/CitationX/Models/Instruments/CDU/DispPages/Progress.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/CduStart.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/FltPlan.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/FltList.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/FltDeparture.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/FltDestination.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/NavPages.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/Performance.nas</file>
+						<file>Aircraft/Q400/Models/panels/CDU/DispPages/Progress.nas</file>
 				</displaypages>
 				<cdu>
 						<file>Models/panels/CDU/CDU.nas</file>
