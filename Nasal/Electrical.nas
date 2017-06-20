@@ -482,12 +482,12 @@ setprop(outPut~"instrument-lights-norm",0.0357 * instr_lights);
     setprop(outPut~"centerpanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/center") ) * 0.0357 );
     
     if(bus_volts>15 && getprop("/instrumentation/team/test")==1) {
-        setprop("/instrumentation/team/running, 1);
+        setprop("/instrumentation/team/running", 1);
     }else if(bus_volts<15) {
-        setprop("/instrumentation/team/running, 0);
+        setprop("/instrumentation/team/running", 0);
         setprop("/instrumentation/team/test", 0);
     }else if(bus_volts>15 && getprop("/instrumentation/team/test")<1) {
-        setprop("/instrumentation/team/running, 2);
+        setprop("/instrumentation/team/running", 2);
     }
 
     for(var i=0; i<size(serv_list); i+=1) {
