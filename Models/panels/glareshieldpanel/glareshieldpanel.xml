@@ -261,7 +261,7 @@
             <binding>
                 <command>property-adjust</command>
                 <property>it-autoflight/input/vs</property>
-                <factor>10</factor>
+                <factor>50</factor>
                 <min>-5000</min>
                 <max>5000</max>                
                 <wrap>false</wrap>

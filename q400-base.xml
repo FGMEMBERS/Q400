@@ -166,18 +166,6 @@ DHC8 -400Q by Alex Park Jan 2010
 
 
 
-    <systems>
-	<electrical>
-            <path></path>
-        </electrical>    
-        <autopilot>
-            <path>Aircraft/Q400/Systems/it-autoflight.xml</path>
-        </autopilot>
-        <property-rule n="100">
-            <path>Aircraft/Q400/Systems/pfd.xml</path>
-        </property-rule>
-    </systems>
-
         <instrumentation>
             <path>Aircraft/Q400/Systems/instrumentation.xml</path>
         </instrumentation>
@@ -198,6 +186,23 @@ DHC8 -400Q by Alex Park Jan 2010
     <allow-toggle-cockpit>true</allow-toggle-cockpit>
 
     <help>
+        <key>
+            <name>q</name>
+            <desc>Disengage Autopilot</desc>
+        </key>
+        <key>
+            <name>w</name>
+            <desc>Walk forward towards view</desc>
+        </key>
+        <key>
+            <name>Del</name>
+            <desc>Toggle Thrust Reversers</desc>
+        </key>
+        <key>
+            <name>m/M</name>
+            <desc>Conditions Levers richer/leaner</desc>
+        </key>
+        
         <title>Dash8-400</title>
 <line>take off speed with flaps 15% = 87knts @ 30000lb</line>
 <line>landing speed with 15% flaps = 110knots @ 30000lb</line>	
@@ -220,12 +225,78 @@ DHC8 -400Q by Alex Park Jan 2010
     <yokes-visible type="bool">1</yokes-visible>
 
 
+    <systems>
+	<electrical>
+            <path></path>
+        </electrical>    
+        <autopilot>
+            <path>Aircraft/Q400/Systems/it-autoflight.xml</path>
+        </autopilot>
+        <property-rule n="100">
+            <path>Aircraft/Q400/Systems/pfd.xml</path>
+        </property-rule>
+    </systems>
+
 
 </sim>
+
+<it-autoflight>
+	<config>
+		<roll>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
+			<kp>0.05</kp>
+			<kp-vloc>0.09</kp-vloc>
+			<ti>10.0</ti>
+			<td>0.00001</td>
+			<kp-cws>0.09</kp-cws>
+		</roll>
+		<pitch>
+			<umin>-0.50</umin>
+			<umax>0.50</umax>
+			<kp>-0.08</kp>
+			<ti>10.0</ti>
+			<td>0.0001</td>
+			<kp-cws>-0.07</kp-cws>
+		</pitch>
+		<cmd>
+			<roll-kp>-1.9</roll-kp>
+			<roll-scale>1.5</roll-scale>
+			<vorloc>-5.0</vorloc>
+			<vs>0.01</vs>
+			<fpa>0.30</fpa> 
+		</cmd>
+		<autoland>
+			<kp-roll>0.10</kp-roll>
+			<kp-pitch>0.02</kp-pitch>
+			<kp-rudder>-0.3</kp-rudder>
+		</autoland>
+	</config>
+	<settings>
+		<default-bank-limit type="float">30</default-bank-limit> <!-- Set the Default Bank Limit -->
+		<enable-cws>0</enable-cws> <!-- Enable/Disable CWS -->
+		<land-enable>0</land-enable> <!-- Enable/Disable Autoland -->
+		<land-flap>0.7</land-flap> <!-- Minimum Flap used for Landing -->
+		<retard-ft>40</retard-ft> <!-- Enable Thrust Retard -->
+		<retard-enable>0</retard-enable> <!-- AGL to Thrust Retard -->
+		<togaspd>170</togaspd> <!-- V2 + 10kts -->
+		<lat-agl-ft>200</lat-agl-ft> <!-- Set to 999999 if you do not want T/O to change automatically to HDG, or LNAV -->
+		<reduc-agl-ft>1500</reduc-agl-ft> <!-- Set to 999999 if you do not want TOGA to change automatically to FLCH -->
+		<autoland-without-ap>1</autoland-without-ap> <!-- Engage LAND and FLARE Modes even if the AP is off -->
+	</settings>
+</it-autoflight>
+
+
 <position>
  <gear-agl-ft>0</gear-agl-ft>
 </position>
-<controls>
+    <controls>
+        <APU>
+            <master type="bool">0</master>
+            <start type="bool">0</start>
+            <generator type="bool">0</generator>
+            <bleedair type="bool">0</bleedair>
+        </APU>
         <electric>
             <battery-switch type = "bool">1</battery-switch>
             <avionics-switch type = "bool">1</avionics-switch>
@@ -240,22 +311,32 @@ DHC8 -400Q by Alex Park Jan 2010
             <switch type ="bool">0</switch>
             <position-norm type = "double">0</position-norm>
             </wipers>
+            <left-aux-pump type="bool">0</left-aux-pump>
+            <right-aux-pump type="bool">0</right-aux-pump>
         </electric>
 
         <lighting>
             <instrument-lights>1</instrument-lights>
-  		<strobe>1</strobe>
-  		<beacon>1</beacon>
-  		<landing-lights>1</landing-lights>
-  		<nav-lights>1</nav-lights>
-		<pfd-norm>1</pfd-norm>
+                <strobe>1</strobe>
+                <beacon>1</beacon>
+                <landing-lights>1</landing-lights>
+                <nav-lights>1</nav-lights>
+                <pfd-norm>1</pfd-norm>
+                <panel>
+                    <glareshield type="double">0</glareshield>
+                    <overhead type="double">0</overhead>
+                    <engine type="double">0</engine>
+                    <center type="double">0</center>
+                </panel>
+                <panel-lights type="bool">0</panel-lights>
         </lighting>
- 
+
 
         <engines>
-            <throttle-lock>0</throttle-lock>
-                <internal-engine-starter>0</internal-engine-starter>
-        <fire-test type="bool">0</fire-test>
+            <throttle-lock type="double">0</throttle-lock>
+            <throttle-lock-position type="double">0</throttle-lock-position>
+            <internal-engine-starter>0</internal-engine-starter>
+            <fire-test type="bool">0</fire-test>
             <engine n="0">
                 <condition-lever>0</condition-lever>
                 <condition>0</condition>
@@ -264,7 +345,9 @@ DHC8 -400Q by Alex Park Jan 2010
                 <propeller-pitch>0</propeller-pitch>
                 <throttle-fwd type="double">0</throttle-fwd>
                 <throttle-rvrs type="double">0</throttle-rvrs>
-                </engine>
+                <reverser-position type="double">0</reverser-position>
+                <ignition-switch type="int">0</ignition-switch>
+            </engine>
             <engine n="1">
                 <condition-lever>0</condition-lever>
                 <condition>0</condition>
@@ -272,10 +355,12 @@ DHC8 -400Q by Alex Park Jan 2010
                 <mixture>0</mixture>
                 <propeller-pitch>0</propeller-pitch>
                 <throttle-fwd type="double">0</throttle-fwd>
-                <throttle-rvrs type="double">0</throttle-rvrs>  
+                <throttle-rvrs type="double">0</throttle-rvrs>
+                <reverser-position type="double">0</reverser-position>
+                <ignition-switch type="int">0</ignition-switch>
             </engine>
         </engines>
-</controls>
+    </controls>
 
 <consumables>
     <fuel>
@@ -328,6 +413,10 @@ DHC8 -400Q by Alex Park Jan 2010
         <oil-temp-norm n="0" type="double">0</oil-temp-norm>
         <oil-temp-norm n="1" type="double">0</oil-temp-norm>
     </eng-gauge>
+    <team>
+        <running type="int">0</running>
+        <test type="double">0</test>
+    </team>
     </instrumentation>
 
     <engines>
@@ -359,17 +448,44 @@ DHC8 -400Q by Alex Park Jan 2010
 
     <input>
         <keyboard>
-			<key n="119">
-				<name>w</name>
-				<desc>Walk forward toward view</desc>
-				<repeatable type="bool">true</repeatable>
-				<binding>
-					<command>nasal</command>
-					<script>
-					 walk.walk_about(0.1);
-					</script>
-				</binding>
-			</key>
+            <key n="119">
+                <name>w</name>
+                <desc>Walk forward toward view</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                        <command>nasal</command>
+                        <script>
+                            walk.walk_about(0.1);
+                        </script>
+                </binding>
+            </key>
+            <key n="113">
+                <name>q</name>
+                <desc>Disengage Autopilot</desc>
+                <repeatable type="bool">true</repeatable>
+                <binding>
+                        <command>property-assign</command>
+                        <property>it-autoflight/input/ap1</property>
+                        <value>0</value>
+                </binding>
+                <binding>
+                        <command>property-assign</command>
+                        <property>it-autoflight/input/ap2</property>
+                        <value>0</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/controls/autopilot/disengage-pressed</property>
+                    <value>1</value>
+                </binding>
+                <mod-up>
+                    <binding>
+                        <command>property-assign</command>
+                        <property>/controls/autopilot/disengage-pressed</property>
+                        <value>0</value>
+                    </binding>
+                </mod-up>
+        </key>
         <key n="127">
             <name>Delete</name>
             <desc>Toggle Reversers</desc>

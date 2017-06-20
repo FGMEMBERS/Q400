@@ -493,8 +493,6 @@ setprop("controls/engines/engine[0]/mixture",1);
 setprop("controls/engines/engine[1]/mixture",1);
 setprop("controls/engines/engine[0]/propeller-pitch",1);
 setprop("controls/engines/engine[1]/propeller-pitch",1);
-setprop("engines/engine[0]/running",1);
-setprop("engines/engine[1]/running",1);
 setprop("controls/electric/RH-AC-bus",1);
 setprop("controls/electric/LH-AC-bus",1);
 setprop("controls/electric/efis/bank[0]",1);
@@ -505,6 +503,8 @@ setprop("consumables/fuel/tank[0]/selected",1);
 setprop("consumables/fuel/tank[1]/selected",1);
 setprop("controls/fuel/Raux-switch","auto");
 setprop("controls/fuel/gauge-switch","auxilary");
+interpolate("/engines/engine[0]/n2, 20, 1);
+interpolate("/engines/engine[1]/n2, 20, 1);
 print("Engines Started. Please shut off APU manually");
 }
 
@@ -661,37 +661,11 @@ setprop("/sim/rendering/als-secondary-lights/use-landing-light", getprop("/contr
 }else{
 setprop("/sim/rendering/als-secondary-lights/use-landing-light", 0);
 }
-#a bit of nasal for the start ;)
-if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
-setprop("/controls/engines/internal-engine-starter", 0);
-}
 #Gear Failure System
 if(getprop("/gear/serviceable") == 1){
 setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
 }
 
-    if(getprop("/controls/engines/engine/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
-    setprop("controls/engines/engine/ignition", 1);
-    } else {
-    setprop("controls/engines/engine/ignition", 0);
-    }
-    if(getprop("/controls/engines/engine[1]/ignition-switch") == 1 and getprop("/systems/electrical/volts") >= 25){
-    setprop("controls/engines/engine[1]/ignition", 1);
-    }else{
-    setprop("controls/engines/engine[1]/ignition", 0);
-    }
-
-#VERY simplified ignition system
-if(getprop("/controls/engines/engine/ignition") == 0){
-setprop("controls/engines/engine/condition", 0);
-}else{
-setprop("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"));
-}
-if(getprop("/controls/engines/engine[1]/ignition") == 0){
-setprop("controls/engines/engine[1]/condition", 0);
-}else{
-setprop("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"));
-}
 #EPU
 if(getprop("/controls/electric/epu-switch")){
 setprop("/controls/electric/power-source", -1);

@@ -170,6 +170,8 @@ init_switches = func() {
     setprop("controls/lighting/engines-norm",0.8);
     setprop("controls/lighting/efis-norm",0.8);
     setprop("controls/lighting/panel-norm",0.8);
+    setprop("controls/lighting/panel/overhead", 0);
+    setprop("controls/lighting/panel/glareshield", 0);
 
     append(switch_list,"controls/anti-ice/prop-heat");
     append(output_list,"prop-heat");
@@ -338,6 +340,31 @@ electrical_bus = func(bv) {
     var start_n2_0 = 0.0;
     var start_n2_1 = 0.0;
 
+    var left_aux = getprop("controls/electric/left-aux-pump");
+    var right_aux = getprop("controls/electric/right-aux-pump");
+    var left_aux_pump_volts = bus_volts * left_aux;
+    var right_aux_pump_volts = bus_volts * right_aux;
+    
+
+    #a bit of nasal for the start ;)
+    if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
+    setprop("/controls/engines/internal-engine-starter", 0);
+    }
+    
+    var starter = getprop("/controls/engines/internal-engine-starter");
+    
+    if(starter==1){
+        setprop("/controls/engines/engine[0]/starter", 1);
+        setprop("/controls/engines/engine[1]/starter", 0);
+    }else if(starter==-1){
+        setprop("/controls/engines/engine[0]/starter", 0);
+        setprop("/controls/engines/engine[1]/starter", 1);
+    }else{
+        setprop("/controls/engines/engine[0]/starter", 0);
+        setprop("/controls/engines/engine[1]/starter", 0);
+    }
+    
+
     var internal_starter = getprop("controls/engines/internal-engine-starter");
     var if_engine0_running = getprop("engines/engine[0]/running");
     var if_engine1_running = getprop("engines/engine[1]/running");
@@ -391,63 +418,43 @@ electrical_bus = func(bv) {
     if (getprop("engines/engine[1]/n2") < start_n2_1) {
         increasing1();
     }
+    var ignition0_switch = getprop("/controls/engines/engine[0]/ignition-switch");
+    var ignition1_switch = getprop("/controls/engines/engine[1]/ignition-switch");
     
-    var internal_condition0 = getprop("controls/engines/engine[0]/condition");
-    var internal_condition1 = getprop("controls/engines/engine[1]/condition");
-    var min_n2_0 = getprop("engines/engine[0]/n2");
-    var min_n2_1 = getprop("engines/engine[1]/n2");
-
-
-    var fuel_rich_func0 = func {
-        if (if_engine0_running == 0 and fuel_rich0 <= 200 and fuel_rich0>=0) {
-            fuel_rich0 =  fuel_rich0 - min_n2_0 + (internal_condition0 * 20);
-	    settimer(fuel_rich_func0, 1);
-	}
+    if(ignition0_switch == 1 and bus_volts >= 25){
+    setprop("controls/engines/engine/ignition", 1);
+    } else {
+    setprop("controls/engines/engine/ignition", 0);
+    }
+    if(ignition1_switch == 1 and bus_volts >= 25){
+    setprop("controls/engines/engine[1]/ignition", 1);
+    }else{
+    setprop("controls/engines/engine[1]/ignition", 0);
     }
 
-    var fuel_rich_func1 = func {
-        if (if_engine1_running == 0 and fuel_rich1 <= 200 and fuel_rich1>=0) {
-            fuel_rich1 =  fuel_rich1 - min_n2_1 + (internal_condition1 * 20);
-	    settimer(fuel_rich_func1, 1);
-	}
-    }
-
-    if (fuel_rich0 >200) {
-        fuel_rich0 = 200;
-    } else if (fuel_rich0 <0) {
-        fuel_rich0 = 0;
-    }
-
+    #VERY simplified ignition system
     
-    if (fuel_rich1 >200) {
-        fuel_rich1 = 200;
-    } else if (fuel_rich1 <0) {
-        fuel_rich1 = 0;
+    var engine0_ignition = getprop("/controls/engines/engine[0]/ignition");
+    var engine1_ignition = getprop("/controls/engines/engine[1]/ignition");
+    var engine0_n2 = getprop("/engines/engine[0]/n2");
+    var engine1_n2 = getprop("/engines/engine[1]/n2");
+
+    if(engine0_ignition == 1 and engine0_n2 >= 15){
+        setprop("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"));
+    }else{
+        interpolate("controls/engines/engine/condition", 0, 1); #Slowly shut engine down
     }
-
-    fuel_rich_func0();
-    fuel_rich_func1();
-
-    if_engine0_running = getprop("engines/engine[0]/running");
-    if_engine1_running = getprop("engines/engine[1]/running");
-
-    if (getprop("engines/engine[0]/n2") >= 12 and internal_condition0 > 0 and fuel_rich0 < 25 and fwd_boost != 0 and if_engine0_serviceable and if_engine0_cutoff==0 and internal_condition0>0.382 and !getprop("sim/model/equipment/left-engine-cover")) {
-       setprop("controls/engines/engine[0]/internal-condition", 1);
-    } else {
-       setprop("controls/engines/engine[0]/internal-condition", 0);
-    }
-
-    if (getprop("engines/engine[1]/n2") >= 12 and internal_condition1 > 0 and fuel_rich1 < 25 and aft_boost != 0  and if_engine1_serviceable and if_engine1_cutoff==0 and internal_condition1>0.382 and !getprop("sim/model/equipment/right-engine-cover")) {
-       setprop("controls/engines/engine[1]/internal-condition", 1);
-    } else {
-       setprop("controls/engines/engine[1]/internal-condition", 0);
+    if(engine1_ignition == 1 and engine1_n2 >= 15){
+        setprop("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"));
+    }else{
+        interpolate("controls/engines/engine[1]/condition", 0, 1); #Slowly shut engine down
     }
     
     var starter_total_volts = starter_volts + starter_volts1;
     
     setprop(outPut~"starter",starter_total_volts); 
-    setprop(outPut~"aft-boost-pumps",aft_boost_pumps_volts); 
-    setprop(outPut~"fwd-boost-pumps",fwd_boost_pumps_volts); 
+    setprop(outPut~"left-aux-pump",left_aux_pump_volts); 
+    setprop(outPut~"right-aux-pump",right_aux_pump_volts); 
 
     for(var i=0; i<size(switch_list); i+=1) {
         var srvc = getprop(switch_list[i]);
@@ -474,6 +481,21 @@ var instr_lights=(bus_volts * getprop("controls/lighting/instrument-lights") ) *
 setprop(outPut~"instrument-lights",(instr_lights));
 setprop(outPut~"instrument-lights-norm",0.0357 * instr_lights);
 
+    setprop(outPut~"glareshield-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/glareshield") ) * 0.0357 );
+    setprop(outPut~"overhead-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/overhead") ) * 0.0357 );
+    setprop(outPut~"enginepanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/engine") ) * 0.0357 );
+    setprop(outPut~"centerpanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/center") ) * 0.0357 );
+    
+    
+    var team_test = getprop("/instrumentation/team/test");
+    if(bus_volts>15 and team_test==1) {
+        setprop("/instrumentation/team/running", 1);
+    }else if(bus_volts<15) {
+        setprop("/instrumentation/team/running", 0);
+        setprop("/instrumentation/team/test", 0);
+    }else if(bus_volts>15 and team_test<1) {
+        setprop("/instrumentation/team/running", 2);
+    }
 
     for(var i=0; i<size(serv_list); i+=1) {
         var srvc = getprop(serv_list[i]);
@@ -489,3 +511,4 @@ update_electrical = func {
     update_virtual_bus( scnd );
 settimer(update_electrical, 0);
 }
+
