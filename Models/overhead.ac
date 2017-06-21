@@ -176098,7 +176098,7 @@ refs 3
 172 0.824508 0.706033
 kids 0
 OBJECT poly
-name "landinglightL"
+name "landinglightLsw"
 loc -11.9403963 2.8317013 0.1594685
 crease 35.0
 texture "overhead.png"
@@ -177069,7 +177069,7 @@ refs 3
 129 0.293820 0.113117
 kids 0
 OBJECT poly
-name "landinglightR"
+name "landinglightRsw"
 loc -11.9403963 2.8317013 0.1061566
 crease 35.0
 texture "overhead.png"

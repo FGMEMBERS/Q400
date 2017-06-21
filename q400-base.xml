@@ -20,6 +20,17 @@ DHC8 -400Q by Alex Park Jan 2010
         <interior>
             <seats type="double">74</seats>
         </interior>
+            <rendering>
+                <reflection-enabled type="int">1</reflection-enabled>
+                <reflection-type type="int">2</reflection-type>
+                <reflection-dynamic type="int">1</reflection-dynamic>
+                <reflection-correction type="float">-0.1</reflection-correction>
+                <reflection-fresnel type="float">0.5</reflection-fresnel>
+                <reflection-fresnel-factor type="float">1.0</reflection-fresnel-factor>
+                <reflection-rainbow type="float">0.1</reflection-rainbow>
+                <reflection-noise type="float">0.05</reflection-noise>
+                <ambient-correction type="float">0.1</ambient-correction>
+            </rendering>
     </model>
 
 
@@ -228,6 +239,12 @@ DHC8 -400Q by Alex Park Jan 2010
     <systems>
 	<electrical>
             <path></path>
+            <outputs>
+                <nav-lights-norm type="int">0</nav-lights-norm>
+                <taxi-lights-norm type="int">0</taxi-lights-norm>
+                <landing-light-norm type="int">0</landing-light-norm>
+                <landing-light-norm type="int" n="1">0</landing-light-norm>
+            </outputs>
         </electrical>    
         <autopilot>
             <path>Aircraft/Q400/Systems/it-autoflight.xml</path>

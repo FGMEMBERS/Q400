@@ -32,7 +32,7 @@
 	<property>/systems/electrical/volts</property>
 	<value>15</value>
 	</greater-than>
-      <property>/sim/model/lights/beacon/state</property>
+      <property>systems/electrical/outputs/beacon-lights-norm</property>
     </condition>
   </animation>
 

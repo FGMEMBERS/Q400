@@ -195,8 +195,8 @@ init_switches = func() {
     append(output_list,"recog-lights");
     append(switch_list,"controls/lighting/logo-lights");
     append(output_list,"logo-lights");
-    append(switch_list,"controls/lighting/strobe");
-    append(output_list,"strobe");
+    append(switch_list,"controls/lighting/strobe-lights");
+    append(output_list,"strobe-lights");
     append(switch_list,"controls/lighting/taxi-lights");
     append(output_list,"taxi-lights");
     append(switch_list,"controls/electric/wipers/switch");
@@ -462,7 +462,51 @@ electrical_bus = func(bv) {
         setprop(outPut~output_list[i],bus_volts * srvc);
     }
     setprop(outPut~"flaps",bus_volts);
-
+    
+    var navLV=getprop("/systems/electrical/outputs/nav-lights");
+    if(navLV){
+        setprop("/systems/electrical/outputs/nav-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/nav-lights-norm", 0);
+    }
+    
+    var taxiLV=getprop("/systems/electrical/outputs/taxi-lights");
+    if(taxiLV){
+        setprop("/systems/electrical/outputs/taxi-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/taxi-lights-norm", 0);
+    }
+    
+    var landingLV0=getprop("/systems/electrical/outputs/landing-light");
+    if(landingLV0){
+        setprop("/systems/electrical/outputs/landing-light-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/landing-light-norm", 0);
+    }
+    
+    var landingLV1=getprop("/systems/electrical/outputs/landing-light[1]");
+    if(landingLV1){
+        setprop("/systems/electrical/outputs/landing-light-norm[1]", 1);
+    }else{
+        setprop("/systems/electrical/outputs/landing-light-norm[1]", 0);
+    }
+    
+    var strobeLV=getprop("/systems/electrical/outputs/strobe-lights");
+    var strobeS=getprop("/sim/model/lights/strobe/state");
+    if(strobeLV and strobeS){
+        setprop("/systems/electrical/outputs/strobe-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/strobe-lights-norm", 0);
+    }
+    
+    var beaconLV=getprop("/systems/electrical/outputs/beacon");
+    var beaconS=getprop("/sim/model/lights/beacon/state");
+    if(beaconLV and beaconS){
+        setprop("/systems/electrical/outputs/beacon-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/beacon-lights-norm", 0);
+    }
+    
     return load;
 }
 
@@ -485,6 +529,8 @@ setprop(outPut~"instrument-lights-norm",0.0357 * instr_lights);
     setprop(outPut~"overhead-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/overhead") ) * 0.0357 );
     setprop(outPut~"enginepanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/engine") ) * 0.0357 );
     setprop(outPut~"centerpanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/center") ) * 0.0357 );
+    
+    
     
     
     var team_test = getprop("/instrumentation/team/test");

@@ -60,7 +60,7 @@
 <type>select</type>
 <object-name>flash</object-name>
 <condition>
-<property>controls/lighting/taxi-lights</property>
+<property>systems/electrical/outputs/taxi-lights-norm</property>
 </condition>
 </animation>
 
