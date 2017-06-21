@@ -25,17 +25,28 @@
 		<path>cabincall.wav</path>
 		<condition>
 			<and>
-		            <property>/controls/electric/battery-switch</property>
-				<or>
-					<equals>
-    	    	        <property>controls/cabin/nosmoking</property>
-						<value>1</value>
-					</equals>
-					<equals>
-    	    	        <property>controls/cabin/nosmoking</property>
-						<value>0</value>
-					</equals>
-				</or>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <property>controls/cabin/nosmoking</property>
+			</and>
+		</condition>
+	</chime>
+	<chime>
+		<name>nosmoking1</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+			<and>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <not>
+                                <property>controls/cabin/nosmoking</property>
+                            </not>
 			</and>
 		</condition>
 	</chime>	   
@@ -46,18 +57,29 @@
 		<type>avionics</type>
 		<path>cabincall.wav</path>
 		<condition>
-			<and>
-		            <property>/controls/electric/battery-switch</property>
-				<or>
-					<equals>
-    	    	        <property>controls/cabin/seatbelts</property>
-						<value>1</value>
-					</equals>
-					<equals>
-    	    	        <property>controls/cabin/seatbelts</property>
-						<value>0</value>
-					</equals>
-				</or>
+                        <and>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <property>controls/cabin/seatbelts</property>
+			</and>
+		</condition>
+	</chime>   
+	<chime>
+		<name>seatbelt1</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+                        <and>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <not>
+                                <property>controls/cabin/seatbelts</property>
+                            </not>
 			</and>
 		</condition>
 	</chime>   

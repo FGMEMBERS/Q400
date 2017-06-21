@@ -300,6 +300,7 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             <file>Nasal/limits.nas</file>
             <file>Nasal/liveries.nas</file>
             <file>Nasal/Electrical.nas</file>
+            <file>Nasal/APU.nas</file>
             <file>Nasal/systems.nas</file>
            <!-- <file>Nasal/vhf22.nas</file>
             <file>Nasal/vir32.nas</file>-->

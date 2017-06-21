@@ -2,9 +2,21 @@
 <PropertyList>
 	<path>overhead.ac</path>
         
-        <!--Panel illumination-->
         
-<animation>
+        
+        <!--Panel illumination-->
+    <effect>
+        <inherits-from>Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/overhead-lights</use></implicit-lightmap-intensity>
+        </parameters>
+	<object-name>base</object-name>
+	<object-name>bases</object-name>
+	<object-name>bases2</object-name>
+	<object-name>scrws</object-name>
+    </effect>
+    
+<!--<animation>
       <type>material</type>
 	<object-name>base</object-name>
 	<object-name>bases</object-name>
@@ -18,7 +30,7 @@
             <blue>1</blue>
             <factor-prop>/controls/lighting/panel/overhead</factor-prop>
         </emission>
-    </animation>
+    </animation>-->
         
         <!--CAUTION PANEL-->
 <!--Test-->
@@ -500,7 +512,7 @@
   <!--Landing Lights-->
    <animation>
     <type>pick</type>
-    <object-name>landinglightLsw</object-name>
+    <object-name>landinglightL</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -513,7 +525,7 @@
   </animation>
    <animation>
     <type>pick</type>
-    <object-name>landinglightRsw</object-name>
+    <object-name>landinglightR</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -527,7 +539,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>landinglightLsw</object-name>
+    <object-name>landinglightL</object-name>
         <property>/controls/lighting/landing-light[0]</property>
     <factor>30</factor>
     <center>
@@ -542,7 +554,7 @@
   </animation>
   <animation>
     <type>rotate</type>
-    <object-name>landinglightRsw</object-name>
+    <object-name>landinglightR</object-name>
         <property>/controls/lighting/landing-light[1]</property>
     <factor>30</factor>
     <center>
@@ -1147,28 +1159,33 @@
       </binding>
     </action>
   </animation>
-<animation>
-      <type>material</type>
-	<object-name>APUpower</object-name>
-        <condition>
-          <property>controls/electric/battery-switch</property>
-	  <property>/controls/APU/master</property></condition>
-        <ambient>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </ambient>
-	 <diffuse>
-   <red>0</red>
-   <green>1</green>
-   <blue>0.0</blue>
-  </diffuse>
-        <emission>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </emission>
-    </animation>
+  <animation>
+    <type>texmultiple</type>
+    <object-name>APUpower</object-name>
+    <condition>
+    <property>controls/electric/battery-switch</property>
+    </condition>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/power-btn</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/power-btn-tst</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+</animation>
   
    <animation>
     <type>pick</type>
@@ -1179,32 +1196,43 @@
       <repeatable>false</repeatable>
       <binding>
         <command>property-toggle</command>
+        <condition>
+                <equals>
+                    <property>/controls/APU/selftest</property>
+                <value>0</value>
+            </equals>
+        </condition>
         <property>/controls/APU/start</property>
       </binding>
     </action>
   </animation>
-<animation>
-      <type>material</type>
-	<object-name>APUstart</object-name>
-        <condition>
-          <property>controls/electric/battery-switch</property>
-	  <property>/controls/APU/start</property></condition>
-        <ambient>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </ambient>
-	 <diffuse>
-   <red>0</red>
-   <green>1</green>
-   <blue>0.0</blue>
-  </diffuse>
-        <emission>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </emission>
-    </animation>
+  <animation>
+    <type>texmultiple</type>
+    <object-name>APUstart</object-name>
+    <condition>
+    <property>controls/electric/battery-switch</property>
+    </condition>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/start</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/start-btn-tst</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+</animation>
   
    <animation>
     <type>pick</type>
@@ -1214,35 +1242,38 @@
       <button>0</button>
       <repeatable>false</repeatable>
       <binding>
-<condition>
-        <property>/controls/APU/running</property></condition>
         <command>property-toggle</command>
         <property>/controls/APU/generator</property>
       </binding>
     </action>
   </animation>
-<animation>
-      <type>material</type>
-	<object-name>APUgen</object-name>
-        <condition>
-          <property>controls/electric/battery-switch</property>
-	  <property>/controls/APU/generator</property></condition>
-        <ambient>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </ambient>
-	 <diffuse>
-   <red>0</red>
-   <green>1</green>
-   <blue>0.0</blue>
-  </diffuse>
-        <emission>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </emission>
-    </animation>
+  <animation>
+    <type>texmultiple</type>
+    <object-name>APUgen</object-name>
+    <condition>
+    <property>controls/electric/battery-switch</property>
+    </condition>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/gen-btn</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/gen-btn-tst</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+</animation>
   
    <animation>
     <type>pick</type>
@@ -1257,53 +1288,64 @@
       </binding>
     </action>
   </animation>
-<animation>
-      <type>material</type>
+  <animation>
+    <type>texmultiple</type>
     <object-name>APUbleedair</object-name>
-        <condition>
-          <property>controls/electric/battery-switch</property>
-        <property>/controls/APU/bleedair</property></condition>
-        <ambient>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </ambient>
-	 <diffuse>
-   <red>0</red>
-   <green>1</green>
-   <blue>0.0</blue>
-  </diffuse>
-        <emission>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </emission>
-    </animation>
-<animation>
-      <type>material</type>
-	<object-name>APUunknown</object-name>
-        <condition>
-          <property>controls/electric/battery-switch</property>
-	  <property>/controls/APU/power</property></condition>
-        <ambient>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </ambient>
-	 <diffuse>
-   <red>0</red>
-   <green>1</green>
-   <blue>0.0</blue>
-  </diffuse>
-        <emission>
-            <red>0.4</red>
-            <green>1</green>
-            <blue>0.4</blue>
-        </emission>
-    </animation>
-    <!--ENGINE START PANEL-->
+    <condition>
+    <property>controls/electric/battery-switch</property>
+    </condition>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/bleedair</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>/controls/APU/bleedair-tst</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+</animation>
+
+  <animation>
+    <type>texmultiple</type>
+    <object-name>APUgenoht</object-name>
+    <condition>
+    <property>controls/electric/battery-switch</property>
+    </condition>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>engines/APU/gen-oht</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+    <transform>
+        <subtype>textranslate</subtype>
+        <property>controls/APU/gen-oht-tst</property>
+        <factor>0.15</factor>
+        <axis>
+        <x>1</x>
+        <y>0</y>
+        <z>0</z>
+    </axis>
+    </transform>
+</animation>
     
-  
+    
+    <!--ENGINE START PANEL-->
    <animation>
     <type>pick</type>
     <object-name>ignition1</object-name>
@@ -1477,7 +1519,17 @@
         <action>
             <button>0</button>
             <repeatable>false</repeatable>
-	    <binding>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/start-select</property>
+            </binding>
+            <mod-up>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/engines/start-select</property>
+            </binding>
+            </mod-up>
+<!--	    <binding>
               <command>property-assign</command>
 <condition><greater-than><property>systems/electrical/volts</property><value>25</value></greater-than>
 	<equals>
@@ -1501,11 +1553,23 @@
               <command>property-assign</command>
 		<property>controls/engines/internal-engine-starter</property>
               <value>1</value>
-            </binding>
+            </binding>-->
             <binding>
                 <command>property-toggle</command>
                 <property>sim/sound/click</property>
             </binding>
         </action>
 </animation>
+<animation>
+      <type>textranslate</type>
+        <object-name>startbtn</object-name>
+        <condition>
+          <property>controls/electric/battery-switch</property>
+          </condition>
+	  <property>/controls/engines/start-select-btn</property>
+      <axis>
+          <x>1</x>
+      </axis>
+      <factor>0.15</factor>
+    </animation>
 </PropertyList>

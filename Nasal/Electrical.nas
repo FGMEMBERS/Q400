@@ -7,7 +7,7 @@ var BattVolts = props.globals.getNode("systems/electrical/batt-volts",1);
 var Volts = props.globals.getNode("/systems/electrical/volts",1);
 var Amps = props.globals.getNode("/systems/electrical/amps",1);
 var EXT  = props.globals.getNode("/controls/electric/external-power",1);
-var APU  = props.globals.getNode("/controls/APU/power",1);
+var APU  = props.globals.getNode("/engines/APU/plugged",1);
 var switch_list=[];
 var output_list=[];
 var serv_list=[];
@@ -258,7 +258,7 @@ update_virtual_bus = func( dt ) {
     var alternator1_volts = alternator1.get_output_volts();
     var alternator2_volts = alternator2.get_output_volts();
     var apu_volts = 28.0;
-    var APU_plugged = getprop("/controls/APU/power");
+    var APU_plugged = getprop("/engines/APU/plugged");
     var external_volts = 28.0;
     var power_selector = getprop("controls/electric/power-source");
     var EXT_plugged = getprop("/services/ext-pwr/enable");
@@ -346,12 +346,36 @@ electrical_bus = func(bv) {
     var right_aux_pump_volts = bus_volts * right_aux;
     
 
+    #Nasal engine start selector
+    var internal_selector = getprop("/controls/engines/internal-engine-starter-selector");
+    var starter_select = getprop("/controls/engines/start-select");
+    var starter = getprop("/controls/engines/internal-engine-starter");
+    
+    if(internal_selector!=0 and starter==0){
+        setprop("/controls/engines/start-select-btn", 1);
+    }else if(starter!=0){
+        setprop("/controls/engines/start-select-btn", 2);
+    }else{
+        setprop("/controls/engines/start-select-btn", 0);
+    }
+    
+    
+    if(getprop("/engines/engine/n2")>=50 and starter==1){
+        setprop("/controls/engines/internal-engine-starter-selector", 0);
+    }
+    
+    if(getprop("/engines/engine[1]/n2")>=50 and starter==-1){
+        setprop("/controls/engines/internal-engine-starter-selector", 0);
+    }
+    
+    
+    
+    
     #a bit of nasal for the start ;)
     if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
     setprop("/controls/engines/internal-engine-starter", 0);
     }
     
-    var starter = getprop("/controls/engines/internal-engine-starter");
     
     if(starter==1){
         setprop("/controls/engines/engine[0]/starter", 1);
@@ -558,3 +582,8 @@ update_electrical = func {
 settimer(update_electrical, 0);
 }
 
+setlistener("/controls/engines/start-select", func{
+    if(getprop("/systems/electrical/volts")==28){
+        setprop("/controls/engines/internal-engine-starter", getprop("/controls/engines/internal-engine-starter-selector"));
+    }
+});

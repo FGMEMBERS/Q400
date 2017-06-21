@@ -2,21 +2,20 @@
 <PropertyList>
 	<path>pedestalrear.ac</path>
         
-        <!--Panel illumination-->
         
-<animation>
-      <type>material</type>
-	<object-name>trimpanel</object-name>
-	<object-name>unknownpanel</object-name>
-	<object-name>emptypanel</object-name>
-        <condition><property>/controls/lighting/panel-lights</property></condition>
-        <emission>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-            <factor-prop>/controls/lighting/panel/engine</factor-prop>
-        </emission>
-    </animation>
+        <!--Panel illumination-->
+    <effect>
+        <inherits-from>Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/centerpanel-lights</use></implicit-lightmap-intensity>
+        </parameters>
+	<object-name>base.1</object-name>
+	<object-name>base.2</object-name>
+	<object-name>base.3</object-name>
+	<object-name>base.4</object-name>
+	<object-name>base.5</object-name>
+	<object-name>screws</object-name>
+    </effect>
         
       
         
@@ -90,4 +89,99 @@
     </center>
 	<axis><z>1</z></axis>
     </animation>
+    
+    
+    <!--A-TEAM COMM/NAV/ATC-->
+    <animation>
+        <type>select</type>
+        <object-name>team.screen.off</object-name>
+        <condition>
+            <equals>
+                <property>/instrumentation/team/running</property>
+                <value>0</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>team.screen</object-name>
+        <object-name>vhf1.act.100</object-name>
+        <object-name>vhf1.act.10</object-name>
+        <object-name>vhf1.act.1</object-name>
+        <object-name>vhf1.act.point</object-name>
+        <object-name>vhf1.act.01</object-name>
+        <object-name>vhf1.act.001</object-name>
+        <object-name>vhf1.act.0001</object-name>
+        <object-name>vhf1.sby.100</object-name>
+        <object-name>vhf1.sby.10</object-name>
+        <object-name>vhf1.sby.1</object-name>
+        <object-name>vhf1.sby.point</object-name>
+        <object-name>vhf1.sby.01</object-name>
+        <object-name>vhf1.sby.001</object-name>
+        <object-name>vhf1.sby.0001</object-name>        
+        <object-name>vhf2.act.100</object-name>
+        <object-name>vhf2.act.10</object-name>
+        <object-name>vhf2.act.1</object-name>
+        <object-name>vhf2.act.point</object-name>
+        <object-name>vhf2.act.01</object-name>
+        <object-name>vhf2.act.001</object-name>
+        <object-name>vhf2.act.0001</object-name>
+        <object-name>vhf2.sby.100</object-name>
+        <object-name>vhf2.sby.10</object-name>
+        <object-name>vhf2.sby.1</object-name>
+        <object-name>vhf2.sby.point</object-name>
+        <object-name>vhf2.sby.01</object-name>
+        <object-name>vhf2.sby.001</object-name>
+        <object-name>vhf2.sby.0001</object-name>
+        <condition>
+            <equals>
+                <property>/instrumentation/team/running</property>
+                <value>1</value>
+            </equals>
+        </condition>
+    </animation>
+    <animation>
+        <type>select</type>
+        <object-name>team.screen.test</object-name>
+        <condition>
+            <equals>
+                <property>/instrumentation/team/running</property>
+                <value>2</value>
+            </equals>
+        </condition>
+    </animation>
+    
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>vhf1.act.100</object-name>
+        <object-name>vhf1.act.10</object-name>
+        <object-name>vhf1.act.1</object-name>
+        <object-name>vhf1.act.point</object-name>
+        <object-name>vhf1.act.01</object-name>
+        <object-name>vhf1.act.001</object-name>
+        <object-name>vhf1.act.0001</object-name>
+        <object-name>vhf1.sby.100</object-name>
+        <object-name>vhf1.sby.10</object-name>
+        <object-name>vhf1.sby.1</object-name>
+        <object-name>vhf1.sby.point</object-name>
+        <object-name>vhf1.sby.01</object-name>
+        <object-name>vhf1.sby.001</object-name>
+        <object-name>vhf1.sby.0001</object-name>        
+        <object-name>vhf2.act.100</object-name>
+        <object-name>vhf2.act.10</object-name>
+        <object-name>vhf2.act.1</object-name>
+        <object-name>vhf2.act.point</object-name>
+        <object-name>vhf2.act.01</object-name>
+        <object-name>vhf2.act.001</object-name>
+        <object-name>vhf2.act.0001</object-name>
+        <object-name>vhf2.sby.100</object-name>
+        <object-name>vhf2.sby.10</object-name>
+        <object-name>vhf2.sby.1</object-name>
+        <object-name>vhf2.sby.point</object-name>
+        <object-name>vhf2.sby.01</object-name>
+        <object-name>vhf2.sby.001</object-name>
+        <object-name>vhf2.sby.0001</object-name>
+    </effect>
+        
+    
 </PropertyList>

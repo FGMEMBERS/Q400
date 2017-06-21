@@ -670,13 +670,6 @@ setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
 if(getprop("/controls/electric/epu-switch")){
 setprop("/controls/electric/power-source", -1);
 }
-#APU
-APUmaster=getprop("/controls/APU/master");
-APUstart=getprop("/controls/APU/start");
-if(APUmaster == 1 and APUstart == 1){setprop("/controls/APU/running", 1)}else{setprop("/controls/APU/running", 0)}
-APUrunning=getprop("/controls/APU/running");
-APUgen=getprop("/controls/APU/generator");
-if(APUrunning == 1 and APUgen == 1){setprop("/controls/APU/power", 1)}else{setprop("/controls/APU/power", 0)}
 
 #Altitude conversion for ap
 setprop("/position/altitude-ft-100", getprop("/position/altitude-ft")*0.01);

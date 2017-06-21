@@ -1,21 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PropertyList>
-	<path>baropanel.ac</path>
+    
+    <path>baropanel.ac</path>
         
-        <!--Panel illumination-->
         
-<animation>
-      <type>material</type>
+    <!--Panel illumination-->
+    <effect>
+        <inherits-from>Effects/panel-lighting</inherits-from>
+        <parameters>
+            <implicit-lightmap-intensity><use>/systems/electrical/outputs/glareshield-lights</use></implicit-lightmap-intensity>
+        </parameters>
 	<object-name>Circle</object-name>
 	<object-name>Circle.001</object-name>
-        <condition><property>/controls/lighting/panel-lights</property></condition>
-        <emission>
-            <red>1</red>
-            <green>1</green>
-            <blue>1</blue>
-            <factor-prop>/controls/lighting/panel/center</factor-prop>
-        </emission>
-    </animation>
+    </effect>
         
 
   <!--Overhead Panel-->

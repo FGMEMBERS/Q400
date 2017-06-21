@@ -313,6 +313,7 @@ DHC8 -400Q by Alex Park Jan 2010
             <start type="bool">0</start>
             <generator type="bool">0</generator>
             <bleedair type="bool">0</bleedair>
+            <selftest type="float">0</selftest>
         </APU>
         <electric>
             <battery-switch type = "bool">1</battery-switch>
@@ -350,6 +351,8 @@ DHC8 -400Q by Alex Park Jan 2010
 
 
         <engines>
+            <internal-engine-starter type="int">0</internal-engine-starter>
+            <internal-engine-starter-selector type="int">0</internal-engine-starter-selector>
             <throttle-lock type="double">0</throttle-lock>
             <throttle-lock-position type="double">0</throttle-lock-position>
             <internal-engine-starter>0</internal-engine-starter>
@@ -437,6 +440,11 @@ DHC8 -400Q by Alex Park Jan 2010
     </instrumentation>
 
     <engines>
+        <APU>
+            <rpm type="double">0</rpm>
+            <running type="bool">0</running>
+            <plugged type="bool">0</plugged>
+        </APU>
         <engine n="0">
             <running>0</running>
             <rpm>0</rpm>
