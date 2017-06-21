@@ -56,6 +56,10 @@
     <object-name>doorRH</object-name>
     <object-name>doorC</object-name>
     <object-name>gearF</object-name>
+    <object-name>GeardoorNHL</object-name>
+    <object-name>GeardoorNVL</object-name>
+    <object-name>GeardoorNHR</object-name>
+    <object-name>GeardoorNVR</object-name>
     <object-name>gearL1</object-name>
     <object-name>gearL2</object-name>
     <object-name>GeardoorLHL</object-name>
@@ -96,6 +100,10 @@
     <object-name>doorRH</object-name>
     <object-name>doorC</object-name>
     <object-name>gearF</object-name>
+    <object-name>GeardoorNHL</object-name>
+    <object-name>GeardoorNVL</object-name>
+    <object-name>GeardoorNHR</object-name>
+    <object-name>GeardoorNVR</object-name>
     <object-name>gearL1</object-name>
     <object-name>gearL2</object-name>
     <object-name>GeardoorLHL</object-name>

@@ -8,6 +8,7 @@ var Volts = props.globals.getNode("/systems/electrical/volts",1);
 var Amps = props.globals.getNode("/systems/electrical/amps",1);
 var EXT  = props.globals.getNode("/controls/electric/external-power",1);
 var APU  = props.globals.getNode("/engines/APU/plugged",1);
+var battery_master = props.globals.getNode("/controls/electric/battery_master");
 var switch_list=[];
 var output_list=[];
 var serv_list=[];
@@ -250,6 +251,8 @@ init_switches = func() {
         tmp.setBoolValue(0);
     }
 }
+
+    
 
 update_virtual_bus = func( dt ) {
     var PWR = getprop("systems/electrical/serviceable");

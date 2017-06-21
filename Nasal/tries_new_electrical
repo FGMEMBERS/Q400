@@ -1,0 +1,297 @@
+
+#var battery = Battery.new(switch-prop,volts,amps,amp_hours,charge_percent,charge_amps);
+Battery = {
+    new : func(swtch,vlt,amp,hr,chp,cha){
+    m = { parents : [Battery] };
+            m.switch = props.globals.getNode(swtch,1);
+            m.switch.setBoolValue(0);
+            m.ideal_volts = vlt;
+            m.ideal_amps = amp;
+            m.amp_hours = hr;
+            m.charge_percent = chp; 
+            m.charge_amps = cha;
+    return m;
+    },
+    apply_load : func(load,dt) {
+        if(me.switch.getValue()){
+        var amphrs_used = load * dt / 3600.0;
+        var percent_used = amphrs_used / me.amp_hours;
+        me.charge_percent -= percent_used;
+        if ( me.charge_percent < 0.0 ) {
+            me.charge_percent = 0.0;
+        } elsif ( me.charge_percent > 1.0 ) {
+        me.charge_percent = 1.0;
+        }
+        var output =me.amp_hours * me.charge_percent;
+        return output;
+        }else return 0;
+    },
+
+    get_output_volts : func {
+        if(me.switch.getValue()){
+            var x = 1.0 - me.charge_percent;
+            var tmp = -(3.0 * x - 1.0);
+            var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+            var output =me.ideal_volts * factor;
+            return output;
+        }else return 0;
+    },
+
+    get_output_amps : func {
+        if(me.switch.getValue()){
+            var x = 1.0 - me.charge_percent;
+            var tmp = -(3.0 * x - 1.0);
+            var factor = (tmp*tmp*tmp*tmp*tmp + 32) / 32;
+            var output =me.ideal_amps * factor;
+            return output;
+        }else return 0;
+    }
+};
+
+# var alternator = Alternator.new(num,switch,rpm_source,rpm_threshold,volts,amps);
+Alternator = {
+    new : func (num,switch,src,thr,vlt,amp){
+        m = { parents : [Alternator] };
+        m.switch =  props.globals.getNode(switch,1);
+        m.switch.setBoolValue(0);
+        m.meter =  props.globals.getNode("systems/electrical/gen-load["~num~"]",1);
+        m.meter.setDoubleValue(0);
+        m.gen_output =  props.globals.getNode("engines/engine["~num~"]/amp-v",1);
+        m.gen_output.setDoubleValue(0);
+        m.meter.setDoubleValue(0);
+        m.rpm_source =  props.globals.getNode(src,1);
+        m.rpm_threshold = thr;
+        m.ideal_volts = vlt;
+        m.ideal_amps = amp;
+        return m;
+    },
+
+    apply_load : func(load) {
+        var cur_volt=me.gen_output.getValue();
+        var cur_amp=me.meter.getValue();
+        if(cur_volt >1){
+            var factor=1/cur_volt;
+            gout = (load * factor);
+            if(gout>1)gout=1;
+        }else{
+            gout=0;
+        }
+        if(cur_amp > gout)me.meter.setValue(cur_amp - 0.01);
+        if(cur_amp < gout)me.meter.setValue(cur_amp + 0.01);
+    },
+
+    get_output_volts : func {
+        var out = 0;
+        if(me.switch.getBoolValue()){
+            var factor = me.rpm_source.getValue() / me.rpm_threshold;
+            if ( factor > 1.0 )factor = 1.0;
+            var out = (me.ideal_volts * factor);
+        }
+        me.gen_output.setValue(out);
+        if (out > 1) return out;
+        return 0;
+    },
+
+    get_output_amps : func {
+        var ampout =0;
+        if(me.switch.getBoolValue()){
+            var factor = me.rpm_source.getValue() / me.rpm_threshold;
+            if ( factor > 1.0 ) {
+                factor = 1.0;
+            }
+            ampout = me.ideal_amps * factor;
+        }
+        return ampout;
+    }
+};
+
+var main_batt = Battery.new("/controls/electric/main-batt-switch",24,30,34,1.0,7.0);
+var aux_batt = Battery.new("/controls/electric/aux-batt-switch",24,30,34,1.0,7.0);
+var stby_batt = Battery.new("/controls/electric/stby-batt-switch",24,30,34,1.0,7.0);
+var alternator1 = Alternator.new(0,"controls/electric/engine[0]/generator","/engines/engine[0]/n2",30.0,28.0,60.0);
+var alternator2 = Alternator.new(1,"controls/electric/engine[1]/generator","/engines/engine[1]/n2",30.0,28.0,60.0);
+
+
+
+update_left_essential_bus = func (dt) {
+    var AUX_BATT_volts=aux_batt.get_output_volts();
+    var STBY_BATT_volts=stby_batt.get_output_volts();
+    var left_main_feeder_volts=getprop("/systems/electrical/left_main_feeder/volts");
+    var bm=getprop(battery_master);
+
+    load=0.0;
+    bus_volts=0.0;
+    power_source=nil;
+
+    if(AUX_BATT_volts>bus_volts and bm){
+        bus_volts=AUX_BATT_volts;
+        power_source="AUX_BATT"
+    }
+
+    if(STBY_BATT_volts>bus_volts and bm){
+        bus_volts=STBY_BATT_volts;
+        power_source=STBY_BATT"
+    }
+    
+    if(left_main_feeder_volts>bus_volts){
+        bus_volts=left_main_feeder_volts;
+        power_source="left_main_feeder";
+    }
+
+
+    if ( power_source == "AUX_BATT" ) {
+        AUX_BATT.apply_load( load, dt );
+        } elsif ( bus_volts > AUX_BATT_volts ) {
+        AUX_BATT.apply_load( -AUX_BATT.charge_amps, dt );
+    }
+
+    if ( power_source == "STBY_BATT" ) {
+        AUX_BATT.apply_load( load, dt );
+        } elsif ( bus_volts > STBY_BATT_volts ) {
+        STBY_BATT.apply_load( -STBY_BATT.charge_amps, dt );
+    }
+    
+    return load;
+}
+
+update_right_essential_bus = func (dt) {
+    var MAIN_BATT_volts=main_batt.get_output_volts();
+    var STBY_BATT_volts=stby_batt.get_output_volts();
+    var left_main_feeder_volts=getprop("/systems/electrical/left_main_feeder/volts");
+    var bm=getprop(battery_master);
+
+    load=0.0;
+    bus_volts=0.0;
+    power_source=nil;
+
+    if(MAIN_BATT_volts>bus_volts and bm){
+        bus_volts=MAIN_BATT_volts;
+        power_source="MAIN_BATT"
+    }
+
+    if(STBY_BATT_volts>bus_volts and bm){
+        bus_volts=STBY_BATT_volts;
+        power_source=STBY_BATT"
+    }
+    
+    if(left_main_feeder_volts>bus_volts){
+        bus_volts=left_main_feeder_volts;
+        power_source="left_main_feeder";
+    }
+
+
+    if ( power_source == "MAIN_BATT" ) {
+        MAIN_BATT.apply_load( load, dt );
+        } elsif ( bus_volts > MAIN_BATT_volts ) {
+        MAIN_BATT.apply_load( -MAIN_BATT.charge_amps, dt );
+    }
+
+    if ( power_source == "STBY_BATT" ) {
+        STBY_BATT.apply_load( load, dt );
+        } elsif ( bus_volts > STBY_BATT_volts ) {
+        STBY_BATT.apply_load( -STBY_BATT.charge_amps, dt );
+    }
+    
+    return load;
+}
+
+update_battery_bus = func (dt) {
+    var STBY_BATT_volts=stby_batt.get_output_volts();
+
+    load=0.0;
+    bus_volts=STBY_BATT_volts;
+    power_source=STBY_BATT"
+    
+
+    if ( power_source == "STBY_BATT" ) {
+        STBY_BATT.apply_load( load, dt );
+        } elsif ( bus_volts > STBY_BATT_volts ) {
+        STBY_BATT.apply_load( -STBY_BATT.charge_amps, dt );
+    }
+    
+    return load;
+}
+
+update_left_main_feeder = func (dt) {
+    var AUX_BATT_volts=aux_batt.get_output_volts();
+    var alternator1_volts = alternator1.get_output_volts(); #DC1 GEN
+    var external_volts = 28.0;
+    var EXT_plugged = getprop("/services/ext-pwr/enable");
+
+    load=0.0;
+    bus_volts=0.0;
+    power_source=nil;
+    
+    if(AUX_BATT_volts>bus_volts){
+        bus_volts=AUX_BATT_volts;
+        power_source="AUX_BATT";
+    }
+    
+    if(alternator1_volts>bus_volts){
+        bus_volts=alternator1_volts;
+        power_source="alternator1";
+    }
+    
+    if(EXT_plugged and external_volts>bus_volts){
+        bus_volts=external_volts;
+        power_source="EXT";
+    }
+    
+    if ( power_source == "AUX_BATT" ) {
+        AUX_BATT.apply_load( load, dt );
+        } elsif ( bus_volts > AUX_BATT_volts ) {
+        AUX_BATT.apply_load( -AUX_BATT.charge_amps, dt );
+    }
+    if ( power_source == "alternator1" ) {
+        alternator1.apply_load( load, dt );
+    }
+    
+    
+}
+    
+    
+update_right_main_feeder = func (dt) {
+    var MAIN_BATT_volts=main_batt.get_output_volts();
+    var alternator2_volts = alternator2.get_output_volts(); #DC2 GEN
+    var apu_volts = 28.0;
+    var APU_plugged = getprop("/engines/APU/plugged");
+
+    load=0.0;
+    bus_volts=0.0;
+    power_source=nil;
+    
+    if(MAIN_BATT_volts>bus_volts){
+        bus_volts=MAIN_BATT_volts;
+        power_source="MAIN_BATT";
+    }
+    
+    if(alternator1_volts>bus_volts){
+        bus_volts=alternator1_volts;
+        power_source="alternator1";
+    }
+    
+    if(APU_plugged and apu_volts>bus_volts){
+        bus_volts=apu_volts;
+        power_source="APU";
+    }
+    
+    
+    if ( power_source == "MAIN_BATT" ) {
+        MAIN_BATT.apply_load( load, dt );
+        } elsif ( bus_volts > MAIN_BATT_volts ) {
+        MAIN_BATT.apply_load( -MAIN_BATT.charge_amps, dt );
+    }
+    if ( power_source == "alternator2" ) {
+        alternator2.apply_load( load, dt );
+    }
+    
+    
+}
+    
+    
+    
+    
+    
+    
+    
+    
