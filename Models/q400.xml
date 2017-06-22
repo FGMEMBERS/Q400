@@ -451,7 +451,7 @@
   <animation>
     <type>rotate</type>
     <object-name>elevator</object-name>
-    <property>surface-position/elevator-pos-norm</property>
+    <property>surface-positions/elevator-pos-norm</property>
     <factor>15.0</factor>
     <center>
       <x-m>16.937134</x-m>
@@ -1030,7 +1030,7 @@
   <animation>
     <type>spin</type>
     <object-name>WheelR</object-name>
-    <property>/gear/gear[2]/rollspeed-ms</property>
+    <property>gear/gear[2]/rollspeed-ms</property>
     <factor>-10</factor>
     <center>
       <x-m>1.11067</x-m>
@@ -1047,7 +1047,7 @@
     <type>rotate</type>
     <object-name>WheelN</object-name>
     <object-name>gearF</object-name>
-    <property>/gear/gear[0]/position-norm</property>
+    <property>gear/gear[0]/position-norm</property>
     <factor>-112</factor>
     <offset-deg>112</offset-deg>
     <min>90</min>
@@ -1066,7 +1066,7 @@
     <type>rotate</type>
     <object-name>WheelN</object-name>
     <object-name>gearF</object-name>
-    <property>/gear/gear[0]/caster-angle-deg</property>
+    <property>gear/gear[0]/caster-angle-deg</property>
     <factor>-0.3</factor>
     <center>
       <x-m>-12.686933</x-m>
@@ -1083,7 +1083,7 @@
     <type>translate</type>
     <object-name>gearF</object-name>
     <object-name>WheelN</object-name>
-    <property>/gear/gear[0]/compression-norm</property>
+    <property>gear/gear[0]/compression-norm</property>
     <factor>0.250</factor>
     <axis>
       <x>0</x>
@@ -1095,7 +1095,7 @@
   <animation>
     <type>spin</type>
     <object-name>WheelN</object-name>
-    <property>/gear/gear[0]/rollspeed-ms</property>
+    <property>gear/gear[0]/rollspeed-ms</property>
     <factor>-10</factor>
     <center>
       <x-m>-12.542431</x-m>

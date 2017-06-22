@@ -512,7 +512,7 @@
   <!--Landing Lights-->
    <animation>
     <type>pick</type>
-    <object-name>landinglightL</object-name>
+    <object-name>landinglightLsw</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -525,7 +525,7 @@
   </animation>
    <animation>
     <type>pick</type>
-    <object-name>landinglightR</object-name>
+    <object-name>landinglightRsw</object-name>
     <visible>true</visible>
     <action>
       <button>0</button>
@@ -539,7 +539,7 @@
   
   <animation>
     <type>rotate</type>
-    <object-name>landinglightL</object-name>
+    <object-name>landinglightLsw</object-name>
         <property>/controls/lighting/landing-light[0]</property>
     <factor>30</factor>
     <center>
@@ -554,7 +554,7 @@
   </animation>
   <animation>
     <type>rotate</type>
-    <object-name>landinglightR</object-name>
+    <object-name>landinglightRsw</object-name>
         <property>/controls/lighting/landing-light[1]</property>
     <factor>30</factor>
     <center>
