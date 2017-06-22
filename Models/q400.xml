@@ -74,7 +74,7 @@
     <object-name>GeardoorRVR</object-name>
   </effect>
   <effect>
-    <inherits-from>Effects/glass</inherits-from>
+    <inherits-from>Effects/model-transparent</inherits-from>
     <object-name>propdiscL</object-name>
     <object-name>propdiscR</object-name>
     <object-name>Windows</object-name>
@@ -451,7 +451,7 @@
   <animation>
     <type>rotate</type>
     <object-name>elevator</object-name>
-    <property>controls/flight/elevator</property>
+    <property>surface-position/elevator-pos-norm</property>
     <factor>15.0</factor>
     <center>
       <x-m>16.937134</x-m>
@@ -466,7 +466,7 @@
   <animation>
     <type>rotate</type>
     <object-name>rudder</object-name>
-    <property>controls/flight/rudder</property>
+    <property>surface-positions/rudder-pos-norm</property>
     <factor>15.0</factor>
     <axis>
       <x1-m>15.146358</x1-m>

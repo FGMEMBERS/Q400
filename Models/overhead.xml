@@ -680,6 +680,65 @@
             <z2-m>2.84417</z2-m>
         </axis>
   </animation>
+  <!--AIR CONDITIONING PANEL-->
+   <animation>
+    <type>pick</type>
+    <object-name>hbovbleed1</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/pneumatic/switches/bleed1</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>hbovbleed1</object-name>
+        <property>/controls/pneumatic/switches/bleed1</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -11.67332 </x-m>
+      <z-m>  2.93665 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+   <animation>
+    <type>pick</type>
+    <object-name>hbovbleed2</object-name>
+    <visible>true</visible>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/pneumatic/switches/bleed2</property>
+      </binding>
+    </action>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>hbovbleed2</object-name>
+        <property>/controls/pneumatic/switches/bleed2</property>
+    <factor>30</factor>
+    <center>
+      <x-m> -11.67332 </x-m>
+      <z-m>  2.93665 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
 <!--ICE PROTECTION PANEL-->
 <!--Illuminate Lamps-->
         <animation>

@@ -5,12 +5,12 @@ setlistener("/sim/signals/fdm-initialized", func{
 
 setlistener("/controls/APU/start", func{
     if(getprop("controls/APU/master")==1 and getprop("/systems/electrical/volts")>20) {
-        interpolate("/engines/APU/rpm", 25, 5);
+        interpolate("/engines/APU/rpm", 62, 5);
     }
 });
 
 setlistener("/engines/APU/rpm" , func{
-    if(getprop("/engines/APU/rpm")==25){
+    if(getprop("/engines/APU/rpm")>=62){
         setprop("/controls/APU/start", 0);
         setprop("/engines/APU/running", 1);
         setprop("/controls/APU/power-btn", 1);
@@ -35,6 +35,15 @@ var update_APU = func{
     var generator=getprop("/controls/APU/generator");
     var selftest=getprop("/controls/APU/selftest");
     
+    if(running and !master){
+        interpolate("/engines/APU/rpm", 0, 5);
+    }else if(running and master and blair){
+        interpolate("/engines/APU/rpm", 98, 2);
+    }else if(running and master and !blair and !start){
+        interpolate("/engines/APU/rpm", 62, 2);
+    }
+    
+        
     
     #APU selftest
     if(selftest>0.25 and selftest<0.75){
@@ -75,10 +84,6 @@ var update_APU = func{
         setprop("/controls/APU/selftest", 0);
     }
     
-    
-    if(running and !master){
-        interpolate("/engines/APU/rpm", 0, 5);
-    }
     
     if(running and generator){
         setprop("/engines/APU/plugged", 1);

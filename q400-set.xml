@@ -267,6 +267,9 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
                 <brake-parking>1</brake-parking>
                 <brake-parking-position>1</brake-parking-position>
             </gear>
+            <flight>
+                <elevator-int type="float">0</elevator-int>
+            </flight>
     </controls>
 
     <instrumentation>
@@ -300,7 +303,6 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             <file>Nasal/limits.nas</file>
             <file>Nasal/liveries.nas</file>
             <file>Nasal/Electrical.nas</file>
-            <file>Nasal/APU.nas</file>
             <file>Nasal/systems.nas</file>
            <!-- <file>Nasal/vhf22.nas</file>
             <file>Nasal/vir32.nas</file>-->
@@ -309,6 +311,11 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
 		<file>Nasal/dual-control-tools.nas</file>-->
             <file>Nasal/lighting.nas</file>
         </q400>
+        <systems>
+            <file>Nasal/APU.nas</file>
+            <file>Nasal/pneumatics.nas</file>
+            <file>Nasal/hydraulics.nas</file>
+        </systems>
         <doors>
             <file>Nasal/doors.nas</file>
         </doors>

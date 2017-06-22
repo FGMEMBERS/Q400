@@ -252,6 +252,9 @@ DHC8 -400Q by Alex Park Jan 2010
         <property-rule n="100">
             <path>Aircraft/Q400/Systems/pfd.xml</path>
         </property-rule>
+        <property-rule n="101">
+            <path>Aircraft/Q400/Systems/flight-controls.xml</path>
+        </property-rule>
     </systems>
 
 

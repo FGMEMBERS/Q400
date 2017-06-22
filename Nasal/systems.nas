@@ -661,10 +661,6 @@ setprop("/sim/rendering/als-secondary-lights/use-landing-light", getprop("/contr
 }else{
 setprop("/sim/rendering/als-secondary-lights/use-landing-light", 0);
 }
-#Gear Failure System
-if(getprop("/gear/serviceable") == 1){
-setprop("/controls/gear/gear-down-int", getprop("/controls/gear/gear-down"));
-}
 
 #EPU
 if(getprop("/controls/electric/epu-switch")){

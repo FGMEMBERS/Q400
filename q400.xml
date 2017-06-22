@@ -83,7 +83,7 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
         sweep="0" dihedral="0" taper="1">
         <stall aoa="18" width="4" peak="1.5"/>
         <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
-        <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+        <control-input axis="/controls/flight/elevator-int" control="FLAP0"/>
         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
     </hstab>
@@ -92,7 +92,7 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
         sweep="20" taper="0.7" >
         <stall aoa="16" width="4" peak="1.5"/>
         <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
-        <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+        <control-input axis="/controls/flight/rudder-int" control="FLAP0" invert="false"/>
         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
     </vstab>
