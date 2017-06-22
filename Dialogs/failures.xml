@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Q400 Aircraft Config Dialog -->
+
+
+<PropertyList>
+
+	<name>aircraft-config-fail</name>
+	<layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>left</halign>
+            <label>System Failures</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <pref-width>20</pref-width>
+            <pref-height>20</pref-height>
+            <legend>X</legend>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+	
+    <hrule/>
+	
+	<text>
+		<halign>left</halign>
+		<label>Failed when Checked</label>
+	</text>
+	
+	<group>
+		<layout>hbox</layout>
+			
+		<group>
+			<layout>vbox</layout>
+			
+			<group>
+				<layout>hbox</layout>
+
+				<hrule>
+					<stretch type="bool">true</stretch>
+				</hrule>
+				<text>
+					<label>Hydraulic System Failures</label>
+				</text>
+				<hrule>
+					<stretch type="bool">true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>HYD 1 Leak</label>
+				<halign>left</halign>
+				<property>/systems/failures/hyd1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>STBY Power Unit (SPU) Fail</label>
+				<halign>left</halign>
+				<property>/systems/failures/spu</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>HYD 2 Leak</label>
+				<halign>left</halign>
+				<property>/systems/failures/hyd2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Power Transfer Unit (PTU) Fail</label>
+				<halign>left</halign>
+				<property>/systems/failures/ptu</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>HYD 3 Leak</label>
+				<halign>left</halign>
+				<property>/systems/failures/hyd3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>HYD 3 Electric Pump Fail</label>
+				<halign>left</halign>
+				<property>/systems/failures/pump3</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox><!--
+			
+			<group>
+				<layout>hbox</layout>
+
+				<hrule>
+					<stretch type="bool">true</stretch>
+				</hrule>
+				<text>
+					<label>PNEU SYS Fail</label>
+				</text>
+				<hrule>
+					<stretch type="bool">true</stretch>
+				</hrule>
+			</group>
+			
+			<checkbox>
+				<label>Bleed APU</label>
+				<halign>left</halign>
+				<property>/systems/failures/bleed-apu</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Bleed EXT</label>
+				<halign>left</halign>
+				<property>/systems/failures/bleed-ext</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Bleed ENG 1</label>
+				<halign>left</halign>
+				<property>/systems/failures/bleed-eng1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Bleed ENG 2</label>
+				<halign>left</halign>
+				<property>/systems/failures/bleed-eng2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pack 1</label>
+				<halign>left</halign>
+				<property>/systems/failures/pack1</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
+			
+			<checkbox>
+				<label>Pack 2</label>
+				<halign>left</halign>
+				<property>/systems/failures/pack2</property>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>-->
+			
+			<hrule/>
+			
+			<button>
+				<legend>Reset All</legend>
+				<halign>center</halign>
+				<padding>5</padding>
+				<pref-width>120</pref-width>
+				<binding>
+                                    <command>property-assign</command>
+                                    <property>/systems/failures/pump3</property>
+                                    <value>0</value>
+				</binding>
+				<binding>
+                                    <command>property-assign</command>
+                                    <property>/systems/failures/hyd3</property>
+                                    <value>0</value>
+				</binding>
+				<binding>
+                                    <command>property-assign</command>
+                                    <property>/systems/failures/hyd2</property>
+                                    <value>0</value>
+				</binding>
+				<binding>
+                                    <command>property-assign</command>
+                                    <property>/systems/failures/hyd1</property>
+                                    <value>0</value>
+				</binding>
+				<binding>
+                                    <command>property-assign</command>
+                                    <property>/systems/failures/ptu</property>
+                                    <value>0</value>
+				</binding>
+				<binding>
+                                    <command>property-assign</command>
+                                    <property>/systems/failures/spu</property>
+                                    <value>0</value>
+				</binding>
+			</button>
+				
+		</group>
+
+	</group>
+	
+</PropertyList>

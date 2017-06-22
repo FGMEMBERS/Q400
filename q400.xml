@@ -86,6 +86,7 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
         <control-input axis="/controls/flight/elevator-int" control="FLAP0"/>
         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+        <control-speed control="FLAP0" transition-time="0.3"/><!--moves slowly due to being operated hydraulically-->
     </hstab>
 
     <vstab x="-15.528" y="0.00" z="3.816" length="3.0" chord="2.9"
@@ -95,6 +96,7 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
         <control-input axis="/controls/flight/rudder-int" control="FLAP0" invert="false"/>
         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+        <control-speed control="FLAP0" transition-time="0.3"/><!--moves slowly due to being operated hydraulically-->
     </vstab>
 
 <!--

@@ -467,7 +467,7 @@
     <type>rotate</type>
     <object-name>rudder</object-name>
     <property>surface-positions/rudder-pos-norm</property>
-    <factor>15.0</factor>
+    <factor>-15.0</factor>
     <axis>
       <x1-m>15.146358</x1-m>
       <z1-m>3.685321</z1-m>

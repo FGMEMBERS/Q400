@@ -254,4 +254,108 @@
             <blue>0.4</blue>
         </emission>
     </animation>
+    
+    
+    <!--Hydraulic Control-->
+<animation>
+	<type>pick</type>
+	<object-name>stbyhydpress</object-name>
+	<visible>true</visible>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/hydraulic/spu_sw</property>
+		</binding>
+	</action>
+</animation>
+<animation>
+<type>texmultiple</type>
+<object-name>stbyhydpress</object-name>
+    <transform>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/volts</property>
+                <value>15</value>
+            </greater-than>
+        </condition>
+      <subtype>textranslate</subtype>
+      <property>controls/hydraulic/spu_act</property>
+      <factor> 0.127 </factor>
+      <axis>
+        <x> 1 </x>
+        <y> 0 </y>
+        <z> 0 </z>
+      </axis>
+    </transform>
+</animation>  
+
+<animation>
+	<type>pick</type>
+	<object-name>ptucntrl</object-name>
+	<visible>true</visible>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/hydraulic/ptu</property>
+		</binding>
+	</action>
+</animation>
+<animation>
+<type>texmultiple</type>
+	<object-name>ptucntrl</object-name>
+    <transform>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/volts</property>
+                <value>15</value>
+            </greater-than>
+        </condition>
+      <subtype>textranslate</subtype>
+      <property>controls/hydraulic/ptu</property>
+      <factor> 0.127 </factor>
+      <axis>
+        <x> 1 </x>
+        <y> 0 </y>
+        <z> 0 </z>
+      </axis>
+    </transform>
+</animation>    
+
+<animation>
+	<type>pick</type>
+	<object-name>hyd3isolvlv</object-name>
+	<visible>true</visible>
+	<action>
+		<button>0</button>
+		<repeatable>true</repeatable>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/hydraulic/isol-valve-btn3</property>
+		</binding>
+	</action>
+</animation>
+<animation>
+<type>texmultiple</type>
+	<object-name>hyd3isolvlv</object-name>
+    <transform>
+        <condition>
+            <greater-than>
+                <property>systems/electrical/volts</property>
+                <value>15</value>
+            </greater-than>
+        </condition>
+      <subtype>textranslate</subtype>
+      <property>controls/hydraulic/isol-valve3</property>
+      <factor> 0.127 </factor>
+      <axis>
+        <x> 1 </x>
+        <y> 0 </y>
+        <z> 0 </z>
+      </axis>
+    </transform>
+</animation>    
 </PropertyList>

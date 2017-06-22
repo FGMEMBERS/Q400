@@ -199,6 +199,19 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
                 <logo-light type="bool">0</logo-light>
             </lighting>
         </electrical>
+        <hydraulic>
+            <psi1 type="float">0</psi1>
+            <psi2 type="float">0</psi2>
+            <psi3 type="float">0</psi3>
+        </hydraulic>
+        <failures>
+            <hyd1 type="bool">0</hyd1>
+            <hyd2 type="bool">0</hyd2>
+            <hyd3 type="bool">0</hyd3>
+            <ptu type="bool">0</ptu>
+            <spu type="bool">0</spu>
+            <pump3 type="bool">0</pump3>
+        </failures>            
     </systems>
     <autopilot>
         <settings>
@@ -270,6 +283,7 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
             <flight>
                 <elevator-int type="float">0</elevator-int>
             </flight>
+            
     </controls>
 
     <instrumentation>

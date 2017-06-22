@@ -56,13 +56,6 @@
                     <property>/systems/hydraulic/psi2</property>
                     <value>2900</value>
                 </greater-than>
-                <and>
-                    <greater-than>
-                        <property>/systems/hydraulic/psi3</property>
-                        <value>2900</value>
-                    </greater-than>
-                    <property>/controls/hydraulic/isol-valve3</property>
-                </and>
             </or>
         </condition>
     </enable>
