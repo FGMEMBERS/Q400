@@ -166,6 +166,7 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
         </color-set>
         <tutorials include="Tutorials/tutorials.xml"/>
         <multiplay>
+            <fallback-model-index type="int">155</fallback-model-index>
             <generic>
                 <string n="0" alias="/sim/aero"/>
                 <string n="1" alias="/sim/multiplay/callsign"/>
