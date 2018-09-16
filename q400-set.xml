@@ -37,6 +37,14 @@ new version with up-to-date systems, a complete new ex- and interior model 2016 
     </limits>
     <sim>
         <description>Bombardier Q400</description>
+        <long-description>
+          The largest variant of the De Havilland Canada DHC-8
+          "Dash-8" and the only one still in production is an 82-seat
+          regional airliner with a glass cockpit and modern heads-up
+          displays, quite different from its STOL and rugged forebear,
+          the DHC-7 "Dash-7".  The "Q" moniker emphasizes the
+          exceptionally quiet turboprop engines.
+        </long-description>
         <status>Alpha development</status>
         <author>Alex Park(Maverickalex); Florian K; D-ECHO</author>
         <flight-model>yasim</flight-model>
