@@ -1,3 +1,7 @@
+# PLEASE NOTE THAT THIS AIRCRAFT REPOSITORY IS OUTDATED AND SHOULD NO LONGER BE USED. FOR CURRENT VERSIONS USE https://sourceforge.net/p/flightgear/fgaddon/HEAD/tree/trunk/Aircraft/QSeries or https://github.com/D-ECHO/QSeries THANKS!
+
+
+
 # Bombardier Dash 8  Q400 Project
 This project aims at creating a realistic Bombardier Q400 for flightgear, the free and open-source flight simulator.
 
