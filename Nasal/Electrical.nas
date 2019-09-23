@@ -7,7 +7,8 @@ var BattVolts = props.globals.getNode("systems/electrical/batt-volts",1);
 var Volts = props.globals.getNode("/systems/electrical/volts",1);
 var Amps = props.globals.getNode("/systems/electrical/amps",1);
 var EXT  = props.globals.getNode("/controls/electric/external-power",1);
-var APU  = props.globals.getNode("/controls/APU/power",1);
+var APU  = props.globals.getNode("/engines/APU/plugged",1);
+var battery_master = props.globals.getNode("/controls/electric/battery_master");
 var switch_list=[];
 var output_list=[];
 var serv_list=[];
@@ -195,8 +196,8 @@ init_switches = func() {
     append(output_list,"recog-lights");
     append(switch_list,"controls/lighting/logo-lights");
     append(output_list,"logo-lights");
-    append(switch_list,"controls/lighting/strobe");
-    append(output_list,"strobe");
+    append(switch_list,"controls/lighting/strobe-lights");
+    append(output_list,"strobe-lights");
     append(switch_list,"controls/lighting/taxi-lights");
     append(output_list,"taxi-lights");
     append(switch_list,"controls/electric/wipers/switch");
@@ -251,6 +252,8 @@ init_switches = func() {
     }
 }
 
+    
+
 update_virtual_bus = func( dt ) {
     var PWR = getprop("systems/electrical/serviceable");
     var battery_volts = battery.get_output_volts();
@@ -258,7 +261,7 @@ update_virtual_bus = func( dt ) {
     var alternator1_volts = alternator1.get_output_volts();
     var alternator2_volts = alternator2.get_output_volts();
     var apu_volts = 28.0;
-    var APU_plugged = getprop("/controls/APU/power");
+    var APU_plugged = getprop("/engines/APU/plugged");
     var external_volts = 28.0;
     var power_selector = getprop("controls/electric/power-source");
     var EXT_plugged = getprop("/services/ext-pwr/enable");
@@ -340,6 +343,55 @@ electrical_bus = func(bv) {
     var start_n2_0 = 0.0;
     var start_n2_1 = 0.0;
 
+    var left_aux = getprop("controls/electric/left-aux-pump");
+    var right_aux = getprop("controls/electric/right-aux-pump");
+    var left_aux_pump_volts = bus_volts * left_aux;
+    var right_aux_pump_volts = bus_volts * right_aux;
+    
+
+    #Nasal engine start selector
+    var internal_selector = getprop("/controls/engines/internal-engine-starter-selector");
+    var starter_select = getprop("/controls/engines/start-select");
+    var starter = getprop("/controls/engines/internal-engine-starter");
+    
+    if(internal_selector!=0 and starter==0){
+        setprop("/controls/engines/start-select-btn", 1);
+    }else if(starter!=0){
+        setprop("/controls/engines/start-select-btn", 2);
+    }else{
+        setprop("/controls/engines/start-select-btn", 0);
+    }
+    
+    
+    if(getprop("/engines/engine/n2")>=50 and starter==1){
+        setprop("/controls/engines/internal-engine-starter-selector", 0);
+    }
+    
+    if(getprop("/engines/engine[1]/n2")>=50 and starter==-1){
+        setprop("/controls/engines/internal-engine-starter-selector", 0);
+    }
+    
+    
+    
+    
+    #a bit of nasal for the start ;)
+    if(getprop("/controls/engines/internal-engine-starter-selector") == 0){
+    setprop("/controls/engines/internal-engine-starter", 0);
+    }
+    
+    
+    if(starter==1){
+        setprop("/controls/engines/engine[0]/starter", 1);
+        setprop("/controls/engines/engine[1]/starter", 0);
+    }else if(starter==-1){
+        setprop("/controls/engines/engine[0]/starter", 0);
+        setprop("/controls/engines/engine[1]/starter", 1);
+    }else{
+        setprop("/controls/engines/engine[0]/starter", 0);
+        setprop("/controls/engines/engine[1]/starter", 0);
+    }
+    
+
     var internal_starter = getprop("controls/engines/internal-engine-starter");
     var if_engine0_running = getprop("engines/engine[0]/running");
     var if_engine1_running = getprop("engines/engine[1]/running");
@@ -393,63 +445,43 @@ electrical_bus = func(bv) {
     if (getprop("engines/engine[1]/n2") < start_n2_1) {
         increasing1();
     }
+    var ignition0_switch = getprop("/controls/engines/engine[0]/ignition-switch");
+    var ignition1_switch = getprop("/controls/engines/engine[1]/ignition-switch");
     
-    var internal_condition0 = getprop("controls/engines/engine[0]/condition");
-    var internal_condition1 = getprop("controls/engines/engine[1]/condition");
-    var min_n2_0 = getprop("engines/engine[0]/n2");
-    var min_n2_1 = getprop("engines/engine[1]/n2");
-
-
-    var fuel_rich_func0 = func {
-        if (if_engine0_running == 0 and fuel_rich0 <= 200 and fuel_rich0>=0) {
-            fuel_rich0 =  fuel_rich0 - min_n2_0 + (internal_condition0 * 20);
-	    settimer(fuel_rich_func0, 1);
-	}
+    if(ignition0_switch == 1 and bus_volts >= 25){
+    setprop("controls/engines/engine/ignition", 1);
+    } else {
+    setprop("controls/engines/engine/ignition", 0);
+    }
+    if(ignition1_switch == 1 and bus_volts >= 25){
+    setprop("controls/engines/engine[1]/ignition", 1);
+    }else{
+    setprop("controls/engines/engine[1]/ignition", 0);
     }
 
-    var fuel_rich_func1 = func {
-        if (if_engine1_running == 0 and fuel_rich1 <= 200 and fuel_rich1>=0) {
-            fuel_rich1 =  fuel_rich1 - min_n2_1 + (internal_condition1 * 20);
-	    settimer(fuel_rich_func1, 1);
-	}
-    }
-
-    if (fuel_rich0 >200) {
-        fuel_rich0 = 200;
-    } else if (fuel_rich0 <0) {
-        fuel_rich0 = 0;
-    }
-
+    #VERY simplified ignition system
     
-    if (fuel_rich1 >200) {
-        fuel_rich1 = 200;
-    } else if (fuel_rich1 <0) {
-        fuel_rich1 = 0;
+    var engine0_ignition = getprop("/controls/engines/engine[0]/ignition");
+    var engine1_ignition = getprop("/controls/engines/engine[1]/ignition");
+    var engine0_n2 = getprop("/engines/engine[0]/n2");
+    var engine1_n2 = getprop("/engines/engine[1]/n2");
+
+    if(engine0_ignition == 1 and engine0_n2 >= 15){
+        setprop("controls/engines/engine/condition", getprop("/controls/engines/engine/condition-lever"));
+    }else{
+        interpolate("controls/engines/engine/condition", 0, 1); #Slowly shut engine down
     }
-
-    fuel_rich_func0();
-    fuel_rich_func1();
-
-    if_engine0_running = getprop("engines/engine[0]/running");
-    if_engine1_running = getprop("engines/engine[1]/running");
-
-    if (getprop("engines/engine[0]/n2") >= 12 and internal_condition0 > 0 and fuel_rich0 < 25 and fwd_boost != 0 and if_engine0_serviceable and if_engine0_cutoff==0 and internal_condition0>0.382 and !getprop("sim/model/equipment/left-engine-cover")) {
-       setprop("controls/engines/engine[0]/internal-condition", 1);
-    } else {
-       setprop("controls/engines/engine[0]/internal-condition", 0);
-    }
-
-    if (getprop("engines/engine[1]/n2") >= 12 and internal_condition1 > 0 and fuel_rich1 < 25 and aft_boost != 0  and if_engine1_serviceable and if_engine1_cutoff==0 and internal_condition1>0.382 and !getprop("sim/model/equipment/right-engine-cover")) {
-       setprop("controls/engines/engine[1]/internal-condition", 1);
-    } else {
-       setprop("controls/engines/engine[1]/internal-condition", 0);
+    if(engine1_ignition == 1 and engine1_n2 >= 15){
+        setprop("controls/engines/engine[1]/condition", getprop("/controls/engines/engine[1]/condition-lever"));
+    }else{
+        interpolate("controls/engines/engine[1]/condition", 0, 1); #Slowly shut engine down
     }
     
     var starter_total_volts = starter_volts + starter_volts1;
     
     setprop(outPut~"starter",starter_total_volts); 
-    setprop(outPut~"aft-boost-pumps",aft_boost_pumps_volts); 
-    setprop(outPut~"fwd-boost-pumps",fwd_boost_pumps_volts); 
+    setprop(outPut~"left-aux-pump",left_aux_pump_volts); 
+    setprop(outPut~"right-aux-pump",right_aux_pump_volts); 
 
     for(var i=0; i<size(switch_list); i+=1) {
         var srvc = getprop(switch_list[i]);
@@ -457,7 +489,51 @@ electrical_bus = func(bv) {
         setprop(outPut~output_list[i],bus_volts * srvc);
     }
     setprop(outPut~"flaps",bus_volts);
-
+    
+    var navLV=getprop("/systems/electrical/outputs/nav-lights");
+    if(navLV){
+        setprop("/systems/electrical/outputs/nav-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/nav-lights-norm", 0);
+    }
+    
+    var taxiLV=getprop("/systems/electrical/outputs/taxi-lights");
+    if(taxiLV){
+        setprop("/systems/electrical/outputs/taxi-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/taxi-lights-norm", 0);
+    }
+    
+    var landingLV0=getprop("/systems/electrical/outputs/landing-light");
+    if(landingLV0){
+        setprop("/systems/electrical/outputs/landing-light-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/landing-light-norm", 0);
+    }
+    
+    var landingLV1=getprop("/systems/electrical/outputs/landing-light[1]");
+    if(landingLV1){
+        setprop("/systems/electrical/outputs/landing-light-norm[1]", 1);
+    }else{
+        setprop("/systems/electrical/outputs/landing-light-norm[1]", 0);
+    }
+    
+    var strobeLV=getprop("/systems/electrical/outputs/strobe-lights");
+    var strobeS=getprop("/sim/model/lights/strobe/state");
+    if(strobeLV and strobeS){
+        setprop("/systems/electrical/outputs/strobe-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/strobe-lights-norm", 0);
+    }
+    
+    var beaconLV=getprop("/systems/electrical/outputs/beacon");
+    var beaconS=getprop("/sim/model/lights/beacon/state");
+    if(beaconLV and beaconS){
+        setprop("/systems/electrical/outputs/beacon-lights-norm", 1);
+    }else{
+        setprop("/systems/electrical/outputs/beacon-lights-norm", 0);
+    }
+    
     return load;
 }
 
@@ -481,12 +557,16 @@ setprop(outPut~"instrument-lights-norm",0.0357 * instr_lights);
     setprop(outPut~"enginepanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/engine") ) * 0.0357 );
     setprop(outPut~"centerpanel-lights", (( bus_volts * getprop("controls/lighting/panel-lights") ) * getprop("controls/lighting/panel/center") ) * 0.0357 );
     
-    if(bus_volts>15 && getprop("/instrumentation/team/test")==1) {
+    
+    
+    
+    var team_test = getprop("/instrumentation/team/test");
+    if(bus_volts>15 and team_test==1) {
         setprop("/instrumentation/team/running", 1);
     }else if(bus_volts<15) {
         setprop("/instrumentation/team/running", 0);
         setprop("/instrumentation/team/test", 0);
-    }else if(bus_volts>15 && getprop("/instrumentation/team/test")<1) {
+    }else if(bus_volts>15 and team_test<1) {
         setprop("/instrumentation/team/running", 2);
     }
 
@@ -505,8 +585,8 @@ update_electrical = func {
 settimer(update_electrical, 0);
 }
 
-#setlistener("/controls/electric/battery-switch", func{
-#    if(bus_volts>15){
-#        interpolate("/instrumentation/team/test", 1, 2);
-#    }
-#});
+setlistener("/controls/engines/start-select", func{
+    if(getprop("/systems/electrical/volts")==28){
+        setprop("/controls/engines/internal-engine-starter", getprop("/controls/engines/internal-engine-starter-selector"));
+    }
+});

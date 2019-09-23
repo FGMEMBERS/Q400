@@ -12,12 +12,14 @@
 
  <sim>
 
-  <description>DHC8-400Q(multiplayer passenger)</description>
+  <description>DHC8-400Q multiplayer passenger</description>
+  <long-description>Board a Q400 flown by another pilot over multiplayer.</long-description> 
   <author>Alex Park (original by Anders Gidenstam)</author>
   <status>alpha</status>
   <aircraft-version>$Id: dhc8-400-passenger-set.xml,v 1.1 2009/12/21 05:26:54 sydadams Exp $</aircraft-version>
   
   <flight-model>null</flight-model>
+  <variant-of>q400</variant-of>
 
   <presets>
    <onground type="bool">false</onground>

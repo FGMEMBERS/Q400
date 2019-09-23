@@ -25,17 +25,28 @@
 		<path>cabincall.wav</path>
 		<condition>
 			<and>
-		            <property>/controls/electric/battery-switch</property>
-				<or>
-					<equals>
-    	    	        <property>controls/cabin/nosmoking</property>
-						<value>1</value>
-					</equals>
-					<equals>
-    	    	        <property>controls/cabin/nosmoking</property>
-						<value>0</value>
-					</equals>
-				</or>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <property>controls/cabin/nosmoking</property>
+			</and>
+		</condition>
+	</chime>
+	<chime>
+		<name>nosmoking1</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+			<and>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <not>
+                                <property>controls/cabin/nosmoking</property>
+                            </not>
 			</and>
 		</condition>
 	</chime>	   
@@ -46,18 +57,29 @@
 		<type>avionics</type>
 		<path>cabincall.wav</path>
 		<condition>
-			<and>
-		            <property>/controls/electric/battery-switch</property>
-				<or>
-					<equals>
-    	    	        <property>controls/cabin/seatbelts</property>
-						<value>1</value>
-					</equals>
-					<equals>
-    	    	        <property>controls/cabin/seatbelts</property>
-						<value>0</value>
-					</equals>
-				</or>
+                        <and>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <property>controls/cabin/seatbelts</property>
+			</and>
+		</condition>
+	</chime>   
+	<chime>
+		<name>seatbelt1</name>
+		<mode>once</mode>
+		<type>avionics</type>
+		<path>cabincall.wav</path>
+		<condition>
+                        <and>
+                            <greater-than>
+                                <property>/systems/electrical/volts</property>
+                                <value>15</value>
+                            </greater-than>
+                            <not>
+                                <property>controls/cabin/seatbelts</property>
+                            </not>
 			</and>
 		</condition>
 	</chime>   
@@ -136,10 +158,10 @@
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
-                <equals>
-                    <property>controls/engines/internal-engine-starter</property>
-                    <value>1</value>
-                </equals>
+                        <equals>
+                            <property>controls/engines/internal-engine-starter</property>
+                            <value>1</value>
+                        </equals>
             </condition>
             <volume>
                 <property>sim/sound/effects/volume</property>
@@ -163,6 +185,10 @@
                 <not>
                     <property>sim/current-view/internal</property>
                 </not>
+                <greater-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
             </condition>
             <volume>
                 <property>engines/engine[0]/n2</property>
@@ -193,6 +219,10 @@
             <property>engines/engine[0]/n2</property>
             <condition>
                     <property>sim/current-view/internal</property>
+                <greater-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
             </condition>
             <volume>
                 <property>engines/engine[0]/n2</property>
@@ -226,6 +256,10 @@
                 <not>
                     <property>sim/current-view/internal</property>
                 </not>
+                <greater-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
             </condition>
             <volume>
                 <property>engines/engine[0]/n2</property>
@@ -257,6 +291,10 @@
             <property>engines/engine[0]/n2</property>
             <condition>
                     <property>sim/current-view/internal</property>
+                <greater-than>
+                    <property>controls/engines/engine[0]/condition</property>
+                    <value>0.15</value>
+                </greater-than>
             </condition>
             <volume>
                 <property>engines/engine[0]/n2</property>
@@ -346,10 +384,10 @@
             <mode>once</mode>
             <path>Sounds/turbine_start.wav</path>
             <condition>
-                <equals>
-                    <property>controls/engines/internal-engine-starter</property>
-                    <value>-1</value>
-                </equals>
+                        <equals>
+                            <property>controls/engines/internal-engine-starter</property>
+                            <value>-1</value>
+                        </equals>
             </condition>
             <volume>
                 <property>sim/sound/effects/volume</property>
@@ -371,16 +409,11 @@
             <path>Sounds/turboprop1.wav</path>
             <property>engines/engine[1]/n2</property>
             <condition>
-                <not>
-                    <property>sim/current-view/internal</property>
-                </not>
-            </condition>
-            <!--<condition>
                 <greater-than>
-                    <property>engines/engine[1]/n2</property>
-                    <value>2</value>
+                    <property>controls/engines/engine[1]/condition</property>
+                    <value>0.15</value>
                 </greater-than>
-            </condition>-->
+            </condition>
             <volume>
                 <property>engines/engine[1]/n2</property>
                 <factor>0.01</factor>
@@ -409,11 +442,11 @@
             <path>Sounds/turboprop1.wav</path>
             <property>engines/engine[1]/n2</property>
             <condition>
-                    <property>sim/current-view/internal</property><!--
+                    <property>sim/current-view/internal</property>
                 <greater-than>
                     <property>controls/engines/engine[1]/condition</property>
                     <value>0.15</value>
-                </greater-than>-->
+                </greater-than>
             </condition>
             <volume>
                 <property>engines/engine[1]/n2</property>
@@ -447,10 +480,10 @@
             <property>engines/engine[1]/n2</property>
             <condition><not>
                     <property>sim/current-view/internal</property></not>
-                <!--<greater-than>
+                <greater-than>
                     <property>controls/engines/engine[1]/condition</property>
                     <value>0.15</value>
-                </greater-than>-->
+                </greater-than>
             </condition>
             <volume>
                 <property>engines/engine[1]/n2</property>
@@ -482,10 +515,10 @@
             <property>engines/engine[1]/n2</property>
             <condition>
                     <property>sim/current-view/internal</property>
-                <!--<greater-than>
+                <greater-than>
                     <property>controls/engines/engine[1]/condition</property>
                     <value>0.15</value>
-                </greater-than>-->
+                </greater-than>
             </condition>
             <volume>
                 <property>engines/engine[1]/n2</property>

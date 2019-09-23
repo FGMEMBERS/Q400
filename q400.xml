@@ -23,12 +23,12 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
 
 <airplane mass="35000">
 
-    <approach speed="100" aoa="5" fuel="0.5">
-        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="0.25"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="0.25"/>
+    <approach speed="90" aoa="5" fuel="0.5">
+        <control-setting axis="/controls/engines/engine[0]/throttle-fwd" value="0.2"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle-fwd" value="0.2"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
-        <control-setting axis="/controls/flight/flaps" value="1.0"/>
+        <control-setting axis="/controls/flight/flaps" value="0.5"/>
         <solve-weight idx="0" weight="360"/>
         <solve-weight idx="1" weight="2940"/>
  	  <control-setting axis="/controls/gear/gear-down" value="1"/>
@@ -83,18 +83,20 @@ empty weight= 37888 according to http://www2.bombardier.com/q400/en/specificatio
         sweep="0" dihedral="0" taper="1">
         <stall aoa="18" width="4" peak="1.5"/>
         <flap0 start="0" end="1" lift="1.4" drag="1.1"/>
-        <control-input axis="/controls/flight/elevator" control="FLAP0"/>
+        <control-input axis="/controls/flight/elevator-int" control="FLAP0"/>
         <control-input axis="/controls/flight/elevator-trim" control="FLAP0"/>
         <control-output control="FLAP0" prop="/surface-positions/elevator-pos-norm"/>
+        <control-speed control="FLAP0" transition-time="0.3"/><!--moves slowly due to being operated hydraulically-->
     </hstab>
 
     <vstab x="-15.528" y="0.00" z="3.816" length="3.0" chord="2.9"
         sweep="20" taper="0.7" >
         <stall aoa="16" width="4" peak="1.5"/>
         <flap0 start="0" end="1" lift="1.5" drag="1.5"/>
-        <control-input axis="/controls/flight/rudder" control="FLAP0" invert="true"/>
+        <control-input axis="/controls/flight/rudder-int" control="FLAP0" invert="false"/>
         <control-input axis="/controls/flight/rudder-trim" control="FLAP0" invert="true"/>
         <control-output control="FLAP0" prop="/surface-positions/rudder-pos-norm"/>
+        <control-speed control="FLAP0" transition-time="0.3"/><!--moves slowly due to being operated hydraulically-->
     </vstab>
 
 <!--

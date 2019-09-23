@@ -306,7 +306,7 @@
         <alignment>left-bottom</alignment>
         <axis-alignment>yz-plane</axis-alignment>
         <type type="string">number-value</type>
-        <property>autopilot/settings/asel</property>
+        <property>it-autoflight/input/alt</property>
         <format>%03.0f</format>
         <truncate>true</truncate>
         <font>helvetica_bold.txf</font>

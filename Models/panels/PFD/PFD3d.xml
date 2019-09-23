@@ -1083,7 +1083,7 @@
     <animation>
         <type>rotate</type>
         <object-name>vsi.needle</object-name>
-        <property>autopilot/internal/vert-speed-fpm</property>
+        <property>it-autoflight/internal/vert-speed-fpm</property>
         <interpolation>
             <entry><ind>-4000</ind><dep>-73.33</dep></entry>
             <entry><ind>0.0</ind><dep>0.0</dep></entry>

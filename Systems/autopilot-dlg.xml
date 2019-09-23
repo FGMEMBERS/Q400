@@ -215,9 +215,8 @@
 			<layout>hbox</layout>
 			
 			<button>
-				<row>0</row>
-				<col>1</col>
 				<legend>SPD</legend>
+				<pref-width>70</pref-width>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/input/kts-mach</property>
@@ -226,9 +225,8 @@
 			</button>
 		
 			<button>
-				<row>1</row>
-				<col>1</col>
 				<legend>Mach</legend>
+				<pref-width>70</pref-width>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/input/kts-mach</property>
@@ -237,9 +235,8 @@
 			</button>
 			
 			<button>
-				<row>0</row>
-				<col>1</col>
 				<legend>TOGA</legend>
+				<pref-width>70</pref-width>
 				<binding>
 				<command>property-assign</command>
 				<property>/it-autoflight/input/toga</property>
@@ -622,45 +619,40 @@
 		
 		<group>
 			<layout>hbox</layout>
-			<text>
-				<label>Mode:</label>
-			</text>
-			<text>
-				<label>[MAG]</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/input/trk</property>
-						<value>0</value>
-					</equals>
-				</visible>
-			</text>
-			<text>
-				<label>[TRK]</label>
-				<visible>
-					<equals>
-						<property>/it-autoflight/input/trk</property>
-						<value>1</value>
-					</equals>
-				</visible>
-			</text>
-			<button>
-                <pref-width>60</pref-width>
-				<legend>Magnetic</legend>
+
+			<checkbox>
+				<label>True HDG</label>
+				<property>/it-autoflight/input/trk</property>
 				<binding>
-					<command>property-assign</command>
-					<property>/it-autoflight/input/trk</property>
-					<value>0</value>
+					<command>dialog-apply</command>
 				</binding>
-			</button>
-			<button>
-                <pref-width>45</pref-width>
-				<legend>Track</legend>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<label>Use NAV2</label>
+				<property>/it-autoflight/settings/use-nav2-radio</property>
+				<enable>
+					<not-equals>
+						<property>/it-autoflight/output/vert</property>
+						<value>2</value>
+					</not-equals>
+				</enable>
 				<binding>
-					<command>property-assign</command>
-					<property>/it-autoflight/input/trk</property>
-					<value>1</value>
+					<command>dialog-apply</command>
 				</binding>
-			</button>
+				<live>true</live>
+			</checkbox>
+			<checkbox>
+				<label>B/C</label>
+				<property>/it-autoflight/settings/use-backcourse</property>
+				<enable>
+					<property>/it-autoflight/settings/extra/unused-button</property>
+				</enable>
+				<binding>
+					<command>dialog-apply</command>
+				</binding>
+				<live>true</live>
+			</checkbox>
 		</group>
 		
 		<group>
@@ -693,9 +685,11 @@
                 <pref-width>70</pref-width>
 				<legend>AUTO</legend>
 				<binding>
-				<command>property-assign</command>
-				<property>/it-autoflight/input/bank-limit</property>
-				<value>30</value>
+				<command>nasal</command>
+				<script>
+				var dbl = getprop("/it-autoflight/settings/default-bank-limit");
+				setprop("/it-autoflight/input/bank-limit", dbl);
+				</script>
 				</binding>
 			</button>
 			
@@ -961,8 +955,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-9.9</min>
-					<max>9.9</max>
+					<min>-20.9</min>
+					<max>20.9</max>
 					<step>-1</step>
 					<wrap>false</wrap>
 				</binding>
@@ -976,8 +970,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-9.9</min>
-					<max>9.9</max>
+					<min>-20.9</min>
+					<max>20.9</max>
 					<step>-0.1</step>
 					<wrap>false</wrap>
 				</binding>
@@ -1003,8 +997,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-9.9</min>
-					<max>9.9</max>
+					<min>-20.9</min>
+					<max>20.9</max>
 					<step>0.1</step>
 					<wrap>false</wrap>
 				</binding>
@@ -1019,8 +1013,8 @@
 				<binding>
 					<command>property-adjust</command>
 					<property>/it-autoflight/input/fpa</property>
-					<min>-9.9</min>
-					<max>9.9</max>
+					<min>-20.9</min>
+					<max>20.9</max>
 					<step>1</step>
 					<wrap>false</wrap>
 				</binding>

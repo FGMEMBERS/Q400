@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+<!-- ELEVATOR -->
+
+  <filter>
+    <name>Elevator</name>
+    <type>gain</type>
+    <update-interval-secs type="double">0.0</update-interval-secs>
+    <input>
+      <property>/controls/flight/elevator</property>
+    </input>
+    <enable>
+        <condition>
+            <or>
+                <greater-than>
+                    <property>/systems/hydraulic/psi1</property>
+                    <value>2900</value>
+                </greater-than>
+                <greater-than>
+                    <property>/systems/hydraulic/psi2</property>
+                    <value>2900</value>
+                </greater-than>
+                <and>
+                    <greater-than>
+                        <property>/systems/hydraulic/psi3</property>
+                        <value>2900</value>
+                    </greater-than>
+                    <property>/controls/hydraulic/isol-valve3</property>
+                </and>
+            </or>
+        </condition>
+    </enable>
+    <gain>1</gain>
+    <output>controls/flight/elevator-int</output>
+  </filter>
+
+<!-- RUDDER -->
+
+  <filter>
+    <name>Rudderr</name>
+    <type>gain</type>
+    <update-interval-secs type="double">0.0</update-interval-secs>
+    <input>
+      <property>/controls/flight/rudder</property>
+    </input>
+    <enable>
+        <condition>
+            <or>
+                <greater-than>
+                    <property>/systems/hydraulic/psi1</property>
+                    <value>2900</value>
+                </greater-than>
+                <greater-than>
+                    <property>/systems/hydraulic/psi2</property>
+                    <value>2900</value>
+                </greater-than>
+            </or>
+        </condition>
+    </enable>
+    <gain>1</gain>
+    <output>controls/flight/rudder-int</output>
+  </filter>
+
+</PropertyList>

@@ -28,11 +28,7 @@
     <type>select</type>
     <object-name>Light</object-name>
     <condition>
-	<greater-than>
-	<property>/systems/electrical/volts</property>
-	<value>15</value>
-	</greater-than>
-      <property>/sim/model/lights/strobe/state</property>
+      <property>/systems/electrical/outputs/strobe-lights-norm</property>
     </condition>
   </animation>
 
